@@ -46,7 +46,7 @@ output:
 <!-- Options de knitr et de R (librairies, ...) --> 
 
 ```{r Options, echo=FALSE, message=FALSE}
-knitr::opts_chunk$set(cache=TRUE, warning=FALSE, tidy=TRUE, tidy.opts=list(blank=FALSE, width.cutoff=40))
+knitr::opts_chunk$set(cache=TRUE, warning=FALSE, tidy=TRUE, tidy.opts=list(blank=FALSE, width.cutoff=40),fig.align="center")
 # Installation des packages si nécessaire et chargement
 Library <- function(Packages) {
   InstallAndLoad <- function(Package) {
@@ -146,32 +146,55 @@ The OLS analysis proved a significant time-dependence of the punctual recruitmen
 It besides proved a significant time-dependence of the accumulated recruitment diversity for the three order and a significant effect of the logging.
 
 
-```{r Fig1, out.width = '100%', fig.asp = 1.2/2, echo=FALSE,fig.cap="Trajectories for the 30 sampled years of Richness, Shannon and Simpson diversity for the **(a)** 5-years laps punctual recruitment and **(b)** accumulated recruits. The diversity measured correspond to the average diversity of recruited trees within 5 years – laps. Line colors represent the logging treatment (green for control, blue for T1,orange for T2 and red for T3). The 0.025 and 0.975 percentile correspond to the variance observed for 50 iteration of the taxonomic uncertainty propagation."}
-load("DB/RecruitmentAccum")
-load("DB/RecruitmentPunctual")
+```{r Fig1, out.width = '80%', fig.asp = 1.2/2, echo=FALSE,fig.cap="Trajectories for the 30 sampled years of Richness, Shannon and Simpson diversity for the **(a)** 5-years laps punctual recruitment and **(b)** accumulated recruits. The diversity measured correspond to the average diversity of recruited trees within 5 years – laps. Line colors represent the logging treatment (green for control, blue for T1,orange for T2 and red for T3). The 0.025 and 0.975 percentile correspond to the variance observed for 50 iteration of the taxonomic uncertainty propagation."}
+load("DB/RecruitmentAccum");load("DB/RecruitmentPunctual")
 
-par(mfrow=c(2,3),oma=c(1,1,1,1),no.readonly=TRUE)
+par(mfrow=c(2,3),mar=c(2,3,1,1),oma=c(2,2,1,1),no.readonly=TRUE)
 for(q in 1:3){
 TrajectoryRec(RecAccum)
 TrajectoryRec(RecPun)
-mtext("(a) Richness",at=0.13,line=-1,outer=TRUE);mtext("(b) Shannon",at=0.47,line=-1,outer=TRUE)
-mtext("(c) Simpson",at=0.79,line=-1,outer=TRUE)
-mtext("Years since disturbance",side=1,at=0.85,cex=0.8,line=-2,outer=TRUE)
-mtext("Equivalent diversity",side=2,padj=1,cex=0.8,line=-1,outer=TRUE)
+mtext("(a) Richness",at=0.1,line=-0.6,outer=TRUE);mtext("(b) Shannon",at=0.44,line=-0.6,outer=TRUE)
+mtext("(c) Simpson",at=0.76,line=-0.6,outer=TRUE)
+mtext("Years since disturbance",side=1,at=0.85,cex=0.8,line=1,outer=TRUE)
+mtext("Equivalent diversity",side=2,padj=1,cex=0.8,line=1.5,outer=TRUE)
 }
-
-
 ```
 
 
 *Comparison to null model*
 Punctual and accumulated recruitment diversity of order 0, 1 and 2 were compared to a null recruitment model. 
-The null model randomly sampled the adequate number of recruited species, as observed in inventories, in the real 5-years laps inventory. 
+The null model randomly sampled the adequate number of recruited species, as observed in the real 5-years laps inventory. 
 
-```{r Fig2, out.width = '100%', fig.asp = 1.2/2, echo=FALSE,fig.cap="Punctual **(a)** and accumulated **(b)** recruitment diversity trajectories for the Richness, Shannon and Simpson diversity compared to the null model trajectories. Values reported correspond to 0.5 quantile of plot-level diversity obtained after 50 repetition of the taxonomic uncertainty propagation process, averaged among plots of the same treatments. Lines colors correspond to the logging treatment initially applied (green for control, blue for T1,orange for T2 and red for T3)."}
+```{r Fig2, out.width = '100%', fig.asp = 1.5/2, echo=FALSE, fig.cap="Punctual recruitment diversity trajectories for the Richness, Shannon and Simpson diversity compared to the null model trajectories. Values reported correspond to 0.5 quantile of plot-level median diversity obtained after 50 repetition of the taxonomic uncertainty propagation process. Lines colors correspond to the logging treatment initially applied (green for control, blue for T1,orange for T2 and red for T3)."}
+load("DB/RecruitmentPunctual_Nullmodel")
+
+TrajectoryRec_vsNull(RecPun,RecPun_Null)
+mtext("Punctual recruitment",line=1.2,adj=0,outer=TRUE,cex=1.2)
+mtext("Richness",at=0.1,line=-0.5,outer=TRUE);mtext("Shannon",at=0.44,line=-0.5,outer=TRUE)
+mtext("Simpson",at=0.76,line=-0.5,outer=TRUE)
+mtext("Years since disturbance",side=1,at=0.85,cex=0.8,line=1,outer=TRUE)
+mtext("Equivalent diversity",side=2,padj=1,cex=0.8,line=1.5,outer=TRUE)
+
 ```
 
-```{r Fig3, out.width = '100%', fig.asp = 1.2/2, echo=FALSE,fig.cap="**(a)** Community weighted means (CWM) of the four disturbance treatment for the six leaf and stem functional traits considered and **(b)** Functional richness of the punctual recruited communities measured as the convex hull volume defined by these same functional traits. Values reported correspond to 0.5 quantile of plot-level CWM and functional richness obtained after 50 repetition of the taxonomic uncertainty propagation and the functional database gap-filling processes. Lines colors correspond to the logging treatment initially applied (green for control, blue for T1,orange for T2 and red for T3)."}
+```{r Fig3, out.width = '100%', fig.asp = 1.5/2, echo=FALSE, fig.cap="Accumulated recruitment diversity trajectories for the Richness, Shannon and Simpson diversity compared to the null model trajectories. Values reported correspond to 0.5 quantile of plot-level median diversity obtained after 50 repetition of the taxonomic uncertainty propagation process. Lines colors correspond to the logging treatment initially applied (green for control, blue for T1,orange for T2 and red for T3)."}
+load("DB/RecruitmentAccum_Nullmodel")
+
+TrajectoryRec_vsNull(RecAccum,RecAccum_Null)
+mtext("Accumulated recruitment",line=1.2,adj=0,outer=TRUE,cex=1.2)
+mtext("Richness",at=0.1,line=-0.5,outer=TRUE);mtext("Shannon",at=0.44,line=-0.5,outer=TRUE)
+mtext("Simpson",at=0.76,line=-0.5,outer=TRUE)
+mtext("Years since disturbance",side=1,at=0.85,cex=0.8,line=1,outer=TRUE)
+mtext("Equivalent diversity",side=2,padj=1,cex=0.8,line=1.5,outer=TRUE)
+
+```
+
+
+```{r Fig4, out.width = '100%', fig.asp = 1.2/2, echo=FALSE,fig.cap="**(a)** Community weighted means (CWM) of the four disturbance treatment for the six leaf and stem functional traits considered and **(b)** Functional richness of the punctual recruited communities measured as the convex hull volume defined by these same functional traits. Values reported correspond to 0.5 quantile of plot-level CWM and functional richness obtained after 50 repetition of the taxonomic uncertainty propagation and the functional database gap-filling processes. Lines colors correspond to the logging treatment initially applied (green for control, blue for T1,orange for T2 and red for T3)."}
+load("DB/Recruitment_CWM")
+
+PlotCWM(Rec_CWM)
+
 ```
 
 
@@ -182,7 +205,11 @@ The increase depended on the logging intensity with higher abundance turnover af
 The turnover then decreased in all plots from 15 years after exploitation and plots of all treatments displayed a turnover equal to the control plots from 25 years after exploitation.
 
 
-```{r Fig4, out.width = '100%', fig.asp = 1.2/2, echo=FALSE,fig.cap="Trajectories over the 30 sampled years of the abundance turnover value between recruited trees and intial stands before exploitation at plotscale. 50 repetitions of the taxonomic propagation process and tree resampling returned the quantiles of the distribution of turnover values. Lines correspond to the within treatement average of the 0.5 plot-based percentile (green for control, blue for T1,orange for T2 and red for T3). The grey envelope corresponds to the 0.025 and 0.975 distribution percentiles."}
+```{r Fig5, out.width = '40%',echo=FALSE,fig.cap="Trajectories over the 30 sampled years of the abundance turnover value between recruited trees and intial stands before exploitation at plotscale. 50 repetitions of the taxonomic propagation process and tree resampling returned the quantiles of the distribution of turnover values. Lines correspond to the within treatement average of the 0.5 plot-based percentile (green for control, blue for T1,orange for T2 and red for T3). The grey envelope corresponds to the 0.025 and 0.975 distribution percentiles."}
+load("DB/Punctual_turnover")
+
+turnover(RecPun_turnover)
+
 ```
 
 
