@@ -2,4 +2,4 @@
 
 Third chapter of my thesis.
 
-[Lecture](https://arianemirabel.github.io/RecruitmentTrajectories/)
+[Lecture](https://arianemirabel.github.io/RecruitmentTrajectories/introduction.html)
