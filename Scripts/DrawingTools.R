@@ -91,6 +91,18 @@ for (Ntrait in 1:dim(TrajTraits[[1]])[4]){
 }
 mtext("Years since disturbance",side=1,at=0.90,cex=0.8,line=0.5,outer=TRUE)}
 
+FDiversity<-function(FdivDB){
+plot(colnames(FdivDB[[1]]),FdivDB[[1]][1,],type="n",xaxt="n",xlab="",
+     ylab="",cex.lab=1.5,ylim=c(min(unlist(FdivDB)),max(unlist(FdivDB))))
+axis(1,at=seq(5,30,5),labels=T) 
+invisible(lapply(1:length(FdivDB),function(tr){
+  lines(colnames(FdivDB[[tr]]),FdivDB[[tr]]["0.5",],col=ColorsTr[tr],lwd=2)
+  
+  polygon(c(colnames(FdivDB[[tr]]),rev(colnames(FdivDB[[tr]]))),
+          col=rgb(0,0,0,alpha=0.1),border=NA,
+          c(FdivDB[[tr]]["0.975",],rev(FdivDB[[tr]]["0.025",])))
+}))}
+
 turnover<-function(TurnData){
   plot(colnames(TurnData[[1]]),TurnData[[1]][1,],type="n",xaxt="n",xlab="",ylab="",
        ylim=c(min(unlist(lapply(TurnData,min))),max(unlist(lapply(TurnData,max)))))
@@ -105,6 +117,6 @@ turnover<-function(TurnData){
             c(toplot["0.975",],rev(toplot["0.025",])),
             col=rgb(0,0,0,alpha=0.1),border=NA)
   }))
-  mtext("Species turnover",adj=0,line=1)
+  mtext("Recruitment turnover compared to current stand",adj=0,line=1,cex=1.2)
   mtext("Years since disturbance",side=1,line=2,adj=1)
 }
