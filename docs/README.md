@@ -1,4 +1,4 @@
-# Demographic decompodition: recruitment trajectories
+# Demographic decomposition: recruitment trajectories
 
 Third chapter of my thesis.
 

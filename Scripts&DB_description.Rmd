@@ -3,6 +3,7 @@ title: "Notice Scripts"
 author: "Ariane"
 date: "27 janvier 2018"
 output: html_document
+bibliography: references.bib
 ---
 
 
@@ -20,27 +21,32 @@ Files in the *DB* are the initial inventories and produced database.
 - *Alpha_Plots*: Alpha matrices for the Dirichlet sampling of the vernacular names botanical trials. 
 It is a list of plot-specific matrices, following previous investigation suggesting that botanical associations should rely on local community inventories and history to minimize biases.
 
-- *Paracou_R_Subdivided_ok*: Formatted Paracou inventories, it contains various matrices and lists that are not all used here. 
-*LivingStand_all* is the lists used here, inventories are subdivided by inventoried year and by plot.
-
 - *BotanyGenus*: Botanical correspondence tables to associate genuses to botanical names trialed from vernacular names.
 
 - *BridgeOK.csv*: csv file of the Bridge dataset: 6 leaves and 2 stem traits.
 
 - *DataLifeTraits.csv*: csv file for the Hmax and seed mass class.
 
-- *TaxoComposition_ForGraphs*: Coordinates of inventories and plots in the 2 dimensions space from taxonomic composition NMDS. 
-Lists the coordinates along the various iteration: for now on, only 5 repetitions (becaus run locally). **Figure 1 & 2 (a)**.
+- *Paracou_R_Subdivided_ok*: Formatted Paracou inventories, it contains various matrices and lists that are not all used here. 
+*LivingStand_all* is the lists used here, inventories are subdivided by inventoried year and by plot.
 
-- *FunctionalComposition_forGraphs*: Coordinates of inventories and plots in the 2 dimensions space from functional composition NMDS. 
-Lists the coordinates along the 50 iteration. Comes from the script: *FunctionalNMDS.R*. **Figure 1 & 2 (b)**.
+- *Punctual_Fevenness*: Value of functional evenness (according to @Villeger2008a) of recruited communities. 
+The 8 functional and life history traits are accounted for, and the recruited communities are all recuits within 3-years laps.
 
-- *ReplacementTraj_ForGraphs*: List by treatment of plots Richness, Shannon and Simpson diversity along inventoried year. 
-It gives the 0.025, 0.5 and 0.975 quantiles from 50 repetitions.
-Comes from the script: *ReplacementTraj_ForGraphs.R*. **Figure 3**.
+- *Punctual_Frichness*: Value of functional richness (according to @Villeger2008a) of recruited communities. 
+The 8 functional and life history traits are accounted for, and the recruited communities are all recuits within 3-years laps.
 
-- *FunctionalTraj_ForGraphs*: List by treatment of plots Rao diversity along inventoried year. 
-It gives the 0.025, 0.5 and 0.975 quantiles from *only 5 for now* repetitions. **Figure 4**.
+- *Punctual_turnover*: Value of taxonomic turnover (according to @Podani2013a) of recruited communities compared to the stand in place at the moment of the inventory.
+
+- *Recruitment_CWM*: The community abundance-weighted means of the puntually recruited communities for the 8 functional and life traits considered.
+
+- *RecruitmentAccum*: Richness, Shannon and Simpson diversity trajectories of the recruited communities accumulated since disturbance.
+
+- *RecruitmentAccum_Nullmodel*: Richness, Shannon and Simpson diversity trajectories from a null model of random species sampling for the recruited communities accumulated since disturbance.
+
+- *RecruitmentPunctual*: Richness, Shannon and Simpson diversity trajectories of the communities recruited every 3-years laps.
+
+- *RecruitmentPunctual_Nullmodel*: Richness, Shannon and Simpson diversity trajectories from a null model of random species sampling for the communities recruited every 3-years laps.
 
 
 ## Scripts file
