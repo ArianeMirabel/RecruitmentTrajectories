@@ -149,13 +149,15 @@ It besides proved a significant time-dependence of the accumulated recruitment d
 ```{r Fig1, out.width = '80%', fig.asp = 1.2/2, echo=FALSE,fig.cap="Trajectories for the 30 sampled years of Richness, Shannon and Simpson diversity for the **(a)** 5-years laps punctual recruitment and **(b)** accumulated recruits. The diversity measured correspond to the average diversity of recruited trees within 5 years – laps. Line colors represent the logging treatment (green for control, blue for T1,orange for T2 and red for T3). The 0.025 and 0.975 percentile correspond to the variance observed for 50 iteration of the taxonomic uncertainty propagation."}
 load("DB/RecruitmentAccum");load("DB/RecruitmentPunctual")
 
-par(mfrow=c(2,3),mar=c(2,3,1,1),oma=c(2,2,1,1),no.readonly=TRUE)
-TrajectoryRec(RecAccum,1)
+par(mfrow=c(2,3),mar=c(2,3,1,1),oma=c(2,3,1,1),no.readonly=TRUE)
 TrajectoryRec(RecPun,0.8)
+TrajectoryRec(RecAccum,1)
 mtext("(a) Richness",at=0.1,line=-0.6,outer=TRUE);mtext("(b) Shannon",at=0.44,line=-0.6,outer=TRUE)
 mtext("(c) Simpson",at=0.76,line=-0.6,outer=TRUE)
 mtext("Years since disturbance",side=1,at=0.85,cex=0.8,line=1,outer=TRUE)
-mtext("Equivalent diversity",side=2,padj=1,cex=0.8,line=1.5,outer=TRUE)
+mtext("Equivalent diversity",side=2,padj=1,cex=0.8,line=0.8,outer=TRUE)
+mtext("Punctual",side=2,adj=0.8,line=1.75,outer=TRUE)
+mtext("Accumulated",side=2,adj=0.2,line=1.75,outer=TRUE)
 
 ```
 
