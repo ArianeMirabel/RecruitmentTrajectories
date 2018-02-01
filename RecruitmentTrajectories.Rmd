@@ -65,7 +65,7 @@ source("Scripts/DrawingTools.R")
 
 # Introduction
 
-The main determinant identified and retained over decades of studies on forest dynamics rely on the demographic processes determining trees recruitment. 
+Decades of studies retained demographic processes driving trees recruitment as the main determinant of forest dynamics. 
 As stated by the Intermediate Disturbance Hypothesis (IDH), a high biodiversity in communities would be maintained by the variability of environmental conditions which would favor and enhance the growth of a variety of species along time which makes the recruited trees to be very diverse. 
 Similarly, the high diversity of tropical forests is assumed to be maintained by the tree fall gaps dynamics which impulses a different recruitment regime between enlightened and dyer gaps and shaded, wet undercover areas. 
 Recruitment dynamics are thus crucial to understand, as determinant of the forest-to-be and driver of community assemblage.
@@ -75,7 +75,6 @@ Predicting in this way species population recovery and subsequently stands diver
 Attempts were successfully conducted to model the regeneration of single species however the response of the whole recruited community after disturbance could not reasonably be assessed via similar methods which would require the combination of accurate knowledge of each species ecology and behavior.
 
 -	Post logging dynamics have been identified but the underlying mechanisms remain unclear, and it is interesting because it gives clues on the functioning of forests (which filters are at stake and how they apply on the ecosystems) 
-
 -	We were interesting in the successional rate along which recruitment functional diversity varies: do we already see the new generation of functional type selected, compared to mature (old growth) forest
 
 -	Do the stand return to initial condition, is the cycle achieved?

@@ -1,6 +1,12 @@
 ColorsTr<-c("darkolivegreen2","deepskyblue2","darkorange1","red2")
 T0<-c(1,6,11);T1<-c(2,7,9);T2<-c(3,5,10);T3<-c(4,8,12);treatments<-list(T0,T1,T2,T3)
 
+smoothTraj<-function(line){
+  first<-(line[1]+line[2])/2;last<-(line[length(line)-1]+line[length(line)])/2
+  ret<-c(first,unlist(lapply(2:(length(line)-1),function(step){return((line[step-1]+line[step]+line[step+1])/3)})),last)
+  names(ret)<-names(line);return(ret)
+}
+
 TrajectoryRec<-function(RecDB,s){
   invisible(lapply(RecDB,function(recind){
     Ylim=c(min(recind),max(recind)*s)
@@ -17,45 +23,27 @@ TrajectoryRec<-function(RecDB,s){
       })}))
   }))}
 
-TrajectoryRec_vsNull<-function(RecDB_obs,RecDb_null){
+TrajectoryRec_vsNull<-function(RecDB_obs,RecDB_null){
   par(mfrow=c(4,3),mar=c(2,3,1,1),oma=c(2,2,2.5,1),no.readonly=TRUE)
   layout(matrix(1:12, 4, 3, byrow = FALSE))
-for (ind in c("Richness","Shannon","Simpson")){
-  Toplot_Null<-lapply(RecDb_null,function(tr){return(tr[,,,ind])})
-  Toplot_Null<-lapply(RecDb_null,function(tr){
-    colnames(tr)<-as.numeric(colnames(tr))-1984
-    ret<-lapply(c(0.025,0.5,0.975),function(quant){
-      apply(tr,c(1,2),function(x){return(quantile(x,probs=quant))})})
-    names(ret)<-c(0.025,0.5,0.975)
-    return(ret)})
-  
-  Toplot<-lapply(RecDB_obs,function(tr){return(tr[,,,ind])})
-  Toplot<-lapply(Toplot,function(tr){
-    colnames(tr)<-as.numeric(colnames(tr))-1984
-    ret<-lapply(c(0.025,0.5,0.975),function(quant){
-      apply(tr,c(1,2),function(x){return(quantile(x,probs=quant))})})
-    names(ret)<-c(0.025,0.5,0.975)
-    return(ret)})
-  
-  lapply(1:length(Toplot_Null),function(tr){
-    plot(colnames(Toplot_Null[[tr]][[1]]),Toplot_Null[[tr]][["0.5"]][1,],type="n",xaxt="n",xlab="",
-         ylab="",cex.lab=1.5,
-         ylim=c(min(unlist(Toplot_Null[[tr]]),unlist(Toplot[[tr]]),na.rm=T),
-                max(unlist(Toplot_Null[[tr]]),unlist(Toplot[[tr]]),na.rm=T)))
-    axis(1,at=seq(5,30,5),labels=T) 
-    toplot_Null<-Toplot_Null[[tr]][["0.5"]]
-    toplot<-Toplot[[tr]][["0.5"]]
-    invisible(lapply(1:nrow(toplot_Null),function(li){
-      lines(colnames(toplot_Null),toplot_Null[li,],col=ColorsTr[tr],lwd=1.5,lty=2)
-      #polygon(c(colnames(toplot_Null),rev(colnames(toplot_Null))),col=rgb(0,0,0,alpha=0.1),border=NA,
-      #c(Toplot_Null[[tr]][["0.975"]][li,],rev(Toplot_Null[[tr]][["0.025"]][li,])))
-      
-      lines(colnames(toplot),toplot[li,],col=ColorsTr[tr],lwd=2)
-      polygon(c(colnames(toplot),rev(colnames(toplot))),col=rgb(0,0,0,alpha=0.1),border=NA,
-              c(Toplot[[tr]][["0.975"]][li,],rev(Toplot[[tr]][["0.025"]][li,])))
-    }))
-  })
-}}
+  for (ind in c("Richness","Shannon","Simpson")){
+    lapply(1:length(treatments),function(tr){
+      toplot<-RecDB_obs[[ind]][which(rownames(RecDB_obs[[ind]])%in%treatments[[tr]]),,]
+      toplotN<-RecDB_null[[ind]][which(rownames(RecDB_null[[ind]])%in%treatments[[tr]]),,]
+      plot(colnames(toplotN),toplotN[1,,"0.5"],type="n",xaxt="n",xlab="",
+           ylab="",cex.lab=1.5,ylim=c(min(min(toplot),min(toplotN)),max(max(toplot),max(toplotN))))
+      axis(1,at=seq(5,30,5),labels=T) 
+      invisible(lapply(1:nrow(toplot),function(li){
+        lines(colnames(toplotN),toplotN[li,,"0.5"],col=ColorsTr[tr],lwd=1.5,lty=2)
+        polygon(c(colnames(toplotN),rev(colnames(toplotN))),col=rgb(0,0,0,alpha=0.05),border=NA,
+        c(toplotN[li,,"0.025"],rev(toplotN[li,,"0.975"])))
+        
+        lines(colnames(toplot),smoothTraj(toplot[li,,"0.5"]),col=ColorsTr[tr],lwd=2)
+        polygon(c(colnames(toplot),rev(colnames(toplot))),col=rgb(0,0,0,alpha=0.1),border=NA,
+                c(smoothTraj(toplot[li,,"0.025"]),rev(smoothTraj(toplot[li,,"0.975"]))))
+      }))
+    })
+  }}
 
 PlotCWM<-function(TrajTraits){
   par(mfrow=c(2,dim(TrajTraits[[1]])[4]/2),mar=c(3,2,2,1),oma=c(2,2,1,1),no.readonly=TRUE)
