@@ -2,10 +2,12 @@ ColorsTr<-c("darkolivegreen2","deepskyblue2","darkorange1","red2")
 T0<-c(1,6,11);T1<-c(2,7,9);T2<-c(3,5,10);T3<-c(4,8,12);treatments<-list(T0,T1,T2,T3)
 
 smoothTraj<-function(line){
+  name<-names(line)
+  line<-as.numeric(line)
   first<-(line[1]+line[2])/2;last<-(line[length(line)-1]+line[length(line)])/2
-  ret<-c(first,unlist(lapply(2:(length(line)-1),function(step){return((line[step-1]+line[step]+line[step+1])/3)})),last)
-  names(ret)<-names(line);return(ret)
-}
+  ret<-c(first,unlist(lapply(2:(length(line)-1),function(step){return((line[step-1]+line[step]+line[step+1])/3)})),
+         last)
+  names(ret)<-name;return(ret)}
 
 TrajectoryRec<-function(RecDB,s){
   invisible(lapply(RecDB,function(recind){
@@ -86,19 +88,14 @@ invisible(lapply(1:length(FdivDB),function(tr){
 }))}
 
 turnover<-function(TurnData){
-  plot(colnames(TurnData[[1]]),TurnData[[1]][1,],type="n",xaxt="n",xlab="",ylab="",
-       ylim=c(min(unlist(lapply(TurnData,min))),max(unlist(lapply(TurnData,max)))))
-  axis(1,at=seq(5,30,5),labels=TRUE)    
-  
-  invisible(lapply(1:4,function(t){  
-    
-    toplot<-TurnData[[t]]
-    
-    lines(colnames(toplot),toplot["0.5",], col =  ColorsTr[t],lty = 1,lwd=3)
-    polygon(c(colnames(toplot),rev(colnames(toplot))),
-            c(toplot["0.975",],rev(toplot["0.025",])),
-            col=rgb(0,0,0,alpha=0.1),border=NA)
+  plot(colnames(TurnData),TurnData[1,,"0.5"],type="n",ylab="",xlab="",ylim=c(min(TurnData),max(TurnData)))
+  invisible(lapply(1:length(treatments),function(tr){
+    toplot<-TurnData[which(rownames(TurnData)%in%treatments[[tr]]),,]
+    lapply(1:nrow(toplot),function(li){
+      lines(colnames(toplot),smoothTraj(toplot[li,,"0.5"]),col=ColorsTr[[tr]],lwd=2)
+      polygon(c(colnames(toplot),rev(colnames(toplot))),
+              c(smoothTraj(toplot[li,,"0.025"]),rev(smoothTraj(toplot[li,,"0.975"]))),
+              col=rgb(0,0,0,alpha=0.05),border=NA)
+    })
   }))
-  mtext("Recruitment turnover compared to current stand",adj=0,line=1,cex=1.2)
-  mtext("Years since disturbance",side=1,line=2,adj=1)
 }

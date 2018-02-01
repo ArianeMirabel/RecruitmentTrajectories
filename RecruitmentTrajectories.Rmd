@@ -219,10 +219,14 @@ The increase depended on the logging intensity with higher abundance turnover af
 The turnover then decreased in all plots from 15 years after exploitation and plots of all treatments displayed a turnover equal to the control plots from 25 years after exploitation.
 
 
-```{r Fig6, out.width = '60%',echo=FALSE,fig.cap="Trajectories over the 30 sampled years of the abundance turnover value between recruited trees and intial stands before exploitation at plotscale. 50 repetitions of the taxonomic propagation process and tree resampling returned the quantiles of the distribution of turnover values. Lines correspond to the within treatement average of the 0.5 plot-based percentile (green for control, blue for T1,orange for T2 and red for T3). The grey envelope corresponds to the 0.025 and 0.975 distribution percentiles."}
-load("DB/Punctual_turnover")
+```{r Fig6, out.width = '60%',echo=FALSE,fig.cap="Trajectories over the 30 sampled years of the abundance-based turnover between recruited trees and intial stands before disturbance. 50 repetitions of the taxonomic propagation process returned the distribution of trunover values, grey envelopes correspond to the 0.025 and 0.975 percentiles and lines to the median in green for control, blue for T1,orange for T2 and red for T3)."}
+load("DB/Turnover_toInit")
 
-turnover(RecPun_turnover)
+turnover(Turn)
+par(mar=c(1,3,2,0))
+mtext("Recruitment specific turnover compared to initial",side=3,adj=0,line=1,cex=1.2)
+mtext("Years since disturbance",side=1,adj=1,line=-2)
+mtext("Equivalent diversity",side=2,line=1.5)
 
 ```
 

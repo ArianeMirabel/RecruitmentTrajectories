@@ -16,7 +16,7 @@ Files in the *Scripts* file are annotated .R files corresponding to the producti
 Files in the *DB* are the initial inventories and produced database.
 
 
-## DB file
+### DB file
 
 - *Alpha_Plots*: Alpha matrices for the Dirichlet sampling of the vernacular names botanical trials. 
 It is a list of plot-specific matrices, following previous investigation suggesting that botanical associations should rely on local community inventories and history to minimize biases.
@@ -36,7 +36,7 @@ The 8 functional and life history traits are accounted for, and the recruited co
 - *Punctual_Frichness*: Value of functional richness (according to @Villeger2008a) of recruited communities. 
 The 8 functional and life history traits are accounted for, and the recruited communities are all recuits within 3-years laps.
 
-- *Punctual_turnover*: Value of taxonomic turnover (according to @Podani2013a) of recruited communities compared to the stand in place at the moment of the inventory.
+- *Turnover_toInit*: Value of abundance-based taxonomic turnover (according to @Podani2013a) of recruited communities per plot compared to the plot inventory in 1984.
 
 - *Recruitment_CWM*: The community abundance-weighted means of the puntually recruited communities for the 8 functional and life traits considered.
 
@@ -49,14 +49,26 @@ The 8 functional and life history traits are accounted for, and the recruited co
 - *RecruitmentPunctual_Nullmodel*: Richness, Shannon and Simpson diversity trajectories from a null model of random species sampling for the communities recruited every 3-years laps.
 
 
-## Scripts file
-
-- *Vernacular_handle.R*: General functions, to propagate taxonomic uncertainty.
-
-- *TraitsMiceFilling.R*: General functions, gap-filling of the traits database.
-
-- *Functional NMDS.R*: Functional composition analysis: iterative NMDS on plots functional inventories.
+### Scripts file
 
 - *DivTaxo_trajectories.R*: Taxonomic Richness, Shannon and Simpson diversity trajectories per plot along inventoried years.
 
 - *DrawingTools.R*: To alleviate the *Manuscript* file I defined separately the functions to draw the plots from dataset.
+
+- *FunctionalNMDS.R*: Functional composition analysis: iterative NMDS on plots functional inventories.
+
+- *GithubPages.R*: Script to clean the file and put .htlm files and pictures in appropriate subfiles.
+
+- *Recruitment_NestTurn.R*: Measure of the nestedness and turnover of recruited comunities compared to plots inventories in 1984. Produces the *Turnover_toInit* file.
+
+- *TraitsMiceFilling.R*: General functions, gap-filling of the traits database.
+
+- *Vernacular_handle.R*: General functions, to propagate taxonomic uncertainty.
+
+- *Recruitment_trajectories.R*: Script to generate the Richness, Shannon and Simpson diversity of plots recruitment along time. 
+We considered "punctual" recruitment (trees recruited during 3-years laps) and "accumulated" recruitment (communities that were recruited since disturbance).
+The null trajectories corresponding to random species sampling are also generated for the two types of recruitment.
+
+
+
+
