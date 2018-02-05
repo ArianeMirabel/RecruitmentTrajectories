@@ -65,19 +65,18 @@ source("Scripts/DrawingTools.R")
 
 # Introduction
 
-Decades of studies retained demographic processes driving trees recruitment as the main determinant of forest dynamics. 
-As stated by the Intermediate Disturbance Hypothesis (IDH), a high biodiversity in communities would be maintained by the variability of environmental conditions which would favor and enhance the growth of a variety of species along time which makes the recruited trees to be very diverse. 
-Similarly, the high diversity of tropical forests is assumed to be maintained by the tree fall gaps dynamics which impulses a different recruitment regime between enlightened and dyer gaps and shaded, wet undercover areas. 
-Recruitment dynamics are thus crucial to understand, as determinant of the forest-to-be and driver of community assemblage.
-A large literature investigated forests population dynamics and successfully modeled forest response to disturbance. 
-Based on stands structure observed in the field, these models proved relevant predictors of carbon sequestration, commercial stocks and diameter distribution dynamics in the short and in the long term \ref{@Gourlet-Fleury2005}. 
-Predicting in this way species population recovery and subsequently stands diversity after disturbance however seems tricky as the growth and survival dynamics in the early life stage, far from being well understood, are highly variable among species which makes the recruitment of a tree too infrequent an event and really poorly correlated to the presence of similar species at the time considered. 
-Attempts were successfully conducted to model the regeneration of single species however the response of the whole recruited community after disturbance could not reasonably be assessed via similar methods which would require the combination of accurate knowledge of each species ecology and behavior.
+Decades of studies retained demographic processes driving trees recruitment as the main determinant of forest dynamics, and a inescapable mirror of the forest-to-be for forest dynamics forecasts.
+Recruitment is the driving mechanisms of the Intermediate Disturbance Hypothesis (IDH) which explains the maintenance of tropical forests high biodiversity through the variability of environmental conditions, favoring the growth of a variety of species and thus the diversity of recruited trees \ref{@Molino2001}. 
+This makes recruitment dynamics the drivers of major dynamics, such as the tree fall gaps dynamics which continuously impulses different recruitment regime between enlightened, dry gaps and shaded, wet undercover areas. 
 
--	Post logging dynamics have been identified but the underlying mechanisms remain unclear, and it is interesting because it gives clues on the functioning of forests (which filters are at stake and how they apply on the ecosystems) 
--	We were interesting in the successional rate along which recruitment functional diversity varies: do we already see the new generation of functional type selected, compared to mature (old growth) forest
+Forests population dynamics were the focus of a large literature which successfully modeled the response of key forest features and functions such as carbon sequestration, commercial stocks, and diameter distribution dynamics in the short and in the long term \ref{@Gourlet-Fleury2005}.
+However, the response of communities on their whole and the underlying assembly rules remains unknown. 
+Insights lready highlighted a combination of environmental filters and stochastic events as drivers of the response to disturbance, but the importance of recruitment dynamics have scarcely been disentangled. This hampers to have a refined understanding of response dynamics and to accurately forecast of future forests dynamics.
+If the regeneration of some species is successfully modeled, the response of the whole recruited community after disturbance but this approach requires an accurate knowledge of species ecology and behavior.
+It would not be workable for the community on its whole,given the number of species in tropical forests and the variability of growth and survival in the early life stage among species.
 
--	Do the stand return to initial condition, is the cycle achieved?
+In this paper we aimed to have some insights into the role of demographic dynamics underlying the response of tropical forest after disturbance. 
+From the 30 years survey of a tropical forest after disturbance following a gradient of disturbance intensity, we aimed to (i) identify the evolution of the taxonomic and functional diversity and the functional characteristics of commnities after disturbance, (ii) highlight the environmental filters ruling the recruitment according to the disturbance intensity, and (iii) highlight the recovery of communities and the existence of cyclic dynamics for the taxonomic and functional diversity.
 
 -	Hypotheses: 
 
@@ -118,16 +117,17 @@ Diversity metrics correspond to the expectancy obtained after 50 iteration of th
 
 *Recruitment Survey* 
 To assess the demographic dynamics along the 30 sampled year we divided the inventoried trees between trees recorded before the logging in 1984 and the trees recruited afterward. 
-Analysis first surveyed the communities of trees recruited every 5 years-laps after exploitation, hereafter called “punctual recruitment”. 
+Analysis first surveyed the communities of trees recruited every 3 years-laps after exploitation, hereafter called “punctual recruitment”. 
 Then to assess the diversity of the stands under settlement analysis surveyed the communities of recruited trees accumulated since exploitation, hereafter called “accumulated recruits”.
-To tackle the unequal number of recruited trees between treatments, which would mislead the diversity with the effect of sampling size, the diversity was assessed as the average measure obtained from the resampling of 50 trees in the 5 years – laps recruited communities. 
-The diversity of accumulated recruits corresponded to the accumulation of resampled trees.
-Taxonomic diversity was assessed through Richness and the Hill number translation of Shannon and Simpson indices. 
+The taxonomic diversity was assessed through Richness and the Hill number translation of Shannon and Simpson indices. To tackle the unequal number of recruited trees among treatments the indices bias corrected estimator were used, following \ref{@chao2015estimating}.
 These three indices belong to the set of HCDT or generalized entropy, respectively corresponding to the 0, 1 and 2 order of diversity (q). 
 This order q grasps the balance between richness and evenness in the community as it determines the emphasis on common species in the diversity metric, with common species weighting more than rare ones when q increases. 
 The similarity between the recruited trees and the old growth forest was measured with the turnover metrics detailed in @Podani2013a. 
 The metric used correspond to the relativized abundance replacement, the sum of abundance in one site that is replaced by completely different species, normalized by the maximum abundance shared by the two communities.
-T_ab=(∑_(i=1)^n▒|x_ia 〖-x〗_ib | -|∑_(i=1)^n▒〖x_ia-∑_(i=1)^n▒x_ib 〗|)/(∑_(i=1)^n▒max{x_ia;x_ib } )
+\begin{equation}
+T_ab=\frac{\sum{\limits_{i=1}^{n}|x_ia - x_ib |} -|\sum{\limits{i=1}^{n} x_ia }- \sum{\limits{i=1}^{n} x_ib} |}{\sum{{i=1}^{n}max{x_ia;x_ib }} 
+(\#eq:TurnoverFormula)
+\end{equation}
 
 To determine whether trees recruitment ensued from a random process the observed diversity trajectories were compared to those generated by 50 repetitions of stochastic null models.
 The null model for taxonomic diversity randomly shuffled individuals among plots while preserving species abundance and plots’ tree density. 
@@ -141,9 +141,9 @@ Over time, 104423 trees and 697 botanical species were recorded.
 
 
 *Punctual and accumulated recruits’ diversity*
-The diversity of trees recruited in T1, T2 and T3 logged plots constituted a community with lower richness and lower evenness than observed for the control plots. 
-The OLS analysis proved a significant time-dependence of the punctual recruitment diversity for the three diversity order, Richness, Shannon and Simpson and a significant effect of the logging treatment (P<0.01 in any case). 
-It besides proved a significant time-dependence of the accumulated recruitment diversity for the three order and a significant effect of the logging.
+The diversity of trees recruited in T1, T2 and T3 logged plots first constituted a community with higher richness and lower evenness than in control plots, but this tendency inversed from 25 years after disturbance when disturbed plots displayed lower richness and lower evenness. 
+*The OLS analysis proved a significant time-dependence of the punctual recruitment diversity for the three diversity order, Richness, Shannon and Simpson and a significant effect of the logging treatment (P<0.01 in any case). 
+It besides proved a significant time-dependence of the accumulated recruitment diversity for the three order and a significant effect of the logging.*
 
 
 ```{r Fig1, out.width = '80%', fig.asp = 1.2/2, echo=FALSE,fig.cap="Trajectories for the 30 sampled years of Richness, Shannon and Simpson diversity for the **(a)** 5-years laps punctual recruitment and **(b)** accumulated recruits. The diversity measured correspond to the average diversity of recruited trees within 5 years – laps. Line colors represent the logging treatment (green for control, blue for T1,orange for T2 and red for T3). The 0.025 and 0.975 percentile correspond to the variance observed for 50 iteration of the taxonomic uncertainty propagation."}
@@ -164,7 +164,7 @@ mtext("Accumulated",side=2,adj=0.2,line=1.75,outer=TRUE)
 
 *Comparison to null model*
 Punctual and accumulated recruitment diversity of order 0, 1 and 2 were compared to a null recruitment model. 
-The null model randomly sampled the adequate number of recruited species, as observed in the real 5-years laps inventory. 
+The null model randomly sampled the adequate number of recruited species, as observed in the real 3-years laps inventory. 
 
 ```{r Fig2, out.width = '100%', fig.asp = 1.5/2, echo=FALSE, fig.cap="Punctual recruitment diversity trajectories for the Richness, Shannon and Simpson diversity compared to the null model trajectories. Values reported correspond to 0.5 quantile of plot-level median diversity obtained after 50 repetition of the taxonomic uncertainty propagation process. Lines colors correspond to the logging treatment initially applied (green for control, blue for T1,orange for T2 and red for T3)."}
 load("DB/RecruitmentPunctual_Nullmodel")
