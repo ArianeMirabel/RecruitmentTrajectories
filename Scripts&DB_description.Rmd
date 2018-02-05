@@ -69,6 +69,6 @@ The script produces the *RecruitmentPunctual*, *RecruitmentAccum*, *RecruitmentP
 - *Recruitment_trajectories_Functional.R*: Script to generate the Rao diversity of 3-years laps punctual recruitment. 
 The script produces the *RecruitmentPunctual_Functional* file.
 
-
+----
 
 `r if (knitr:::is_html_output()) '# References {-}'`

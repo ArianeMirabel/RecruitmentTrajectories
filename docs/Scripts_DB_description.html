@@ -134,14 +134,13 @@ $(document).ready(function () {
 <li><p><em>BridgeOK.csv</em>: csv file of the Bridge dataset: 6 leaves and 2 stem traits.</p></li>
 <li><p><em>DataLifeTraits.csv</em>: csv file for the Hmax and seed mass class.</p></li>
 <li><p><em>Paracou_R_Subdivided_ok</em>: Formatted Paracou inventories, it contains various matrices and lists that are not all used here. <em>LivingStand_all</em> is the lists used here, inventories are subdivided by inventoried year and by plot.</p></li>
-<li><p><em>Punctual_Fevenness</em>: Value of functional evenness (according to <span class="citation">Villéger, Mason, and Mouillot (2008)</span>) of recruited communities. The 8 functional and life history traits are accounted for, and the recruited communities are all recuits within 3-years laps.</p></li>
-<li><p><em>Punctual_Frichness</em>: Value of functional richness (according to <span class="citation">Villéger, Mason, and Mouillot (2008)</span>) of recruited communities. The 8 functional and life history traits are accounted for, and the recruited communities are all recuits within 3-years laps.</p></li>
-<li><p><em>Turnover_toInit</em>: Value of abundance-based taxonomic turnover (according to <span class="citation">Podani, Ricotta, and Schmera (2013)</span>) of recruited communities per plot compared to the plot inventory in 1984.</p></li>
-<li><p><em>Recruitment_CWM</em>: The community abundance-weighted means of the puntually recruited communities for the 8 functional and life traits considered.</p></li>
 <li><p><em>RecruitmentAccum</em>: Richness, Shannon and Simpson diversity trajectories of the recruited communities accumulated since disturbance.</p></li>
 <li><p><em>RecruitmentAccum_Nullmodel</em>: Richness, Shannon and Simpson diversity trajectories from a null model of random species sampling for the recruited communities accumulated since disturbance.</p></li>
 <li><p><em>RecruitmentPunctual</em>: Richness, Shannon and Simpson diversity trajectories of the communities recruited every 3-years laps.</p></li>
+<li><p><em>RecruitmentPunctual_Functional</em>: Rao diversity for the 3-years laps punstual recruitment, considering the 8 functional traits and life traits.</p></li>
 <li><p><em>RecruitmentPunctual_Nullmodel</em>: Richness, Shannon and Simpson diversity trajectories from a null model of random species sampling for the communities recruited every 3-years laps.</p></li>
+<li><p><em>Recruits_CWM</em>: The community abundance-weighted means of the puntually recruited communities for the 7 functional and life traits considered.</p></li>
+<li><p><em>Turnover_toInit</em>: Value of abundance-based taxonomic turnover (according to <span class="citation">Podani, Ricotta, and Schmera (2013)</span>) of recruited communities per plot compared to the plot inventory in 1984.</p></li>
 </ul>
 </div>
 <div id="scripts-file" class="section level3">
@@ -154,14 +153,16 @@ $(document).ready(function () {
 <li><p><em>Recruitment_NestTurn.R</em>: Measure of the nestedness and turnover of recruited comunities compared to plots inventories in 1984. Produces the <em>Turnover_toInit</em> file.</p></li>
 <li><p><em>TraitsMiceFilling.R</em>: General functions, gap-filling of the traits database.</p></li>
 <li><p><em>Vernacular_handle.R</em>: General functions, to propagate taxonomic uncertainty.</p></li>
-<li><p><em>Recruitment_trajectories.R</em>: Script to generate the Richness, Shannon and Simpson diversity of plots recruitment along time. We considered “punctual” recruitment (trees recruited during 3-years laps) and “accumulated” recruitment (communities that were recruited since disturbance). The null trajectories corresponding to random species sampling are also generated for the two types of recruitment.</p></li>
+<li><p><em>Recruitment_trajectories.R</em>: Script to generate the Richness, Shannon and Simpson diversity of plots recruitment along time. We considered “punctual” recruitment (trees recruited during 3-years laps) and “accumulated” recruitment (communities that were recruited since disturbance). The null trajectories corresponding to random species sampling are also generated for the two types of recruitment. The script produces the <em>RecruitmentPunctual</em>, <em>RecruitmentAccum</em>, <em>RecruitmentPunctual_Nullmodel</em> and <em>RecruitmentAccum_Nullmodel</em> files.</p></li>
+<li><p><em>Recruitment_trajectories_Functional.R</em>: Script to generate the Rao diversity of 3-years laps punctual recruitment. The script produces the <em>RecruitmentPunctual_Functional</em> file.</p></li>
 </ul>
+<hr />
+</div>
+<div id="references" class="section level1 unnumbered">
+<h1>References</h1>
 <div id="refs" class="references">
 <div id="ref-Podani2013a">
 <p>Podani, János, Carlo Ricotta, and Dénes Schmera. 2013. “A general framework for analyzing beta diversity, nestedness and related community-level phenomena based on abundance data.” <em>Ecological Complexity</em> 15: 52–61. doi:<a href="https://doi.org/10.1016/j.ecocom.2013.03.002">10.1016/j.ecocom.2013.03.002</a>.</p>
-</div>
-<div id="ref-Villeger2008a">
-<p>Villéger, Mason, and Mouillot. 2008. “New multidimensional functional diversity indices for a multifaceted framwork in functional ecology.” <em>Ecology</em> 89 (8): 2290–2301. doi:<a href="https://doi.org/10.1890/07-1206.1">10.1890/07-1206.1</a>.</p>
 </div>
 </div>
 </div>
