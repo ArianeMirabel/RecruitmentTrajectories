@@ -30,23 +30,19 @@ It is a list of plot-specific matrices, following previous investigation suggest
 - *Paracou_R_Subdivided_ok*: Formatted Paracou inventories, it contains various matrices and lists that are not all used here. 
 *LivingStand_all* is the lists used here, inventories are subdivided by inventoried year and by plot.
 
-- *Punctual_Fevenness*: Value of functional evenness (according to @Villeger2008a) of recruited communities. 
-The 8 functional and life history traits are accounted for, and the recruited communities are all recuits within 3-years laps.
-
-- *Punctual_Frichness*: Value of functional richness (according to @Villeger2008a) of recruited communities. 
-The 8 functional and life history traits are accounted for, and the recruited communities are all recuits within 3-years laps.
-
-- *Turnover_toInit*: Value of abundance-based taxonomic turnover (according to @Podani2013a) of recruited communities per plot compared to the plot inventory in 1984.
-
-- *Recruitment_CWM*: The community abundance-weighted means of the puntually recruited communities for the 8 functional and life traits considered.
-
 - *RecruitmentAccum*: Richness, Shannon and Simpson diversity trajectories of the recruited communities accumulated since disturbance.
 
 - *RecruitmentAccum_Nullmodel*: Richness, Shannon and Simpson diversity trajectories from a null model of random species sampling for the recruited communities accumulated since disturbance.
 
 - *RecruitmentPunctual*: Richness, Shannon and Simpson diversity trajectories of the communities recruited every 3-years laps.
 
+- *RecruitmentPunctual_Functional*: Rao diversity for the 3-years laps punstual recruitment, considering the 8 functional traits and life traits.
+
 - *RecruitmentPunctual_Nullmodel*: Richness, Shannon and Simpson diversity trajectories from a null model of random species sampling for the communities recruited every 3-years laps.
+
+- *Recruits_CWM*: The community abundance-weighted means of the puntually recruited communities for the 7 functional and life traits considered.
+
+- *Turnover_toInit*: Value of abundance-based taxonomic turnover (according to @Podani2013a) of recruited communities per plot compared to the plot inventory in 1984.
 
 
 ### Scripts file
@@ -68,7 +64,11 @@ The 8 functional and life history traits are accounted for, and the recruited co
 - *Recruitment_trajectories.R*: Script to generate the Richness, Shannon and Simpson diversity of plots recruitment along time. 
 We considered "punctual" recruitment (trees recruited during 3-years laps) and "accumulated" recruitment (communities that were recruited since disturbance).
 The null trajectories corresponding to random species sampling are also generated for the two types of recruitment.
+The script produces the *RecruitmentPunctual*, *RecruitmentAccum*, *RecruitmentPunctual_Nullmodel* and *RecruitmentAccum_Nullmodel* files.
+
+- *Recruitment_trajectories_Functional.R*: Script to generate the Rao diversity of 3-years laps punctual recruitment. 
+The script produces the *RecruitmentPunctual_Functional* file.
 
 
 
-
+`r if (knitr:::is_html_output()) '# References {-}'`
