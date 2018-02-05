@@ -87,6 +87,21 @@ invisible(lapply(1:length(FdivDB),function(tr){
           c(FdivDB[[tr]]["0.975",],rev(FdivDB[[tr]]["0.025",])))
 }))}
 
+TrajectoryRec_fun<-function(RecDB_fun){
+  Ylim=c(min(RecDB_fun,na.rm=T),max(RecDB_fun,na.rm=T))
+  plot(colnames(RecDB_fun),RecDB_fun[1,,"0.5"],type="n",ylim=Ylim,xlab="",ylab="")
+  invisible(lapply(1:length(treatments),function(tr){
+    toplot<-RecDB_fun[which(rownames(RecDB_fun)%in%treatments[[tr]]),,]
+    lapply(1:nrow(toplot),function(Li){
+      lig<-t(toplot[Li,,]);lig<-lig[,which(!apply(lig,2,anyNA))]
+      lig<-t(apply(lig,1,function(li){return(
+        c(unlist(lapply(2:(length(li)-1),function(step){return((li[step-1]+li[step]+li[step+1])/3)})),li[length(li)]))}))
+      lines(colnames(lig),lig["0.5",],col=ColorsTr[[tr]],lwd=2)
+      polygon(c(colnames(lig),rev(colnames(lig))),c(lig["0.025",],rev(lig["0.975",])),
+              col=rgb(0,0,0,alpha=0.05),border=NA)
+    })}))
+}
+
 turnover<-function(TurnData){
   plot(colnames(TurnData),TurnData[1,,"0.5"],type="n",ylab="",xlab="",ylim=c(min(TurnData),max(TurnData)))
   invisible(lapply(1:length(treatments),function(tr){

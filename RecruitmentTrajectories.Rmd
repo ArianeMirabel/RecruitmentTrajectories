@@ -91,7 +91,7 @@ From the 30 years survey of a tropical forest after disturbance following a grad
 
 # Material and Methods
 
-*Study Site* 
+*Study Site* \\
 Analyses were based on the inventories conducted at the Paracou station in French Guiana (5°18'N and 52°53'W) in a lowland tropical rain forest. 
 The site corresponds to a tropical wet climate with mean annual precipitation averaging 2980 mm.y-1 (30-y period) with a 3-months dry season (< 100 mm.months-1) from mid-August to mid-November, and a one-month dry season in march. 
 Elevation ranges between 5 and 50 m and mean annual temperature is 26°C. 
@@ -101,7 +101,7 @@ Logging treatments were attributed according to a randomized plot design with th
 The logging treatments correspond to averages of 10 trees remove per hectare with a diameter at 1.3 m height (DBH) above 50 cm for treatment 1 (T1), 32 trees/ha above 40 cm DBH for treatment 2 (T2) and 40 trees above 40 cm DBH for treatment 3 (T3). 
 Treatments T2 and T3 included besides logging of 10trees/ha the thinning by poison girdling.
 
-*Inventories Protocol and Dataset Collection* 
+*Inventories Protocol and Dataset Collection* \\
 The study site corresponds to a tropical rain forest with a dominance of Fabaceae, Chrysobalanaceae, Lecythidaceae and Sapotaceae. 
 In the twelve experimental plots all trees above 10 cm DBH are mapped and measured annually since 1984, which allows to survey the trees recruited annually. 
 During the inventories trees are first identified with a vernacular name, assigned by the field team, and then with a scientific name, assigned by a botanist during regular botanical campaigns. 
@@ -115,7 +115,7 @@ These replacement were made through a multinomial distribution M~v~([s~1~, s~2~,
 See appendix 1 for the detailed methodology. 
 Diversity metrics correspond to the expectancy obtained after 50 iteration of the taxonomic uncertainty propagation framework. 
 
-*Recruitment Survey* 
+*Recruitment Survey* \\
 To assess the demographic dynamics along the 30 sampled year we divided the inventoried trees between trees recorded before the logging in 1984 and the trees recruited afterward. 
 Analysis first surveyed the communities of trees recruited every 3 years-laps after exploitation, hereafter called “punctual recruitment”. 
 Then to assess the diversity of the stands under settlement analysis surveyed the communities of recruited trees accumulated since exploitation, hereafter called “accumulated recruits”.
@@ -140,13 +140,13 @@ Over time, 104423 trees and 697 botanical species were recorded.
 **Recruitment Diversity** 
 
 
-*Punctual and accumulated recruits’ diversity*
-The diversity of trees recruited in T1, T2 and T3 logged plots first constituted a community with higher richness and lower evenness than in control plots, but this tendency inversed from 25 years after disturbance when disturbed plots displayed lower richness and lower evenness. 
+*Punctual and accumulated recruits’ diversity* \\
+The diversity of trees recruited in T1, T2 and T3 logged plots first constituted a community with higher richness and lower evenness than in control plots until 25 years after disturbance. From then on, disturbed plots displayed lower richness and lower evenness than control ones. 
 *The OLS analysis proved a significant time-dependence of the punctual recruitment diversity for the three diversity order, Richness, Shannon and Simpson and a significant effect of the logging treatment (P<0.01 in any case). 
 It besides proved a significant time-dependence of the accumulated recruitment diversity for the three order and a significant effect of the logging.*
 
 
-```{r Fig1, out.width = '80%', fig.asp = 1.2/2, echo=FALSE,fig.cap="Trajectories for the 30 sampled years of Richness, Shannon and Simpson diversity for the **(a)** 5-years laps punctual recruitment and **(b)** accumulated recruits. The diversity measured correspond to the average diversity of recruited trees within 5 years – laps. Line colors represent the logging treatment (green for control, blue for T1,orange for T2 and red for T3). The 0.025 and 0.975 percentile correspond to the variance observed for 50 iteration of the taxonomic uncertainty propagation."}
+```{r Fig1, out.width = '80%', fig.asp = 1.2/2, echo=FALSE,fig.cap="Trajectories for the 30 sampled years of Richness, Shannon and Simpson diversity for **(a)**  3-years laps punctual recruitment and **(b)** recruits accumulated since disturbance. Solid lines (green for control, blue for T1, orange for T2 and red for T3 disturbance treatments) correspond to the median observed after 50 iteration of the taxonomic uncertainty propagation, along with the 95% confidence interval (grey envelope)."}
 load("DB/RecruitmentAccum");load("DB/RecruitmentPunctual")
 
 par(mfrow=c(2,3),mar=c(2,3,1,1),oma=c(2,3,1,1),no.readonly=TRUE)
@@ -162,11 +162,11 @@ mtext("Accumulated",side=2,adj=0.2,line=1.75,outer=TRUE)
 ```
 
 
-*Comparison to null model*
-Punctual and accumulated recruitment diversity of order 0, 1 and 2 were compared to a null recruitment model. 
-The null model randomly sampled the adequate number of recruited species, as observed in the real 3-years laps inventory. 
+*Comparison to null model* \\
+Punctual and accumulated recruitment diversity of order 0, 1 and 2 were compared to a null recruitment model corresponding to the random sampling of recruited trees holding constant the effectives of trees recruited.
+For control plots the richness and evenness of observed punctual recruitment were constantly equivalent or higher than obtained with the null model \ref{Fig2}. For the disturbed plots the richness of observed punctual recruitment remained equivalent to this of the null model, however the evenness that was first equivalent or higher became lower than this of the null model from 10 years after disturbance whenever the disturbance intensity.
 
-```{r Fig2, out.width = '100%', fig.asp = 1.5/2, echo=FALSE, fig.cap="Punctual recruitment diversity trajectories for the Richness, Shannon and Simpson diversity compared to the null model trajectories. Values reported correspond to 0.5 quantile of plot-level median diversity obtained after 50 repetition of the taxonomic uncertainty propagation process. Lines colors correspond to the logging treatment initially applied (green for control, blue for T1,orange for T2 and red for T3)."}
+```{r Fig2, out.width = '80%', fig.asp = 1.5/2, echo=FALSE, fig.cap="Punctual recruitment diversity trajectories for the Richness, Shannon and Simpson diversity compared to the null model trajectories. Values reported correspond to the median diversity observed after 50 repetition of the taxonomic uncertainty propagation. Solid lines correspond to the observed trajectories and dotted lines to the null model simulations.Line colors stand for the disturbance treatment with green for control, blue for T1, orange for T2 and red for T3 disturbance treatments.Values reported correspond to the median and 95% confidence intervalobserved after 50 iteration of the taxonomic uncertainty propagation and null model simulation."}
 load("DB/RecruitmentPunctual_Nullmodel")
 
 TrajectoryRec_vsNull(RecPun,RecPun_Null)
@@ -175,10 +175,12 @@ mtext("Richness",at=0.1,line=-0.5,outer=TRUE);mtext("Shannon",at=0.44,line=-0.5,
 mtext("Simpson",at=0.76,line=-0.5,outer=TRUE)
 mtext("Years since disturbance",side=1,at=0.85,cex=0.8,line=1,outer=TRUE)
 mtext("Equivalent diversity",side=2,padj=1,cex=0.8,line=1.5,outer=TRUE)
-
 ```
 
-```{r Fig3, out.width = '100%', fig.asp = 1.5/2, echo=FALSE, fig.cap="Accumulated recruitment diversity trajectories for the Richness, Shannon and Simpson diversity compared to the null model trajectories. Values reported correspond to 0.5 quantile of plot-level median diversity obtained after 50 repetition of the taxonomic uncertainty propagation process. Lines colors correspond to the logging treatment initially applied (green for control, blue for T1,orange for T2 and red for T3)."}
+
+In the same way as for punctual recruitment the richness and evenness of accumulated recuits in control plots was equivalent or higher than observed for the null model for all the post logging survey. On disturbed plaots the richness of accumulated recruits followed this of the null model whereas the evenness, initially higher,  became lower than this of the null model after some time \ref{Fig3}. 
+
+```{r Fig3, out.width = '80%', fig.asp = 1.5/2, echo=FALSE, fig.cap="Accumulated recruitment diversity trajectories for the Richness, Shannon and Simpson diversity compared to the null model trajectories. Values reported correspond to the median diversity observed after 50 repetition of the taxonomic uncertainty propagation. Solid lines correspond to the observed trajectories and dotted lines to the null model simulations.Line colors stand for the disturbance treatment with green for control, blue for T1, orange for T2 and red for T3 disturbance treatments.Values reported correspond to the median and 95% confidence intervalobserved after 50 iteration of the taxonomic uncertainty propagation and null model simulation.."}
 load("DB/RecruitmentAccum_Nullmodel")
 
 TrajectoryRec_vsNull(RecAccum,RecAccum_Null)
@@ -187,68 +189,63 @@ mtext("Richness",at=0.1,line=-0.5,outer=TRUE);mtext("Shannon",at=0.44,line=-0.5,
 mtext("Simpson",at=0.76,line=-0.5,outer=TRUE)
 mtext("Years since disturbance",side=1,at=0.85,cex=0.8,line=1,outer=TRUE)
 mtext("Equivalent diversity",side=2,padj=1,cex=0.8,line=1.5,outer=TRUE)
-
 ```
 
 
-```{r Fig4, out.width = '100%', fig.asp = 1.2/2, echo=FALSE,fig.cap="Community weighted means (CWM) of the four disturbance treatment for the six leaf and stem functional traits considered. Values reported correspond to 0.5 quantile of plot-level median obtained after 50 repetition of the taxonomic uncertainty propagation and the functional database gap-filling processes. Lines colors correspond to the logging treatment initially applied (green for control, blue for T1,orange for T2 and red for T3)."}
+*Recruitment functional diversity * \\
+Punctual and accumulated recruitment diversity of order 0, 1 and 2 were compared to a null recruitment model corresponding 
+
+
+```{r Fig4, out.width = '50%', echo=FALSE,fig.cap="Functional diversity of punctual recruited trees from the considered functional traits. Values reported correspond to the plot-level median and the 95% confidence interval obtained after 50 repetition of the taxonomic uncertainty propagation and the functional database gap-filling processes. Lines colors correspond to the logging treatment initially applied (green for control, blue for T1,orange for T2 and red for T3)."}
+load("DB/RecruitmentPunctual_Functional")
+
+TrajectoryRec_fun(RecPun_Fun)
+mtext("Rao diversity",adj=0,line=1)
+mtext("Years since disturbance",side=1,adj=1,line=2)
+mtext("Equivalent diversity",side=2,line=2.5)
+```
+
+*Recruitment traits weighted means* \\
+Punctual and accumulated recruitment diversity of order 0, 1 and 2 were compared to a null recruitment model corresponding 
+
+```{r Fig5, out.width = '80%', fig.asp = 1.2/2, echo=FALSE,fig.cap="Community weighted means (CWM) of the four disturbance treatment for the four leaf traits, the two stem traits  and the specific Hmax. Values reported correspond to the plot-level median obtained after 50 repetition of the taxonomic uncertainty propagation and the functional database gap-filling processes. Lines colors correspond to the disturbance intensity (green for control, blue for T1,orange for T2 and red for T3)."}
 load("DB/Recruitment_CWM")
 
 PlotCWM(Rec_CWM)
 
 ```
 
-```{r Fig5, out.width = '100%', fig.asp = 1/3, echo=FALSE,fig.cap="Functional richness, evenness and dispersion from the considered functional traits. Values reported correspond to 0.5 quantile of plot-level median obtained after 50 repetition of the taxonomic uncertainty propagation and the functional database gap-filling processes. Lines colors correspond to the logging treatment initially applied (green for control, blue for T1,orange for T2 and red for T3)."}
-load("DB/Punctual_Fevenness");load("DB/Punctual_Frichness")
-
-par(mfrow=c(1,3),mar=c(2,2,1,1),oma=c(2,2,1,1),no.readonly=TRUE)
-FDiversity(Punctual_FRich)
-FDiversity(Punctual_FEve)
-mtext("(a) Richness",at=0.1,line=-0.6,outer=TRUE);mtext("(b) Evenness",at=0.44,line=-0.6,outer=TRUE)
-mtext("(c) Dispersion",at=0.76,line=-0.6,outer=TRUE)
-mtext("Years since disturbance",side=1,at=0.85,cex=0.8,line=1,outer=TRUE)
-mtext("Equivalent diversity",side=2,padj=1,cex=0.8,line=1.5,outer=TRUE)
-
-```
-
-
 **Recruitment Turnover**
 
-The abundance turnover of recruited trees compared to the initial stand inventoried before exploitation remained even for the 30 sampled years in the control plots whereas it showed a first significant increase for 15 years after exploitation in all logged plots. 
-The increase depended on the logging intensity with higher abundance turnover after the most intense exploitation. 
-The turnover then decreased in all plots from 15 years after exploitation and plots of all treatments displayed a turnover equal to the control plots from 25 years after exploitation.
+The abundance turnover of recruited trees compared to the initial stand inventoried before exploitation remained even for the 30 sampled years in the control plots \ref{Fig6}. For the disturbed plot the abundance turnover displayed a humped-back trajectory with maximum reached around 10 years after disturbance that was positively correlated to the disturbance intensity. The turnover had returned close to zero for all plots 30 years after disturbance.
 
 
-```{r Fig6, out.width = '60%',echo=FALSE,fig.cap="Trajectories over the 30 sampled years of the abundance-based turnover between recruited trees and intial stands before disturbance. 50 repetitions of the taxonomic propagation process returned the distribution of trunover values, grey envelopes correspond to the 0.025 and 0.975 percentiles and lines to the median in green for control, blue for T1,orange for T2 and red for T3)."}
+```{r Fig6, out.width = '50%',echo=FALSE,fig.cap="Trajectories over the 30 sampled years of the abundance-based turnover between recruited trees and intial stands before disturbance. 50 repetitions of the taxonomic propagation process returned the distribution of trunover values, grey envelopes correspond to the 0.025 and 0.975 percentiles and lines to the median in green for control, blue for T1,orange for T2 and red for T3)."}
 load("DB/Turnover_toInit")
 
 turnover(Turn)
-par(mar=c(1,3,2,0))
-mtext("Recruitment specific turnover compared to initial",side=3,adj=0,line=1,cex=1.2)
+par(mar=c(1,2,1,0))
+mtext("Recruitment specific turnover compared to initial",side=3,adj=0,cex=1.2)
 mtext("Years since disturbance",side=1,adj=1,line=-2)
-mtext("Equivalent diversity",side=2,line=1.5)
-
+mtext("Equivalent diversity",side=2,line=1)
 ```
 
 
 # Discussion
 
--	The pool of recruited trees is restricted after exploitation, suggesting the involvement of additional filters (biotic or abiotic) compared to natural forests. 
+-	Despite a higher number of recruits, the pool of recruited species is dominated by a smaller set of species than compared to natural forest (\ref{Fig1}). 
 
--	This is confirmed with the comparison to null model: the recruitment after exploitation is more diverse than in natural forests.
+-	This is confirmed with the comparison to null model: in natural forest the recruitement equals a random sampling whereas it is less diverse after disturbance (\ref{Fig2},\ref{Fig3}).
 
--	The punctual diversity is lower after exploitation but the diversity of the accumulated recruitment is higher: the filters change along time.
+- The turnover is high until 15 years after disturbance but then reveals a return to the initial state \ref{Fig6}.
 
--	The IDH all the more strong the filters are different compared to natural forests so the diversity increases with the mix of after logging and old-growth species + with the changes of after logging species. 
-It is confirmed with functional analysis.
+- The functional diversity of recruited trees also increases after disturbance, probably because of higher recruitment rates. It decreases more rapidly for the higher disturbance intensity, this reflects that some species dominate the recruitment when the intensity is high \ref{Fig4}.
 
--	The change in filters is actual until 20 or 25 years after logging: from then on the species recruited are nested within the initial community.
-
--	The stand is on the way to recover its initial condition, whenever the treatment, but this will probably be much longer than the 30 years envisaged for the logging rotations. 
+- 30 years after disturbance it seems that the recruitment dynamics have recovered (\ref{Fig4},\ref{Fig6}). But the post disturbance changes remain visible at the scale of the community (\ref{Fig1},\ref{Fig2},\ref{Fig3}).
 Baraloto, 2012: on juveniles the differences were still at stake.
 
 -	The big question is then: would we observe the same dynamic after a second cycle or is the seed bank depleted after the recruitment of old-growth species. 
-A second rotation would be lethal for the stand composition recovery.
+HP: A second rotation would be lethal for the stand composition recovery.
 
 
 `r if (knitr:::is_html_output()) '# References {-}'`
