@@ -252,7 +252,7 @@ mtext("Equivalent diversity",side=2,line=1)
 
 - The turnover is high until 15 years after disturbance but then reveals a return to the initial state \ref{Fig6}. The decreasing turnover fits the observed increase in whole plot diversity after disturbance, which suggests that recruitment dynamics are driven by competition while abiotic parameter remain stable [@Anderson2007]
 
-- The functional diversity of recruited trees also increases after disturbance, probably because of higher recruitment rates. It decreases more rapidly for the higher disturbance intensity, this reflects that some species dominate the recruitment when the intensity is high \ref{Fig4}.
+- The functional diversity of recruited trees also increases after disturbance, probably because of higher recruitment rates. It decreases more rapidly for the higher disturbance intensity, this reflects that some species dominate the recruitment when the intensity is high \ref{Fig4}. This is consistent with the observd clumpinfg of some pioneere species after disturbance [@Leclerc2015;@Scotti2015a].
 
 - 30 years after disturbance it seems that the recruitment dynamics have recovered (\ref{Fig4},\ref{Fig6}). But the post disturbance changes remain visible at the scale of the community (\ref{Fig1},\ref{Fig2},\ref{Fig3}).
 <!-- Baraloto, 2012: on juveniles the differences were still at stake. --> 
