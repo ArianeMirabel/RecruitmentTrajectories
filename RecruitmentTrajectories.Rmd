@@ -15,13 +15,10 @@ affiliation:
       97310 Kourou,
       France.
   - affsuperscript: 2
-    dptuniv: to be completed
-    address: >
-      Street address,
-      Zip code,
-      Country.
+    dptuniv: INPHB (Institut National Ploytechnique Félix Houphoüet Boigny) 
+    address: Yamoussoukro, Ivory Coast
 corrauthor:
-    email: prenom.nom@ecofog.gf
+    email: ariane.mirabel@ecofog.gf
     url: http://www.ecofog.gf/spip.php?article47
 abstract: >
   Résumé de l'article.
@@ -46,7 +43,7 @@ output:
 <!-- Options de knitr et de R (librairies, ...) --> 
 
 ```{r Options, echo=FALSE, message=FALSE}
-knitr::opts_chunk$set(cache=T, warning=FALSE, tidy=TRUE, tidy.opts=list(blank=FALSE, width.cutoff=40),fig.align="center")
+knitr::opts_chunk$set(cache=F, warning=FALSE, tidy=TRUE, tidy.opts=list(blank=FALSE, width.cutoff=40),fig.align="center")
 # Installation des packages si nécessaire et chargement
 Library <- function(Packages) {
   InstallAndLoad <- function(Package) {
@@ -67,10 +64,10 @@ source("Scripts/DrawingTools.R")
 
 Recruitment dynamics are by definition the main determinent of forest recovery following disturbance. 
 These dynamics determine the vegetative structure of the forests, the ecosystem physiology, the carbon and nutrients cycling and the maintenance of species diversity [@Anderson-Teixeira2013].
-Recruitment is the driving mechanisms of the Intermediate Disturbance Hypothesis (IDH) which explains the maintenance of tropical forests high biodiversity through the variability of environmental conditions, favoring the growth of a variety of species and thus the diversity of recruited trees \ref{@Molino2001}. 
+Recruitment is the driving mechanisms of the Intermediate Disturbance Hypothesis (IDH) which explains the maintenance of tropical forests high biodiversity through the variability of environmental conditions, favoring the growth of a variety of species and thus the diversity of recruited trees [@Molino2001]. 
 This makes recruitment dynamics the drivers of major dynamics, such as the tree fall gaps dynamics which continuously impulses different recruitment regime between enlightened, dry gaps and shaded, wet undercover areas. 
 
-Forests population dynamics were the focus of a large literature which successfully modeled the response of key forest features and functions such as carbon sequestration, commercial stocks, and diameter distribution dynamics in the short and in the long term \ref{@Gourlet-Fleury2005}.
+Forests population dynamics were the focus of a large literature which successfully modeled the response of key forest features and functions such as carbon sequestration, commercial stocks, and diameter distribution dynamics in the short and in the long term [@Gourlet-Fleury2005].
 However, the response of communities on their whole and the underlying assembly rules remains unknown. 
 Insights lready highlighted a combination of environmental filters and stochastic events as drivers of the response to disturbance, but the importance of recruitment dynamics have scarcely been disentangled. This hampers to have a refined understanding of response dynamics and to accurately forecast of future forests dynamics.
 If the regeneration of some species is successfully modeled, the response of the whole recruited community after disturbance but this approach requires an accurate knowledge of species ecology and behavior.
@@ -92,7 +89,10 @@ From the 30 years survey of a tropical forest after disturbance following a grad
 
 # Material and Methods
 
-*Study Site* \\
+
+*Study Site* 
+
+
 Analyses were based on the inventories conducted at the Paracou station in French Guiana (5°18'N and 52°53'W) in a lowland tropical rain forest. 
 The site corresponds to a tropical wet climate with mean annual precipitation averaging 2980 mm.y-1 (30-y period) with a 3-months dry season (< 100 mm.months-1) from mid-August to mid-November, and a one-month dry season in march. 
 Elevation ranges between 5 and 50 m and mean annual temperature is 26°C. 
@@ -102,7 +102,10 @@ Logging treatments were attributed according to a randomized plot design with th
 The logging treatments correspond to averages of 10 trees remove per hectare with a diameter at 1.3 m height (DBH) above 50 cm for treatment 1 (T1), 32 trees/ha above 40 cm DBH for treatment 2 (T2) and 40 trees above 40 cm DBH for treatment 3 (T3). 
 Treatments T2 and T3 included besides logging of 10trees/ha the thinning by poison girdling.
 
-*Inventories Protocol and Dataset Collection* \\
+
+*Inventories Protocol and Dataset Collection* 
+
+
 The study site corresponds to a tropical rain forest with a dominance of Fabaceae, Chrysobalanaceae, Lecythidaceae and Sapotaceae. 
 In the twelve experimental plots all trees above 10 cm DBH are mapped and measured annually since 1984, which allows to survey the trees recruited annually. 
 During the inventories trees are first identified with a vernacular name, assigned by the field team, and then with a scientific name, assigned by a botanist during regular botanical campaigns. 
@@ -128,10 +131,8 @@ These three indices belong to the set of HCDT or generalized entropy, respective
 This order q grasps the balance between richness and evenness in the community as it determines the emphasis on common species in the diversity metric, with common species weighting more than rare ones when q increases. 
 The similarity between the recruited trees and the old growth forest was measured with the turnover metrics detailed in @Podani2013a. 
 The metric used correspond to the relativized abundance replacement, the sum of abundance in one site that is replaced by completely different species, normalized by the maximum abundance shared by the two communities.
-\begin{equation}
-T_ab=\frac{\sum{\limits_{i=1}^{n}|x_ia - x_ib |} -|\sum{\limits{i=1}^{n} x_ia }- \sum{\limits{i=1}^{n} x_ib} |}{\sum{{i=1}^{n}max{x_ia;x_ib }} 
-(\#eq:TurnoverFormula)
-\end{equation}
+
+$$ T_{ab}=\frac{\displaystyle\sum_{i=1}^{n}|x_i^a - x_i^b| - \bigg|\sum_{i=1}^{n} x_i^a - \sum_{i=1}^{n} x_i^b \bigg|}{\displaystyle\sum_{i=1}^{n}max\big({x_i^a;x_i^b\big) }} $$
 
 To determine whether trees recruitment ensued from a random process the observed diversity trajectories were compared to those generated by 50 repetitions of stochastic null models.
 The null model for taxonomic diversity randomly shuffled individuals among plots while preserving species abundance and plots’ tree density. 
@@ -172,7 +173,7 @@ mtext("Accumulated",side=2,adj=0.2,line=1.75,outer=TRUE)
 
 
 Punctual and accumulated recruitment diversity of order 0, 1 and 2 were compared to a null recruitment model corresponding to the random sampling of recruited trees holding constant the effectives of trees recruited.
-For control plots the richness and evenness of observed punctual recruitment were constantly equivalent or higher than obtained with the null model \ref{Fig2}. For the disturbed plots the richness of observed punctual recruitment remained equivalent to this of the null model, however the evenness that was first equivalent or higher became lower than this of the null model from 10 years after disturbance whenever the disturbance intensity.
+For control plots the richness and evenness of observed punctual recruitment were constantly equivalent or higher than obtained with the null model \@ref(fig:Fig2). For the disturbed plots the richness of observed punctual recruitment remained equivalent to this of the null model, however the evenness that was first equivalent or higher became lower than this of the null model from 10 years after disturbance whenever the disturbance intensity.
 
 ```{r Fig2, out.width = '80%', fig.asp = 1.5/2, echo=FALSE, fig.cap="Punctual recruitment diversity trajectories for the Richness, Shannon and Simpson diversity compared to the null model trajectories. Values reported correspond to the median diversity observed after 50 repetition of the taxonomic uncertainty propagation. Solid lines correspond to the observed trajectories and dotted lines to the null model simulations.Line colors stand for the disturbance treatment with green for control, blue for T1, orange for T2 and red for T3 disturbance treatments.Values reported correspond to the median and 95% confidence intervalobserved after 50 iteration of the taxonomic uncertainty propagation and null model simulation."}
 load("DB/RecruitmentPunctual_Nullmodel")
@@ -186,7 +187,7 @@ mtext("Equivalent diversity",side=2,padj=1,cex=0.8,line=1.5,outer=TRUE)
 ```
 
 
-In the same way as for punctual recruitment the richness and evenness of accumulated recuits in control plots was equivalent or higher than observed for the null model for all the post logging survey. On disturbed plaots the richness of accumulated recruits followed this of the null model whereas the evenness, initially higher,  became lower than this of the null model after some time \ref{Fig3}. 
+In the same way as for punctual recruitment the richness and evenness of accumulated recuits in control plots was equivalent or higher than observed for the null model for all the post logging survey. On disturbed plaots the richness of accumulated recruits followed this of the null model whereas the evenness, initially higher,  became lower than this of the null model after some time \@ref(fig:Fig3). 
 
 ```{r Fig3, out.width = '80%', fig.asp = 1.5/2, echo=FALSE, fig.cap="Accumulated recruitment diversity trajectories for the Richness, Shannon and Simpson diversity compared to the null model trajectories. Values reported correspond to the median diversity observed after 50 repetition of the taxonomic uncertainty propagation. Solid lines correspond to the observed trajectories and dotted lines to the null model simulations.Line colors stand for the disturbance treatment with green for control, blue for T1, orange for T2 and red for T3 disturbance treatments.Values reported correspond to the median and 95% confidence intervalobserved after 50 iteration of the taxonomic uncertainty propagation and null model simulation.."}
 load("DB/RecruitmentAccum_Nullmodel")
@@ -230,7 +231,7 @@ PlotCWM(Rec_CWM)
 
 **Recruitment Turnover**
 
-The abundance turnover of recruited trees compared to the initial stand inventoried before exploitation remained even for the 30 sampled years in the control plots \ref{Fig6}. For the disturbed plot the abundance turnover displayed a humped-back trajectory with maximum reached around 10 years after disturbance that was positively correlated to the disturbance intensity. The turnover had returned close to zero for all plots 30 years after disturbance.
+The abundance turnover of recruited trees compared to the initial stand inventoried before exploitation remained even for the 30 sampled years in the control plots \@ref(fig:Fig6). For the disturbed plot the abundance turnover displayed a humped-back trajectory with maximum reached around 10 years after disturbance that was positively correlated to the disturbance intensity. The turnover had returned close to zero for all plots 30 years after disturbance.
 
 
 ```{r Fig6, out.width = '50%',echo=FALSE,fig.cap="Trajectories over the 30 sampled years of the abundance-based turnover between recruited trees and intial stands before disturbance. 50 repetitions of the taxonomic propagation process returned the distribution of trunover values, grey envelopes correspond to the 0.025 and 0.975 percentiles and lines to the median in green for control, blue for T1,orange for T2 and red for T3)."}
@@ -246,15 +247,15 @@ mtext("Equivalent diversity",side=2,line=1)
 
 # Discussion
 
--	Despite a higher number of recruits, the pool of recruited species is dominated by a smaller set of species than compared to natural forest (\ref{Fig1}). 
+-	Despite a higher number of recruits, the pool of recruited species is dominated by a smaller set of species than compared to natural forest (\@ref(fig:Fig1)). 
 
--	This is confirmed with the comparison to null model: in natural forest the recruitement equals a random sampling whereas it is less diverse after disturbance (\ref{Fig2},\ref{Fig3}).
+-	This is confirmed with the comparison to null model: in natural forest the recruitement equals a random sampling whereas it is less diverse after disturbance (\@ref(fig:Fig2),\@ref(fig:Fig3)).
 
-- The turnover is high until 15 years after disturbance but then reveals a return to the initial state \ref{Fig6}. The decreasing turnover fits the observed increase in whole plot diversity after disturbance, which suggests that recruitment dynamics are driven by competition while abiotic parameter remain stable [@Anderson2007]
+- The turnover is high until 15 years after disturbance but then reveals a return to the initial state \@ref(fig:Fig6). The decreasing turnover fits the observed increase in whole plot diversity after disturbance, which suggests that recruitment dynamics are driven by competition while abiotic parameter remain stable [@Anderson2007]
 
-- The functional diversity of recruited trees also increases after disturbance, probably because of higher recruitment rates. It decreases more rapidly for the higher disturbance intensity, this reflects that some species dominate the recruitment when the intensity is high \ref{Fig4}. This is consistent with the observd clumpinfg of some pioneere species after disturbance [@Leclerc2015;@Scotti2015a].
+- The functional diversity of recruited trees also increases after disturbance, probably because of higher recruitment rates. It decreases more rapidly for the higher disturbance intensity, this reflects that some species dominate the recruitment when the intensity is high \@ref(Fig4). This is consistent with the observd clumpinfg of some pioneere species after disturbance [@Leclerc2015;@Scotti2015a].
 
-- 30 years after disturbance it seems that the recruitment dynamics have recovered (\ref{Fig4},\ref{Fig6}). But the post disturbance changes remain visible at the scale of the community (\ref{Fig1},\ref{Fig2},\ref{Fig3}).
+- 30 years after disturbance it seems that the recruitment dynamics have recovered (\@ref(fig:Fig4),\@ref(fig:Fig6)). But the post disturbance changes remain visible at the scale of the community (\@ref(fig:Fig1),\@ref(fig:Fig2),\@ref(fig:Fig3)).
 <!-- Baraloto, 2012: on juveniles the differences were still at stake. --> 
 
 -	The big question is then: would we observe the same dynamic after a second cycle or is the seed bank depleted after the recruitment of old-growth species. 
