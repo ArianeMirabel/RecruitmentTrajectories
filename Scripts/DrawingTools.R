@@ -38,7 +38,7 @@ TrajectoryRec_vsNull<-function(RecDB_obs,RecDB_null){
       invisible(lapply(1:nrow(toplot),function(li){
         lines(colnames(toplotN),toplotN[li,,"0.5"],col=ColorsTr[tr],lwd=1.5,lty=2)
         polygon(c(colnames(toplotN),rev(colnames(toplotN))),col=rgb(0,0,0,alpha=0.05),border=NA,
-        c(toplotN[li,,"0.025"],rev(toplotN[li,,"0.975"])))
+                c(toplotN[li,,"0.025"],rev(toplotN[li,,"0.975"])))
         
         lines(colnames(toplot),smoothTraj(toplot[li,,"0.5"]),col=ColorsTr[tr],lwd=2)
         polygon(c(colnames(toplot),rev(colnames(toplot))),col=rgb(0,0,0,alpha=0.1),border=NA,
@@ -48,44 +48,49 @@ TrajectoryRec_vsNull<-function(RecDB_obs,RecDB_null){
   }}
 
 PlotCWM<-function(TrajTraits){
-  par(mfrow=c(2,dim(TrajTraits[[1]])[4]/2),mar=c(3,2,2,1),oma=c(2,2,1,1),no.readonly=TRUE)
-for (Ntrait in 1:dim(TrajTraits[[1]])[4]){
-  Toplot<-lapply(TrajTraits,function(tr){return(tr[,,,Ntrait])})
-  Toplot<-lapply(Toplot,function(tr){return(tr[,which(colnames(tr)<=2015),])})
-  Toplot<-lapply(Toplot,function(tr){
-    ret<-do.call(rbind,lapply(c(0.025,0.5,0.975),function(quant){
-      apply(apply(tr,c(1,2),function(rep){quantile(rep,probs=quant)}),2,mean)}))
-    rownames(ret)<-c(0.025,0.5,0.975)
-    colnames(ret)<-as.numeric(colnames(ret))-1984
-    return(ret)})
-  
-  plot(colnames(Toplot[[1]]),Toplot[[1]]["0.5",],type="n",xaxt="n",xlab="",
-       ylab="",cex.lab=1.5,ylim=c(min(unlist(Toplot)),max(unlist(Toplot))))
-  axis(1,at=seq(5,30,5),labels=T) 
-  mtext(c("Leaf Thickness","Chlorophyll Content", "Leaf Toughness","SLA","WD","Bark Thickness")[Ntrait],
-        3,line = 0.5,cex=0.9)
-  mtext(c("µm",expression(paste("g.",mm^-2,sep = "")), "N",expression(paste(mm^2,".",mg^-1,sep = "")),
-          expression(paste("g.",cm^-3,sep = "")),"mm")[Ntrait],
-        3,line = 0.5,adj=-0.05,cex=0.7)
-  lapply(1:length(Toplot),function(tr){
-    lines(colnames(Toplot[[tr]]),Toplot[[tr]]["0.5",],col=ColorsTr[tr],lwd=1.5)
-    polygon(c(colnames(Toplot[[tr]]),rev(colnames(Toplot[[tr]]))),col=rgb(0,0,0,alpha=0.1),
-            border=NA,c(Toplot[[tr]]["0.975",],rev(Toplot[[tr]]["0.025",])))
-  })
+  for (Ntrait in 1:length(TrajTraits)){
+    Toplot<-TrajTraits[[Ntrait]]
+    plot(colnames(Toplot),Toplot[1,,"0.5"],type="n",xaxt="n",xlab="",
+         ylab="",cex.lab=1.5,ylim=c(min(Toplot),max(Toplot)))
+    axis(1,at=seq(5,30,5),labels=T) 
+    invisible(lapply(1:length(treatments),function(tr){
+      toplot<-Toplot[which(rownames(Toplot)%in%treatments[[tr]]),,]  
+      lapply(1:nrow(toplot),function(Li){
+        lines(colnames(toplot),toplot[Li,,"0.5"],col=ColorsTr[[tr]],lwd=2)
+        polygon(c(colnames(toplot),rev(colnames(toplot))),c(toplot[Li,,"0.025"],rev(toplot[Li,,"0.975"])),
+                col=rgb(0,0,0,alpha=0.05),border=NA)})
+    }))
+  }
 }
-mtext("Years since disturbance",side=1,at=0.90,cex=0.8,line=0.5,outer=TRUE)}
+legendCWM<-function(){
+  mtext("Leaf thickness\n",at=0.13,line=-1,outer=TRUE,cex=0.9)
+  mtext("µm",at=0.08,line=-1.4,outer=TRUE,cex=0.9)
+  mtext("Leaf cholophyll content\n",at=0.4,line=-1,outer=TRUE,cex=0.9)
+  mtext(expression(paste("g.",mm^-2,sep = "")),at=0.34,line=-1.4,outer=TRUE,cex=0.9)
+  mtext("Leaf toughness\n",at=0.64,line=-1,outer=TRUE,cex=0.9)
+  mtext("N",at=0.56,line=-1.4,outer=TRUE,cex=0.9)
+  mtext("SLA\n",at=0.88,line=-1,outer=TRUE,cex=0.9)
+  mtext(expression(paste(mm^2,".",mg^-1,sep = "")),at=0.84,line=-1.4,outer=TRUE,cex=0.9)
+  
+  mtext("WD\n",at=0.13,line=-14.5,outer=TRUE,cex=0.9)
+  mtext(expression(paste("g.",cm^-3,sep = "")),at=0.08,line=-14.5,outer=TRUE,cex=0.9)
+  mtext("Bark thickness\n",at=0.4,line=-14.5,outer=TRUE,cex=0.9)
+  mtext("mm",at=0.32,line=-14.5,outer=TRUE,cex=0.9)
+  mtext("Hmax\n",at=0.64,line=-14.5,outer=TRUE,cex=0.9)
+  mtext("m",at=0.56,line=-14.5,outer=TRUE,cex=0.9)
+}
 
 FDiversity<-function(FdivDB){
-plot(colnames(FdivDB[[1]]),FdivDB[[1]][1,],type="n",xaxt="n",xlab="",
-     ylab="",cex.lab=1.5,ylim=c(min(unlist(FdivDB)),max(unlist(FdivDB))))
-axis(1,at=seq(5,30,5),labels=T) 
-invisible(lapply(1:length(FdivDB),function(tr){
-  lines(colnames(FdivDB[[tr]]),FdivDB[[tr]]["0.5",],col=ColorsTr[tr],lwd=2)
-  
-  polygon(c(colnames(FdivDB[[tr]]),rev(colnames(FdivDB[[tr]]))),
-          col=rgb(0,0,0,alpha=0.1),border=NA,
-          c(FdivDB[[tr]]["0.975",],rev(FdivDB[[tr]]["0.025",])))
-}))}
+  plot(colnames(FdivDB[[1]]),FdivDB[[1]][1,],type="n",xaxt="n",xlab="",
+       ylab="",cex.lab=1.5,ylim=c(min(unlist(FdivDB)),max(unlist(FdivDB))))
+  axis(1,at=seq(5,30,5),labels=T) 
+  invisible(lapply(1:length(FdivDB),function(tr){
+    lines(colnames(FdivDB[[tr]]),FdivDB[[tr]]["0.5",],col=ColorsTr[tr],lwd=2)
+    
+    polygon(c(colnames(FdivDB[[tr]]),rev(colnames(FdivDB[[tr]]))),
+            col=rgb(0,0,0,alpha=0.1),border=NA,
+            c(FdivDB[[tr]]["0.975",],rev(FdivDB[[tr]]["0.025",])))
+  }))}
 
 TrajectoryRec_fun<-function(RecDB_fun){
   Ylim=c(min(RecDB_fun,na.rm=T),max(RecDB_fun,na.rm=T))

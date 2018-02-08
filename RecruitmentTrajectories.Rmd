@@ -62,9 +62,11 @@ source("Scripts/DrawingTools.R")
 
 # Introduction
 
-Recruitment dynamics are by definition the main determinent of forest recovery following disturbance. 
+Recruitment, the demographic process whereby trees germinate, grow and survive until adult stage, is a major determinent of forest dynamics after disturbance. 
+Disturbance by definition changes ecosystems biotic and abiotic context and creates a temporal variability allowing a variety of species to strive despite the exclusion for resource competition [@denslow1980].
+This mechanism is the driver of the Intermediate Disturbance Hypothesis (IDH) which explains the structure and the high biodiversity of tropical forests by the patchy variability of environmental conditions. 
+This, to the extent that changes are not too drastic and excludes a portion of the ecological range, favors the growth and survival of numerous species browsing a wide ecological range [@Molino2001;@Bongers2009].<this extent remains to be found>.
 These dynamics determine the vegetative structure of the forests, the ecosystem physiology, the carbon and nutrients cycling and the maintenance of species diversity [@Anderson-Teixeira2013].
-Recruitment is the driving mechanisms of the Intermediate Disturbance Hypothesis (IDH) which explains the maintenance of tropical forests high biodiversity through the variability of environmental conditions, favoring the growth of a variety of species and thus the diversity of recruited trees [@Molino2001]. 
 This makes recruitment dynamics the drivers of major dynamics, such as the tree fall gaps dynamics which continuously impulses different recruitment regime between enlightened, dry gaps and shaded, wet undercover areas. 
 
 Forests population dynamics were the focus of a large literature which successfully modeled the response of key forest features and functions such as carbon sequestration, commercial stocks, and diameter distribution dynamics in the short and in the long term [@Gourlet-Fleury2005].
@@ -222,10 +224,13 @@ mtext("Equivalent diversity",side=2,line=2.5)
 Punctual and accumulated recruitment diversity of order 0, 1 and 2 were compared to a null recruitment model corresponding 
 
 ```{r Fig5, out.width = '80%', fig.asp = 1.2/2, echo=FALSE,fig.cap="Community weighted means (CWM) of the four disturbance treatment for the four leaf traits, the two stem traits  and the specific Hmax. Values reported correspond to the plot-level median obtained after 50 repetition of the taxonomic uncertainty propagation and the functional database gap-filling processes. Lines colors correspond to the disturbance intensity (green for control, blue for T1,orange for T2 and red for T3)."}
-load("DB/Recruitment_CWM")
+load("DB/Recruits_CWM")
 
+par(mfrow=c(2,4),mar=c(3,3,2,1),oma=c(2,1,4,1),no.readonly=TRUE)
 PlotCWM(Rec_CWM)
-
+legendCWM()
+mtext("Punctual recruits CWM",line=2,adj=0,outer=TRUE)
+mtext("Years since disturbance",side=1,at=0.6,cex=0.8,line=-0.2,outer=TRUE)
 ```
 
 
@@ -253,7 +258,8 @@ mtext("Equivalent diversity",side=2,line=1)
 
 - The turnover is high until 15 years after disturbance but then reveals a return to the initial state \@ref(fig:Fig6). The decreasing turnover fits the observed increase in whole plot diversity after disturbance, which suggests that recruitment dynamics are driven by competition while abiotic parameter remain stable [@Anderson2007]
 
-- The functional diversity of recruited trees also increases after disturbance, probably because of higher recruitment rates. It decreases more rapidly for the higher disturbance intensity, this reflects that some species dominate the recruitment when the intensity is high \@ref(fig:Fig4). This is consistent with the observd clumpinfg of some pioneere species after disturbance [@Leclerc2015;@Scotti2015a].
+- The functional diversity of recruited trees also increases after disturbance, probably because of higher recruitment rates. It decreases more rapidly for the higher disturbance intensity, this reflects that some species dominate the recruitment when the intensity is high \@ref(fig:Fig4). This is consistent with the observed clumping of some pioneere species after disturbance [@Leclerc2015;@Scotti2015a]. Hubbel 1999 didn't observe higher diversity in canopy gaps, recruitment limitation make stochastic events redominant: we also observe an increase of richness due to higher recruitment but more dominance in the higher disturbance intensity. All the same as Hubbell, except for T3: competitive exclusion enters so the threshold is located between the two intensities (the threshold is AGB removed or diversity after disturbance).
+To argues for the change in assembly processes mechanisms after disturbance, because obviously negative-density dependence [@Harms2000] is not at stake anymore (they browsed a wide range of ecology so it is not the composition that makes the difference). 
 
 - 30 years after disturbance it seems that the recruitment dynamics have recovered (\@ref(fig:Fig4),\@ref(fig:Fig6)). But the post disturbance changes remain visible at the scale of the community (\@ref(fig:Fig1),\@ref(fig:Fig2),\@ref(fig:Fig3)).
 <!-- Baraloto, 2012: on juveniles the differences were still at stake. --> 
