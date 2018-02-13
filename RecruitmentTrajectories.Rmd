@@ -206,7 +206,7 @@ mtext("Equivalent diversity",side=2,padj=1,cex=0.8,line=1.5,outer=TRUE)
 *Recruitment functional diversity * 
 
 
-Punctual and accumulated recruitment diversity of order 0, 1 and 2 were compared to a null recruitment model corresponding 
+Punctual and accumulated recruitment diversity of order 0, 1 and 2 were compared to a null recruitment model corresponding to the random shuffle of complete set of traits valueamong species.
 
 
 ```{r Fig4, out.width = '50%', echo=FALSE,fig.cap="Functional diversity of punctual recruited trees from the considered functional traits. Values reported correspond to the plot-level median and the 95% confidence interval obtained after 50 repetition of the taxonomic uncertainty propagation and the functional database gap-filling processes. Lines colors correspond to the logging treatment initially applied (green for control, blue for T1,orange for T2 and red for T3)."}
@@ -217,6 +217,8 @@ mtext("Rao diversity",adj=0,line=1)
 mtext("Years since disturbance",side=1,adj=1,line=2)
 mtext("Equivalent diversity",side=2,line=2.5)
 ```
+
+Recruits functional diversity displayed a unimodal response to disturbance which maximum was positively correlated to disturbance intenity but that peaked at times unrelated to the disturbance treatment.
 
 *Recruitment traits weighted means* 
 
@@ -252,32 +254,50 @@ mtext("Equivalent diversity",side=2,line=1)
 
 # Discussion
 
-> In any case the density-dependence mechanisms maintaining forest diversity are lost after disturbance (this is why punctual recruitment is lower).When the disturbance is low: recruitment limitation because the recruited community is nested within the existing one and the recruitment is close to rendom. When the disturbance is high there is some selection as found for Molino and this is clearly an acquisitive strategies selection.
+From the 30 years of forest dynamics survey in the Paracou station we highlighted contrasting recruitment mechanisms between control and post-disturbance tropical forests. The difference among treatments were also significant which suggest an intensity threshold between the first and second disturbance treatment and could involve gaps size, the richness of exploited trees or the intervention density [@denslow1980].
+> If we go for a model, maybe we can tst the most relevant parameter!?
 
--	Despite a higher number of recruits, the pool of recruited species is dominated by a smaller set of species than compared to natural forest (\@ref(fig:Fig1)). 
-> Confirms the IDH and Molino results + "between patch" model for high richness [@Chesson2000; @Sheil2003]
+Disturbance increases the recruitment rate which here to increased the richness of recruited trees but impaired their evenness, all the more so that disturbance intensity is high. 
+After disturbance the recruitment was then dominated by a restricted pool of species and Shannon and Simpson diversities decreased up to lower value than for control plots.
 
--	This is confirmed with the comparison to null model: in natural forest the recruitement equals a random sampling whereas it is less diverse after disturbance (\@ref(fig:Fig2),\@ref(fig:Fig3)).
-> Confirms the IDH and Molino results BUT the mechanisms maintaining a high diversity are a whole, between closed forests (see negative density dependence) and gap dynamics [@denslow1987]. In natural stands, any type of dominance preventing ([@Connell1978;@Sheil2003])
-> But for small disturbance, recruitment limitation as observed for T1
+For the 15 first years following disturbance the recruitement seemed driven by the growth of pre-disturbance saplings on hold of suitable growth condition that benefitted from the environmental changes. 
+This translated by an increase in the functional diversity of recruits for all disturbance intensity and an even distribution of functional traits.
 
-- The turnover is high until 15 years after disturbance but then reveals a return to the initial state \@ref(fig:Fig6). The decreasing turnover fits the observed increase in whole plot diversity after disturbance, which suggests that recruitment dynamics are driven by competition while abiotic parameter like water supply and hazards remain stable  or vary in a tight relation to the stand (light thourgh canopy openness or nutrient turnover) [@Anderson2007]. Rapid close of the forest [@Newbery1998;]
-> Confirms the IDH and Molino results but according to the return time to initial depends on the gap size: we suggest that under a certain threshold the recruitment limitation prevails
-> besides, we consider trees above 10cm dbh and long time. The first to grow are the one already big and waiting: low turnover in the beginning but it increases after for disturbed plots so the germination is different when the disturbance is high.
-> As suggested in [@bongers2009] the recruited community is nested with the stand in place so as we are in wet forests, the intensity generating disturbance should be higher.
+After this first recruitment phase, in the case of low disturbance intensity (T1 plots) the recruitment was highly nested within the community in place and displayed a richness and evenness similar to those of a random sampling null-model. 
+This argues for the existence of some recruitment limitation that means the strive of a variety of species, even when not the most fitted for the environmental context, because the best competitors couldn't set in the disturbed area.
+The key role of recruitment limitation in recovery dynamic was already highlighted for low disturbance intensity in tropical wet forests [@Hubbell1999;@Sheil2003;@Bongers2009] and supported the IDH as it mitigates competitive exclusion and maintains some inferior competitiors in the community.
+Recruitment and dispersal limitation are consistent with the short dispersal distance observed for tropical trees, and it was already highlighted in Paracou through the genetic clumping observed for some pioneers [@Leclerc2015;@Scotti2015a].
+
+In the case of high disturbance intensity, the species turnover was high and the functional diversity decreased rapidly, along a shift of the recruitment toward acquisitive functional strategies. 
+This was particularly marked for functional traits of the leaf and stem and for life history traits (Leaf thickness, SLA, Wood Density and Hmax) which values represented a community of fast-growing species with a high resources acquisition strategy.
+The time elpased between disturbance and the significance of those functional and diversity shifts suggests that the second recruitment phase reflects the germination of seeds from the soil seed bank at the moment of the disturbance. 
+This recruitment would undergo a range of environmental filters strengthening the competitive exclusion and thus restricting the pool of species recruited [@Molino2001]. 
+
+Eventually, we observed that disturbance induce particular recruitment mechanisms but it also set aside mechanisms at stake in natural plots.
+Diversity of recruited community in undisturbed plots was higher than this observed for a random-sampling null model, suggesting mechanisms maintaining high diversity like negative density dependance [@Harms2000].
+
+
+Previous studies already highlighted the significant diversity increase of communities as a whole (Mirabel et al., in.prep.) that here seems supported by a shift in recruitment dynamics in favor of acquisitive functional types [@TerSteege2001].
+
+After 30 years stands functional characteristics had recover whenever the disturbance intensity but significant taxonomic diversity difference persisted when the disturbance intensity was high. 
+Stands functioning would then recover faster than taxonomic composition, which questions the importance, the recovery and the role regarding diversity of functional redundancy in tropical forests.
+In any case, the recruitment turnover compared to initial stand ends up close to zero.
+This argues for the maintenance, or for the recovery in relation to the stand [@Anderson2007], of the before-disturbance environment.
+It also supports the convergence of communities tree species taxonomic and functional composition in the long term [@Li2016].
+Post-disturbance communities would then persist for more than 30 years as suggested by the remaining difference among treatments but the initial meachnisms seemed restored at this point, ensuring communities resilience.
+This is however only valid for a single disturbance event, given that second recruitment phase seemed to rely on the soil seed bank a storage effect would modify the trajectories after another disturbance event.
+We assume that in this case the competitive exclusion among dormant life-stage (seeds or even seedlings) would be harsher and bring more radical changes in the recuitment composition and functional profile.
+
+Our long-term study of diversity trajectories after disturbance desentangled the mechanisms underlying stands diversity. While in undisturbed forests mechanisms like negative density dependence enhance species diversity, any disturbance induce new mechanisms depending on the disturbance intensity.
+In any case, communities short term response first reflects the growth of a variety of already grown sapling which increases the taxonomic and functional evenness of the community.
+When the disturbance is low, recruitment limitation  is balanced against environmental filters and induce a recruited community mirroring the stand in place while selecting more acquisitive functional type.
+When the disturbance is intense however the species turnover is high and induce a recruited community significantly dominated by acquisitive functional types and a restricted pool of species.
+In both cases plots recruitment is specific, because it is determined by the surrounding stand in case of low disturbance or because the competitive exclusion randomly selects a restricted pool of species after intense disturbance.
+At the landscape scale then disturbance increases the diversity through the "between patch" difference [@denslow1987;@Chesson2000; @Sheil2003].
+
+> Connell 1978, refute the "equal chance HP because trees don't recruit equally"
 > Contrary to Hubbell and Molino: the question is "do gaps allow specific species to establish which would thrive otherwise?" [@Sheil2003]. The turnover answers that yes it does
-
-- The functional diversity of recruited trees also increases after disturbance, probably because of higher recruitment rates. It decreases more rapidly for the higher disturbance intensity, this reflects that some species dominate the recruitment when the intensity is high \@ref(fig:Fig4). This is consistent with the observed clumping of some pioneere species after disturbance [@Leclerc2015;@Scotti2015a]. 
-> Hubbel 1999 didn't observe higher diversity in canopy gaps, recruitment limitation make stochastic events redominant: we also observe an increase of richness due to higher recruitment but more dominance in the higher disturbance intensity. All the same as Hubbell, except for T3: competitive exclusion enters so the threshold is located between the two intensities (the threshold is AGB removed or diversity after disturbance).
-> To argues for the change in assembly processes mechanisms after disturbance, because obviously negative-density dependence [@Harms2000] is not at stake anymore (they browsed a wide range of ecology so it is not the composition that makes the difference). 
-> Acquisitive like functional traits associated with higher diversity and disturbance dynamics [@TerSteege2001].
-
-- 30 years after disturbance it seems that the recruitment dynamics have recovered (\@ref(fig:Fig4),\@ref(fig:Fig6)). But the post disturbance changes remain visible at the scale of the community (\@ref(fig:Fig1),\@ref(fig:Fig2),\@ref(fig:Fig3)).
 <!-- Baraloto, 2012: on juveniles the differences were still at stake. --> 
-
--	The big question is then: would we observe the same dynamic after a second cycle or is the seed bank depleted after the recruitment of old-growth species. 
-HP: A second rotation would be lethal for the stand composition recovery.
-> Storage effect, avoid competitive exclusion through dormant life stage
 
 ----
 
