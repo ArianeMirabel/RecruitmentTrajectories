@@ -1,11 +1,11 @@
 ---
 title: 30 Years of Recruitment in Tropical Forest After Selective Logging 
 author:
-  - name: Ariane Mirabel
+  - name: Ariane MIRABEL
     authsuperscript: 1*
-  - name: Eric Marcon
+  - name: Eric MARCON
     authsuperscript: 1
-  - name: Bruno Hérault
+  - name: Bruno HERAULT
     authsuperscript: 2
 affiliation:
   - affsuperscript: 1
@@ -255,10 +255,10 @@ mtext("Equivalent diversity",side=2,line=1)
 # Discussion
 
 From the 30 years of forest dynamics survey in the Paracou station we highlighted contrasting recruitment mechanisms between control and post-disturbance tropical forests. The difference among treatments were also significant which suggest an intensity threshold between the first and second disturbance treatment and could involve gaps size, the richness of exploited trees or the intervention density [@denslow1980].
-> If we go for a model, maybe we can tst the most relevant parameter!?
+> If we go for a model, maybe we can test the most relevant parameter!?
 
 Disturbance increases the recruitment rate which here to increased the richness of recruited trees but impaired their evenness, all the more so that disturbance intensity is high. 
-After disturbance the recruitment was then dominated by a restricted pool of species and Shannon and Simpson diversities decreased up to lower value than for control plots.
+After disturbance the recruitment was then dominated by a restricted pool of species and Shannon and Simpson diversities decreased up to lower value than those of control plots.
 
 For the 15 first years following disturbance the recruitement seemed driven by the growth of pre-disturbance saplings on hold of suitable growth condition that benefitted from the environmental changes. 
 This translated by an increase in the functional diversity of recruits for all disturbance intensity and an even distribution of functional traits.
@@ -284,9 +284,12 @@ Stands functioning would then recover faster than taxonomic composition, which q
 In any case, the recruitment turnover compared to initial stand ends up close to zero.
 This argues for the maintenance, or for the recovery in relation to the stand [@Anderson2007], of the before-disturbance environment.
 It also supports the convergence of communities tree species taxonomic and functional composition in the long term [@Li2016].
-Post-disturbance communities would then persist for more than 30 years as suggested by the remaining difference among treatments but the initial meachnisms seemed restored at this point, ensuring communities resilience.
+Post-disturbance communities would then persist for more than 30 years as suggested by the remaining difference among treatments but the initial mechanisms seemed restored at this point, ensuring communities resilience.
+On the same site, the different results of two studies 10 years [@Molino2001] and 20 years [@Baraloto2012a] already suggested the recovery toward initial taxonomic and functional condition of the stands in revealing a decreasing proportion of pioneers between the two periods.
 This is however only valid for a single disturbance event, given that second recruitment phase seemed to rely on the soil seed bank a storage effect would modify the trajectories after another disturbance event.
 We assume that in this case the competitive exclusion among dormant life-stage (seeds or even seedlings) would be harsher and bring more radical changes in the recuitment composition and functional profile.
+Some functional shift toward more acquisitive, small seeded and globally disturbance resitant species building a more resilient community as it has been observed by [@Haddad2008] who linked the persistence of species to their ability to recover from disturbance which is the seed mass , growth rate linked to WD and SLA for plants.
+Additionally to a somehow depleted seed bank this strongly questions the repeatability of observed trajectories after other disturbance events.
 
 Our long-term study of diversity trajectories after disturbance desentangled the mechanisms underlying stands diversity. While in undisturbed forests mechanisms like negative density dependence enhance species diversity, any disturbance induce new mechanisms depending on the disturbance intensity.
 In any case, communities short term response first reflects the growth of a variety of already grown sapling which increases the taxonomic and functional evenness of the community.
