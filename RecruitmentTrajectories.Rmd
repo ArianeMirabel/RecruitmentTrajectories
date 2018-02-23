@@ -62,10 +62,10 @@ source("Scripts/DrawingTools.R")
 
 # Introduction
 
-Recruitment, the demographic process whereby trees germinate, grow and survive until adult stage, is a major determinent of forest dynamics after disturbance. 
-Disturbance by definition changes ecosystems biotic and abiotic context and creates a temporal variability allowing a variety of species to strive despite the exclusion for resource competition [@denslow1980].
-This mechanism is the driver of the Intermediate Disturbance Hypothesis (IDH) which explains the structure and the high biodiversity of tropical forests by the patchy variability of environmental conditions. 
-This, to the extent that changes are not too drastic and excludes a portion of the ecological range, favors the growth and survival of numerous species browsing a wide ecological range [@Molino2001;@Bongers2009].<this extent remains to be found>.
+In forest communities, the recruitment dynamics that determine the effectives and the species of trees that grow and survive until the adult stage, are determinent of communities recovery after disturbance. 
+Disturbance, by definition, changes the ecosystem biotic and abiotic environment and creates a temporal variability that allows a variety of species to strive in the long term despite the risk of exclusion for resource competition [@Denslow1980].
+This principle  underlies the Intermediate Disturbance Hypothesis (IDH) which explains the origin and maintenance of tropical forests biodiversity through a patchy variability of environmental conditions in space and time. 
+Providing the intensity and frequence of this variability is drastic and excludes a portion of the ecological range, favors the growth and survival of numerous species browsing a wide ecological range [@Molino2001;@Bongers2009].<this extent remains to be found>.
 These dynamics determine the vegetative structure of the forests, the ecosystem physiology, the carbon and nutrients cycling and the maintenance of species diversity [@Anderson-Teixeira2013].
 This makes recruitment dynamics the drivers of major dynamics, such as the tree fall gaps dynamics which continuously impulses different recruitment regime between enlightened, dry gaps and shaded, wet undercover areas. 
 
