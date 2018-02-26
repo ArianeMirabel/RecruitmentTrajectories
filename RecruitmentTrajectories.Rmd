@@ -65,7 +65,7 @@ source("Scripts/DrawingTools.R")
 Determining the response of tropical forests to disturbance is key to understand the ecological rules that shape them.
 This prospect yielded a vast literature which successfully defined and modeled the response of important forest features and functions such as carbon sequestration, commercial stocks, and diameter distribution dynamics in the short and in the long term [@Gourlet-Fleury2000;@Putz2012;@Martin2015;@Vidal2016].
 Similar approach for stand communities diversity, though, has been hindered by both the huge biological diversity of tropical forests and the scarcity of long-term monitoring.
-Although the response to disturbance has identified for some species individually, this requires accurate ecological knowledge of the species and usually confined to commercial and valuable tree species [@Sebbenn2008;@Vinson2015].
+Although the response to disturbance was identified for some species individually, this requires accurate ecological knowledge of the species and usually confined to commercial and valuable tree species [@Sebbenn2008;@Rozendaal2010;@Vinson2015].
 The overall response of taxonomic and functional diversity of forest communities therefore remains unclear, and thus also the underlying ecological rules. 
 
 Diversity dynamics of tropical forest communities are largely determined by the recruitment dynamics that drive the amount and the species of trees growing and surviving until the adult stage. 
