@@ -27,16 +27,17 @@ journalinfo: Hal 00679993
 archive: DOI xxxx
 date: "`r format(Sys.time(), '%d %B %Y')`"
 preamble: >
-  \usepackage{amsmath}
+  \usepackage{textcomp}
+  \DeclareUnicodeCharacter{B0}{\textdegree}
 bibliography: references.bib
 lang: english
 keywordlabel: Mots-clés # Keywords
 corrauthorlabel: Contact # Corresponding author
 output:
-  bookdown::gitbook: default
   bookdown::pdf_book:
     base_format: EcoFoG::article
     keep_tex: TRUE
+  bookdown::gitbook: default
   bookdown::word_document2: default
 ---
 
@@ -92,9 +93,9 @@ We aimed to (i) confirm the role of environmental filters selecting the recruite
 
 *Study Site* 
 
-Analyses were based on the inventories conducted at the Paracou station in French Guiana (5~18'N and 52~53'W), located in a lowland tropical rain forest. 
+Analyses were based on the inventories conducted at the Paracou station in French Guiana (5°18'N and 52°53'W), located in a lowland tropical rain forest. 
 The site corresponds to a tropical wet climate with mean annual precipitation averaging 2980 mm.y^-1^ (30-y period) with a 3-months dry season (< 100 mm.months^-1^) from mid-August to mid-November, and a one-month dry season in March [@Wagner2011]. 
-Elevation ranges between 5 and 50 m and mean annual temperature is 26~C. 
+Elevation ranges between 5 and 50 m and mean annual temperature is 26°C. 
 Soils correspond to thin acrisols over a layer of transformed saprolite with low permeability generating lateral drainage during heavy rains.
 The experiment corresponds to a network of twelve 6.25ha plots that have undergone a gradient of three logging, thinning and fuelwood treatments \@ref(tab:Tab1).
 Disturbance treatments were attributed according to a randomized plot design with three replicate blocks of four plots. 
