@@ -34,10 +34,10 @@ lang: english
 keywordlabel: Mots-clés # Keywords
 corrauthorlabel: Contact # Corresponding author
 output:
+  bookdown::gitbook: default
   bookdown::pdf_book:
     base_format: EcoFoG::article
     keep_tex: TRUE
-  bookdown::gitbook: default
   bookdown::word_document2: default
 ---
 
@@ -180,7 +180,7 @@ The diversity of trees recruited in T1, T2 and T3 disturbed plots followed an as
 > It besides proved a significant time-dependence of the accumulated recruitment diversity for the three order and a significant effect of the logging.
 
 
-```{r Fig1, out.width = '80%', fig.asp = 1.2/2, echo=FALSE,fig.cap="Trajectories for the 30 sampled years of Richness, Shannon and Simpson diversity for **(a)**  3-years laps punctual recruitment and **(b)** recruits accumulated since disturbance. Solid lines (green for control, blue for T1, orange for T2 and red for T3 disturbance treatments) correspond to the median observed after 50 iteration of the taxonomic uncertainty propagation, along with the 95\\% confidence interval (grey envelope)."}
+```{r Fig1, out.width = '80%', fig.asp = 1.2/2, echo=FALSE,fig.cap="Trajectories for the 30 sampled years of Richness, Shannon and Simpson diversity for **(a)**  3-years laps punctual recruitment and **(b)** recruits accumulated since disturbance. Solid lines (green for control, blue for T1, orange for T2 and red for T3 disturbance treatments) correspond to the median observed after 50 iteration of the taxonomic uncertainty propagation, along with the 95\\% confidence interval (grey envelope).", fig.env="figure*"}
 
 load("DB/RecruitmentAccum");load("DB/RecruitmentPunctual")
 
@@ -203,7 +203,7 @@ Punctual and accumulated recruitment diversity of order 0, 1 and 2 were compared
 For control plots the richness and evenness of observed punctual recruitment were constantly equivalent or higher than obtained with the null model \@ref(fig:Fig2).
 For the disturbed plots the richness of observed punctual recruitment remained equivalent to this of the null model but the evenness that was first equivalent or higher became and remained lower than this of the null model from 10 years after disturbance whenever the disturbance intensity.
 
-```{r Fig2, out.width = '80%', fig.asp = 1.5/2, echo=FALSE, fig.cap="Punctual recruitment diversity trajectories for the Richness, Shannon and Simpson diversity compared to the null model trajectories. Values reported correspond to the median diversity observed after 50 repetition of the taxonomic uncertainty propagation. Solid lines correspond to the observed trajectories and dotted lines to the null model simulations.Line colors stand for the disturbance treatment with green for control, blue for T1, orange for T2 and red for T3 disturbance treatments.Values reported correspond to the median and 95\\% confidence interval observed after 50 iterations of the taxonomic uncertainty propagation and null model simulation."}
+```{r Fig2, out.width = '80%', fig.asp = 1.5/2, echo=FALSE, fig.cap="Punctual recruitment diversity trajectories for the Richness, Shannon and Simpson diversity compared to the null model trajectories. Values reported correspond to the median diversity observed after 50 repetition of the taxonomic uncertainty propagation. Solid lines correspond to the observed trajectories and dotted lines to the null model simulations.Line colors stand for the disturbance treatment with green for control, blue for T1, orange for T2 and red for T3 disturbance treatments.Values reported correspond to the median and 95\\% confidence interval observed after 50 iterations of the taxonomic uncertainty propagation and null model simulation.", fig.env="figure*"}
 load("DB/RecruitmentPunctual_Nullmodel")
 
 TrajectoryRec_vsNull(RecPun,RecPun_Null)
@@ -218,7 +218,7 @@ mtext("Equivalent diversity",side=2,padj=1,cex=0.8,line=1.5,outer=TRUE)
 In the same way as for punctual recruitment the richness and evenness of accumulated recuits in control plots was equivalent or higher than observed for the null model for all the post logging survey. 
 On disturbed plots the richness of accumulated recruits followed this of the null model whereas the evenness, initially higher,  became lower than this of the null model after some time \@ref(fig:Fig3). 
 
-```{r Fig3, out.width = '80%', fig.asp = 1.5/2, echo=FALSE, fig.cap="Accumulated recruitment diversity trajectories for the Richness, Shannon and Simpson diversity compared to the null model trajectories. Values reported correspond to the median diversity observed after 50 repetition of the taxonomic uncertainty propagation. Solid lines correspond to the observed trajectories and dotted lines to the null model simulations.Line colors stand for the disturbance treatment with green for control, blue for T1, orange for T2 and red for T3 disturbance treatments.Values reported correspond to the median and 95\\% confidence intervalobserved after 50 iteration of the taxonomic uncertainty propagation and null model simulation.."}
+```{r Fig3, out.width = '80%', fig.asp = 1.5/2, echo=FALSE, fig.cap="Accumulated recruitment diversity trajectories for the Richness, Shannon and Simpson diversity compared to the null model trajectories. Values reported correspond to the median diversity observed after 50 repetition of the taxonomic uncertainty propagation. Solid lines correspond to the observed trajectories and dotted lines to the null model simulations.Line colors stand for the disturbance treatment with green for control, blue for T1, orange for T2 and red for T3 disturbance treatments.Values reported correspond to the median and 95\\% confidence intervalobserved after 50 iteration of the taxonomic uncertainty propagation and null model simulation..", fig.env="figure*"}
 load("DB/RecruitmentAccum_Nullmodel")
 
 TrajectoryRec_vsNull(RecAccum,RecAccum_Null)
@@ -236,7 +236,7 @@ mtext("Equivalent diversity",side=2,padj=1,cex=0.8,line=1.5,outer=TRUE)
 Punctual and accumulated recruitment diversity of order 0, 1 and 2 were compared to a null recruitment model corresponding to the random shuffle of complete set of traits value among species \@ref(fig:Fig4).
 
 
-```{r Fig4, out.width = '50%', echo=FALSE,fig.cap="Functional diversity of punctual recruited trees from the considered functional traits. Values reported correspond to the plot-level median and the 95\\% confidence interval obtained after 50 repetition of the taxonomic uncertainty propagation and the functional database gap-filling processes. Lines colors correspond to the logging treatment initially applied (green for control, blue for T1,orange for T2 and red for T3)."}
+```{r Fig4, echo=FALSE,fig.cap="Functional diversity of punctual recruited trees from the considered functional traits. Values reported correspond to the plot-level median and the 95\\% confidence interval obtained after 50 repetition of the taxonomic uncertainty propagation and the functional database gap-filling processes. Lines colors correspond to the logging treatment initially applied (green for control, blue for T1,orange for T2 and red for T3)."}
 load("DB/RecruitmentPunctual_Functional")
 
 TrajectoryRec_fun(RecPun_Fun)
@@ -252,7 +252,7 @@ Recruits functional diversity displayed a unimodal response to disturbance with 
 The trajectories of recruited trees functional and life traits weighted means showed the dominance after disturbance of species displaying large exchange surface area and light tissues (high SLA, low leaf toughness and low wood specific gravity) \@ref(fig:Fig5).
 all traits trajectories dosplayed asymptotic CWM trajectories, except the SLA that displayed a unimodal trajectory with a maximum positively correlated to disturbance intensity and a time a maximum around ten years after disturbance equivalent for all treatments. 
 
-```{r Fig5, out.width = '80%', fig.asp = 1.2/2, echo=FALSE,fig.cap="Community weighted means (CWM) of the four disturbance treatment for the four leaf traits, the two stem traits  and the specific Hmax. Values reported correspond to the plot-level median obtained after 50 repetition of the taxonomic uncertainty propagation and the functional database gap-filling processes. Lines colors correspond to the disturbance intensity (green for control, blue for T1,orange for T2 and red for T3)."}
+```{r Fig5, out.width = '80%', fig.asp = 1.2/2, echo=FALSE,fig.cap="Community weighted means (CWM) of the four disturbance treatment for the four leaf traits, the two stem traits  and the specific Hmax. Values reported correspond to the plot-level median obtained after 50 repetition of the taxonomic uncertainty propagation and the functional database gap-filling processes. Lines colors correspond to the disturbance intensity (green for control, blue for T1,orange for T2 and red for T3).", fig.env="figure*"}
 load("DB/Recruits_CWM")
 
 par(mfrow=c(2,4),mar=c(3,3,2,1),oma=c(2,1,4,1),no.readonly=TRUE)
