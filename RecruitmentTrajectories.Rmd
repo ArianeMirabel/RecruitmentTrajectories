@@ -150,7 +150,7 @@ Species seed mass correspond to 5 classes of increasing mass, the seed mass traj
 All composition and diversity metrics corresponded to the expectancy obtained after 50 iterations of the taxonomic uncertainty propagation framework and of the filling process of missing trait values. 
 
 
-###Recruitment monitoring
+### Recruitment monitoring
 
 To assess the demographic dynamics along the 30 sampled year we divided the inventoried trees between trees recorded before the logging in 1984 and trees recruited afterward. 
 Two types of recruitment were examined: on the one hand the communities recruited punctually by 3-years intervals after exploitation, hereafter called “punctual recruitment”, on the other hand the communities of all trees recruited since exploitation, hereafter called “accumulated recruits”.
