@@ -2,4 +2,5 @@
 
 Third chapter
 
-[Lecture](https://arianemirabel.github.io/RecruitmentTrajectories/introduction.html)
+[Lecture](https://arianemirabel.github.io/RecruitmentTrajectories/introduction.html) ou
+[téléchargement](https://arianemirabel.github.io/RecruitmentTrajectories/RecruitmentTrajectories.pdf)

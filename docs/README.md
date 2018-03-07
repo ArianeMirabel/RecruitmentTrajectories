@@ -1,5 +1,6 @@
 # Demographic decomposition: recruitment trajectories
 
-Third chapter of my thesis.
+Third chapter
 
-[Lecture](https://arianemirabel.github.io/RecruitmentTrajectories/introduction.html)
+[Lecture](https://arianemirabel.github.io/RecruitmentTrajectories/introduction.html) ou
+[téléchargement](https://arianemirabel.github.io/RecruitmentTrajectories/RecruitmentTrajectories.pdf)

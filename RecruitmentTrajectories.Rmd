@@ -1,5 +1,5 @@
 ---
-title: 30 Years of Recruitment in Tropical Forest After Selective Logging 
+title: "30 Years of Recruitment in Tropical Forest After Selective Logging"
 author:
   - name: Ariane MIRABEL
     authsuperscript: 1*
@@ -27,17 +27,18 @@ journalinfo: Hal 00679993
 archive: DOI xxxx
 date: "`r format(Sys.time(), '%d %B %Y')`"
 preamble: >
-  \usepackage{amsmath}
+  \usepackage{textcomp}
+  \DeclareUnicodeCharacter{B0}{\textdegree}
 bibliography: references.bib
-lang: french # english
+lang: english
 keywordlabel: Mots-clés # Keywords
 corrauthorlabel: Contact # Corresponding author
 output:
-  bookdown::gitbook
-#   bookdown::pdf_book:
-#     base_format: EcoFoG::article
-#     keep_tex: TRUE
-#  bookdown::word_document2
+  bookdown::gitbook: default
+  bookdown::pdf_book:
+    base_format: EcoFoG::article
+    keep_tex: TRUE
+  bookdown::word_document2: default
 ---
 
 <!-- Options de knitr et de R (librairies, ...) --> 
@@ -92,7 +93,7 @@ We aimed to (i) confirm the role of environmental filters selecting the recruite
 
 ###Study Site
 
-Analyses were based on the inventories conducted at the Paracou station in French Guiana (5°18'N and 52°53'W),located in a lowland tropical rain forest. 
+Analyses were based on the inventories conducted at the Paracou station in French Guiana (5°18'N and 52°53'W), located in a lowland tropical rain forest. 
 The site corresponds to a tropical wet climate with mean annual precipitation averaging 2980 mm.y^-1^ (30-y period) with a 3-months dry season (< 100 mm.months^-1^) from mid-August to mid-November, and a one-month dry season in March [@Wagner2011]. 
 Elevation ranges between 5 and 50 m and mean annual temperature is 26°C. 
 Soils correspond to thin acrisols over a layer of transformed saprolite with low permeability generating lateral drainage during heavy rains.
@@ -103,21 +104,22 @@ Treatments T2 and T3 besides included the thinning of trees by poison girdling [
 
 Table : (\#tab:Tab1) Intervention table, summary of the disturbance intensity for the 4 plot treatments in Paracou.
 
-------------------------------------------------------------------------------------------------------------------------
-                          ***Timber***              ***Thinning***          ***Fuelwood***           **%AGB lost**         
-------------------  ------------------------ ------------------------- ------------------------ ------------------------
-           Control                                                                                          0            
+---------------------------------------------------------------------------------------------------------------------------
+                          ***Timber***              ***Thinning***          ***Fuelwood***                  **%AGB lost**         
 
-                T1   DBH ≥ 50 cm,                                                                                       
-                     commercial species,                                                                [12%-33%]         
+------------------  ------------------------ ------------------------- ---------------------------------- -----------------
+    ***Control***                                                                                             0            
+
+         ***T1***    DBH $\geq$ 50 cm,                                                                                       
+                     commercial species,                                                                   [12%-33%]         
                      ~ 10 trees/ha                                                                                      
 
-                T2   DBH ≥ 50 cm,              DBH ≥ 40 cm,                                                                 
-                     commercial species,       non-valuable species,                                    [33%-56%]         
+         ***T2***    DBH $\geq$ 50 cm,         DBH $\geq$ 40 cm,                                                                 
+                     commercial species,       non-valuable species,                                       [33%-56%]         
                      ~ 10 trees/ha             ~ 30 trees/ha                                                              
 
-                T3   DBH ≥ 50 cm,              DBH ≥ 50 cm,               40 cm ≤ DBH ≤ 50 cm                               
-                     commercial species,       non-valuable species,      non-valuable species,         [35%-56%]         
+         ***T3***    DBH $\geq$ 50 cm,         DBH $\geq$ 50 cm,          40 cm $\leq$ DBH $\leq$ 50 cm                               
+                     commercial species,       non-valuable species,      non-valuable species,            [35%-56%]         
                      ~ 10 trees/ha             ~ 15 trees/ha              ~ 15 trees/ha                                     
 ------------------------------------------------------------------------------------------------------------------------
 
@@ -130,16 +132,18 @@ In 1984, specific vernacular names were given to 62 commercial or common species
 The botanical campaigns carried every 5 to 6 years to identify all trees at the species level only started in 2003 and identification practices varied among plots and successive campaigns. 
 This raised methodological issues as vernacular names usually correspond to different botanical species, resulting in significant taxonomic uncertainties that had to be propagated to composition and diversity metrics throught a Bayesian framework. 
 The uncertainty propagation was done by the replenishment of inventories completed at genus level from real incomplete ones on the basisof vernacular/botanical names association. 
-Vernacular names were replaced through multinomial trials (M~v~([*s~1~, s~2~, …, s~N~*] ,[*α~1~, α~2~,…, α~N~*]) ) based on the observed association probability [*α~1~, α~2~,…, α~N~*] between each vernacular name *v* and the species [*s~1~, s~2~, …, s~N~*] recorded in the inventory. 
+Vernacular names were replaced through multinomial trials (M~v~([*s~1~, s~2~, …, s~N~*] ,[*$\alpha$~1~, $\alpha$~2~,…, $\alpha$~N~*]) ) based on the observed association probability [*$\alpha$~1~, $\alpha$~2~,…, $\alpha$~N~*] between each vernacular name *v* and the species [*s~1~, s~2~, …, s~N~*] recorded in the inventory. 
 To avoid remaining identification caveats and consider complete inventories, the simulated inventories were then reported at genus.
 See appendix 1 and @Aubry-Kientz2013 for the detailed methodology.
 
 The functional diversity metrics used a dataset for 6 functional traits representing leaf economics (leaves thickness, toughness, total chlorophyll content and specific leaf area, the leaf area per unit dry mass) and wood economics (wood specific gravity and bark thickness), and life history traits (maximum specific height and seed mass).
-Traits database came from the BRIDGE project (http://www.ecofog.gf/Bridge/index.html) where traits values were assessed from a selection of individuals located in nine permanent plots in French Guiana, including two in Paracou. 
+Traits database came from the BRIDGE project [^1] where traits values were assessed from a selection of individuals located in nine permanent plots in French Guiana, including two in Paracou. 
 Missing trait values were filled using multivariate imputation by chained equation (mice) restricted to samples pertaining to the next higher taxonomic level, in order to account for the phylogenetic signal of the functional traits. 
 The dataset comprised 294 botanical species pertaining to 157 botanical genus. 
 Whenever a species inventoried was not in the dataset, it was attributed a set of traits values randomly sampled among species of the same next higher taxonomic level. 
 As seed mass information correspond to a classification into mass classes, no data filling process was applied so analysis were performed considering the 414 botanical species of the seed mass dataset.
+
+[^1]: http://www.ecofog.gf/Bridge/
 
 Functional trajectories measured with the Rao quadratic entropy were drawn along with the community weighted means (CWM) representing the average trait value in a community weighted by relative abundance of the species carrying each value [@Diaz2007;@Garnier2004]. 
 Species seed mass correspond to 5 classes of increasing mass, the seed mass trajectories were reported by the proportion of each class recorded in the inventories.
@@ -175,11 +179,12 @@ The null model for taxonomic diversity randomly shuffled individuals among plots
 
 The diversity of trees recruited in T1, T2 and T3 disturbed plots followed an asymptotique trajectory, first displaying higher richness and lower evenness than those observed in control plots and then lower richness and lower evenness.
 
-*The OLS analysis proved a significant time-dependence of the punctual recruitment diversity for the three diversity order, Richness, Shannon and Simpson and a significant effect of the logging treatment (P<0.01 in any case). 
-It besides proved a significant time-dependence of the accumulated recruitment diversity for the three order and a significant effect of the logging.*
+> The OLS analysis proved a significant time-dependence of the punctual recruitment diversity for the three diversity order, Richness, Shannon and Simpson and a significant effect of the logging treatment (P<0.01 in any case).
+> It besides proved a significant time-dependence of the accumulated recruitment diversity for the three order and a significant effect of the logging.
 
 
-```{r Fig1, out.width = '80%', fig.asp = 1.2/2, echo=FALSE,fig.cap="Trajectories for the 30 sampled years of Richness, Shannon and Simpson diversity for **(a)**  3-years laps punctual recruitment and **(b)** recruits accumulated since disturbance. Solid lines (green for control, blue for T1, orange for T2 and red for T3 disturbance treatments) correspond to the median observed after 50 iteration of the taxonomic uncertainty propagation, along with the 95% confidence interval (grey envelope)."}
+```{r Fig1, out.width = '80%', fig.asp = 1.2/2, echo=FALSE,fig.cap="Trajectories for the 30 sampled years of Richness, Shannon and Simpson diversity for **(a)**  3-years laps punctual recruitment and **(b)** recruits accumulated since disturbance. Solid lines (green for control, blue for T1, orange for T2 and red for T3 disturbance treatments) correspond to the median observed after 50 iteration of the taxonomic uncertainty propagation, along with the 95\\% confidence interval (grey envelope).", fig.env="figure*"}
+
 load("DB/RecruitmentAccum");load("DB/RecruitmentPunctual")
 
 par(mfrow=c(2,3),mar=c(2,3,1,1),oma=c(2,3,1,1),no.readonly=TRUE)
@@ -201,7 +206,7 @@ Punctual and accumulated recruitment diversity of order 0, 1 and 2 were compared
 For control plots the richness and evenness of observed punctual recruitment were constantly equivalent or higher than obtained with the null model \@ref(fig:Fig2).
 For the disturbed plots the richness of observed punctual recruitment remained equivalent to this of the null model but the evenness that was first equivalent or higher became and remained lower than this of the null model from 10 years after disturbance whenever the disturbance intensity.
 
-```{r Fig2, out.width = '80%', fig.asp = 1.5/2, echo=FALSE, fig.cap="Punctual recruitment diversity trajectories for the Richness, Shannon and Simpson diversity compared to the null model trajectories. Values reported correspond to the median diversity observed after 50 repetition of the taxonomic uncertainty propagation. Solid lines correspond to the observed trajectories and dotted lines to the null model simulations.Line colors stand for the disturbance treatment with green for control, blue for T1, orange for T2 and red for T3 disturbance treatments.Values reported correspond to the median and 95% confidence intervalobserved after 50 iteration of the taxonomic uncertainty propagation and null model simulation."}
+```{r Fig2, out.width = '80%', fig.asp = 1.5/2, echo=FALSE, fig.cap="Punctual recruitment diversity trajectories for the Richness, Shannon and Simpson diversity compared to the null model trajectories. Values reported correspond to the median diversity observed after 50 repetition of the taxonomic uncertainty propagation. Solid lines correspond to the observed trajectories and dotted lines to the null model simulations.Line colors stand for the disturbance treatment with green for control, blue for T1, orange for T2 and red for T3 disturbance treatments.Values reported correspond to the median and 95\\% confidence interval observed after 50 iterations of the taxonomic uncertainty propagation and null model simulation.", fig.env="figure*"}
 load("DB/RecruitmentPunctual_Nullmodel")
 
 TrajectoryRec_vsNull(RecPun,RecPun_Null)
@@ -216,7 +221,7 @@ mtext("Equivalent diversity",side=2,padj=1,cex=0.8,line=1.5,outer=TRUE)
 In the same way as for punctual recruitment the richness and evenness of accumulated recuits in control plots was equivalent or higher than observed for the null model for all the post logging survey. 
 On disturbed plots the richness of accumulated recruits followed this of the null model whereas the evenness, initially higher,  became lower than this of the null model after some time \@ref(fig:Fig3). 
 
-```{r Fig3, out.width = '80%', fig.asp = 1.5/2, echo=FALSE, fig.cap="Accumulated recruitment diversity trajectories for the Richness, Shannon and Simpson diversity compared to the null model trajectories. Values reported correspond to the median diversity observed after 50 repetition of the taxonomic uncertainty propagation. Solid lines correspond to the observed trajectories and dotted lines to the null model simulations.Line colors stand for the disturbance treatment with green for control, blue for T1, orange for T2 and red for T3 disturbance treatments.Values reported correspond to the median and 95% confidence intervalobserved after 50 iteration of the taxonomic uncertainty propagation and null model simulation.."}
+```{r Fig3, out.width = '80%', fig.asp = 1.5/2, echo=FALSE, fig.cap="Accumulated recruitment diversity trajectories for the Richness, Shannon and Simpson diversity compared to the null model trajectories. Values reported correspond to the median diversity observed after 50 repetition of the taxonomic uncertainty propagation. Solid lines correspond to the observed trajectories and dotted lines to the null model simulations.Line colors stand for the disturbance treatment with green for control, blue for T1, orange for T2 and red for T3 disturbance treatments.Values reported correspond to the median and 95\\% confidence intervalobserved after 50 iteration of the taxonomic uncertainty propagation and null model simulation..", fig.env="figure*"}
 load("DB/RecruitmentAccum_Nullmodel")
 
 TrajectoryRec_vsNull(RecAccum,RecAccum_Null)
@@ -234,7 +239,7 @@ mtext("Equivalent diversity",side=2,padj=1,cex=0.8,line=1.5,outer=TRUE)
 Punctual and accumulated recruitment diversity of order 0, 1 and 2 were compared to a null recruitment model corresponding to the random shuffle of complete set of traits value among species \@ref(fig:Fig4).
 
 
-```{r Fig4, out.width = '50%', echo=FALSE,fig.cap="Functional diversity of punctual recruited trees from the considered functional traits. Values reported correspond to the plot-level median and the 95% confidence interval obtained after 50 repetition of the taxonomic uncertainty propagation and the functional database gap-filling processes. Lines colors correspond to the logging treatment initially applied (green for control, blue for T1,orange for T2 and red for T3)."}
+```{r Fig4, echo=FALSE,fig.cap="Functional diversity of punctual recruited trees from the considered functional traits. Values reported correspond to the plot-level median and the 95\\% confidence interval obtained after 50 repetition of the taxonomic uncertainty propagation and the functional database gap-filling processes. Lines colors correspond to the logging treatment initially applied (green for control, blue for T1,orange for T2 and red for T3)."}
 load("DB/RecruitmentPunctual_Functional")
 
 TrajectoryRec_fun(RecPun_Fun)
@@ -250,7 +255,7 @@ Recruits functional diversity displayed a unimodal response to disturbance with 
 The trajectories of recruited trees functional and life traits weighted means showed the dominance after disturbance of species displaying large exchange surface area and light tissues (high SLA, low leaf toughness and low wood specific gravity) \@ref(fig:Fig5).
 all traits trajectories dosplayed asymptotic CWM trajectories, except the SLA that displayed a unimodal trajectory with a maximum positively correlated to disturbance intensity and a time a maximum around ten years after disturbance equivalent for all treatments. 
 
-```{r Fig5, out.width = '80%', fig.asp = 1.2/2, echo=FALSE,fig.cap="Community weighted means (CWM) of the four disturbance treatment for the four leaf traits, the two stem traits  and the specific Hmax. Values reported correspond to the plot-level median obtained after 50 repetition of the taxonomic uncertainty propagation and the functional database gap-filling processes. Lines colors correspond to the disturbance intensity (green for control, blue for T1,orange for T2 and red for T3)."}
+```{r Fig5, out.width = '80%', fig.asp = 1.2/2, echo=FALSE,fig.cap="Community weighted means (CWM) of the four disturbance treatment for the four leaf traits, the two stem traits  and the specific Hmax. Values reported correspond to the plot-level median obtained after 50 repetition of the taxonomic uncertainty propagation and the functional database gap-filling processes. Lines colors correspond to the disturbance intensity (green for control, blue for T1,orange for T2 and red for T3).", fig.env="figure*"}
 load("DB/Recruits_CWM")
 
 par(mfrow=c(2,4),mar=c(3,3,2,1),oma=c(2,1,4,1),no.readonly=TRUE)
