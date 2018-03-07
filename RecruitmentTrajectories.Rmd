@@ -90,7 +90,7 @@ We aimed to (i) confirm the role of environmental filters selecting the recruite
 # Material and Methods
 
 
-*Study Site* 
+###Study Site
 
 Analyses were based on the inventories conducted at the Paracou station in French Guiana (5°18'N and 52°53'W),located in a lowland tropical rain forest. 
 The site corresponds to a tropical wet climate with mean annual precipitation averaging 2980 mm.y^-1^ (30-y period) with a 3-months dry season (< 100 mm.months^-1^) from mid-August to mid-November, and a one-month dry season in March [@Wagner2011]. 
@@ -105,24 +105,23 @@ Table : (\#tab:Tab1) Intervention table, summary of the disturbance intensity fo
 
 ------------------------------------------------------------------------------------------------------------------------
                           ***Timber***              ***Thinning***          ***Fuelwood***           **%AGB lost**         
-
 ------------------  ------------------------ ------------------------- ------------------------ ------------------------
-    ***Control***                                                                                          0            
+           Control                                                                                          0            
 
-         ***T1***    DBH ≥ 50 cm,                                                                                       
+                T1   DBH ≥ 50 cm,                                                                                       
                      commercial species,                                                                [12%-33%]         
                      ~ 10 trees/ha                                                                                      
 
-         ***T2***    DBH ≥ 50 cm,              DBH ≥ 40 cm,                                                                 
+                T2   DBH ≥ 50 cm,              DBH ≥ 40 cm,                                                                 
                      commercial species,       non-valuable species,                                    [33%-56%]         
                      ~ 10 trees/ha             ~ 30 trees/ha                                                              
 
-         ***T3***    DBH ≥ 50 cm,              DBH ≥ 50 cm,               40 cm ≤ DBH ≤ 50 cm                               
+                T3   DBH ≥ 50 cm,              DBH ≥ 50 cm,               40 cm ≤ DBH ≤ 50 cm                               
                      commercial species,       non-valuable species,      non-valuable species,         [35%-56%]         
                      ~ 10 trees/ha             ~ 15 trees/ha              ~ 15 trees/ha                                     
 ------------------------------------------------------------------------------------------------------------------------
 
-*Inventories Protocol and Dataset Collection* 
+###Inventories Protocol and Dataset Collection 
 
 The study site corresponds to a tropical rainforest with a dominance of Fabaceae, Chrysobalanaceae, Lecythidaceae and Sapotaceae botanical families. 
 In the twelve experimental plots of the experiment, all trees above 10 cm DBH were mapped and measured annually since 1984. 
@@ -147,7 +146,7 @@ Species seed mass correspond to 5 classes of increasing mass, the seed mass traj
 All composition and diversity metrics corresponded to the expectancy obtained after 50 iterations of the taxonomic uncertainty propagation framework and of the filling process of missing trait values. 
 
 
-*Recruitment monitoring* 
+###Recruitment monitoring
 
 To assess the demographic dynamics along the 30 sampled year we divided the inventoried trees between trees recorded before the logging in 1984 and trees recruited afterward. 
 Two types of recruitment were examined: on the one hand the communities recruited punctually by 3-years intervals after exploitation, hereafter called “punctual recruitment”, on the other hand the communities of all trees recruited since exploitation, hereafter called “accumulated recruits”.
@@ -157,9 +156,12 @@ These three indices belong to the set of HCDT or generalized entropy, respective
 This order q grasps the balance between richness and evenness in the community as it determines the emphasis on common species in the diversity metric, with common species weighting more than rare ones when q increases. 
 
 The similarity between the recruited trees and the old growth forest was measured with the turnover metrics detailed in @Podani2013a. 
-The metric used correspond to the relativized abundance replacement, the sum of abundance in one site that is replaced by completely different species, normalized by the maximum abundance shared by the two communities.
+The metric used correspond to the relativized abundance replacement, the sum of abundance in one site that is replaced by completely different species, normalized by the maximum abundance shared by the two communities \@ref(eq:formNest).
 
-$$ T_{ab}=\frac{\displaystyle\sum_{i=1}^{n}|x_i^a - x_i^b| - \bigg|\sum_{i=1}^{n} x_i^a - \sum_{i=1}^{n} x_i^b \bigg|}{\displaystyle\sum_{i=1}^{n}max\big({x_i^a;x_i^b\big) }} $$
+\begin{equation}
+T_{ab}=\frac{\displaystyle\sum_{i=1}^{n}|x_i^a - x_i^b| - \bigg|\sum_{i=1}^{n} x_i^a - \sum_{i=1}^{n} x_i^b \bigg|}{\displaystyle\sum_{i=1}^{n}max\big({x_i^a;x_i^b\big) }}
+(\#eq:formNest)
+\end{equation}
 
 To determine whether trees recruitment ensued from a random process the observed diversity trajectories were compared to those generated by 50 repetitions of stochastic null models.
 The null model for taxonomic diversity randomly shuffled individuals among plots while preserving species abundance and plots’ tree density. 
@@ -167,7 +169,7 @@ The null model for taxonomic diversity randomly shuffled individuals among plots
 
 # Results
 
-**Recruitment Diversity** 
+###Recruitment Diversity
 
 *Punctual and accumulated recruits’ diversity* 
 
@@ -259,7 +261,7 @@ mtext("Years since disturbance",side=1,at=0.6,cex=0.8,line=-0.2,outer=TRUE)
 ```
 
 
-**Recruitment Turnover**
+###Recruitment Turnover
 
 The abundance turnover of recruited trees compared to the initial stand inventoried before exploitation remained even for the 30 sampled years in the control plots \@ref(fig:Fig6). 
 For the disturbed plot the abundance turnover displayed a unimodal response to disturbance, with maximum reached around 10 years after disturbance that was positively correlated to the disturbance intensity. 
@@ -324,7 +326,7 @@ In any case, communities short term response first reflected the growth of a var
 When the disturbance was low, recruitment limitation was balanced against environmental filters and induced a recruited community mirroring the stand in place while selecting more acquisitive functional types.
 When the disturbance was intense however the species turnover was high and induced a recruited community significantly dominated by acquisitive functional types and a restricted pool of species.
 In both cases plots recruitment is specific, because it is determined by the surrounding stand in case of low disturbance or because the competitive exclusion randomly selected a restricted pool of species after intense disturbance.
-At the landscape scale, then, disturbance increased the diversity through the "between patch" difference [@denslow1987;@Chesson2000; @Sheil2003].
+At the landscape scale, then, disturbance increased the diversity through the "between patch" difference [@Denslow1987;@Chesson2000; @Sheil2003].
 
 > Connell 1978, refute the "equal chance HP because trees don't recruit equally"
 > Contrary to Hubbell and Molino: the question is "do gaps allow specific species to establish which would thrive otherwise?" [@Sheil2003]. The turnover answers that yes it does
