@@ -36,10 +36,10 @@ lang: english
 keywordlabel: Mots-clés # Keywords
 corrauthorlabel: Contact # Corresponding author
 output:
-  bookdown::gitbook: default
   bookdown::pdf_book:
     base_format: EcoFoG::article
     keep_tex: TRUE
+  bookdown::gitbook: default
   bookdown::word_document2: default
 ---
 
@@ -120,14 +120,13 @@ Intervention <- data.frame(
   Fuelwood=c("", 
              "", 
              "", 
-             "40 cm $\\leq$ DBH $\\leq$ 50, non-valuable species, ~ 15 trees/ha"),
-  AGBLost=c(0, "[12%-33%]", "[33%-56%]", "[35%-56%]")
+             "40 cm $\\leq$ DBH $\\leq$ 50 cm, non-valuable species, ~ 15 trees/ha"),
+  AGBLost=c(0, "$[12\\%-33\\%]$", "$[33\\%-56\\%]$", "$[35\\%-56\\%]$")
 )
-names(Intervention)[5] <- "%AGB lost"
-knitr::kable(Intervention, caption="Intervention table, summary of the disturbance intensity for the 4 plot treatments in Paracou.", longtable = TRUE, booktabs = TRUE) %>%
+names(Intervention)[5] <- "\\%AGB lost"
+knitr::kable(Intervention, caption="Intervention table, summary of the disturbance intensity for the 4 plot treatments in Paracou.", longtable = TRUE, booktabs = TRUE, escape = FALSE) %>%
   kableExtra::kable_styling(bootstrap_options = "striped", full_width = TRUE)
 ```
-
 
 ## Inventories Protocol and Dataset Collection 
 
