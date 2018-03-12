@@ -109,6 +109,7 @@
 
 % User-adder preamble
 \usepackage{textcomp} \DeclareUnicodeCharacter{B0}{\textdegree}
+\hyphenation{sa-plings} \usepackage{longtable,tabu}
 
 %----------------------------------------------------------------------------------------
 %	ARTICLE INFORMATION
@@ -171,8 +172,8 @@ approach for stand communities diversity, though, has been hindered by
 both the huge biological diversity of tropical forests and the scarcity
 of long-term monitoring. Although the response to disturbance was
 identified for some species individually, this requires accurate
-ecological knowledge of the species and usually confined to commercial
-and valuable tree species
+ecological knowledge of the species and is usually confined to
+commercial and valuable tree species
 \citep{Sebbenn2008, Rozendaal2010, Vinson2015}. The overall response of
 taxonomic and functional diversity of forest communities therefore
 remains unclear, and thus also the underlying ecological rules.
@@ -195,22 +196,24 @@ its taxonomic diversity, vegetative structure, physiology and cycles of
 carbon, nutrients, and water \citep{Anderson-Teixeira2013}. Empirical
 tests of the IDH in tropical rainforests,though, proved hard to setup
 and yielded controversial results
-\citep{Hubbell1999, Molino2001, Sheil2003}. Latests studies on this
+\citep{Hubbell1999, Molino2001, Sheil2003}. Latest studies on this
 matter supported the IDH in proving the significant impact of
 disturbance, in the form of tree fall gaps and consecutive environmental
 changes, on the diversity and taxonomic composition of tropical forests
 communities. Disturbance indeed proved to prompt some environmental
 filters selecting species with fast and efficient resource acquisition
-\citep[Mirabel2018,in prep.]{Baraloto2012a}. At the whole plot level the
-shift towards more acquisitive functional strategies was reflected by
-functional traits of the leaves (Leaf thickness, toughness, chlorophyll
-content and specific area) and stem (wood specific gravity and bark
-thickness) and life traits (maximum hight at adult stage and class of
-seed mass) \citep{Wright2004, Chave2009b, Herault2011}. Within these
-whole plot dynamics the share hold by the recruitment and mortality
-processes remains to be determined, first to establish if environmental
-filters rather influence the growth and survival of some species or the
-mortality of some others, then to anticipate the prfile of the forest
+\citep[Mirabel2018, in prep.]{Baraloto2012a}.
+
+At the whole plot level the shift towards more acquisitive functional
+strategies was reflected by functional traits of the leaves (leaf
+thickness, toughness, chlorophyll content and specific area) and stem
+(wood specific gravity and bark thickness) and life traits (maximum
+hight at adult stage and class of seed mass)
+\citep{Wright2004, Chave2009b, Herault2011}. Within these whole plot
+dynamics the share hold by the recruitment and mortality processes
+remains to be determined, first to establish if environmental filters
+rather influence the growth and survival of some species or the
+mortality of some others, then to anticipate the profile of the forest
 being put in place and specifically its taxonomic and functional
 structure. Desentangle the impacts of disturbance on recruitment and
 mortality would resolve the dynamics of stands'recovery and debate about
@@ -234,12 +237,12 @@ traits and species maximum height We aimed to (i) confirm the role of
 environmental filters selecting the recruited trees according to their
 competitivity for resource acquisition, (ii) resolve the convergence of
 communities and the maintenance of taxonomic composition in the long
-term, and (iii) determine the resilience of the initial pre-distirbance
+term, and (iii) determine the resilience of the initial pre-disturbance
 .
 
 \section{Material and Methods}\label{material-and-methods}
 
-\emph{Study Site}
+\subsection{Study Site}\label{study-site}
 
 Analyses were based on the inventories conducted at the Paracou station
 in French Guiana (5°18'N and 52°53'W), located in a lowland tropical
@@ -253,86 +256,28 @@ to thin acrisols over a layer of transformed saprolite with low
 permeability generating lateral drainage during heavy rains. The
 experiment corresponds to a network of twelve 6.25ha plots that have
 undergone a gradient of three logging, thinning and fuelwood treatments
-\ref{tab:Tab1}. Disturbance treatments were attributed according to a
-randomized plot design with three replicate blocks of four plots. The
-disturbance corresponds to averages of 10 trees removed per hectare with
-a diameter at 1.3 m height (DBH) above 50 cm for treatment 1 (T1), 32
-trees/ha above 40 cm DBH for treatment 2 (T2) and 40 trees above 40 cm
-DBH for treatment 3 (T3). Treatments T2 and T3 besides included the
+(Table \ref{tab:Tab1}). Disturbance treatments were attributed according
+to a randomized plot design with three replicate blocks of four plots.
+The disturbance corresponds to averages of 10 trees removed per hectare
+with a diameter at 1.3 m height (DBH) above 50 cm for treatment 1 (T1),
+32 trees/ha above 40 cm DBH for treatment 2 (T2) and 40 trees above 40
+cm DBH for treatment 3 (T3). Treatments T2 and T3 besides included the
 thinning of trees by poison girdling \citep{Blanc2009}.
 
-Table : \label{tab:Tab1} Intervention table, summary of the disturbance
-intensity for the 4 plot treatments in Paracou.
-
-\begin{longtable}[]{@{}lcccc@{}}
+\begin{longtabu} to \linewidth {>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X}
+\caption{\label{tab:Tab1}Intervention table, summary of the disturbance intensity for the 4 plot treatments in Paracou.}\\
 \toprule
-\begin{minipage}[b]{0.14\columnwidth}\raggedright\strut
-\strut
-\end{minipage} & \begin{minipage}[b]{0.17\columnwidth}\centering\strut
-\textbf{\emph{Timber}}\strut
-\end{minipage} & \begin{minipage}[b]{0.18\columnwidth}\centering\strut
-\textbf{\emph{Thinning}}\strut
-\end{minipage} & \begin{minipage}[b]{0.24\columnwidth}\centering\strut
-\textbf{\emph{Fuelwood}}\strut
-\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\centering\strut
-\textbf{\%AGB lost}\strut
-\end{minipage}\tabularnewline
+Treatment & Timber & Thinning & Fuelwood & \%AGB lost\\
 \midrule
-\endhead
-\begin{minipage}[t]{0.14\columnwidth}\raggedright\strut
-\textbf{\emph{Control}}\strut
-\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering\strut
-\strut
-\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\centering\strut
-\strut
-\end{minipage} & \begin{minipage}[t]{0.24\columnwidth}\centering\strut
-\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering\strut
-0\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.14\columnwidth}\raggedright\strut
-\textbf{\emph{T1}}\strut
-\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering\strut
-DBH \(\geq\) 50 cm, commercial species, \textasciitilde{} 10
-trees/ha\strut
-\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\centering\strut
-\strut
-\end{minipage} & \begin{minipage}[t]{0.24\columnwidth}\centering\strut
-\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering\strut
-{[}12\%-33\%{]}\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.14\columnwidth}\raggedright\strut
-\textbf{\emph{T2}}\strut
-\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering\strut
-DBH \(\geq\) 50 cm, commercial species, \textasciitilde{} 10
-trees/ha\strut
-\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\centering\strut
-DBH \(\geq\) 40 cm, non-valuable species, \textasciitilde{} 30
-trees/ha\strut
-\end{minipage} & \begin{minipage}[t]{0.24\columnwidth}\centering\strut
-\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering\strut
-{[}33\%-56\%{]}\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.14\columnwidth}\raggedright\strut
-\textbf{\emph{T3}}\strut
-\end{minipage} & \begin{minipage}[t]{0.17\columnwidth}\centering\strut
-DBH \(\geq\) 50 cm, commercial species, \textasciitilde{} 10
-trees/ha\strut
-\end{minipage} & \begin{minipage}[t]{0.18\columnwidth}\centering\strut
-DBH \(\geq\) 50 cm, non-valuable species, \textasciitilde{} 15
-trees/ha\strut
-\end{minipage} & \begin{minipage}[t]{0.24\columnwidth}\centering\strut
-40 cm \(\leq\) DBH \(\leq\) 50 cm non-valuable species,
-\textasciitilde{} 15 trees/ha\strut
-\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering\strut
-{[}35\%-56\%{]}\strut
-\end{minipage}\tabularnewline
+Control &  &  &  & 0\\
+T1 & DBH \$\textbackslash{}geq\$ 50 cm, commercial species, \textasciitilde{} 10 trees/ha &  &  & [12\%-33\%]\\
+T2 & DBH \$\textbackslash{}geq\$ 50 cm, commercial species, \textasciitilde{} 10 trees/ha & DBH \$\textbackslash{}geq\$ 40 cm, non-valuable species, \textasciitilde{} 30 trees/ha &  & [33\%-56\%]\\
+T3 & DBH \$\textbackslash{}geq\$ 50 cm, commercial species, \textasciitilde{} 10 trees/ha & DBH \$\textbackslash{}geq\$ 50 cm, non-valuable species, \textasciitilde{} 15 trees/ha & 40 cm \$\textbackslash{}leq\$ DBH \$\textbackslash{}leq\$ 50, non-valuable species, \textasciitilde{} 15 trees/ha & [35\%-56\%]\\
 \bottomrule
-\end{longtable}
+\end{longtabu}
 
-\emph{Inventories Protocol and Dataset Collection}
+\subsection{Inventories Protocol and Dataset
+Collection}\label{inventories-protocol-and-dataset-collection}
 
 The study site corresponds to a tropical rainforest with a dominance of
 Fabaceae, Chrysobalanaceae, Lecythidaceae and Sapotaceae botanical
@@ -351,7 +296,7 @@ correspond to different botanical species, resulting in significant
 taxonomic uncertainties that had to be propagated to composition and
 diversity metrics throught a Bayesian framework. The uncertainty
 propagation was done by the replenishment of inventories completed at
-genus level from real incomplete ones on the basisof
+genus level from real incomplete ones on the basis of
 vernacular/botanical names association. Vernacular names were replaced
 through multinomial trials
 (M\textsubscript{v}({[}\emph{s\textsubscript{1}, s\textsubscript{2},
@@ -370,8 +315,8 @@ inventories were then reported at genus. See appendix 1 and
 The functional diversity metrics used a dataset for 6 functional traits
 representing leaf economics (leaves thickness, toughness, total
 chlorophyll content and specific leaf area, the leaf area per unit dry
-mass) and wood economics (wood specific gravity and bark thickness), and
-life history traits (maximum specific height and seed mass). Traits
+mass), wood economics (wood specific gravity and bark thickness) and
+life history traits (maximum specific height and seed mass). The trait
 database came from the BRIDGE project \footnote{http://www.ecofog.gf/Bridge/}
 where traits values were assessed from a selection of individuals
 located in nine permanent plots in French Guiana, including two in
@@ -382,7 +327,7 @@ of the functional traits. The dataset comprised 294 botanical species
 pertaining to 157 botanical genus. Whenever a species inventoried was
 not in the dataset, it was attributed a set of traits values randomly
 sampled among species of the same next higher taxonomic level. As seed
-mass information correspond to a classification into mass classes, no
+mass information corresponds to a classification into mass classes, no
 data filling process was applied so analysis were performed considering
 the 414 botanical species of the seed mass dataset.
 
@@ -393,23 +338,23 @@ species carrying each value \citep{Diaz2007, Garnier2004}. Species seed
 mass correspond to 5 classes of increasing mass, the seed mass
 trajectories were reported by the proportion of each class recorded in
 the inventories. All composition and diversity metrics corresponded to
-the expectancy obtained after 50 iterations of the taxonomic uncertainty
+the average obtained after 50 iterations of the taxonomic uncertainty
 propagation framework and of the filling process of missing trait
 values.
 
-\emph{Recruitment monitoring}
+\subsection{Recruitment monitoring}\label{recruitment-monitoring}
 
 To assess the demographic dynamics along the 30 sampled year we divided
 the inventoried trees between trees recorded before the logging in 1984
 and trees recruited afterward. Two types of recruitment were examined:
-on the one hand the communities recruited punctually by 3-years
-intervals after exploitation, hereafter called ``punctual recruitment'',
-on the other hand the communities of all trees recruited since
-exploitation, hereafter called ``accumulated recruits''. The taxonomic
-diversity was assessed through Richness and the Hill number translation
-of Shannon and Simpson indices \citep{Hill1973}. To tackle the unequal
-number of recruited trees among treatments the indices bias corrected
-estimator were used, following \citep{chao2015estimating, Marcon2015b}.
+on the one hand the communities recruited punctually by 3-year intervals
+after exploitation, hereafter called ``punctual recruitment'', on the
+other hand the communities of all trees recruited since exploitation,
+hereafter called ``accumulated recruits''. The taxonomic diversity was
+assessed through Richness and the Hill number translation of Shannon and
+Simpson indices \citep{Hill1973}. To tackle the unequal number of
+recruited trees among treatments the indices bias corrected estimator
+were used, following \citet{chao2015estimating};\citet{Marcon2015b}.
 These three indices belong to the set of HCDT or generalized entropy,
 respectively corresponding to the 0, 1 and 2 order of diversity (q),
 which proved well suited for diversity studies
@@ -423,11 +368,14 @@ measured with the turnover metrics detailed in \citet{Podani2013a}. The
 metric used correspond to the relativized abundance replacement, the sum
 of abundance in one site that is replaced by completely different
 species, normalized by the maximum abundance shared by the two
-communities.
+communities \eqref{eq:formNest}.
 
-\[ T_{ab}=\frac{\displaystyle\sum_{i=1}^{n}|x_i^a - x_i^b| - \bigg|\sum_{i=1}^{n} x_i^a - \sum_{i=1}^{n} x_i^b \bigg|}{\displaystyle\sum_{i=1}^{n}max\big({x_i^a;x_i^b\big) }} \]
+\begin{equation}
+T_{ab}=\frac{\sum_{i=1}^{n}|x_i^a - x_i^b| - \bigg| \sum_{i=1}^{n}{x_i^a} - \sum_{i=1}^{n}{x_i^b} \bigg|}{\sum_{i=1}^{n}\max{\left( x_i^a;x_i^b \right)}}
+\label{eq:formNest}
+\end{equation}
 
-To determine whether trees recruitment ensued from a random process the
+To determine whether tree recruitment ensued from a random process the
 observed diversity trajectories were compared to those generated by 50
 repetitions of stochastic null models. The null model for taxonomic
 diversity randomly shuffled individuals among plots while preserving
@@ -435,9 +383,10 @@ species abundance and plots' tree density.
 
 \section{Results}\label{results}
 
-\textbf{Recruitment Diversity}
+\subsection{Recruitment Diversity}\label{recruitment-diversity}
 
-\emph{Punctual and accumulated recruits' diversity}
+\subsubsection{Punctual and accumulated recruits'
+diversity*}\label{punctual-and-accumulated-recruits-diversity}
 
 The diversity of trees recruited in T1, T2 and T3 disturbed plots
 followed an asymptotique trajectory, first displaying higher richness
@@ -462,18 +411,18 @@ order and a significant effect of the logging.
 \caption{Trajectories for the 30 sampled years of Richness, Shannon and Simpson diversity for **(a)**  3-years laps punctual recruitment and **(b)** recruits accumulated since disturbance. Solid lines (green for control, blue for T1, orange for T2 and red for T3 disturbance treatments) correspond to the median observed after 50 iteration of the taxonomic uncertainty propagation, along with the 95\% confidence interval (grey envelope).}\label{fig:Fig1}
 \end{figure*}
 
-\emph{Comparison to null model}
+\subsubsection{Comparison to null model}\label{comparison-to-null-model}
 
-Punctual and accumulated recruitment diversity of order 0, 1 and 2 were
+Punctual and accumulated recruitment diversity of orders 0, 1 and 2 were
 compared to a null recruitment model corresponding to the random
 sampling of recruited trees holding constant the number of trees
 recruited. For control plots the richness and evenness of observed
 punctual recruitment were constantly equivalent or higher than obtained
-with the null model \ref{fig:Fig2}. For the disturbed plots the richness
-of observed punctual recruitment remained equivalent to this of the null
-model but the evenness that was first equivalent or higher became and
-remained lower than this of the null model from 10 years after
-disturbance whenever the disturbance intensity.
+with the null model (Figure \ref{fig:Fig2}). For the disturbed plots the
+richness of observed punctual recruitment remained equivalent to that of
+the null model but the evenness that was first equivalent or higher
+became and remained lower than that of the null model from 10 years
+after disturbance whenever the disturbance intensity.
 
 \begin{figure*}
 
@@ -485,11 +434,11 @@ disturbance whenever the disturbance intensity.
 \end{figure*}
 
 In the same way as for punctual recruitment the richness and evenness of
-accumulated recuits in control plots was equivalent or higher than
+accumulated recruits in control plots was equivalent or higher than
 observed for the null model for all the post logging survey. On
-disturbed plots the richness of accumulated recruits followed this of
+disturbed plots the richness of accumulated recruits followed that of
 the null model whereas the evenness, initially higher, became lower than
-this of the null model after some time \ref{fig:Fig3}.
+that of the null model after some time (Figure \ref{fig:Fig3}).
 
 \begin{figure*}
 
@@ -500,11 +449,12 @@ this of the null model after some time \ref{fig:Fig3}.
 \caption{Accumulated recruitment diversity trajectories for the Richness, Shannon and Simpson diversity compared to the null model trajectories. Values reported correspond to the median diversity observed after 50 repetition of the taxonomic uncertainty propagation. Solid lines correspond to the observed trajectories and dotted lines to the null model simulations.Line colors stand for the disturbance treatment with green for control, blue for T1, orange for T2 and red for T3 disturbance treatments.Values reported correspond to the median and 95\% confidence intervalobserved after 50 iteration of the taxonomic uncertainty propagation and null model simulation..}\label{fig:Fig3}
 \end{figure*}
 
-\emph{Recruitment functional diversity }
+\subsubsection{Recruitment functional
+diversity}\label{recruitment-functional-diversity}
 
 Punctual and accumulated recruitment diversity of order 0, 1 and 2 were
 compared to a null recruitment model corresponding to the random shuffle
-of complete set of traits value among species \ref{fig:Fig4}.
+of complete set of traits value among species (Figure \ref{fig:Fig4}).
 
 \begin{figure}
 
@@ -520,16 +470,17 @@ disturbance with a maximum positively correlated to disturbance
 intensity but with a time at maximum that was unrelated to the
 disturbance treatment.
 
-\emph{Recruitment traits weighted means}
+\subsubsection{Recruitment traits weighted
+means}\label{recruitment-traits-weighted-means}
 
 The trajectories of recruited trees functional and life traits weighted
 means showed the dominance after disturbance of species displaying large
 exchange surface area and light tissues (high SLA, low leaf toughness
-and low wood specific gravity) \ref{fig:Fig5}. all traits trajectories
-dosplayed asymptotic CWM trajectories, except the SLA that displayed a
-unimodal trajectory with a maximum positively correlated to disturbance
-intensity and a time a maximum around ten years after disturbance
-equivalent for all treatments.
+and low wood specific gravity) (Figure \ref{fig:Fig5}). all traits
+trajectories dosplayed asymptotic CWM trajectories, except the SLA that
+displayed a unimodal trajectory with a maximum positively correlated to
+disturbance intensity and a time a maximum around ten years after
+disturbance equivalent for all treatments.
 
 \begin{figure*}
 
@@ -540,14 +491,14 @@ equivalent for all treatments.
 \caption{Community weighted means (CWM) of the four disturbance treatment for the four leaf traits, the two stem traits  and the specific Hmax. Values reported correspond to the plot-level median obtained after 50 repetition of the taxonomic uncertainty propagation and the functional database gap-filling processes. Lines colors correspond to the disturbance intensity (green for control, blue for T1,orange for T2 and red for T3).}\label{fig:Fig5}
 \end{figure*}
 
-\textbf{Recruitment Turnover}
+\subsection{Recruitment Turnover}\label{recruitment-turnover}
 
 The abundance turnover of recruited trees compared to the initial stand
 inventoried before exploitation remained even for the 30 sampled years
-in the control plots \ref{fig:Fig6}. For the disturbed plot the
+in the control plots (Figure \ref{fig:Fig6}). For the disturbed plot the
 abundance turnover displayed a unimodal response to disturbance, with
 maximum reached around 10 years after disturbance that was positively
-correlated to the disturbance intensity. The turnover had returned close
+correlated to the disturbance intensity. The turnover has returned close
 to zero for all plots 30 years after disturbance.
 
 \begin{figure}
@@ -567,24 +518,26 @@ post-disturbance tropical forests. The difference among treatments were
 also significant which suggest an intensity threshold between the first
 and second disturbance treatment and could involve gaps size, the
 richness of exploited trees or the intervention density
-\citep{Denslow1980}. \textgreater{} If we go for a model, maybe we can
-test the most relevant parameter!?
+\citep{Denslow1980}.
 
-Disturbance increases the recruitment rate which subsequently increased
+\begin{quote}
+If we go for a model, maybe we can test the most relevant parameter!?
+\end{quote}
+
+Disturbance increased the recruitment rate which subsequently increased
 the richness of recruitment but impaired its evenness, all the more so
 that disturbance intensity was high. After disturbance the recruitment
-was then dominated by a restricted pool of species and Shannon and
-Simpson diversities decreased up to lower values than those of control
-plots.
+was dominated by a restricted pool of species and Shannon and Simpson
+diversities decreased down to lower values than those of control plots.
 
 For the 15 first years following disturbance the recruitement seemed
 driven by the growth of pre-disturbance saplings on hold of suitable
 growth condition that benefitted from the environmental changes. This
 translated by an increase in the functional diversity of recruits for
-all disturbance intensity and an even distribution of functional traits.
-According to the high increase of SLA CWM trajectory \ref{fig:Fig5}
-right after disturbance these early recruited species would been
-pionneers dominating the recruited community until 10 years after
+all disturbance intensities and an even distribution of functional
+traits. According to the high increase of SLA CWM trajectory (Figure
+\ref{fig:Fig5}) right after disturbance these early recruited species
+were pionneers dominating the recruited community until 10 years after
 disturbance.
 
 After this first recruitment phase, in the case of low disturbance
@@ -629,7 +582,7 @@ of communities as a whole (Mirabel et al., in.prep.) that seemed
 supported here by a shift in recruitment dynamics in favor of
 acquisitive functional types \citep{TerSteege2001}.
 
-After 30 years stands functional characteristics had recovered whenever
+After 30 years stands functional characteristics had recovered whatever
 the disturbance intensity but significant taxonomic diversity difference
 persisted when the disturbance intensity was high. Stands functioning
 would then recover faster than taxonomic composition, which questions
@@ -645,25 +598,25 @@ difference among treatments but the initial recruitment dynamics seemed
 restored at this point, ensuring communities resilience if no other
 disturbance is applied. The different results of two studies on the same
 site 10 years \citep{Molino2001} and 20 years \citep{Baraloto2012a}
-already suggested the recovery towards initial taxonomic and functional
-condition of the stands in revealing a decreasing proportion of pioneers
-between the two periods. This is however only valid for a single
-disturbance event, given that second recruitment phase assumed to rely
-on the seed bank triggers a storage effect likely modifying the
-trajectories after another disturbance event. We assume that in this
-case the competitive exclusion among dormant life-stage (seeds or even
-seedlings) would be harsher and bring more radical changes in the
-recuitment composition and functional profile. Some functional shift
-towards more acquisitive, small seeded and globally disturbance resitant
-species building a more resilient community as it has been observed by
-\citep{Haddad2008} who linked the persistence of species to their
-ability to recover from disturbance which is the seed mass , growth rate
-linked to WD and SLA for plants. Additionally to a somehow depleted seed
-bank this strongly questioned the repeatability of observed trajectories
-after other disturbance events.
+after logging already suggested the recovery towards initial taxonomic
+and functional condition of the stands in revealing a decreasing
+proportion of pioneers between the two periods. This is however only
+valid for a single disturbance event, given that second recruitment
+phase assumed to rely on the seed bank triggers a storage effect likely
+to modify the trajectories after another disturbance event. We assume
+that in this case the competitive exclusion among dormant life-stage
+(seeds or even seedlings) would be harsher and bring more radical
+changes in the recruitment composition and functional profile. Some
+functional shift towards more acquisitive, small seeded and globally
+disturbance-resitant species building a more resilient community as it
+has been observed by \citet{Haddad2008} who linked the persistence of
+species to their ability to recover from disturbance which is the seed
+mass, growth rate linked to WD and SLA for plants. Additionally to a
+somehow depleted seed bank this strongly questioned the repeatability of
+observed trajectories after other disturbance events.
 
 Our long-term study of diversity trajectories after disturbance
-desentangled the mechanisms underlying stands diversity. While, in
+disentangled the mechanisms underlying stands diversity. While, in
 undisturbed forests, mechanisms like negative density dependence
 enhanced species diversity, any disturbance induced new mechanisms
 depending on the disturbance intensity. In any case, communities short
@@ -680,7 +633,7 @@ surrounding stand in case of low disturbance or because the competitive
 exclusion randomly selected a restricted pool of species after intense
 disturbance. At the landscape scale, then, disturbance increased the
 diversity through the ``between patch'' difference
-\citep{denslow1987, Chesson2000, Sheil2003}.
+\citep{Denslow1987, Chesson2000, Sheil2003}.
 
 \begin{quote}
 Connell 1978, refute the ``equal chance HP because trees don't recruit
@@ -697,7 +650,9 @@ allow specific species to establish which would thrive otherwise?''
 
 \bibliographystyle{mee}
 \makeatletter
+% The filename has .bib extension the must be eliminated
 \filename@parse{references.bib}
+% parse stores the file name in base. Extension starts at the first dot, so don't use dots in file names.
 \bibliography{\filename@base}
 \makeatother
 
