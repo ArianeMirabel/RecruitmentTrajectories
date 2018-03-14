@@ -66,14 +66,16 @@ source("Scripts/DrawingTools.R")
 
 # Introduction
 
-Determining the response of tropical forests to disturbance is key to understand the ecological rules that shape them.
+Determining the response of tropical forests to disturbance is crucial to understand the ecological rules that shape stands communities.
 This prospect yielded a vast literature which successfully defined and modeled the response of important forest features and functions such as carbon sequestration, commercial stocks, and diameter distribution dynamics in the short and in the long term [@Gourlet-Fleury2000;@Putz2012;@Martin2015;@Vidal2016].
 Similar approach for stand communities diversity, though, has been hindered by both the huge biological diversity of tropical forests and the scarcity of long-term monitoring.
-Although the response to disturbance was identified for some species individually, this requires accurate ecological knowledge of the species and is usually confined to commercial and valuable tree species [@Sebbenn2008;@Rozendaal2010;@Vinson2015].
-The overall response of taxonomic and functional diversity of forest communities therefore remains unclear, and thus also the underlying ecological rules. 
+Although the response to disturbance was identified for some species individually, this approach is usually confined to few commercial and valuable species and requires an accurate knowledge of their ecology  [@Sebbenn2008;@Rozendaal2010;@Vinson2015].
+Given the complexity of such species-based approach it is not conceivable to use it in the study of forest communities overall response.
+This should rather be assessed through community-scale approaches describing the response of communities structure and composition.
 
-Diversity dynamics of tropical forest communities are largely determined by the recruitment dynamics that drive the amount and the species of trees growing and surviving until the adult stage. 
-These dynamics rely upon the disturbance regime which, in changing ecosystem's biotic and abiotic conditions, creates an environmental variability that allows a variety of species to strive in the long term despite the competition for resources among species that may exclude them [@Denslow1980].
+Diversity dynamics of forest communities are largely determined by the recruitment processes which correspond to the succession of biological events from seeds production, dispersion and germination to seedlings and saplings survival and growth until a threshold marking the adult stage.
+Along this succession occur major ecological rules that determine the number and taxonomic composition of trees growing and surviving until integrating with the community. 
+Recruitment processes rely upon the disturbance regime which, in changing ecosystem's biotic and abiotic conditions, create an environmental variability allowing a variety of species to strive in the long term instead of being excluded by the competition for resources [@Denslow1980].
 This principle underlies the Intermediate Disturbance Hypothesis (IDH) that explains the origin and maintenance of tropical forests biodiversity by the patchy variability of environmental conditions in space and time following climate irregularity, random tree fall gaps, etc. 
 This variability, when not too intense or frequent as to set up strong environmental filters, is assumed to enlarge the ecological range of species in the community [@Molino2001;@Bongers2009] and shapes its taxonomic diversity, vegetative structure, physiology and cycles of carbon, nutrients, and water [@Anderson-Teixeira2013].
 Empirical tests of the IDH in tropical rainforests,though, proved hard to setup and yielded controversial results [@Hubbell1999;@Molino2001;@Sheil2003].
