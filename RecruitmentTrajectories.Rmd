@@ -61,9 +61,6 @@ Library("kableExtra")
 source("Scripts/DrawingTools.R")
 ```
 
-<!-- Début du document ci-dessous --> 
-
-
 # Introduction
 
 Determining the response of tropical forests to disturbance is crucial to understand the ecological rules that shape stands communities.
@@ -74,7 +71,7 @@ Given the complexity of such species-based approach it is not conceivable to use
 This should rather be assessed through community-scale approaches describing the response of communities structure and composition.
 
 Diversity dynamics of forest communities are largely determined by the recruitment processes which correspond to the succession of biological events from seeds production, dispersion and germination to seedlings and saplings survival and growth until a threshold marking the adult stage.
-Along this succession major ecological processes, such as environmental filtering, govern the growth and survival of individuals thut determining the number and taxonomic composition of trees eventually integrating with the community [@Ackerly2003]. 
+Along this succession major ecological processes, such as environmental filtering, govern the growth and survival of individuals thus determining the number and taxonomic composition of trees eventually integrating with the community [@Ackerly2003; @GourletFleury2005]. 
 The recruitment processes rely upon the disturbance regime which changes ecosystem's biotic and abiotic conditions and creates an environmental variability allowing a variety of species to strive in the long term rather than undergoing the competitive exclusion for resources [@Denslow1980].
 This principle underlies the Intermediate Disturbance Hypothesis (IDH) that explains the origin and maintenance of tropical forests biodiversity by the patchy variability of environmental conditions in space and time following climate irregularity, random tree fall gaps, etc. 
 This variability, when not too intense or frequent as to set up strong environmental filters, is assumed to enlarge the ecological range of species in the community [@Molino2001;@Bongers2009] and shapes its taxonomic diversity, vegetative structure, physiology and cycles of carbon, nutrients, and water [@Anderson-Teixeira2013].
