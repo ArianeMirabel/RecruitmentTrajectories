@@ -336,7 +336,7 @@ In any case, communities short term response first reflected the growth of a var
 When the disturbance was low, recruitment limitation was balanced against environmental filters and induced a recruited community mirroring the stand in place while selecting more acquisitive functional types.
 When the disturbance was intense however the species turnover was high and induced a recruited community significantly dominated by acquisitive functional types and a restricted pool of species.
 In both cases plots recruitment is specific, because it is determined by the surrounding stand in case of low disturbance or because the competitive exclusion randomly selected a restricted pool of species after intense disturbance.
-At the landscape scale, then, disturbance increased the diversity through the "between patch" difference [@Denslow1987;@Chesson2000; @Sheil2003].
+At the landscape scale, then, disturbance increased the diversity through the "between patch" difference [@Denslow1987;@Chesson2000; @Sheil2003;@Guitet2017].
 
 > Connell 1978, refute the "equal chance HP because trees don't recruit equally"
 > Contrary to Hubbell and Molino: the question is "do gaps allow specific species to establish which would thrive otherwise?" [@Sheil2003]. The turnover answers that yes it does
