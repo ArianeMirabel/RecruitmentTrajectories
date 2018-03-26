@@ -69,3 +69,18 @@ RecPun_Fun5<-lapply(c(0.025,0.5,0.975),function(quant){
 RecPun_Fun5<-array(unlist(RecPun_Fun5),dim=c(nrow(RecPun_Fun5[[1]]),ncol(RecPun_Fun5[[1]]),3),
            dimnames=list(rownames(RecPun_Fun5[[1]]),as.numeric(colnames(RecPun_Fun5[[1]]))-1984,c(0.025,0.5,0.975)))
 
+#Missings<-Recruitment[which(Recruitment[,"name"]%in%missings),]
+#Missings<-Missings[which(Missings$n_parcelle%in%1:12),]
+#Missings<-Missings[which(!Missings$campagne%in%c(1998,2000,2002,2004,2006)),]
+
+#lapply(unique(Missings[,"campagne"]),function(yr){Yr<-Missings[which(Missings$campagne==yr),];return(tapply(Yr$n_parcelle,Yr$n_parcelle,length))})
+
+#plot(1:12,tapply(Missings$n_parcelle,Missings$n_parcelle,length),type="n")
+#lapply(1:4,function(tr){
+#  toplot<-Missings[which(Missings$n_parcelle%in%treatments[[tr]]),]
+#  points(treatments[[tr]],tapply(toplot$n_parcelle,toplot$n_parcelle,length),
+#         col=c("darkolivegreen2","deepskyblue2","darkorange1","red2")[tr],pch=19)
+#})
+
+#toplot<-tapply(Missings$campagne,Missings$campagne,length)
+#plot(names(toplot),toplot)

@@ -20,7 +20,7 @@ traits<-merge(traits2,traits1,by="name")
 ##SLA calc for empty values with LA available
 traits[which(!is.na(traits[,"LA"])),"SLA"]<-
   traits[which(!is.na(traits[,"LA"])),"LA"]/traits[which(!is.na(traits[,"LA"])),"L_DryMass"]
-Seltraits<-c("Hmax","S_mass","L_thickness","L_chloro","L_toughness","L_DryMass","SLA","WD","moisture","Bark_thick")
+Seltraits<-c("Hmax","L_thickness","L_chloro","L_toughness","L_DryMass","SLA","WD","moisture","Bark_thick")#,"S_mass")
 traits<-traits[,c("Family","Genus","name","bar_code",Seltraits)]
 
 ##########################  Only some missing values: MICE regression to keep all available information
@@ -28,7 +28,7 @@ traits<-traits[,c("Family","Genus","name","bar_code",Seltraits)]
 traitsPartial<-traits[which(apply(traits[,Seltraits],1,function(li){return(any(!is.na(li)))})),]
 traitsPartial<-traitsPartial[which(apply(traitsPartial[,Seltraits],1,function(li){return(any(is.na(li)))})),]
 traitsComp<-traits[which(apply(traits[,Seltraits],1,function(li){return(!any(is.na(li)))})),]
-traitsEmpty<-traits[which(apply(traits[,Seltraits],1,function(li){return(!any(!is.na(li)))})),]
+#traitsEmpty<-traits[which(apply(traits[,Seltraits],1,function(li){return(!any(!is.na(li)))})),]
 
 traitsPartial_gen<-lapply(unique(traitsPartial[,"Genus"]),function(gen){return(traitsPartial[which(traitsPartial[,"Genus"]==gen),])})
 
@@ -70,29 +70,31 @@ traitsPartial_filled<-rbind(traitsPartial_gen,traitsPartial_fam,comScarce)
 #### it is not possible to use multilevel model, because some Families have only one sample
 
 ##### For completely missing lines: sample the traits values from the Melaine's algorithm
-if(nrow(traitsEmpty)!=0){
-traitsEmpty_filled<-do.call(rbind,lapply(1:nrow(traitsEmpty),function(li){
-  sp<-traitsEmpty[li,]
-  Tosample<-traitsComp[which(traitsComp[,"name"]==as.character(sp["name"])),8:15]
-  if(nrow(Tosample)!=0){sp[8:15]<-Tosample[sample(rownames(Tosample),1),]}
+#if(nrow(traitsEmpty)!=0){
+#traitsEmpty_filled<-do.call(rbind,lapply(1:nrow(traitsEmpty),function(li){
+#  sp<-traitsEmpty[li,]
+#  Tosample<-traitsComp[which(traitsComp[,"name"]==as.character(sp["name"])),8:15]
+#  if(nrow(Tosample)!=0){sp[8:15]<-Tosample[sample(rownames(Tosample),1),]}
   
-  if(nrow(Tosample)==0){
+#  if(nrow(Tosample)==0){
     
-    Tosample<-traitsComp[which(traitsComp[,"Genus"]==as.character(sp["Genus"])),8:15]
-    if(nrow(Tosample)!=0){sp[8:15]<-Tosample[sample(rownames(Tosample),1),]}
+#    Tosample<-traitsComp[which(traitsComp[,"Genus"]==as.character(sp["Genus"])),8:15]
+#    if(nrow(Tosample)!=0){sp[8:15]<-Tosample[sample(rownames(Tosample),1),]}
     
-    if(nrow(Tosample)==0){
-      Tosample<-traitsComp[which(traitsComp[,"Family"]==as.character(sp["Family"])),8:15]
+#    if(nrow(Tosample)==0){
+#      Tosample<-traitsComp[which(traitsComp[,"Family"]==as.character(sp["Family"])),8:15]
       
-      if(nrow(Tosample)!=0){sp[8:15]<-Tosample[sample(rownames(Tosample),1),]}
-    if(nrow(Tosample)==0){sp[8:15]<-traitsComp[sample(rownames(traitsComp),1),8:15]}
-  }}
-  return(sp)
-}))
-traits_filled<-rbind(traitsEmpty_filled,traitsPartial_filled,traitsComp)
-}
+#      if(nrow(Tosample)!=0){sp[8:15]<-Tosample[sample(rownames(Tosample),1),]}
+#    if(nrow(Tosample)==0){sp[8:15]<-traitsComp[sample(rownames(traitsComp),1),8:15]}
+#  }}
+# return(sp)
+#}))
+#traits_filled<-rbind(traitsEmpty_filled,traitsPartial_filled,traitsComp)
+#}
 
-if(nrow(traitsEmpty)==0){traits_filled<-rbind(traitsPartial_filled,traitsComp)}
+#if(nrow(traitsEmpty)==0){traits_filled<-rbind(traitsPartial_filled,traitsComp)}
+
+traits_filled<-rbind(traitsPartial_filled,traitsComp)
 
 traits_filled<-traits_filled[order(sort(traits_filled[,"name"])),which(colnames(traits_filled)!="moisture")]
 traits_filled<-traits_filled[which(!is.na(traits_filled[,"Hmax"])),]

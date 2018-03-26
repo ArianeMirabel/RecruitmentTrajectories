@@ -239,6 +239,8 @@ mtext("Equivalent diversity",side=2,padj=1,cex=0.8,line=1.5,outer=TRUE)
 
 ### Recruitment functional diversity
 
+The dataset available encompassed 88% of all species recorded in the recruitment inventories.
+Because the species for which trait values were unavailable were not evenly distributed among plots and along time so we decided to discard them from the inventories to preserve homogeneous data filling.
 
 Punctual and accumulated recruitment diversity of order 0, 1 and 2 were compared to a null recruitment model corresponding to the random shuffle of complete set of traits value among species (Figure \@ref(fig:Fig4)).
 
