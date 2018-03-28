@@ -109,7 +109,9 @@
 
 % User-adder preamble
 \usepackage{textcomp} \DeclareUnicodeCharacter{B0}{\textdegree}
-\hyphenation{sa-plings} \usepackage{longtable,tabu}
+\usepackage{tabu}
+\renewenvironment{table}{\begin{table*}}{\end{table*}\ignorespacesafterend}
+\hyphenation{bio-di-ver-si-ty sap-lings}
 
 %----------------------------------------------------------------------------------------
 %	ARTICLE INFORMATION
@@ -276,17 +278,21 @@ with a diameter at 1.3 m height (DBH) above 50 cm for treatment 1 (T1),
 cm DBH for treatment 3 (T3). Treatments T2 and T3 besides included the
 thinning of trees by poison girdling \citep{Blanc2009}.
 
-\begin{longtabu} to \linewidth {>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X}
-\caption{\label{tab:Tab1}Intervention table, summary of the disturbance intensity for the 4 plot treatments in Paracou.}\\
+\begin{table}
+
+\caption{\label{tab:Tab1}Intervention table, summary of the disturbance intensity for the 4 plot treatments in Paracou.}
+\centering
+\begin{tabu} to \linewidth {>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X}
 \toprule
 Treatment & Timber & Thinning & Fuelwood & \%AGB lost\\
 \midrule
 Control &  &  &  & 0\\
-T1 & DBH $\geq$ 50 cm, commercial species, ~ 10 trees/ha &  &  & $[12\%-33\%]$\\
-T2 & DBH $\geq$ 50 cm, commercial species, ~ 10 trees/ha & DBH $\geq$ 40 cm, non-valuable species, ~ 30 trees/ha &  & $[33\%-56\%]$\\
-T3 & DBH $\geq$ 50 cm, commercial species, ~ 10 trees/ha & DBH $\geq$ 50 cm, non-valuable species, ~ 15 trees/ha & 40 cm $\leq$ DBH $\leq$ 50 cm, non-valuable species, ~ 15 trees/ha & $[35\%-56\%]$\\
+T1 & DBH $\geq$ 50 cm, commercial species, $\approx$ 10 trees/ha &  &  & $[12\%-33\%]$\\
+T2 & DBH $\geq$ 50 cm, commercial species, $\approx$ 10 trees/ha & DBH $\geq$ 40 cm, non-valuable species, $\approx$ 30 trees/ha &  & $[33\%-56\%]$\\
+T3 & DBH $\geq$ 50 cm, commercial species, $\approx$ 10 trees/ha & DBH $\geq$ 50 cm, non-valuable species, $\approx$ 15 trees/ha & 40 cm $\leq$ DBH $\leq$ 50 cm, non-valuable species, $\approx$ 15 trees/ha & $[35\%-56\%]$\\
 \bottomrule
-\end{longtabu}
+\end{tabu}
+\end{table}
 
 \subsection{Inventories Protocol and Dataset
 Collection}\label{inventories-protocol-and-dataset-collection}
@@ -311,18 +317,14 @@ propagation was done by the replenishment of inventories completed at
 genus level from real incomplete ones on the basis of
 vernacular/botanical names association. Vernacular names were replaced
 through multinomial trials
-(M\textsubscript{v}({[}\emph{s\textsubscript{1}, s\textsubscript{2},
-\ldots{}, s\textsubscript{N}}{]} ,{[}\emph{\(\alpha\)\textsubscript{1},
-\(\alpha\)\textsubscript{2},\ldots{}, \(\alpha\)\textsubscript{N}}{]}) )
+\(M_v\Big(\big[s_1, s_2, …, s_N\big],\big[\alpha_1, \alpha_2,…, \alpha_3\big]\Big)\)
 based on the observed association probability
-{[}\emph{\(\alpha\)\textsubscript{1},
-\(\alpha\)\textsubscript{2},\ldots{}, \(\alpha\)\textsubscript{N}}{]}
-between each vernacular name \emph{v} and the species
-{[}\emph{s\textsubscript{1}, s\textsubscript{2}, \ldots{},
-s\textsubscript{N}}{]} recorded in the inventory. To avoid remaining
-identification caveats and consider complete inventories, the simulated
-inventories were then reported at genus. See appendix 1 and
-\citet{Aubry-Kientz2013} for the detailed methodology.
+\(\big[\alpha_1, \alpha_2,…, \alpha_3\big]\) between each vernacular
+name \emph{v} and the species \(\big[s_1, s_2, …, s_N\big]\) recorded in
+the inventory. To avoid remaining identification caveats and consider
+complete inventories, the simulated inventories were then reported at
+genus. See appendix 1 and \citet{Aubry-Kientz2013} for the detailed
+methodology.
 
 The functional diversity metrics used a dataset for 6 functional traits
 representing leaf economics (leaves thickness, toughness, total
@@ -463,6 +465,12 @@ that of the null model after some time (Figure \ref{fig:Fig3}).
 
 \subsubsection{Recruitment functional
 diversity}\label{recruitment-functional-diversity}
+
+The dataset available encompassed 88\% of all species recorded in the
+recruitment inventories. Because the species for which trait values were
+unavailable were not evenly distributed among plots and along time so we
+decided to discard them from the inventories to preserve homogeneous
+data filling.
 
 Punctual and accumulated recruitment diversity of order 0, 1 and 2 were
 compared to a null recruitment model corresponding to the random shuffle
@@ -645,7 +653,7 @@ surrounding stand in case of low disturbance or because the competitive
 exclusion randomly selected a restricted pool of species after intense
 disturbance. At the landscape scale, then, disturbance increased the
 diversity through the ``between patch'' difference
-\citep{Denslow1987, Chesson2000, Sheil2003}.
+\citep{Denslow1987, Chesson2000, Sheil2003, Guitet2017}.
 
 \begin{quote}
 Connell 1978, refute the ``equal chance HP because trees don't recruit

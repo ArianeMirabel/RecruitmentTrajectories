@@ -98,11 +98,8 @@ TrajectoryRec_fun<-function(RecDB_fun){
   invisible(lapply(1:length(treatments),function(tr){
     toplot<-RecDB_fun[which(rownames(RecDB_fun)%in%treatments[[tr]]),,]
     lapply(1:nrow(toplot),function(Li){
-      lig<-t(toplot[Li,,]);lig<-lig[,which(!apply(lig,2,anyNA))]
-      lig<-t(apply(lig,1,function(li){return(
-        c(unlist(lapply(2:(length(li)-1),function(step){return((li[step-1]+li[step]+li[step+1])/3)})),li[length(li)]))}))
-      lines(colnames(lig),lig["0.5",],col=ColorsTr[[tr]],lwd=2)
-      polygon(c(colnames(lig),rev(colnames(lig))),c(lig["0.025",],rev(lig["0.975",])),
+      lines(colnames(toplot),toplot[Li,,"0.5"],col=ColorsTr[[tr]],lwd=2)
+      polygon(c(colnames(toplot),rev(colnames(toplot))),c(toplot[Li,,"0.025"],rev(toplot[Li,,"0.975"])),
               col=rgb(0,0,0,alpha=0.05),border=NA)
     })}))
 }
