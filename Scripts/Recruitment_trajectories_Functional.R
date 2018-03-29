@@ -35,7 +35,7 @@ Recruits3<-lapply(1:(length(dates)-1),function(y){
   return(do.call(rbind,Recruits[which(names(Recruits)>=dates[y] & names(Recruits)<dates[y+1])]))})
 names(Recruits3)<-dates[-1]
 
-Nrep<-10
+Nrep<-2
 RecPun_Fun<-lapply(1:Nrep,function(rep){
   Ret<-do.call(cbind,lapply(Recruits3,function(yr){
   ret<-unlist(lapply(sort(unique(yr[,"n_parcelle"])),function(plot){
@@ -53,7 +53,7 @@ RecPun_Fun<-lapply(1:Nrep,function(rep){
   dissim<-as.matrix(daisy(tra,metric="gower"))
   dissim <- 1 - dissim/max(dissim)
    
-  return(expq(Hqz(as.AbdVector(tapply(ret,ret,length)), q=2, dissim,Correction="Best"),q=2))
+  return(expq(Hqz(as.AbdVector(tapply(ret,ret,length)), q=2, dissim,Correction="None"),q=2))
   }))
   ret<-as.data.frame(ret,row.names=as.character(sort(unique(yr[,"n_parcelle"]))))
   ret<-merge(ret,as.data.frame(1:12,row.names=as.character(1:12)),by="row.names",all.y=TRUE)[,1:2]
@@ -85,7 +85,7 @@ RecPun_Fun_DiffNull<-lapply(1:Nrep,function(rep){
        
       tra<-Traits_filled[which(rownames(Traits_filled)%in%ret),];tra<-tra[order(rownames(tra)),]
       traN<-Traits_filled;rownames(traN)<-rownames(traN)[sample(nrow(traN))]
-      traN<-Traits_filled[which(rownames(Traits_filled)%in%ret),];traN<-traN[order(rownames(traN)),]
+      traN<-traN[which(rownames(traN)%in%ret),];traN<-traN[order(rownames(traN)),]
       ret<-ret[which(ret%in%rownames(tra))]
      
       dissim<-as.matrix(daisy(tra,metric="gower"))
@@ -94,9 +94,9 @@ RecPun_Fun_DiffNull<-lapply(1:Nrep,function(rep){
       dissimN<-as.matrix(daisy(traN,metric="gower"))
       dissimN <- 1 - dissimN/max(dissimN)
       
-      retN<-expq(Hqz(as.AbdVector(tapply(ret,ret,length)), q=2, dissimN,Correction="Best"),q=2)
-      ret<-expq(Hqz(as.AbdVector(tapply(ret,ret,length)), q=2, dissim,Correction="Best"),q=2)
-      return(retN_ret)
+      retN<-expq(Hqz(as.AbdVector(tapply(ret,ret,length)), q=2, dissimN,Correction="None"),q=2)
+      ret<-expq(Hqz(as.AbdVector(tapply(ret,ret,length)), q=2, dissim,Correction="None"),q=2)
+      return(retN-ret)
     }))
     ret<-as.data.frame(ret,row.names=as.character(sort(unique(yr[,"n_parcelle"]))))
     ret<-merge(ret,as.data.frame(1:12,row.names=as.character(1:12)),by="row.names",all.y=TRUE)[,1:2]
@@ -146,7 +146,7 @@ RecPun_Fun_Null<-lapply(1:Nrep,function(rep){
       Traits_filled<-aggregate(Traits_filled[,TraitsName],list(Traits_filled$name),median)
       rownames(Traits_filled)<-Traits_filled[,1];Traits_filled<-Traits_filled[,TraitsName]
       tra<-Traits_filled;rownames(tra)<-rownames(tra)[sample(nrow(tra))]
-      tra<-Traits_filled[which(rownames(Traits_filled)%in%ret),];tra<-tra[order(rownames(tra)),]
+      tra<-tra[which(rownames(tra)%in%ret),];tra<-tra[order(rownames(tra)),]
       ret<-ret[which(ret%in%rownames(tra))]
       
       dissim<-as.matrix(daisy(tra,metric="gower"))
