@@ -210,7 +210,6 @@ Punctual and accumulated recruitment diversity of orders 0, 1 and 2 were compare
 For control plots the richness and evenness of observed punctual recruitment were constantly equivalent or higher than obtained with the null model (Figure \@ref(fig:Fig2)).
 For the disturbed plots the richness of observed punctual recruitment remained equivalent to that of the null model but the evenness that was first equivalent or higher became and remained lower than that of the null model from 10 years after disturbance whenever the disturbance intensity.
 
-
 In the same way as for punctual recruitment the richness and evenness of accumulated recruits in control plots was equivalent or higher than observed for the null model for all the post logging survey. 
 On disturbed plots the richness of accumulated recruits followed that of the null model whereas the evenness, initially higher,  became lower than that of the null model after some time (Figure \@ref(fig:Fig3)). 
 

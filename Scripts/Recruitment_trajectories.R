@@ -149,7 +149,7 @@ RecAccum_DiffNull<-lapply(0:2,function(id){
 })
 names(RecAccum_DiffNull)<-c("Richness","Shannon","Simpson") 
 
-save(RecPun_DiffNull,file="DB/RecruitmentPunctuel_Nullmodel_Diff")
+save(RecPun_DiffNull,file="DB/RecruitmentPunctual_Nullmodel_Diff")
 save(RecAccum_DiffNull,file="DB/RecruitmentAccum_Nullmodel_Diff")
 
 RecPun_Null<-lapply(0:2,function(id){

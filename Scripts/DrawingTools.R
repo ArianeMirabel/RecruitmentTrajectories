@@ -1,14 +1,6 @@
 ColorsTr<-c("darkolivegreen2","deepskyblue2","darkorange1","red2")
 T0<-c(1,6,11);T1<-c(2,7,9);T2<-c(3,5,10);T3<-c(4,8,12);treatments<-list(T0,T1,T2,T3)
 
-smoothTraj<-function(line){
-  name<-names(line)
-  line<-as.numeric(line)
-  first<-(line[1]+line[2])/2;last<-(line[length(line)-1]+line[length(line)])/2
-  ret<-c(first,unlist(lapply(2:(length(line)-1),function(step){return((line[step-1]+line[step]+line[step+1])/3)})),
-         last)
-  names(ret)<-name;return(ret)}
-
 TrajectoryDiffNull<-function(RecDB,RecDB_Diff){
   par(mfcol=c(2,3),oma=c(1,2,2,0),no.readonly=TRUE)
   invisible(lapply(1:length(RecDB_Diff),function(ind){
@@ -43,28 +35,6 @@ TrajectoryDiffNull<-function(RecDB,RecDB_Diff){
   mtext("Communities diversity",side=2,line=0.5,adj=0,at=0.6,cex=0.9,outer=TRUE)
   mtext("Divergence from null model",side=2,line=0.5,adj=0,at=0.1,cex=0.9,outer=TRUE)
 }
-
-TrajectoryRec_vsNull<-function(RecDB_obs,RecDB_null){
-  par(mfrow=c(4,3),mar=c(2,3,1,1),oma=c(2,2,2.5,1),no.readonly=TRUE)
-  layout(matrix(1:12, 4, 3, byrow = FALSE))
-  for (ind in c("Richness","Shannon","Simpson")){
-    lapply(1:length(treatments),function(tr){
-      toplot<-RecDB_obs[[ind]][which(rownames(RecDB_obs[[ind]])%in%treatments[[tr]]),,]
-      toplotN<-RecDB_null[[ind]][which(rownames(RecDB_null[[ind]])%in%treatments[[tr]]),,]
-      plot(colnames(toplotN),toplotN[1,,"0.5"],type="n",xaxt="n",xlab="",
-           ylab="",cex.lab=1.5,ylim=c(min(min(toplot),min(toplotN)),max(max(toplot),max(toplotN))))
-      axis(1,at=seq(5,30,5),labels=T) 
-      invisible(lapply(1:nrow(toplot),function(li){
-        lines(colnames(toplotN),toplotN[li,,"0.5"],col=ColorsTr[tr],lwd=1.5,lty=2)
-        polygon(c(colnames(toplotN),rev(colnames(toplotN))),col=rgb(0,0,0,alpha=0.05),border=NA,
-                c(toplotN[li,,"0.025"],rev(toplotN[li,,"0.975"])))
-        
-        lines(colnames(toplot),smoothTraj(toplot[li,,"0.5"]),col=ColorsTr[tr],lwd=2)
-        polygon(c(colnames(toplot),rev(colnames(toplot))),col=rgb(0,0,0,alpha=0.1),border=NA,
-                c(smoothTraj(toplot[li,,"0.025"]),rev(smoothTraj(toplot[li,,"0.975"]))))
-      }))
-    })
-  }}
 
 PlotCWM<-function(TrajTraits){
   for (Ntrait in 1:length(TrajTraits)){
@@ -128,9 +98,9 @@ turnover<-function(TurnData){
   invisible(lapply(1:length(treatments),function(tr){
     toplot<-TurnData[which(rownames(TurnData)%in%treatments[[tr]]),,]
     lapply(1:nrow(toplot),function(li){
-      lines(colnames(toplot),smoothTraj(toplot[li,,"0.5"]),col=ColorsTr[[tr]],lwd=2)
+      lines(colnames(toplot),toplot[li,,"0.5"],col=ColorsTr[[tr]],lwd=2)
       polygon(c(colnames(toplot),rev(colnames(toplot))),
-              c(smoothTraj(toplot[li,,"0.025"]),rev(smoothTraj(toplot[li,,"0.975"]))),
+              c(toplot[li,,"0.025"],rev(toplot[li,,"0.975"])),
               col=rgb(0,0,0,alpha=0.05),border=NA)
     })
   }))
@@ -139,5 +109,27 @@ turnover<-function(TurnData){
 
 
 
+##############################################################"
 
 
+TrajectoryRec_vsNull<-function(RecDB_obs,RecDB_null){
+  par(mfrow=c(4,3),mar=c(2,3,1,1),oma=c(2,2,2.5,1),no.readonly=TRUE)
+  layout(matrix(1:12, 4, 3, byrow = FALSE))
+  for (ind in c("Richness","Shannon","Simpson")){
+    lapply(1:length(treatments),function(tr){
+      toplot<-RecDB_obs[[ind]][which(rownames(RecDB_obs[[ind]])%in%treatments[[tr]]),,]
+      toplotN<-RecDB_null[[ind]][which(rownames(RecDB_null[[ind]])%in%treatments[[tr]]),,]
+      plot(colnames(toplotN),toplotN[1,,"0.5"],type="n",xaxt="n",xlab="",
+           ylab="",cex.lab=1.5,ylim=c(min(min(toplot),min(toplotN)),max(max(toplot),max(toplotN))))
+      axis(1,at=seq(5,30,5),labels=T) 
+      invisible(lapply(1:nrow(toplot),function(li){
+        lines(colnames(toplotN),toplotN[li,,"0.5"],col=ColorsTr[tr],lwd=1.5,lty=2)
+        polygon(c(colnames(toplotN),rev(colnames(toplotN))),col=rgb(0,0,0,alpha=0.05),border=NA,
+                c(toplotN[li,,"0.025"],rev(toplotN[li,,"0.975"])))
+        
+        lines(colnames(toplot),smoothTraj(toplot[li,,"0.5"]),col=ColorsTr[tr],lwd=2)
+        polygon(c(colnames(toplot),rev(colnames(toplot))),col=rgb(0,0,0,alpha=0.1),border=NA,
+                c(smoothTraj(toplot[li,,"0.025"]),rev(smoothTraj(toplot[li,,"0.975"]))))
+      }))
+    })
+  }}
