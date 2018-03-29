@@ -9,21 +9,40 @@ smoothTraj<-function(line){
          last)
   names(ret)<-name;return(ret)}
 
-TrajectoryRec<-function(RecDB,s){
-  invisible(lapply(RecDB,function(recind){
-    Ylim=c(min(recind),max(recind)*s)
-    plot(colnames(recind),recind[1,,"0.5"],type="n",ylim=Ylim,xlab="",ylab="")
+TrajectoryDiffNull<-function(RecDB,RecDB_Diff){
+  par(mfcol=c(2,3),oma=c(1,2,2,0),no.readonly=TRUE)
+  invisible(lapply(1:length(RecDB_Diff),function(ind){
+    recind<-RecDB_Diff[[ind]]
+    Ylim=c(min(recind),max(recind))
+    par(mar=c(0, 2, 2, 1))
+    plot(colnames(recind),recind[1,,"0.5"],type="n",ylim=Ylim,xlab="",ylab="",xaxt="n",main=names(RecDB)[ind])
     invisible(lapply(1:length(treatments),function(tr){
       toplot<-recind[which(rownames(recind)%in%treatments[[tr]]),,]
       lapply(1:nrow(toplot),function(Li){
-        lig<-t(toplot[Li,,]);lig<-lig[,which(!apply(lig,2,anyNA))]
-        lig<-t(apply(lig,1,function(li){return(
-          c(unlist(lapply(2:(length(li)-1),function(step){return((li[step-1]+li[step]+li[step+1])/3)})),li[length(li)]))}))
-        lines(colnames(lig),lig["0.5",],col=ColorsTr[[tr]],lwd=2)
-        polygon(c(colnames(lig),rev(colnames(lig))),c(lig["0.025",],rev(lig["0.975",])),
+        lines(colnames(toplot),toplot[Li,,"0.5"],col=ColorsTr[[tr]],lwd=2)
+        polygon(c(colnames(toplot),rev(colnames(toplot))),c(toplot[Li,,"0.025"],rev(toplot[Li,,"0.975"])),
                 col=rgb(0,0,0,alpha=0.05),border=NA)
-      })}))
-  }))}
+      })
+    }))
+    par(mar=c(1, 2, 0, 1))
+    recindN<-RecDB_Diff[[ind]]
+    Ylim=c(min(recindN),max(recindN))
+    plot(colnames(recindN),recindN[1,,"0.5"],type="n",ylim=Ylim,xlab="",ylab="",xaxt="n")
+    abline(h=0,lty=1,lwd=1)
+    invisible(lapply(1:length(treatments),function(tr){
+      toplot<-recindN[which(rownames(recindN)%in%treatments[[tr]]),,]
+      lapply(1:nrow(toplot),function(Li){
+        lines(colnames(toplot),toplot[Li,,"0.5"],col=ColorsTr[[tr]],lwd=1,lty=2)
+        polygon(c(colnames(toplot),rev(colnames(toplot))),c(toplot[Li,,"0.025"],rev(toplot[Li,,"0.975"])),
+                col=rgb(0,0,0,alpha=0.03),border=NA)
+      })
+    }))
+  }))
+  mtext("Equivalent\ndiversity",side=3,adj=0,line=-1,outer=TRUE)
+  mtext("Years since disturbance",side=1,at=0.85,line=-0.5,outer=TRUE)
+  mtext("Communities diversity",side=2,line=0.5,adj=0,at=0.6,cex=0.9,outer=TRUE)
+  mtext("Divergence from null model",side=2,line=0.5,adj=0,at=0.1,cex=0.9,outer=TRUE)
+}
 
 TrajectoryRec_vsNull<-function(RecDB_obs,RecDB_null){
   par(mfrow=c(4,3),mar=c(2,3,1,1),oma=c(2,2,2.5,1),no.readonly=TRUE)
@@ -116,3 +135,9 @@ turnover<-function(TurnData){
     })
   }))
 }
+
+
+
+
+
+

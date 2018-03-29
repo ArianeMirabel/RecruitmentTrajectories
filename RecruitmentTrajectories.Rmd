@@ -180,7 +180,7 @@ The null model for taxonomic diversity randomly shuffled individuals among plots
 
 ## Recruitment Diversity
 
-### Punctual and accumulated recruits’ diversity* 
+### Punctual and accumulated recruits’ diversity 
 
 The diversity of trees recruited in T1, T2 and T3 disturbed plots followed an asymptotique trajectory, first displaying higher richness and lower evenness than those observed in control plots and then lower richness and lower evenness.
 
@@ -190,17 +190,11 @@ The diversity of trees recruited in T1, T2 and T3 disturbed plots followed an as
 
 ```{r Fig1, out.width = '80%', fig.asp = 1.2/2, echo=FALSE,fig.cap="Trajectories for the 30 sampled years of Richness, Shannon and Simpson diversity for **(a)**  3-years laps punctual recruitment and **(b)** recruits accumulated since disturbance. Solid lines (green for control, blue for T1, orange for T2 and red for T3 disturbance treatments) correspond to the median observed after 50 iteration of the taxonomic uncertainty propagation, along with the 95\\% confidence interval (grey envelope).", fig.env="figure*"}
 
-load("DB/RecruitmentAccum");load("DB/RecruitmentPunctual")
+load("DB/RecruitmentPunctual");load("DB/RecruitmentPunctual_Nullmodel_Diff")
+load("DB/RecruitmentAccum");load("DB/RecruitmentAccum_Nullmodel_Diff")
 
-par(mfrow=c(2,3),mar=c(2,3,1,1),oma=c(2,3,1,1),no.readonly=TRUE)
-TrajectoryRec(RecPun,0.8)
-TrajectoryRec(RecAccum,1)
-mtext("(a) Richness",at=0.1,line=-0.6,outer=TRUE);mtext("(b) Shannon",at=0.44,line=-0.6,outer=TRUE)
-mtext("(c) Simpson",at=0.76,line=-0.6,outer=TRUE)
-mtext("Years since disturbance",side=1,at=0.85,cex=0.8,line=1,outer=TRUE)
-mtext("Equivalent diversity",side=2,padj=1,cex=0.8,line=0.8,outer=TRUE)
-mtext("Punctual",side=2,adj=0.8,line=1.75,outer=TRUE)
-mtext("Accumulated",side=2,adj=0.2,line=1.75,outer=TRUE)
+TrajectoryDiffNull(RecDB=RecPun,RecDB_Diff=RecPun_DiffNull)
+TrajectoryDiffNull(RecDB=RecAccum,RecDB_Diff=RecAccum_DiffNull)
 
 ```
 
