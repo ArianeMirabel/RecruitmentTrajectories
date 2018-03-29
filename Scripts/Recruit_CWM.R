@@ -1,12 +1,10 @@
-setwd("P:/Private/Taff/These/Codes/DemographicDynamics")
 load("DB/Paracou_R_Subdivided_ok")
-library(RColorBrewer)
 library(reshape2)
 library(cluster)
 
-source("Vernacular_handle.R")
-source("Overview_functions.R")
-source("TraitsMiceFilling.R")
+source("Scripts/Vernacular_handle.R")
+source("Scripts/Overview_functions.R")
+source("Scripts/TraitsMiceFilling.R")
 
 smooth<-function(mat,larg){return(do.call(cbind,lapply(1:ncol(mat),function(step){
   range<-max(1,step-larg):min(ncol(mat),step+larg)
@@ -14,7 +12,7 @@ smooth<-function(mat,larg){return(do.call(cbind,lapply(1:ncol(mat),function(step
 
 Traits1<-read.csv("DB/BridgeOK.csv",sep=";",na.strings="")
 Traits2<-read.csv("DB/DataLifeTraits.csv",sep=";",na.strings="")
-TraitsName<-c("Hmax","L_thickness","L_chloro","L_toughness","L_DryMass","SLA","WD","Bark_thick")
+TraitsName<-c("Hmax","L_thickness","L_chloro","L_toughness","SLA","WD","Bark_thick")#"L_DryMass",
 
 load("DB/Alpha_Plots")
 InventorySp<-do.call(rbind,lapply(LivingStand_all,function(yr){
@@ -42,7 +40,7 @@ Recruits3<-lapply(1:(length(dates)-1),function(y){
 names(Recruits3)<-dates[-1]
 
 Nrep<-2
-Traits_traj<-lapply(TraitsName,function(traitName){
+Rec_CWM<-lapply(TraitsName,function(traitName){
   Traj<-lapply(1:Nrep,function(rep){
   Ret<-do.call(cbind,lapply(Recruits3,function(yr){
     ret<-unlist(lapply(sort(unique(yr[,"n_parcelle"])),function(plot){
@@ -74,48 +72,7 @@ Traj<-lapply(c(0.025,0.5,0.975),function(quant){
 Traj<-array(unlist(Traj),dim=c(nrow(Traj[[1]]),ncol(Traj[[1]]),3),
                   dimnames=list(rownames(Traj[[1]]),as.numeric(colnames(Traj[[1]]))-1984,c(0.025,0.5,0.975)))
 })
-names(Traits_traj)<-TraitsName
+names(Rec_CWM)<-TraitsName
 
-save(Traits_traj,file="DB/Recruits_CWM_sansHmax")
 save(Rec_CWM,file="P:/Private/Taff/These/Redaction/3_RecruitmentTrajectories/DB/Recruits_CWM")
-load("DB/Recruits_CWM_Hmax")
 
-ColorsTr<-c("chartreuse3","deepskyblue2","darkorange1","red2")
-
-windows()
-par(mfrow=c(2,4),mar=c(2,2,2,1))
-for (Ntrait in names(Traits_traj)){
-  Toplot<-Traits_traj[[Ntrait]]
-  plot(colnames(Toplot),Toplot[1,,"0.5"],type="n",xaxt="n",xlab="",
-       ylab="",cex.lab=1.5,ylim=c(min(Toplot),max(Toplot)))
-  axis(1,at=seq(5,30,5),labels=T) 
-  mtext(Ntrait,3,adj=0,line = 0.5,cex=0.8)
-
-invisible(lapply(1:length(treatments),function(tr){
-  toplot<-Toplot[which(rownames(Toplot)%in%treatments[[tr]]),,]  
-  lapply(1:nrow(toplot),function(Li){
-   lines(colnames(toplot),toplot[Li,,"0.5"],col=ColorsTr[[tr]],lwd=2)
-   polygon(c(colnames(toplot),rev(colnames(toplot))),c(toplot[Li,,"0.025"],rev(toplot[Li,,"0.975"])),
-            col=rgb(0,0,0,alpha=0.05),border=NA)})
-}))
-}
-
-windows()
-par(mfrow=c(2,4),mar=c(2,2,2,1))
-for (Ntrait in names(Traits_traj)){
-  Toplot<-Traits_traj[[Ntrait]]
-  plot(colnames(Toplot),Toplot[1,,"0.5"],type="n",xaxt="n",xlab="",
-       ylab="",cex.lab=1.5,ylim=c(min(Toplot),max(Toplot)))
-  axis(1,at=seq(5,30,5),labels=T) 
-  mtext(Ntrait,3,adj=0,line = 0.5,cex=0.8)
-  
-  invisible(lapply(1:length(treatments),function(tr){
-    toplot<-Toplot[which(rownames(Toplot)%in%treatments[[tr]]),,]  
-      lines(colnames(toplot),apply(toplot[,,"0.5"],2,median),col=ColorsTr[[tr]],lwd=2)
-      polygon(c(colnames(toplot),rev(colnames(toplot))),
-              c(apply(toplot[,,"0.025"],2,median),rev(apply(toplot[,,"0.975"],2,median))),
-              col=rgb(0,0,0,alpha=0.05),border=NA)
-  }))
-}
-
-  
