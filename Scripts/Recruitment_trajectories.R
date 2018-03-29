@@ -2,6 +2,10 @@ load("DB/Paracou_R_Subdivided_ok")
 load("DB/Alpha_Plots")
 source("Scripts/Vernacular_handle.R")
 
+smooth<-function(mat,larg){return(do.call(cbind,lapply(1:ncol(mat),function(step){
+  range<-max(1,step-larg):min(ncol(mat),step+larg)
+  rowSums(mat[,range])/length(range)})))}
+
 #Plots of the different treatments
 T0<-c(1,6,11);T1<-c(2,7,9);T2<-c(3,5,10);T3<-c(4,8,12)
 treatments<-list(T0,T1,T2,T3)
@@ -14,11 +18,10 @@ Recruits<-Recruits[order(names(Recruits))]
 Recruits<-lapply(Recruits,function(yr){return(yr[which(yr[,"n_parcelle"]%in%1:15),])})
 Recruits<-Recruits[which(lapply(Recruits,nrow)>0)]
 
-dates<-names(Recruits)
-sequence<-seq(1,29,3)
-Recruits3<-lapply(1:(length(sequence)-1),function(i){return(do.call(rbind,
-                      Recruits[which(names(Recruits)>=dates[sequence[i]] & names(Recruits)<dates[sequence[i+1]])]))})
-names(Recruits3)<-dates[sequence[-1]]
+dates<-names(Recruits[seq(2,29,2)])
+Recruits3<-lapply(1:(length(dates)-1),function(y){
+  return(do.call(rbind,Recruits[which(names(Recruits)>=dates[y] & names(Recruits)<dates[y+1])]))})
+names(Recruits3)<-dates[-1]
 
 Nrep<-2
 RecPun<-lapply(0:2,function(id){
@@ -34,10 +37,10 @@ RecPun<-lapply(0:2,function(id){
   ret<-ret[order(as.numeric(ret[,"Row.names"])),];rownames(ret)<-ret[,"Row.names"]
   return(ret["ret"])
 }))
-colnames(Ret)<-names(Recruits3)
 return(Ret)})
+recind<-lapply(recind,function(rep){return(smooth(rep,2))}) # moving average, path=2
 recind<-array(unlist(recind),dim=c(nrow(recind[[1]]),ncol(recind[[1]]),Nrep),
-           dimnames=list(rownames(recind[[1]]),colnames(recind[[1]]),1:Nrep))
+           dimnames=list(rownames(recind[[1]]),names(Recruits3),1:Nrep))
 recind<-lapply(c(0.025,0.5,0.975),function(quant){
   return(apply(recind,c(1,2),function(rep){return(quantile(rep,probs = quant,na.rm=T))}))
   })
@@ -62,10 +65,10 @@ RecAccum<-lapply(0:2,function(id){
       ret<-ret[order(as.numeric(ret[,"Row.names"])),];rownames(ret)<-ret[,"Row.names"]
       return(ret["ret"])
 }))
-    colnames(Ret)<-names(Recruits3)
     return(Ret)})
+  recind<-lapply(recind,function(rep){return(smooth(rep,2))}) # moving average, path=2
   recind<-array(unlist(recind),dim=c(nrow(recind[[1]]),ncol(recind[[1]]),Nrep),
-                dimnames=list(rownames(recind[[1]]),colnames(recind[[1]]),1:Nrep))
+                dimnames=list(rownames(recind[[1]]),names(Recruits3),1:Nrep))
   recind<-lapply(c(0.025,0.5,0.975),function(quant){
     return(apply(recind,c(1,2),function(rep){return(quantile(rep,probs = quant,na.rm=T))}))
   })
@@ -101,10 +104,10 @@ RecPun_DiffNull<-lapply(0:2,function(id){
       ret<-ret[order(as.numeric(ret[,"Row.names"])),];rownames(ret)<-ret[,"Row.names"]
       return(ret["ret"])
     }))
-    colnames(Ret)<-names(Recruits3)
     return(Ret)})
+  recind<-lapply(recind,function(rep){return(smooth(rep,2))}) # moving average, path=2
   recind<-array(unlist(recind),dim=c(nrow(recind[[1]]),ncol(recind[[1]]),Nrep),
-                dimnames=list(rownames(recind[[1]]),colnames(recind[[1]]),1:Nrep))
+                dimnames=list(rownames(recind[[1]]),names(Recruits3),1:Nrep))
   recind<-lapply(c(0.025,0.5,0.975),function(quant){
     return(apply(recind,c(1,2),function(rep){return(quantile(rep,probs = quant,na.rm=T))}))
   })
@@ -136,10 +139,10 @@ RecAccum_DiffNull<-lapply(0:2,function(id){
       ret<-ret[order(as.numeric(ret[,"Row.names"])),];rownames(ret)<-ret[,"Row.names"]
       return(ret["ret"])
     }))
-    colnames(Ret)<-names(Recruits3)
     return(Ret)})
+  recind<-lapply(recind,function(rep){return(smooth(rep,2))}) # moving average, path=2
   recind<-array(unlist(recind),dim=c(nrow(recind[[1]]),ncol(recind[[1]]),Nrep),
-                dimnames=list(rownames(recind[[1]]),colnames(recind[[1]]),1:Nrep))
+                dimnames=list(rownames(recind[[1]]),names(Recruits3),1:Nrep))
   recind<-lapply(c(0.025,0.5,0.975),function(quant){
     return(apply(recind,c(1,2),function(rep){return(quantile(rep,probs = quant,na.rm=T))}))
   })
@@ -151,6 +154,7 @@ names(RecAccum_DiffNull)<-c("Richness","Shannon","Simpson")
 
 save(RecPun_DiffNull,file="DB/RecruitmentPunctual_Nullmodel_Diff")
 save(RecAccum_DiffNull,file="DB/RecruitmentAccum_Nullmodel_Diff")
+
 
 RecPun_Null<-lapply(0:2,function(id){
   recind<-lapply(1:Nrep,function(rep){
@@ -168,10 +172,10 @@ RecPun_Null<-lapply(0:2,function(id){
       ret<-ret[order(as.numeric(ret[,"Row.names"])),];rownames(ret)<-ret[,"Row.names"]
       return(ret["ret"])
     }))
-    colnames(Ret)<-names(Recruits3)
     return(Ret)})
+  recind<-lapply(recind,function(rep){return(smooth(rep,2))}) # moving average, path=2
   recind<-array(unlist(recind),dim=c(nrow(recind[[1]]),ncol(recind[[1]]),Nrep),
-                dimnames=list(rownames(recind[[1]]),colnames(recind[[1]]),1:Nrep))
+                dimnames=list(rownames(recind[[1]]),names(Recruits3),1:Nrep))
   recind<-lapply(c(0.025,0.5,0.975),function(quant){
     return(apply(recind,c(1,2),function(rep){return(quantile(rep,probs = quant,na.rm=T))}))
   })
@@ -199,10 +203,10 @@ RecAccum_Null<-lapply(0:2,function(id){
       ret<-ret[order(as.numeric(ret[,"Row.names"])),];rownames(ret)<-ret[,"Row.names"]
       return(ret["ret"])
 }))
-    colnames(Ret)<-names(Recruits3)
     return(Ret)})
+  recind<-lapply(recind,function(rep){return(smooth(rep,2))}) # moving average, path=2
   recind<-array(unlist(recind),dim=c(nrow(recind[[1]]),ncol(recind[[1]]),Nrep),
-                dimnames=list(rownames(recind[[1]]),colnames(recind[[1]]),1:Nrep))
+                dimnames=list(rownames(recind[[1]]),names(Recruits3),1:Nrep))
   recind<-lapply(c(0.025,0.5,0.975),function(quant){
     return(apply(recind,c(1,2),function(rep){return(quantile(rep,probs = quant,na.rm=T))}))
   })

@@ -189,7 +189,6 @@ The diversity of trees recruited in T1, T2 and T3 disturbed plots followed an as
 
 
 ```{r Fig1, out.width = '80%', fig.asp = 1.2/2, echo=FALSE,fig.cap="Trajectories for the 30 sampled years of Richness, Shannon and Simpson diversity for 2-years laps punctual recruitment (upper graphics) and the divergence of observed trajectories to the null model (lower graphics). Lines colors correspond to the perturbation regime: green for control, blue for T1, orange for T2 and red for T3 disturbance treatments. Lines correspond to the median observed after 50 iteration of the the taxonomic uncertainty propagation for observed values and 50 run of the null model run, both trajectories are given along with the 95\\% confidence interval (grey envelope).", fig.env="figure*"}
-
 load("DB/RecruitmentPunctual");load("DB/RecruitmentPunctual_Nullmodel_Diff")
 
 TrajectoryDiffNull(RecDB=RecPun,RecDB_Diff=RecPun_DiffNull)
@@ -197,7 +196,6 @@ TrajectoryDiffNull(RecDB=RecPun,RecDB_Diff=RecPun_DiffNull)
 ```
 
 ```{r Fig2, out.width = '80%', fig.asp = 1.2/2, echo=FALSE,fig.cap="Trajectories for the 30 sampled years of Richness, Shannon and Simpson diversity of communities recruited since disturbance (upper graphics) and the divergence of observed trajectories to the null model (lower graphics). Lines colors correspond to the perturbation regime: green for control, blue for T1, orange for T2 and red for T3 disturbance treatments. Lines correspond to the median observed after 50 iteration of the the taxonomic uncertainty propagation for observed values and 50 run of the null model run, both trajectories are given along with the 95\\% confidence interval (grey envelope).", fig.env="figure*"}
-
 load("DB/RecruitmentAccum");load("DB/RecruitmentAccum_Nullmodel_Diff")
 
 TrajectoryDiffNull(RecDB=RecAccum,RecDB_Diff=RecAccum_DiffNull)

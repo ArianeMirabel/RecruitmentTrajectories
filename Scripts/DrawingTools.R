@@ -2,9 +2,10 @@ ColorsTr<-c("darkolivegreen2","deepskyblue2","darkorange1","red2")
 T0<-c(1,6,11);T1<-c(2,7,9);T2<-c(3,5,10);T3<-c(4,8,12);treatments<-list(T0,T1,T2,T3)
 
 TrajectoryDiffNull<-function(RecDB,RecDB_Diff){
-  par(mfcol=c(2,3),oma=c(1,2,2,0),no.readonly=TRUE)
-  invisible(lapply(1:length(RecDB_Diff),function(ind){
-    recind<-RecDB_Diff[[ind]]
+  windows()
+  par(mfcol=c(2,3),oma=c(2.5,3,2,0),no.readonly=TRUE)
+  invisible(lapply(1:length(RecDB),function(ind){
+    recind<-RecDB[[ind]]
     Ylim=c(min(recind),max(recind))
     par(mar=c(0, 2, 2, 1))
     plot(colnames(recind),recind[1,,"0.5"],type="n",ylim=Ylim,xlab="",ylab="",xaxt="n",main=names(RecDB)[ind])
@@ -20,6 +21,7 @@ TrajectoryDiffNull<-function(RecDB,RecDB_Diff){
     recindN<-RecDB_Diff[[ind]]
     Ylim=c(min(recindN),max(recindN))
     plot(colnames(recindN),recindN[1,,"0.5"],type="n",ylim=Ylim,xlab="",ylab="",xaxt="n")
+    axis(1,at=colnames(recindN),labels=T) 
     abline(h=0,lty=1,lwd=1)
     invisible(lapply(1:length(treatments),function(tr){
       toplot<-recindN[which(rownames(recindN)%in%treatments[[tr]]),,]
@@ -31,9 +33,10 @@ TrajectoryDiffNull<-function(RecDB,RecDB_Diff){
     }))
   }))
   mtext("Equivalent\ndiversity",side=3,adj=0,line=-1,outer=TRUE)
-  mtext("Years since disturbance",side=1,at=0.85,line=-0.5,outer=TRUE)
-  mtext("Communities diversity",side=2,line=0.5,adj=0,at=0.6,cex=0.9,outer=TRUE)
-  mtext("Divergence from null model",side=2,line=0.5,adj=0,at=0.1,cex=0.9,outer=TRUE)
+  mtext("Years since disturbance",side=1,at=0.85,line=1.5,outer=TRUE)
+  mtext(expression(paste("Communities diversity,  ",'H'['obs']^q)),side=2,line=0.5,adj=0,at=0.6,cex=0.9,outer=TRUE)
+  mtext(expression(paste("Divergence from null model,  ",'H'['null']^q," - ",'H'['obs']^q)),
+        side=2,line=0.5,adj=0,at=0.05,cex=0.9,outer=TRUE)
 }
 
 PlotCWM<-function(TrajTraits){

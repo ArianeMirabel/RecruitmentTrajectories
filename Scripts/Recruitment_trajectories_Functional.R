@@ -72,6 +72,50 @@ RecPun_Fun<-array(unlist(RecPun_Fun),dim=c(nrow(RecPun_Fun[[1]]),ncol(RecPun_Fun
 
 save(RecPun_Fun,file="DB/RecruitmentPunctual_Functional")
 
+
+RecPun_Fun_DiffNull<-lapply(1:Nrep,function(rep){
+  Ret<-do.call(cbind,lapply(Recruits3,function(yr){
+    ret<-unlist(lapply(sort(unique(yr[,"n_parcelle"])),function(plot){
+      ret<-yr[which(yr[,"n_parcelle"]==plot),]
+      ret<-Replacement(ret,Alpha=alphas_plot[[which(names(alphas_plot)==plot)]])
+      
+      #Traits_filled<-Traits_filling(Traits1,Traits2,InventorySp)
+      #Traits_filled<-aggregate(Traits_filled[,TraitsName],list(Traits_filled$name),median)
+      #rownames(Traits_filled)<-Traits_filled[,1];Traits_filled<-Traits_filled[,TraitsName]
+       
+      tra<-Traits_filled[which(rownames(Traits_filled)%in%ret),];tra<-tra[order(rownames(tra)),]
+      traN<-Traits_filled;rownames(traN)<-rownames(traN)[sample(nrow(traN))]
+      traN<-Traits_filled[which(rownames(Traits_filled)%in%ret),];traN<-traN[order(rownames(traN)),]
+      ret<-ret[which(ret%in%rownames(tra))]
+     
+      dissim<-as.matrix(daisy(tra,metric="gower"))
+      dissim <- 1 - dissim/max(dissim)
+      
+      dissimN<-as.matrix(daisy(traN,metric="gower"))
+      dissimN <- 1 - dissimN/max(dissimN)
+      
+      retN<-expq(Hqz(as.AbdVector(tapply(ret,ret,length)), q=2, dissimN,Correction="Best"),q=2)
+      ret<-expq(Hqz(as.AbdVector(tapply(ret,ret,length)), q=2, dissim,Correction="Best"),q=2)
+      return(retN_ret)
+    }))
+    ret<-as.data.frame(ret,row.names=as.character(sort(unique(yr[,"n_parcelle"]))))
+    ret<-merge(ret,as.data.frame(1:12,row.names=as.character(1:12)),by="row.names",all.y=TRUE)[,1:2]
+    ret<-ret[order(as.numeric(ret[,"Row.names"])),];rownames(ret)<-ret[,"Row.names"]
+    return(ret["ret"])
+  }))
+  return(Ret)})
+RecPun_Fun_DiffNull<-lapply(RecPun_Fun_DiffNull,function(rep){return(smooth(rep,2))}) # moving average, path=2
+RecPun_Fun_DiffNull<-array(unlist(RecPun_Fun_DiffNull),dim=c(nrow(RecPun_Fun_DiffNull[[1]]),ncol(RecPun_Fun_DiffNull[[1]]),Nrep),
+                       dimnames=list(rownames(RecPun_Fun_DiffNull[[1]]),names(Recruits3),1:Nrep))
+RecPun_Fun_DiffNull<-lapply(c(0.025,0.5,0.975),function(quant){
+  return(apply(RecPun_Fun_DiffNull,c(1,2),function(rep){return(quantile(rep,probs = quant,na.rm=T))}))
+})
+RecPun_Fun_DiffNull<-array(unlist(RecPun_Fun_DiffNull),dim=c(nrow(RecPun_Fun_DiffNull[[1]]),ncol(RecPun_Fun_DiffNull[[1]]),3),
+                       dimnames=list(rownames(RecPun_Fun_DiffNull[[1]]),as.numeric(colnames(RecPun_Fun_DiffNull[[1]]))-1984,c(0.025,0.5,0.975)))
+
+save(RecPun_Fun_DiffNull,file="DB/RecruitmentPunctual_Functional_Nullmodel_Diff")
+
+
 #Missings<-Recruitment[which(Recruitment[,"name"]%in%missings),]
 #Missings<-Missings[which(Missings$n_parcelle%in%1:12),]
 #Missings<-Missings[which(!Missings$campagne%in%c(1998,2000,2002,2004,2006)),]
@@ -115,11 +159,10 @@ RecPun_Fun_Null<-lapply(1:Nrep,function(rep){
     ret<-ret[order(as.numeric(ret[,"Row.names"])),];rownames(ret)<-ret[,"Row.names"]
     return(ret["ret"])
   }))
-  colnames(Ret)<-names(Recruits3)
   return(Ret)})
 RecPun_Fun_Null<-lapply(RecPun_Fun_Null,function(rep){return(smooth(rep,2))}) # moving average, path=2
 RecPun_Fun_Null<-array(unlist(RecPun_Fun_Null),dim=c(nrow(RecPun_Fun_Null[[1]]),ncol(RecPun_Fun_Null[[1]]),Nrep),
-                  dimnames=list(rownames(RecPun_Fun_Null[[1]]),colnames(RecPun_Fun_Null[[1]]),1:Nrep))
+                  dimnames=list(rownames(RecPun_Fun_Null[[1]]),names(Recruits3),1:Nrep))
 RecPun_Fun_Null<-lapply(c(0.025,0.5,0.975),function(quant){
   return(apply(RecPun_Fun_Null,c(1,2),function(rep){return(quantile(rep,probs = quant,na.rm=T))}))
 })
