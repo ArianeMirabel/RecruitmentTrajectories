@@ -79,14 +79,7 @@ In this paper we follow the fate of a recruited tree communities (XX individuals
 
 ## Study Site
 
-Analyses were based on the inventories conducted at the Paracou station in French Guiana (5°18'N and 52°53'W), located in a lowland tropical rain forest. 
-The site corresponds to a tropical wet climate with mean annual precipitation averaging 2980 mm.y^-1^ (30-y period) with a 3-months dry season (< 100 mm.months^-1^) from mid-August to mid-November, and a one-month dry season in March [@Wagner2011]. 
-Elevation ranges between 5 and 50 m and mean annual temperature is 26°C. 
-Soils correspond to thin acrisols over a layer of transformed saprolite with low permeability generating lateral drainage during heavy rains.
-The experiment corresponds to a network of twelve 6.25ha plots that have undergone a gradient of three logging, thinning and fuelwood treatments (Table \@ref(tab:Tab1)).
-Disturbance treatments were attributed according to a randomized plot design with three replicate blocks of four plots. 
-The disturbance corresponds to averages of 10 trees removed per hectare with a diameter at 1.3 m height (DBH) above 50 cm for treatment 1 (T1), 32 trees/ha above 40 cm DBH for treatment 2 (T2) and 40 trees above 40 cm DBH for treatment 3 (T3). 
-Treatments T2 and T3 besides included the thinning of trees by poison girdling [@Blanc2009]. 
+The Paracou station is located in a lowland tropical rain forest in French Guiana (5°18'N and 52°53'W). Climate is tropical wet with mean annual precipitation averaging 2980 mm.y^-1^ (30-y period) and a 3-months dry season (< 100 mm.months^-1^) from mid-August to mid-November, and a one-month dry season in March [@Wagner2011]. Elevation ranges from 5 to 50 m and mean annual temperature is 26°C. Soils are thin acrisols over a layer of transformed saprolite with low permeability generating lateral drainage during heavy rains. The disturbance experiment spraid over a network of twelve 6.25ha plots (Table \@ref(tab:Tab1)) that underwent three disturbance treatments in 1986-1987 [@Herault2018]. Dominant families are Fabaceae, Chrysobalanaceae, Lecythidaceae and Sapotaceae. 
 
 ```{r Tab1, echo=FALSE}
 Intervention <- data.frame(
@@ -111,52 +104,19 @@ knitr::kable(Intervention, caption="Intervention table, summary of the disturban
 ```
 
 ## Inventories Protocol and Dataset Collection 
+All trees above 10 cm DBH were mapped and measured annually since 1984. During inventories, trees were first identified with a vernacular name assigned by the field team, and afterward with a scientific name assigned by a botanist during regular botanical campaigns. Botanical campaigns have been carried out every 5 to 6 years from 2003 onwards. This raised methodological issues as vernacular names usually correspond to different botanical species, resulting in significant taxonomic uncertainties that were propagated to composition and diversity metrics. Vernacular names were replaced through multinomial trials $M_v\Big(\big[s_1, s_2, …, s_N\big],\big[\alpha_1, \alpha_2,…, \alpha_3\big]\Big)$  based on the observed association probability $\big[\alpha_1, \alpha_2,…, \alpha_3\big]$ between each vernacular name *v* and the species $\big[s_1, s_2, …, s_N\big]$ recorded in the inventory. See appendix 1 and @Aubry-Kientz2013 for the detailed methodology. To avoid remaining identification caveats, the simulated botanical inventories were reported at genus level.
 
-The study site corresponds to a tropical rainforest with a dominance of Fabaceae, Chrysobalanaceae, Lecythidaceae and Sapotaceae botanical families. 
-In the twelve experimental plots of the experiment, all trees above 10 cm DBH were mapped and measured annually since 1984. 
-During inventories, trees were first identified with a vernacular name assigned by the field team, and afterward with a scientific name assigned by a botanist during regular botanical campaigns. 
-In 1984, specific vernacular names were given to 62 commercial or common species whereas other less common species were identified under two identifiers only separating trees and palm trees. 
-The botanical campaigns carried every 5 to 6 years to identify all trees at the species level only started in 2003 and identification practices varied among plots and successive campaigns. 
-This raised methodological issues as vernacular names usually correspond to different botanical species, resulting in significant taxonomic uncertainties that had to be propagated to composition and diversity metrics throught a Bayesian framework. 
-The uncertainty propagation was done by the replenishment of inventories completed at genus level from real incomplete ones on the basis of vernacular/botanical names association. 
-Vernacular names were replaced through multinomial trials $M_v\Big(\big[s_1, s_2, …, s_N\big],\big[\alpha_1, \alpha_2,…, \alpha_3\big]\Big)$  based on the observed association probability $\big[\alpha_1, \alpha_2,…, \alpha_3\big]$ between each vernacular name *v* and the species $\big[s_1, s_2, …, s_N\big]$ recorded in the inventory. 
-To avoid remaining identification caveats and consider complete inventories, the simulated inventories were then reported at genus.
-See appendix 1 and @Aubry-Kientz2013 for the detailed methodology.
-
-The functional diversity metrics used a dataset for 6 functional traits representing leaf economics (leaves thickness, toughness, total chlorophyll content and specific leaf area, the leaf area per unit dry mass), wood economics (wood specific gravity and bark thickness) and life history traits (maximum specific height and seed mass).
-The trait database came from the BRIDGE project [^1] where traits values were assessed from a selection of individuals located in nine permanent plots in French Guiana, including two in Paracou. 
-Missing trait values were filled using multivariate imputation by chained equation (mice) restricted to samples pertaining to the next higher taxonomic level, in order to account for the phylogenetic signal of the functional traits. 
-The dataset comprised 294 botanical species pertaining to 157 botanical genus. 
-Whenever a species inventoried was not in the dataset, it was attributed a set of traits values randomly sampled among species of the same next higher taxonomic level. 
-As seed mass information corresponds to a classification into mass classes, no data filling process was applied so analysis were performed considering the 414 botanical species of the seed mass dataset.
+Six functional traits, representing leaf economics (leaves thickness, toughness, total chlorophyll content and specific leaf area, the leaf area per unit dry mass), wood economics (wood specific gravity and bark thickness) and life history traits (maximum specific height and seed mass), come from the BRIDGE project [^1] where trait values were measured on nine french guianan forest plots, including two in Paracou. Missing trait values (X%) were filled using multivariate imputation by chained equation (mice) restricted to samples pertaining to the next higher taxonomic level, in order to account for the phylogenetic signal of the functional traits (refs MICE). As seed mass information corresponds to a classification into mass classes, no data filling process was applied so analysis were performed only considering the 414 botanical species of the seed mass dataset.
 
 [^1]: http://www.ecofog.gf/Bridge/
 
-Functional trajectories measured with the Rao quadratic entropy were drawn along with the community weighted means (CWM) representing the average trait value in a community weighted by relative abundance of the species carrying each value [@Diaz2007;@Garnier2004]. 
-Species seed mass correspond to 5 classes of increasing mass, the seed mass trajectories were reported by the proportion of each class recorded in the inventories.
-All composition and diversity metrics corresponded to the average obtained after 50 iterations of the taxonomic uncertainty propagation framework and of the filling process of missing trait values. 
+Functional trajectories were estimated with the Rao quadratic entropy using community weighted means (CWM) [@Diaz2007;@Garnier2004]. Seed mass trajectories were reported by the proportion of each class recorded in the inventories.
+All composition and diversity metrics are the average obtained after 50 iterations of uncertainty propagation (taxonomy and trait values). 
 
 
-## Recruitment monitoring
+## Recruitment trajectories
 
-To assess the demographic dynamics along the 30 sampled year we divided the inventoried trees between trees recorded before the logging in 1984 and trees recruited afterward. 
-Two types of recruitment were examined: on the one hand the communities recruited punctually by 3-year intervals after exploitation, hereafter called “punctual recruitment”, on the other hand the communities of all trees recruited since exploitation, hereafter called “accumulated recruits”.
-The taxonomic diversity was assessed through Richness and the Hill number translation of Shannon and Simpson indices [@Hill1973]. 
-To tackle the unequal number of recruited trees among treatments the indices bias corrected estimator were used, following @chao2015estimating;@Marcon2015b.
-These three indices belong to the set of HCDT or generalized entropy, respectively corresponding to the 0, 1 and 2 order of diversity (q), which proved well suited for diversity studies [@Patil1982;@Tothmeresz1995]. 
-This order q grasps the balance between richness and evenness in the community as it determines the emphasis on common species in the diversity metric, with common species weighting more than rare ones when q increases. 
-
-The similarity between the recruited trees and the old growth forest was measured with the turnover metrics detailed in @Podani2013a. 
-The metric used correspond to the relativized abundance replacement, the sum of abundance in one site that is replaced by completely different species, normalized by the maximum abundance shared by the two communities \@ref(eq:formNest).
-
-\begin{equation}
-T_{ab}=\frac{\sum_{i=1}^{n}|x_i^a - x_i^b| - \bigg| \sum_{i=1}^{n}{x_i^a} - \sum_{i=1}^{n}{x_i^b} \bigg|}{\sum_{i=1}^{n}\max{\left( x_i^a;x_i^b \right)}}
-(\#eq:formNest)
-\end{equation}
-
-To determine whether tree recruitment ensued from a random process the observed diversity trajectories were compared to those generated by 50 repetitions of stochastic null models.
-The null model for taxonomic diversity randomly shuffled individuals among plots while preserving species abundance and plots’ tree density. 
-
+We split the forest community in 'survivors, i.e. trees that survived the disturbance,  and post-disturbance recruited trees. Two recruitment metrics were examined: on the one hand the "punctual recruitment" by 3-year intervals after disturbance, on the other hand all recruited trees since disturbance, hereafter “accumulated recruits”. The taxonomic diversity was assessed through bias corrected Richness and the Hill number translation of Shannon and Simpson indices [@Hill1973;@chao2015estimating;@Marcon2015b]. These three indices belong to the set of HCDT or generalized entropy, respectively corresponding to the 0, 1 and 2 order of diversity (q), which grasps the balance between richness and evenness in the community with common species weighting more than rare ones when q increases. The similarity between the recruited trees and the pre-disturbance forest was measured with the turnover metrics detailed in @Podani2013a. To determine whether recruitment trajectories ensued from a pure random process the observed diversity trajectories were compared to those generated by 50 repetitions of a null model that shuffled individuals among plots while preserving species abundance and plots’ tree density. 
 
 # Results
 
