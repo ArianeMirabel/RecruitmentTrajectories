@@ -54,8 +54,6 @@ PlotCWM<-function(TrajTraits){
   }
 }
 legendCWM<-function(){
-  mtext("Hmax\n",at=0.64,line=-14.5,outer=TRUE,cex=0.9)
-  mtext("m",at=0.56,line=-14.5,outer=TRUE,cex=0.9)
   mtext("Leaf thickness\n",at=0.13,line=-1,outer=TRUE,cex=0.9)
   mtext(expression(paste(mu, "m",sep = "")),at=0.08,line=-1.4,outer=TRUE,cex=0.9)
   mtext("Leaf cholophyll content\n",at=0.4,line=-1,outer=TRUE,cex=0.9)
@@ -64,11 +62,14 @@ legendCWM<-function(){
   mtext("N",at=0.56,line=-1.4,outer=TRUE,cex=0.9)
   mtext("SLA\n",at=0.88,line=-1,outer=TRUE,cex=0.9)
   mtext(expression(paste(mm^2,".",mg^-1,sep = "")),at=0.84,line=-1.4,outer=TRUE,cex=0.9)
+  
   mtext("WD\n",at=0.13,line=-14.5,outer=TRUE,cex=0.9)
   mtext(expression(paste("g.",cm^-3,sep = "")),at=0.08,line=-14.5,outer=TRUE,cex=0.9)
   mtext("Bark thickness\n",at=0.4,line=-14.5,outer=TRUE,cex=0.9)
   mtext("mm",at=0.32,line=-14.5,outer=TRUE,cex=0.9)
- }
+  mtext("Hmax\n",at=0.64,line=-14.5,outer=TRUE,cex=0.9)
+  mtext("m",at=0.56,line=-14.5,outer=TRUE,cex=0.9)
+}
 
 FDiversity<-function(FdivDB){
   plot(colnames(FdivDB[[1]]),FdivDB[[1]][1,],type="n",xaxt="n",xlab="",
