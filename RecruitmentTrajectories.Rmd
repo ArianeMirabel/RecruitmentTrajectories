@@ -122,45 +122,30 @@ We split the forest community in 'survivors, i.e. trees that survived the distur
 
 ## Recruitment Diversity
 
-### Punctual and accumulated recruits’ diversity 
+### Taxonomic diversity
 
-The diversity of trees recruited in T1, T2 and T3 disturbed plots followed an asymptotique trajectory, first displaying higher richness and lower evenness than those observed in control plots and then lower richness and lower evenness.
+Punctual recruits'diversity followed a consistent trajectory among disturbance treatments with first higher richness and lower evenness than in control plots and then lower richness and lower evenness. Accumulated recruits'diversity trajectories are always lower than trajectories from control plots, except for richness in the most disturbed plots T3.
 
-> The OLS analysis proved a significant time-dependence of the punctual recruitment diversity for the three diversity order, Richness, Shannon and Simpson and a significant effect of the logging treatment (P<0.01 in any case).
-> It besides proved a significant time-dependence of the accumulated recruitment diversity for the three order and a significant effect of the logging.
-
-
-```{r Fig1, out.width = '80%', fig.asp = 1.2/2, echo=FALSE,fig.cap="Trajectories for the 30 sampled years of Richness, Shannon and Simpson diversity for 2-years laps punctual recruitment (upper graphics) and the divergence of observed trajectories to the null model (lower graphics). Lines colors correspond to the perturbation regime: green for control, blue for T1, orange for T2 and red for T3 disturbance treatments. Lines correspond to the median observed after 50 iteration of the the taxonomic uncertainty propagation for observed values and 50 run of the null model run, both trajectories are given along with the 95\\% confidence interval (grey envelope).", fig.env="figure*"}
+```{r Fig1, out.width = '80%', fig.asp = 1.2/2, echo=FALSE,fig.cap="Trajectories of Richness, Shannon and Simpson diversity for 3-years laps punctual (upper panels) and accumulated (lower panels) recruitment. Lines colors refer to the perturbation regime: green for control, blue for T1, orange for T2 and red for T3 disturbance treatments. Plain lines correspond to the median observed after uncertainty propagation and are given along with the 95\\% confidence interval (grey envelope).", fig.env="figure*"}
 load("DB/RecruitmentPunctual");load("DB/RecruitmentPunctual_Nullmodel_Diff")
 
 TrajectoryDiffNull(RecDB=RecPun,RecDB_Diff=RecPun_DiffNull)
 
 ```
 
-```{r Fig2, out.width = '80%', fig.asp = 1.2/2, echo=FALSE,fig.cap="Trajectories for the 30 sampled years of Richness, Shannon and Simpson diversity of communities recruited since disturbance (upper graphics) and the divergence of observed trajectories to the null model (lower graphics). Lines colors correspond to the perturbation regime: green for control, blue for T1, orange for T2 and red for T3 disturbance treatments. Lines correspond to the median observed after 50 iteration of the the taxonomic uncertainty propagation for observed values and 50 run of the null model run, both trajectories are given along with the 95\\% confidence interval (grey envelope).", fig.env="figure*"}
+```{r Fig2, out.width = '80%', fig.asp = 1.2/2, echo=FALSE,fig.cap="Trajectories of Richness, Shannon and Simpson diversity for 3-years laps punctual (upper panels) and accumulated (lower panels) recruitment. Lines colors refer to the perturbation regime: green for control, blue for T1, orange for T2 and red for T3 disturbance treatments. Plain lines correspond to the median observed after uncertainty propagation and are given along with the 95\\% confidence interval (grey envelope).", fig.env="figure*"}
 load("DB/RecruitmentAccum");load("DB/RecruitmentAccum_Nullmodel_Diff")
 
 TrajectoryDiffNull(RecDB=RecAccum,RecDB_Diff=RecAccum_DiffNull)
 
 ```
 
-### Comparison to null model
+Punctual and accumulated recruitment diversity of orders 0, 1 and 2 were then compared to a null recruitment model with random sampling. In control plots, punctual recruitment values were constantly equivalent or higher than with the null model (Figure \@ref(fig:Fig2)). In disturbed plots, punctual recruitment richness (order 0) remained equivalent to that of the null model but evenness (order 2) was first equivalent and, after 10 years, became and remained lower than that of the null model. Similar trajectories were observed for accumulated recruitments (Figure \@ref(fig:Fig3)). 
 
-Punctual and accumulated recruitment diversity of orders 0, 1 and 2 were compared to a null recruitment model corresponding to the random sampling of recruited trees holding constant the number of trees recruited.
-For control plots the richness and evenness of observed punctual recruitment were constantly equivalent or higher than obtained with the null model (Figure \@ref(fig:Fig2)).
-For the disturbed plots the richness of observed punctual recruitment remained equivalent to that of the null model but the evenness that was first equivalent or higher became and remained lower than that of the null model from 10 years after disturbance whenever the disturbance intensity.
-
-In the same way as for punctual recruitment the richness and evenness of accumulated recruits in control plots was equivalent or higher than observed for the null model for all the post logging survey. 
-On disturbed plots the richness of accumulated recruits followed that of the null model whereas the evenness, initially higher,  became lower than that of the null model after some time (Figure \@ref(fig:Fig3)). 
+-> Accumulated rajectories plots should go in SUPP MAT
 
 
-### Recruitment functional diversity
-
-The dataset available encompassed 88% of all species recorded in the recruitment inventories.
-Because the species for which trait values were unavailable were not evenly distributed among plots and along time so we decided to discard them from the inventories to preserve homogeneous data filling.
-
-Punctual and accumulated recruitment diversity of order 0, 1 and 2 were compared to a null recruitment model corresponding to the random shuffle of complete set of traits value among species (Figure \@ref(fig:Fig4)).
-
+### Functional diversity
 
 ```{r Fig4, echo=FALSE,fig.cap="Functional diversity of punctual recruited trees from the considered functional traits. Values reported correspond to the plot-level median and the 95\\% confidence interval obtained after 50 repetition of the taxonomic uncertainty propagation and the functional database gap-filling processes. Lines colors correspond to the logging treatment initially applied (green for control, blue for T1,orange for T2 and red for T3)."}
 load("DB/RecruitmentPunctual_Functional")
@@ -168,12 +153,8 @@ load("DB/RecruitmentPunctual_Functional")
 TrajectoryRec_fun(RecDB_fun=RecPun_Fun,RecDB_fun_Diff=RecPun_Fun_DiffNull)
 ```
 
-Recruits functional diversity displayed a unimodal response to disturbance with a maximum positively correlated to disturbance intensity but with a time at maximum that was unrelated to the disturbance treatment.
-
-### Recruitment traits weighted means
-
-The trajectories of recruited trees functional and life traits weighted means showed the dominance after disturbance of species displaying large exchange surface area and light tissues (high SLA, low leaf toughness and low wood specific gravity) (Figure \@ref(fig:Fig5)).
-all traits trajectories dosplayed asymptotic CWM trajectories, except the SLA that displayed a unimodal trajectory with a maximum positively correlated to disturbance intensity and a time a maximum around ten years after disturbance equivalent for all treatments. 
+Recruits functional diversity displayed a unimodal response to disturbance with a maximum value positively linked to disturbance intensity (R= xx) but with a time at maximum that was inversely related to the disturbance treatment (R= xx). Trajectories of recruited trees in the functional spaces showed the dominance after disturbance of species displaying large exchange surface area and light tissues (high SLA, low leaf toughness and low wood specific gravity) (Figure \@ref(fig:Fig5)).
+All traits trajectories displayed univariate CWM trajectories, except SLA and leaf thickness that displayed a unimodal trajectory. 
 
 ```{r Fig5, out.width = '80%', fig.asp = 1.2/2, echo=FALSE,fig.cap="Community weighted means (CWM) of the four disturbance treatment for the four leaf traits, the two stem traits  and the specific Hmax. Values reported correspond to the plot-level median obtained after 50 repetition of the taxonomic uncertainty propagation and the functional database gap-filling processes. Lines colors correspond to the disturbance intensity (green for control, blue for T1,orange for T2 and red for T3).", fig.env="figure*"}
 load("DB/Recruits_CWM")
@@ -188,12 +169,11 @@ mtext("Years since disturbance",side=1,at=0.6,cex=0.8,line=-0.2,outer=TRUE)
 
 ## Recruitment Turnover
 
-The abundance turnover of recruited trees compared to the initial stand inventoried before exploitation remained even for the 30 sampled years in the control plots (Figure \@ref(fig:Fig6)). 
-For the disturbed plot the abundance turnover displayed a unimodal response to disturbance, with maximum reached around 10 years after disturbance that was positively correlated to the disturbance intensity. 
-The turnover has returned close to zero for all plots 30 years after disturbance.
+In control plots, species turnover remained highly stable for the 30 sampled years (Figure \@ref(fig:Fig6)). 
+In disturbed plots, turnover displayed a unimodal response to disturbance, with maximum reached around 15 years and with a value positively correlated to the disturbance intensity (R= xx). The turnover trajectory returned close to zero for all plots 30 years after disturbance.
 
 
-```{r Fig6, out.width = '50%',echo=FALSE,fig.cap="Trajectories over the 30 sampled years of the abundance-based turnover between recruited trees and intial stands before disturbance. 50 repetitions of the taxonomic propagation process returned the distribution of trunover values, grey envelopes correspond to the 0.025 and 0.975 percentiles and lines to the median in green for control, blue for T1,orange for T2 and red for T3)."}
+```{r Fig6, out.width = '50%',echo=FALSE,fig.cap="Trajectories over the 30 sampled years of the abundance-based turnover between recruited trees and intial communities before disturbance. Grey envelopes correspond to the 0.025 and 0.975 percentiles of the uncertainty propagation procedue and lines to the median in green for control, blue for T1,orange for T2 and red for T3)."}
 load("DB/Turnover_toInit")
 
 turnover(Turn)
