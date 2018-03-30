@@ -37,10 +37,10 @@ lang: english
 keywordlabel: Mots-clés # Keywords
 corrauthorlabel: Contact # Corresponding author
 output:
+  bookdown::gitbook: default
   bookdown::pdf_book:
     base_format: EcoFoG::article
     keep_tex: TRUE
-  bookdown::gitbook: default
   bookdown::word_document2: default
 ---
 
@@ -65,14 +65,26 @@ source("Scripts/DrawingTools.R")
 # Introduction
 
 Determining the response of tropical forests to disturbance is a key to predict their fate in a global change context.
-A vast literature has successfully modeled the response of tropical forest dynamics, carbon stocks and fluxes to anthropogenic and natural disturbances [@Gourlet-Fleury2000;@Putz2012;@Martin2015;@Piponiot2016]. However, regarding diversity, similar attempts have been hindered by both the huge biological diversity and the scarcity of long-term monitoring. Although the community composition response to disturbance was identified for common species assemblages, this approach is usually confined to few commercial and valuable species [@Sebbenn2008;@Rozendaal2010;@Vinson2015]. Given the complexity of adressing simultaneously the response of dozens of species, community-scale approaches have been developped [@deAvila2016].
+A vast literature has successfully modeled the response of tropical forest dynamics, carbon stocks and fluxes to anthropogenic and natural disturbances [@Gourlet-Fleury2000;@Putz2012;@Martin2015;@Piponiot2016]. 
+However, regarding diversity, similar attempts have been hindered by both the huge biological diversity and the scarcity of long-term monitoring. 
+Although the community composition response to disturbance was identified for common species assemblages, this approach is usually confined to few commercial and valuable species [@Sebbenn2008;@Rozendaal2010;@Vinson2015]. 
+Given the complexity of adressing simultaneously the response of dozens of species, community-scale approaches have been developped [@deAvila2016].
 
 The post-disturbance community dynamic is largely determined by the recruitment process, i.e. from seed production, dispersion and germination to seedlings' and saplings' growth until a threshold, usually 10cm DBH in tropical forest plots.
-Major ecological processes, such as environmental filtering or limiting similarity, occur before formal recruitment and determine the taxonomic composition of trees eventually integrating the forest community [@Ackerly2003]. The recruitment process is inherently linked to the disturbance regime that locally changes ecosystem's biotic and abiotic conditions and creates opportunities for pioneer species to strive in the long term rather than undergoing the competitive exclusion for resources in mature patches [@Denslow1980]. This relies on the Intermediate Disturbance Hypothesis (IDH) that explains the maintenance of tropical forests biodiversity by the patchy variability of environmental conditions in space and time [@Guitet2018]. This disturbance-induced environmental variability, when not too intense, is assumed to enlarge the ecological range of species present in the community [@Molino2001;@Bongers2009] and shapes its taxonomic diversity, vegetative structure, physiology as well as carbon, nutrients, and water cycles [@Anderson-Teixeira2013]. Empirical tests of the IDH in tropical rainforests, though, proved hard to succeed and yielded controversial results [@Hubbell1999;@Molino2001;@Sheil2003].
+Major ecological processes, such as environmental filtering or limiting similarity, occur before formal recruitment and determine the taxonomic composition of trees eventually integrating the forest community [@Ackerly2003]. 
+The recruitment process is inherently linked to the disturbance regime that locally changes ecosystem's biotic and abiotic conditions and creates opportunities for pioneer species to strive in the long term rather than undergoing the competitive exclusion for resources in mature patches [@Denslow1980]. 
+This relies on the Intermediate Disturbance Hypothesis (IDH) that explains the maintenance of tropical forests biodiversity by the patchy variability of environmental conditions in space and time [@Guitet2018]. 
+This disturbance-induced environmental variability, when not too intense, is assumed to enlarge the ecological range of species present in the community [@Molino2001;@Bongers2009] and shapes its taxonomic diversity, vegetative structure, physiology as well as carbon, nutrients, and water cycles [@Anderson-Teixeira2013]. 
+Empirical tests of the IDH in tropical rainforests, though, proved hard to succeed and yielded controversial results [@Hubbell1999;@Molino2001;@Sheil2003].
 
-During post-disturbance times, the shift from resource-acquisitive to resource-conservative ecological strategies may be detected in leaves (leaf thickness, toughness, chlorophyll content and specific area) and stem (wood specific gravity and bark thickness) and life-history traits (maximum height at adult stage and class of seed mass) [@Wright2004;@Chave2009b;@Herault2011]. The relative importance of recruitment of new individuals and of mortality of distrubance survivors will shape the new forest and its functioning. Given that disturbance survivors largely mirror the pre-disturbance forest composition [@Piponiot2018], predicting the recruitment comosition and diversity trajectory would be a major step towards the prediction of the future of tropical forest in a changing global environment where dusturbance are expected to become more and more frequent. This would give insights into the resilience of this hyperdiverse ecosystems, elucidate the determinism, or not, of tropical forests trajectories, test the convergence after disturbance of taxonomic and functional communities towards initial state and also help future adaptative conservation strategies [@Diaz2005;@Gardner2007;@Schwartz2017].
+During post-disturbance times, the shift from resource-acquisitive to resource-conservative ecological strategies may be detected in leaves (leaf thickness, toughness, chlorophyll content and specific area) and stem (wood specific gravity and bark thickness) and life-history traits (maximum height at adult stage and class of seed mass) [@Wright2004;@Chave2009b;@Herault2011]. 
+The relative importance of recruitment of new individuals and of mortality of distrubance survivors will shape the new forest and its functioning. 
+Given that disturbance survivors largely mirror the pre-disturbance forest composition [@Piponiot2018], predicting the recruitment composition and diversity trajectories would be a major step towards the prediction of the future of tropical forest in a changing global environment where disturbance are expected to become more and more frequent. 
+This would give insights into the resilience of this hyperdiverse ecosystems, elucidate the determinism, or not, of tropical forests trajectories, test the convergence after disturbance of taxonomic and functional communities towards initial state and also help future adaptative conservation strategies [@Diaz2005;@Gardner2007;@Schwartz2017].
 
-In this paper we follow the fate of a recruited tree communities (XX individuals) over 30 years on a disturbance gradient, with 10 to 60% of forest biomass removed. We assessed the taxonomic as well as functional diversity of recruited trees, using a large functional trait database covering, the leaf, wood and life-history spectra. We aimed to (i) assess the role of environmental filtering selecting the recruited trees according to their competitivity for resource acquisition, (ii) resolve the convergence of communities and the maintenance of taxonomic composition in the long term, and (iii) determine the global resilience of the ecosystem.
+In this paper we follow the fate of a recruited tree communities (60121 individuals) over 30 years on a disturbance gradient, with 10 to 60% of forest biomass removed. 
+We assessed the taxonomic as well as functional diversity of recruited trees, using a large functional trait database covering, the leaf, wood and life-history spectra. 
+We aimed to (i) assess the role of environmental filtering selecting the recruited trees according to their competitivity for resource acquisition, (ii) resolve the convergence of communities and the maintenance of taxonomic composition in the long term, and (iii) determine the global resilience of the ecosystem.
 
 # Material and Methods
 

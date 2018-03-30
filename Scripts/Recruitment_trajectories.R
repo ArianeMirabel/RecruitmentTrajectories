@@ -78,8 +78,8 @@ RecAccum<-lapply(0:2,function(id){
 })
 names(RecAccum)<-c("Richness","Shannon","Simpson") 
 
-save(RecAccum,file="RecruitmentAccum")
-save(RecPun,file="RecruitmentPunctual")
+save(RecAccum,file="DB/RecruitmentAccum")
+save(RecPun,file="DB/RecruitmentPunctual")
 
 ########################################"
 ##### Null model
@@ -97,7 +97,7 @@ RecPun_DiffNull<-lapply(0:2,function(id){
         retN<-Replacement(retN,Alpha=alphas_plot[[which(names(alphas_plot)==plot)]])
         retN<-expq(bcTsallis(as.AbdVector(tapply(retN,retN,length)),q=id,Correction="None"),q=id)
         ret<-expq(bcTsallis(as.AbdVector(tapply(ret,ret,length)),q=id,Correction="None"),q=id)
-        return(retN-ret)
+        return(ret-retN)
       }))
       ret<-as.data.frame(ret,row.names=as.character(sort(unique(yr[,"n_parcelle"]))))
       ret<-merge(ret,as.data.frame(1:12,row.names=as.character(1:12)),by="row.names",all.y=TRUE)[,1:2]
@@ -132,7 +132,7 @@ RecAccum_DiffNull<-lapply(0:2,function(id){
         retN<-Replacement(retN,Alpha=alphas_plot[[which(names(alphas_plot)==plot)]])
         retN<-expq(bcTsallis(as.AbdVector(tapply(retN,retN,length)),q=id,Correction="None"),q=id)
         ret<-expq(bcTsallis(as.AbdVector(tapply(ret,ret,length)),q=id,Correction="None"),q=id)
-        return(retN-ret)
+        return(ret-retN)
       }))
       ret<-as.data.frame(ret,row.names=as.character(sort(unique(yr[,"n_parcelle"]))))
       ret<-merge(ret,as.data.frame(1:12,row.names=as.character(1:12)),by="row.names",all.y=TRUE)[,1:2]
@@ -154,7 +154,6 @@ names(RecAccum_DiffNull)<-c("Richness","Shannon","Simpson")
 
 save(RecPun_DiffNull,file="DB/RecruitmentPunctual_Nullmodel_Diff")
 save(RecAccum_DiffNull,file="DB/RecruitmentAccum_Nullmodel_Diff")
-
 
 RecPun_Null<-lapply(0:2,function(id){
   recind<-lapply(1:Nrep,function(rep){

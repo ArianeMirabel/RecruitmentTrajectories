@@ -96,7 +96,7 @@ RecPun_Fun_DiffNull<-lapply(1:Nrep,function(rep){
       
       retN<-expq(Hqz(as.AbdVector(tapply(ret,ret,length)), q=2, dissimN,Correction="None"),q=2)
       ret<-expq(Hqz(as.AbdVector(tapply(ret,ret,length)), q=2, dissim,Correction="None"),q=2)
-      return(retN-ret)
+      return(ret-retN)
     }))
     ret<-as.data.frame(ret,row.names=as.character(sort(unique(yr[,"n_parcelle"]))))
     ret<-merge(ret,as.data.frame(1:12,row.names=as.character(1:12)),by="row.names",all.y=TRUE)[,1:2]
