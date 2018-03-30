@@ -14,22 +14,19 @@ if (length(htmlFiles) > 0)
 # Figures
 html_filesDir <- list.files(pattern="*_files")
 if (length(html_filesDir) > 0) {
-  sapply(paste("docs/", html_filesDir, sep=""), dir.create)
-  sapply(paste("docs/", html_filesDir, "/figure-html", sep=""), dir.create)
-  html_files <- list.files(pattern=paste(html_filesDir, "/figure-html", sep=""), full.names = TRUE, recursive=TRUE)
+  sapply(paste("docs/", html_filesDir, sep=""), function(dir){if(!dir.exists(dir)){dir.create(dir)}})
+  sapply(paste("docs/", html_filesDir, "/figure-html", sep=""), function(dir){if(!dir.exists(dir)){dir.create(dir)}})
+  html_files <- list.files(path=paste(html_filesDir, "/figure-html", sep=""), full.names = T, recursive=TRUE)
   if (length(html_files) > 0)
     file.copy(from=html_files, to=paste("docs/", html_files, sep = ""), overwrite=TRUE)
 }
 #libs
 libsDirs <- list.dirs(path="libs", full.names=TRUE, recursive=TRUE)
 if (length(libsDirs) > 0) {
-  sapply(paste("docs/", libsDirs, sep = ""), dir.create)
+  sapply(paste("docs/", libsDirs, sep = ""), function(dir){if(!dir.exists(dir)){dir.create(dir)}})
   libsFiles <- list.files("libs", full.names = TRUE, recursive=TRUE)
   file.copy(from=libsFiles, to=paste("docs/", libsFiles, sep = ""), overwrite=TRUE)
 }
-
-list.dirs(html_filesDir)
-paste("P:/Private/Taff/These/Redaction/3_RecruitmentTrajectories/",html_filesDir,"/figure-html",sep="")
 
 # Copy knitted pdf files
 RmdFiles <- list.files(pattern="*.Rmd")
