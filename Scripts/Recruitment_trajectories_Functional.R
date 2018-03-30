@@ -10,7 +10,7 @@ smooth<-function(mat,larg){return(do.call(cbind,lapply(1:ncol(mat),function(step
 
 Traits1<-read.csv("DB/BridgeOK.csv",sep=";",na.strings="")
 Traits2<-read.csv("DB/DataLifeTraits.csv",sep=";",na.strings="")
-TraitsName<-c("SLA","WD","Hmax","Bark_thick","L_chloro","L_thickness")#,"L_DryMass","L_toughness"
+TraitsName<-c("SLA","WD","Hmax","Bark_thick","L_toughness","L_chloro","L_thickness")#,"L_DryMass"
 
 #InventorySp<-do.call(rbind,lapply(LivingStand_all,function(yr){ret<-do.call(rbind,yr)[,c("Famille","Genre","name")]
 #  ret<-ret[which(!grepl("Indet.",ret[,"name"])),];return(ret[which(!duplicated(ret)),])}))

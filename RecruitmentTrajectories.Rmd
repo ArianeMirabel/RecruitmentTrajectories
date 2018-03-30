@@ -68,7 +68,7 @@ Determining the response of tropical forests to disturbance is a key to predict 
 A vast literature has successfully modeled the response of tropical forest dynamics, carbon stocks and fluxes to anthropogenic and natural disturbances [@Gourlet-Fleury2000;@Putz2012;@Martin2015;@Piponiot2016]. 
 However, regarding diversity, similar attempts have been hindered by both the huge biological diversity and the scarcity of long-term monitoring. 
 Although the community composition response to disturbance was identified for common species assemblages, this approach is usually confined to few commercial and valuable species [@Sebbenn2008;@Rozendaal2010;@Vinson2015]. 
-Given the complexity of adressing simultaneously the response of dozens of species, community-scale approaches have been developped [@deAvila2016].
+Given the complexity of adressing simultaneously the response of dozens of species, community-scale approaches have been developped [@DeAvila2016].
 
 The post-disturbance community dynamic is largely determined by the recruitment process, i.e. from seed production, dispersion and germination to seedlings' and saplings' growth until a threshold, usually 10cm DBH in tropical forest plots.
 Major ecological processes, such as environmental filtering or limiting similarity, occur before formal recruitment and determine the taxonomic composition of trees eventually integrating the forest community [@Ackerly2003]. 
@@ -91,7 +91,7 @@ We aimed to (i) assess the role of environmental filtering selecting the recruit
 
 ## Study Site
 
-The Paracou station is located in a lowland tropical rain forest in French Guiana (5°18'N and 52°53'W). Climate is tropical wet with mean annual precipitation averaging 2980 mm.y^-1^ (30-y period) and a 3-months dry season (< 100 mm.months^-1^) from mid-August to mid-November, and a one-month dry season in March [@Wagner2011]. Elevation ranges from 5 to 50 m and mean annual temperature is 26°C. Soils are thin acrisols over a layer of transformed saprolite with low permeability generating lateral drainage during heavy rains. The disturbance experiment spraid over a network of twelve 6.25ha plots (Table \@ref(tab:Tab1)) that underwent three disturbance treatments in 1986-1987 [@Herault2018]. Dominant families are Fabaceae, Chrysobalanaceae, Lecythidaceae and Sapotaceae. 
+The Paracou station is located in a lowland tropical rain forest in French Guiana (5°18'N and 52°53'W). Climate is tropical wet with mean annual precipitation averaging 2980 mm.y^-1^ (30-y period) and a 3-months dry season (< 100 mm.months^-1^) from mid-August to mid-November, and a one-month dry season in March [@Wagner2011]. Elevation ranges from 5 to 50 m and mean annual temperature is 26°C. Soils are thin acrisols over a layer of transformed saprolite with low permeability generating lateral drainage during heavy rains. The disturbance experiment spread over a network of twelve 6.25ha plots (Table \@ref(tab:Tab1)) that underwent three disturbance treatments in 1986-1987 [@Herault2018]. Dominant families are Fabaceae, Chrysobalanaceae, Lecythidaceae and Sapotaceae. 
 
 ```{r Tab1, echo=FALSE}
 Intervention <- data.frame(
@@ -152,23 +152,23 @@ TrajectoryDiffNull(RecDB=RecAccum,RecDB_Diff=RecAccum_DiffNull)
 
 ```
 
-Punctual and accumulated recruitment diversity of orders 0, 1 and 2 were then compared to a null recruitment model with random sampling. In control plots, punctual recruitment values were constantly equivalent or higher than with the null model (Figure \@ref(fig:Fig2)). In disturbed plots, punctual recruitment richness (order 0) remained equivalent to that of the null model but evenness (order 2) was first equivalent and, after 10 years, became and remained lower than that of the null model. Similar trajectories were observed for accumulated recruitments (Figure \@ref(fig:Fig3)). 
+Punctual and accumulated recruitment diversity of orders 0, 1 and 2 were then compared to a null recruitment model with random sampling. In control plots, punctual recruitment values were constantly equivalent or higher than with the null model (Figure \@ref(fig:Fig1)). In disturbed plots, punctual recruitment richness (order 0) remained equivalent to that of the null model but evenness (order 2) was first equivalent and, after 10 years, became and remained lower than that of the null model. Similar trajectories were observed for accumulated recruitments (Figure \@ref(fig:Fig2)). 
 
 -> Accumulated rajectories plots should go in SUPP MAT
 
 
 ### Functional diversity
 
-```{r Fig4, echo=FALSE,fig.cap="Functional diversity of punctual recruited trees from the considered functional traits. Values reported correspond to the plot-level median and the 95\\% confidence interval obtained after 50 repetition of the taxonomic uncertainty propagation and the functional database gap-filling processes. Lines colors correspond to the logging treatment initially applied (green for control, blue for T1,orange for T2 and red for T3)."}
-load("DB/RecruitmentPunctual_Functional")
+```{r Fig3,out.width = '80%',fig.asp=1.1/1, echo=FALSE,fig.cap="Functional diversity of punctual recruited trees from the considered functional traits. Values reported correspond to the plot-level median and the 95\\% confidence interval obtained after 50 repetition of the taxonomic uncertainty propagation and the functional database gap-filling processes. Lines colors correspond to the logging treatment initially applied (green for control, blue for T1,orange for T2 and red for T3)."}
+load("DB/RecruitmentPunctual_Functional");load("DB/RecruitmentPunctual_Functional_Nullmodel_Diff")
 
 TrajectoryRec_fun(RecDB_fun=RecPun_Fun,RecDB_fun_Diff=RecPun_Fun_DiffNull)
 ```
 
-Recruits functional diversity displayed a unimodal response to disturbance with a maximum value positively linked to disturbance intensity (R= xx) but with a time at maximum that was inversely related to the disturbance treatment (R= xx). Trajectories of recruited trees in the functional spaces showed the dominance after disturbance of species displaying large exchange surface area and light tissues (high SLA, low leaf toughness and low wood specific gravity) (Figure \@ref(fig:Fig5)).
+Recruits functional diversity displayed a unimodal response to disturbance with a maximum value positively linked to disturbance intensity (R= xx) but with a time at maximum that was inversely related to the disturbance treatment (R= xx) (Figure \@ref(fig:Fig3)). Trajectories of recruited trees in the functional spaces showed the dominance after disturbance of species displaying large exchange surface area and light tissues (high SLA, low leaf toughness and low wood specific gravity) (Figure \@ref(fig:Fig4)).
 All traits trajectories displayed univariate CWM trajectories, except SLA and leaf thickness that displayed a unimodal trajectory. 
 
-```{r Fig5, out.width = '80%', fig.asp = 1.2/2, echo=FALSE,fig.cap="Community weighted means (CWM) of the four disturbance treatment for the four leaf traits, the two stem traits  and the specific Hmax. Values reported correspond to the plot-level median obtained after 50 repetition of the taxonomic uncertainty propagation and the functional database gap-filling processes. Lines colors correspond to the disturbance intensity (green for control, blue for T1,orange for T2 and red for T3).", fig.env="figure*"}
+```{r Fig4, out.width = '80%', fig.asp = 1.2/2, echo=FALSE,fig.cap="Community weighted means (CWM) of the four disturbance treatment for the four leaf traits, the two stem traits  and the specific Hmax. Values reported correspond to the plot-level median obtained after 50 repetition of the taxonomic uncertainty propagation and the functional database gap-filling processes. Lines colors correspond to the disturbance intensity (green for control, blue for T1,orange for T2 and red for T3).", fig.env="figure*"}
 load("DB/Recruits_CWM")
 
 par(mfrow=c(2,4),mar=c(3,3,2,1),oma=c(2,1,4,1),no.readonly=TRUE)
@@ -181,11 +181,11 @@ mtext("Years since disturbance",side=1,at=0.6,cex=0.8,line=-0.2,outer=TRUE)
 
 ## Recruitment Turnover
 
-In control plots, species turnover remained highly stable for the 30 sampled years (Figure \@ref(fig:Fig6)). 
+In control plots, species turnover remained highly stable for the 30 sampled years (Figure \@ref(fig:Fig5)). 
 In disturbed plots, turnover displayed a unimodal response to disturbance, with maximum reached around 15 years and with a value positively correlated to the disturbance intensity (R= xx). The turnover trajectory returned close to zero for all plots 30 years after disturbance.
 
 
-```{r Fig6, out.width = '50%',echo=FALSE,fig.cap="Trajectories over the 30 sampled years of the abundance-based turnover between recruited trees and intial communities before disturbance. Grey envelopes correspond to the 0.025 and 0.975 percentiles of the uncertainty propagation procedue and lines to the median in green for control, blue for T1,orange for T2 and red for T3)."}
+```{r Fig5, out.width = '50%',echo=FALSE,fig.cap="Trajectories over the 30 sampled years of the abundance-based turnover between recruited trees and intial communities before disturbance. Grey envelopes correspond to the 0.025 and 0.975 percentiles of the uncertainty propagation procedue and lines to the median in green for control, blue for T1,orange for T2 and red for T3)."}
 load("DB/Turnover_toInit")
 
 turnover(Turn)
@@ -201,7 +201,7 @@ mtext("Equivalent diversity",side=2,line=1)
 From the 30 years of forest dynamics survey in the Paracou station, we highlighted contrasting recruitment patterns depending on disturbance intensity. Disturbance increased the recruitment rate which subsequently increased the richness of recruitment but impaired its evenness, all the more so that disturbance intensity was high. After disturbance the recruitment was dominated by a restricted pool of species and Shannon and Simpson diversities decreased down to lower values than those of control plots.
 
 ## On the underlyings of the hump-shaped trajectories
-Punctual recruitment, some key functional traits (SLA, leaf thickness) and turn-over trajectories exhibited hump-shaped curves so that, for the 10-15 first years following disturbance, recruitment processes seemed first driven by the growth of pre-disturbance saplings that benefitted from the environmental changes [@Herault2010JAE] and progressively incorporated true recruits, i.e. individual trees that had germinated after the disturbance. This translated by a regular increase in functional diversity of recruits in the early times. According to the SLA trajectory (Figure \@ref(fig:Fig5)), these true recruits are mainly pionneer species that dominate the recruited community 12 years after disturbance.
+Punctual recruitment, some key functional traits (SLA, leaf thickness) and turn-over trajectories exhibited hump-shaped curves so that, for the 10-15 first years following disturbance, recruitment processes seemed first driven by the growth of pre-disturbance saplings that benefitted from the environmental changes [@Herault2010] and progressively incorporated true recruits, i.e. individual trees that had germinated after the disturbance. This translated by a regular increase in functional diversity of recruits in the early times. According to the SLA trajectory (Figure \@ref(fig:Fig4)), these true recruits are mainly pionneer species that dominate the recruited community 12 years after disturbance.
 
 After this first recruitment phase, in the case of low disturbance intensity (T1 plots) the recruitment was higly similar to the pre-disturbance community as revealed by the random sampling. This argues for the existence of recruitment limitation in the medium-term *????meaning the strive of a variety of species, even when not the most fitted for the environmental context, because the best competitors couldn't set in disturbed area???? to be rewritten*. The key role of recruitment limitation in recovery dynamic was already highlighted for low disturbance intensity in tropical wet forests [@Hubbell1999;@Sheil2003;@Bongers2009] and supported the IDH as it mitigates competitive exclusion and maintains some inferior competitiors in the community. Recruitment and dispersal limitation are consistent with the short dispersal distance observed for tropical trees, and it was already highlighted in Paracou through the genetic clumping observed for some pioneers [@Leclerc2015;@Scotti2015a].
 
