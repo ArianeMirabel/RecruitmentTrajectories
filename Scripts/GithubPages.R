@@ -28,6 +28,9 @@ if (length(libsDirs) > 0) {
   file.copy(from=libsFiles, to=paste("docs/", libsFiles, sep = ""), overwrite=TRUE)
 }
 
+list.dirs(html_filesDir)
+paste("P:/Private/Taff/These/Redaction/3_RecruitmentTrajectories/",html_filesDir,"/figure-html",sep="")
+
 # Copy knitted pdf files
 RmdFiles <- list.files(pattern="*.Rmd")
 # Change .Rmd files extension

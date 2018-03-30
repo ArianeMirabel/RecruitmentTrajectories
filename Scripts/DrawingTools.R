@@ -109,7 +109,7 @@ TrajectoryRec_fun<-function(RecDB_fun,RecDB_fun_Diff){
   mtext("Equivalent\ndiversity",side=3,adj=0,line=-1,outer=TRUE)
   mtext("Years since disturbance",side=1,at=0.85,line=1.5,outer=TRUE)
   mtext(expression(paste("Functional diversity,  ",'H'['obs']^q)),side=2,line=0.5,adj=0,at=0.5,cex=0.8,outer=TRUE)
-  mtext(expression(paste('H'['null']^q," - ",'H'['obs']^q)),
+  mtext(expression(paste('H'['obs']^q," - ",'H'['null']^q)),
         side=2,line=0.5,adj=0,at=0.05,cex=0.8,outer=TRUE)
 }
 

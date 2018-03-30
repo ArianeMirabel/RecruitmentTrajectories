@@ -136,16 +136,16 @@ We split the forest community in 'survivors, i.e. trees that survived the distur
 
 ### Taxonomic diversity
 
-Punctual recruits'diversity followed a consistent trajectory among disturbance treatments with first higher richness and lower evenness than in control plots and then lower richness and lower evenness. Accumulated recruits'diversity trajectories are always lower than trajectories from control plots, except for richness in the most disturbed plots T3.
+Punctual recruits' diversity followed a consistent trajectory among disturbance treatments with first higher richness and lower evenness than in control plots and then lower richness and lower evenness. Accumulated recruits'diversity trajectories are always lower than trajectories from control plots, except for richness in the most disturbed plots T3.
 
-```{r Fig1, out.width = '80%', fig.asp = 1.2/2, echo=FALSE,fig.cap="Trajectories of Richness, Shannon and Simpson diversity for 3-years laps punctual (upper panels) and accumulated (lower panels) recruitment. Lines colors refer to the perturbation regime: green for control, blue for T1, orange for T2 and red for T3 disturbance treatments. Plain lines correspond to the median observed after uncertainty propagation and are given along with the 95\\% confidence interval (grey envelope).", fig.env="figure*"}
+```{r Fig1, out.width = '80%', fig.asp = 1.2/2, echo=FALSE,fig.cap="Trajectories of Richness, Shannon and Simpson diversity for 2-years laps punctual  recruitment (upper panels) and divergence to null model (lower panels). Lines colors refer to the perturbation regime: green for control, blue for T1, orange for T2 and red for T3 disturbance treatments. Plain lines correspond to the median observed after uncertainty propagation and are given along with the 95\\% confidence interval (grey envelope).", fig.env="figure*"}
 load("DB/RecruitmentPunctual");load("DB/RecruitmentPunctual_Nullmodel_Diff")
 
 TrajectoryDiffNull(RecDB=RecPun,RecDB_Diff=RecPun_DiffNull)
 
 ```
 
-```{r Fig2, out.width = '80%', fig.asp = 1.2/2, echo=FALSE,fig.cap="Trajectories of Richness, Shannon and Simpson diversity for 3-years laps punctual (upper panels) and accumulated (lower panels) recruitment. Lines colors refer to the perturbation regime: green for control, blue for T1, orange for T2 and red for T3 disturbance treatments. Plain lines correspond to the median observed after uncertainty propagation and are given along with the 95\\% confidence interval (grey envelope).", fig.env="figure*"}
+```{r Fig2, out.width = '80%', fig.asp = 1.2/2, echo=FALSE,fig.cap="Trajectories of Richness, Shannon and Simpson diversity for 2-years laps accumulated recruitment (upper panels) and divergence to null model (lower panels). Lines colors refer to the perturbation regime: green for control, blue for T1, orange for T2 and red for T3 disturbance treatments. Plain lines correspond to the median observed after uncertainty propagation and are given along with the 95\\% confidence interval (grey envelope).", fig.env="figure*"}
 load("DB/RecruitmentAccum");load("DB/RecruitmentAccum_Nullmodel_Diff")
 
 TrajectoryDiffNull(RecDB=RecAccum,RecDB_Diff=RecAccum_DiffNull)
@@ -159,7 +159,7 @@ Punctual and accumulated recruitment diversity of orders 0, 1 and 2 were then co
 
 ### Functional diversity
 
-```{r Fig3,out.width = '80%',fig.asp=1.1/1, echo=FALSE,fig.cap="Functional diversity of punctual recruited trees from the considered functional traits. Values reported correspond to the plot-level median and the 95\\% confidence interval obtained after 50 repetition of the taxonomic uncertainty propagation and the functional database gap-filling processes. Lines colors correspond to the logging treatment initially applied (green for control, blue for T1,orange for T2 and red for T3)."}
+```{r Fig3,out.width = '80%',fig.asp=1.1/1, echo=FALSE,fig.cap="Functional diversity of punctual recruited trees from the considered functional traits and divergence to null model. Values reported correspond to the plot-level median and the 95\\% confidence interval obtained after 50 repetition of the taxonomic uncertainty propagation and the functional database gap-filling processes and 50 run of the null model. Lines colors correspond to the logging treatment initially applied (green for control, blue for T1,orange for T2 and red for T3)."}
 load("DB/RecruitmentPunctual_Functional");load("DB/RecruitmentPunctual_Functional_Nullmodel_Diff")
 
 TrajectoryRec_fun(RecDB_fun=RecPun_Fun,RecDB_fun_Diff=RecPun_Fun_DiffNull)
