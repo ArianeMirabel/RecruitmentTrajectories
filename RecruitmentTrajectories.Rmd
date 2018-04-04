@@ -37,10 +37,10 @@ lang: english
 keywordlabel: Mots-clés # Keywords
 corrauthorlabel: Contact # Corresponding author
 output:
-  bookdown::gitbook: default
   bookdown::pdf_book:
     base_format: EcoFoG::article
     keep_tex: TRUE
+  bookdown::gitbook: default
   bookdown::word_document2: default
 ---
 
@@ -218,7 +218,8 @@ However the first recruitment phase corresponded to a sharp increase in SLA and 
 
 ## On the resilience of the recruitment process
 
-Thirty years after the disturbance event, the functional diversity *not true for all traits, i.e. wood density* had recovered whatever the disturbance intensity but significant taxonomic diversity difference persisted for high disturbance levels.
+Thirty years after disturbance, recruitment functional diversity and richness had recovered equivalent levels as those observed for control plots and right after disturbance.
+Recruitment evenness and functional and taxonomic composition, though, remained lower for all disturbed plots and difference from the initial state and the control plots remained for the weighted means of all functional traits.
 Would this mean that ecosystem functioning recover faster than taxonomic composition? The link between functional traits and ecpsystem functionning is not trivial but our results may highlight the key role of functional redundancy in ecological systems and also suggest that the recovery trajectory may be, more than commonly thought, upon dependence of the pre-disturbance functional ecosystem signature [@Herault2018]. Whatever the disturbance intensity, the recruitment turnover compared to initial stand ended up close to zero. This again argue for the high dependence of the recovery trajectory on the pre-disturbance ecosystem characteristics [@Anderson2007]. In other words, initial compositional variation caused tree communities to remain divergent in taxonomic composition, even though these same tree communities strongly converged in functional space [@Fukami2005]. This makes these commmunities both highly functionally and taxonomically resilient. Our results extend previous ones from the Paracou experiment, 10 years [@Molino2001] and 20 years [@Baraloto2012a] after disturbance that suggested the recovery towards pre-disturbance taxonomic and functional composition. This is however only valid for a single disturbance event, given that second recruitment phase assumed to rely on the seed bank triggers a storage effect likely to modify the recruitment trajectories in case of a new disturbance event. In this hypothetical case, the competitive exclusion among dormant life-stage (seeds or even seedlings) would be harsher and would bring more radical changes in the recruitment composition and functional profile.
 
 ## Conclusion
