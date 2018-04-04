@@ -111,7 +111,7 @@ Intervention <- data.frame(
   AGBLost=c(0, "$[12\\%-33\\%]$", "$[33\\%-56\\%]$", "$[35\\%-56\\%]$")
 )
 names(Intervention)[5] <- "\\%AGB lost"
-knitr::kable(Intervention, caption="Intervention table, summary of the disturbance intensity for the 4 plot treatments in Paracou.", longtable = FALSE, booktabs = TRUE, escape = FALSE) %>%
+knitr::kable(Intervention, caption="Intervention table, summary of the disturbance intensity for the 4 plot treatments in Paracou.", longtable = FALSE, booktabs = TRUE, escape = FALSE,format="latex") %>%
   kableExtra::kable_styling(bootstrap_options = "striped", full_width = TRUE)
 ```
 
@@ -202,21 +202,19 @@ From the 30 years of forest dynamics survey in the Paracou station, we highlight
 Disturbance increased the recruitment rate which subsequently increased the richness of recruitment but impaired its evenness, all the more so that disturbance intensity was high. After disturbance the recruitment was dominated by a restricted pool of species and Shannon and Simpson diversities decreased down to lower values than those of control plots.
 
 ## On the underlyings of the hump-shaped trajectories
-The punctual recruitment richness, some key functional traits (SLA and bark thickness) and the species turn-over trajectories exhibited hump-shaped curves so that, for the 10-15 first years following disturbance, recruitment processes seemed driven by the growth of pre-disturbance saplings benefitting from the environmental changes [@Herault2010] after which it progressively incorporated true recruits, i.e. individual trees that had germinated after the disturbance. 
-This translated first by a stable functional diversity of recruits and diversities equivalent to those of random sampling. 
-Second, the incorporation of true recruits which underwent stronger environmental selection translated by a much lower diversity than for random models and adecrease of functional diversity.
-According to the SLA trajectory (Figure \@ref(fig:Fig4)), these true recruits are mainly pionneer species dominating the recruited community 12 years after disturbance.
 
-After this first recruitment phase, in the case of low disturbance intensity (T1 plots) the composition of the recruitment remained highly similar to the pre-disturbance community and the corresponding functional diversity increased until a levels observed for control plots. 
-This argues for the existence of recruitment limitation in the medium-term *????meaning the strive of a variety of species, even when not the most fitted for the environmental context, because the best competitors couldn't set in disturbed area???? to be rewritten*. 
-The key role of recruitment limitation in recovery dynamic was already highlighted for low disturbance intensity in tropical wet forests [@Hubbell1999;@Sheil2003;@Bongers2009] and supported the IDH as it mitigates competitive exclusion and maintains some inferior competitiors in the community. 
-Recruitment and dispersal limitation are consistent with the short dispersal distance observed for tropical trees, and it was already highlighted in Paracou through the genetic clumping observed for some pioneers [@Leclerc2015;@Scotti2015a].
+The punctual recruitment richness, some key functional traits (SLA and bark thickness) and the species turn-over trajectories exhibited hump-shaped curves so that, for the 10-15 first years following disturbance, recruitment processes seemed driven by the growth of pre-disturbance saplings benefitting from the environmental changes [@Herault2010] after which it progressively incorporated true recruits, *i.e.* individual trees that had germinated after the disturbance. 
+This translated first by a stable functional diversity of the recruitment, equivalent as this of control plots, and low difference to random null model, at least for the lower intensities. 
+According to the SLA trajectory (Figure \@ref(fig:Fig4)), these true recruits dominating the recruitment 12 years after disturbance are mainly pionneer species.
 
-In the case of high disturbance intensity, the species turnover remains very high after the initial 10 year phasis and the functional diversity decreased sharply, along a general functional shift towards acquisitive functional strategies. 
-This was marked for nearly all functional traits of the leaf and stem and for life history traits (Leaf thickness, Wood Specific Gravity and Hmax) which values represented a community of fast-growing long-lived species with a high resources acquisition strategies [@Wright2004;@Chave2009b;@Herault2011;@Reich2014]. 
-The time elpased between disturbance and the significance of those functional and diversity shifts suggests that the second recruitment phase stems from the germination of long-lived pioneers at the moment of the disturbance.  *here i think that we are seeing the effect of long-lived pioneers, and this should be discusssed. especially the functional differences between long- and short-lived pioneers*
-
-*?????Eventually, we observed that disturbance induced particular recruitment mechanisms but also set aside mechanisms at stake in natural plots.????*
+After this first recruitment phase, different trajectories were observed according to the disturbance intensity.
+In the case of low disturbance intensity (T1 plots) the recruitment resembled pre-disturbance species composition.
+Besides it displayed on the one hand decreasing eveness compared to control plots and random models, translating selective recruitment, and on the other hand increasing functional diversity reaching the levels of control plots or above, translating some competitive exclusion. 
+The second recruitment phase at this level of disturbance is then dominated by pioneers and light demanding species either competing with each other and resulting in a functionally diversified community, or preserved from the overwhelming settlement of hard pioneers by recruitment limitation [@Hubbell1999;@Sheil2003;@Bongers2009].
+Recruitment limitation of hard pioneers, mitigating competitive exclusion and maintaining some inferior competitiors in the community, would be consistent with the short dispersal distance observed for tropical trees, specifically in Paracou with the genetic clumping of some pioneers [@Leclerc2015;@Scotti2015a].
+In the case of high disturbance intensity, the species turnover remains very high after the initial 10 year phasis and the functional diversity decreased sharply towards a restricted range of acquisitive functional strategies.  
+Both recruitment phase were marked for nearly all functional traits of the leaf and stem and for life history traits, reflecting the dominance of high resources acquisition strategies [@Wright2004;@Chave2009b;@Herault2011;@Reich2014].
+However the first recruitment phase corresponded to a sharp increase in SLA and bark thickness, reflecting the dominance of short-lived pionneers, while the second recruitment phase corresponded to a decrease in leaf thoughness, Wood Specific Gravity and Hmax relecting the incorporation of long-lived pioneers.
 
 ## On the resilience of the recruitment process
 
