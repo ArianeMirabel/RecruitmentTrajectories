@@ -25,7 +25,7 @@ names(Recruits3)<-dates[-1]
 
 #dates<-c("1985","1990","1995","2001","2006","2011","2017")
 
-Nrep<-2
+Nrep<-50
 Nest<-lapply(1:Nrep,function(rep){
    Ret<-do.call(cbind,lapply(Recruits3,function(yr){
       ret<-unlist(lapply(sort(unique(yr[,"n_parcelle"])),function(plot){
