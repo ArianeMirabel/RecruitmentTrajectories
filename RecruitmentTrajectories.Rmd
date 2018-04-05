@@ -44,7 +44,6 @@ output:
   bookdown::word_document2: default
 ---
 
-<!-- Options de knitr et de R (librairies, ...) --> 
 
 ```{r Options, echo=FALSE, message=FALSE}
 knitr::opts_chunk$set(cache=F, warning=FALSE, tidy=TRUE, tidy.opts=list(blank=FALSE, width.cutoff=40),fig.align="center")
@@ -153,9 +152,8 @@ TrajectoryDiffNull(RecDB=RecPun,RecDB_Diff=RecPun_DiffNull)
 
 ```
 
-Punctual and accumulated recruitment diversity of orders 0, 1 and 2 were then compared to a null recruitment model with random sampling. 
-In control plots, punctual recruitment values were constantly equivalent or higher than with the null model (Figure \@ref(fig:Fig1)). 
-In disturbed plots, punctual recruitment richness and evenness remained lower than of the null model whenever the disturbance treatment.
+Punctual and accumulated recruitment diversity of orders 0, 1 and 2 were then compared to a null random recruitment model. 
+In control plots, punctual recruitment values remained equivalent or higher than with the null model (Figure \@ref(fig:Fig1)) while in disturbed plots punctual recruitment richness and evenness remained lower than that of the null model whenever the disturbance treatment.
 Accumulated recruitment richness (order 0) and evenness (order 2) were higher or equivalent to those of the null model for plots T1 and some plots T2 but lower for plots T3 and a plot T2. 
 
 ### Functional diversity
@@ -237,7 +235,7 @@ Our results extend previous ones from the Paracou experiment, 10 years [@Molino2
 This is however only valid for a single disturbance event, given that second recruitment phase assumed to rely on the seed bank triggers a storage effect likely to modify the recruitment trajectories in case of a new disturbance event. 
 In this hypothetical case, the competitive exclusion among dormant life-stage (seeds or even seedlings) would be harsher and would bring more radical changes in the recruitment composition and functional profile.
 
-## Conclusion
+# Conclusion
 
 Our long-term study of diversity trajectories after disturbance disentangled the mechanisms underlying the forest trajectory in the diversity space. 
 While, in undisturbed forests, mechanisms like negative density dependence enhanced species diversity, disturbance induced new mechanisms depending on its intensity. 
