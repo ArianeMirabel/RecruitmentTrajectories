@@ -65,16 +65,18 @@ source("Scripts/DrawingTools.R")
 
 Determining the response of tropical forests to disturbance is a key to predict their fate in a global change context.
 A vast literature has successfully modeled the response of tropical forest dynamics, carbon stocks and fluxes to anthropogenic and natural disturbances [@Gourlet-Fleury2000;@Putz2012;@Martin2015;@Piponiot2016]. 
-However, regarding diversity, similar attempts have been hindered by both the huge biological diversity and the scarcity of long-term monitoring. 
-Although the community composition response to disturbance was identified for common species assemblages, this approach is usually confined to few commercial and valuable species [@Sebbenn2008;@Rozendaal2010;@Vinson2015]. 
-Given the complexity of adressing simultaneously the response of dozens of species, community-scale approaches have been developped [@DeAvila2016].
+Regarding diversity, however, similar attempts have been hindered by both the huge biological diversity and the scarcity of long-term monitoring. 
+If the response to disturbance has been identified for common species assemblages, it usually remained confined to few commercial and valuable species [@Sebbenn2008;@Rozendaal2010;@Vinson2015]. 
+Forest dynamics, though, result from the constantly evolving interactions and feedbacks among trees and their environment and could therefore only be assessed through a complete community-scale approach [@DeAvila2016].
 
-The post-disturbance community dynamic is largely determined by the recruitment process, i.e. from seed production, dispersion and germination to seedlings' and saplings' growth until a threshold, usually 10cm DBH in tropical forest plots.
-Major ecological processes, such as environmental filtering or limiting similarity, occur before formal recruitment and determine the taxonomic composition of trees eventually integrating the forest community [@Ackerly2003]. 
-The recruitment process is inherently linked to the disturbance regime that locally changes ecosystem's biotic and abiotic conditions and creates opportunities for pioneer species to strive in the long term rather than undergoing the competitive exclusion for resources in mature patches [@Denslow1980]. 
-This relies on the Intermediate Disturbance Hypothesis (IDH) that explains the maintenance of tropical forests biodiversity by the patchy variability of environmental conditions in space and time [@Guitet2018]. 
-This disturbance-induced environmental variability, when not too intense, is assumed to enlarge the ecological range of species present in the community [@Molino2001;@Bongers2009] and shapes its taxonomic diversity, vegetative structure, physiology as well as carbon, nutrients, and water cycles [@Anderson-Teixeira2013]. 
-Empirical tests of the IDH in tropical rainforests, though, proved hard to succeed and yielded controversial results [@Hubbell1999;@Molino2001;@Sheil2003].
+Key to understand communities response to disturbance is to identify the processes shaping the composition and diversity of recruited trees.
+Forests dynamics stem from the suit of recruitment process from seed production, dispersion and germination to seedlings' and saplings' growth until the adult stage.
+Recruitment mechanisms result from the interplay of deterministic environmental processes, like the exclusion of stress-intolerant species or the limitation of similarity through resource competition [@Ackerly2003;@McGill2006], and stochastic processes like random dispersal, recruitment and death [@Hubbell2001].
+The deterministic processes are inherently linked to disturbance regime which locally changes ecosystem's biotic and abiotic conditions and maintains species able of efficient acquisition of resource but living shortly and poorly resistant to hazards and diseases [@Denslow1980]. 
+They rely on the Intermediate Disturbance Hypothesis (IDH) that explains the maintenance of tropical forests biodiversity by the patchy variability of environmental conditions in space and time [@Guitet2018]. 
+Specifically, in tropical wet forests changes light availability has a central role enhancing the recruitment of pioneers and light-demanding species after disturbance compared to mature stands where more competitive shade bearers dominate. 
+Disturbance then enlarges the ecological range of species in the community [@Molino2001;@Bongers2009] and shapes their taxonomic diversity, vegetative structure, physiology as well as carbon, nutrients, and water cycles [@Anderson-Teixeira2013]. 
+>>(on parle plus vraiment de IDH maintenant) Empirical tests of the IDH in tropical rainforests, though, proved hard to succeed and yielded controversial results [@Hubbell1999;@Molino2001;@Sheil2003].
 
 During post-disturbance times, the shift from resource-acquisitive to resource-conservative ecological strategies may be detected in leaves (leaf thickness, toughness, chlorophyll content and specific area) and stem (wood specific gravity and bark thickness) and life-history traits (maximum height at adult stage and class of seed mass) [@Wright2004;@Chave2009b;@Herault2011]. 
 The relative importance of recruitment of new individuals and of mortality of distrubance survivors will shape the new forest and its functioning. 
