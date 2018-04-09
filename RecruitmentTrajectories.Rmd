@@ -142,10 +142,10 @@ To draw plots trajectories we applied a moving average with a one step window al
 
 ## Recruitment Diversity
 
-### Taxonomic diversity
+### Taxonomic Diversity
 
 Punctual recruits' diversity followed a consistent trajectory among disturbance treatments with first higher richness and lower evenness than in control plots and then equivalent richness and lower evenness (Figure (\@ref(fig:Fig1)). 
-The richness of accumulated recruits was higher for the disturbed plots, consistently with the increase of recruited trees following disturbance, but their evenness was equivalent or lower, specifically for the most disturbed plots.
+For recruits accumulated since disturbance, the richness (order 0) in highly disturbed plots (T3 and some T2) was higher than in control plots, consistently with the increase of recruited trees after disturbance, and the evenness (order 2) was lower, specifically for the most disturbed plots (Appendix I, fig. S1).
 
 ```{r Fig1, out.width = '80%', fig.asp = 1.2/2, echo=FALSE,fig.cap="Trajectories of Richness, Shannon and Simpson diversity for 2-years laps punctual  recruitment (upper panels) and divergence to null model (lower panels). Lines colors refer to the perturbation regime: green for control, blue for T1, orange for T2 and red for T3 disturbance treatments. Plain lines correspond to the median observed after uncertainty propagation and are given along with the 95\\% confidence interval (grey envelope).", fig.env="figure*"}
 load("DB/RecruitmentPunctual");load("DB/RecruitmentPunctual_Nullmodel_Diff")
@@ -155,10 +155,15 @@ TrajectoryDiffNull(RecDB=RecPun,RecDB_Diff=RecPun_DiffNull)
 ```
 
 Punctual and accumulated recruitment diversity of orders 0, 1 and 2 were then compared to a null random recruitment model. 
-In control plots, punctual recruitment values remained equivalent or higher than with the null model (Figure \@ref(fig:Fig1)) while in disturbed plots punctual recruitment richness and evenness remained lower than that of the null model whenever the disturbance treatment.
-Accumulated recruitment richness (order 0) and evenness (order 2) were higher or equivalent to those of the null model for plots T1 and some plots T2 but lower for plots T3 and a plot T2 (Figure A1, Appendix I). 
+While in control plots the richness and evenness of punctual recruits remained equivalent or higher than for the null random model (Figure \@ref(fig:Fig1)), in was significantly lower for all disturbed plots all along the monitoring period.
+Accumulated recruitment richness (order 0) and evenness (order 2) were higher or equivalent to those of the null model for plots T1 and some plots T2 but lower for plots T3 and a plot T2 (AppendixI, fig. S1). 
 
-### Functional diversity
+### Functional Diversity and Composition
+
+The functional diversity (Rao diversity) of punctual recruitment was measured and compared to a null model of random traits shuffling. 
+In most distrubed plots (plots T2 and T3) the functional diversity was deacrinsing and lower to this of control plots until 15 years after disturbance (Figure \@ref(fig:Fig3)).
+It then increased to values equivalent or higher to those observed in control plots.
+For all disturbed and control plots the observed functional diversity was lower than for the null model of random traits shuffle, except for two T1 plots.
 
 ```{r Fig2, fig.asp=1.1/1, echo=FALSE,fig.cap="Functional diversity of punctual recruited trees from the considered functional traits and divergence to null model. Values reported correspond to the plot-level median and the 95\\% confidence interval obtained after 50 repetition of the taxonomic uncertainty propagation and the functional database gap-filling processes and 50 run of the null model. Lines colors correspond to the logging treatment initially applied (green for control, blue for T1,orange for T2 and red for T3)."}
 load("DB/RecruitmentPunctual_Functional");load("DB/RecruitmentPunctual_Functional_Nullmodel_Diff")
@@ -166,9 +171,8 @@ load("DB/RecruitmentPunctual_Functional");load("DB/RecruitmentPunctual_Functiona
 TrajectoryRec_fun(RecDB_fun=RecPun_Fun,RecDB_fun_Diff=RecPun_Fun_DiffNull)
 ```
 
-Recruits functional diversity lower after disturbance for 15 to 20 years period before increasing to a similar or higher value as observed for control plots (Figure \@ref(fig:Fig3)). 
-Trajectories of recruited trees in the functional spaces showed the dominance after disturbance of species displaying large exchange surface area and light tissues (high SLA, low leaf toughness and low wood specific gravity) (Figure \@ref(fig:Fig3)).
-All traits trajectories displayed univariate CWM trajectories, except SLA and leaf thickness that displayed a unimodal trajectory. 
+Trajectories of recruited trees in the functional spaces showed the dominance after disturbance of species displaying large exchange surface area and light tissues (high SLA, low leaf toughnessand thickness and low wood specific gravity) (Figure \@ref(fig:Fig3)).
+All traits trajectories displayed univariate CWM trajectories with leaf toughness, wood specific gravity and bark thickness decreasing before stabilizing at low values around 15 after disturbance, except SLA and leaf thickness that displayed a unimodal trajectory with a maximum reach around 15 years after disturbance. 
 
 ```{r Fig3, out.width = '80%', fig.asp = 1.2/2, echo=FALSE,fig.cap="Community weighted means (CWM) of the four disturbance treatment for the four leaf traits, the two stem traits  and the specific Hmax. Values reported correspond to the plot-level median obtained after 50 repetition of the taxonomic uncertainty propagation and the functional database gap-filling processes. Lines colors correspond to the disturbance intensity (green for control, blue for T1,orange for T2 and red for T3).", fig.env="figure*"}
 load("DB/Recruits_CWM")
@@ -183,7 +187,7 @@ mtext("Years since disturbance",side=1,at=0.6,cex=0.8,line=-0.2,outer=TRUE)
 
 ## Recruitment Turnover
 
-In control plots, species turnover remained highly stable for the 30 sampled years (Figure \@ref(fig:Fig4)). 
+In control plots species turnover remained highly stable for the 30 sampled years (Figure \@ref(fig:Fig4)), reflecting a strong similarity between the initial plots composition and the punctual recruits. 
 In disturbed plots, turnover displayed a unimodal response to disturbance, with maximum reached around 15 years and with a value positively correlated to the disturbance intensity ($\rho_{spearman}=0.93$). 
 The turnover trajectory returned close to zero for all plots 30 years after disturbance.
 
@@ -201,7 +205,9 @@ mtext("Equivalent diversity",side=2,line=1)
 # Discussion
 
 From the 30 years of forest dynamics survey in the Paracou station, we highlighted contrasting recruitment patterns depending on disturbance intensity. 
-Disturbance increased the recruitment rate which subsequently increased the richness of recruitment but impaired its evenness, all the more so that disturbance intensity was high. After disturbance the recruitment was dominated by a restricted pool of species and Shannon and Simpson diversities decreased down to lower values than those of control plots.
+Disturbance increased the recruitment rate and thus also the richness of recruited trees but in contrast impaired the recruitment evenness, all the more so that disturbance intensity was high. 
+Post disturbance recruitment underwent significant selective pressure in favour of acquisitive functional strategies, which steered the diversity trajectories away from random processes and restricted the pool of recruited trees that did not reflect the initial stand composition, unlike the recruitment of control plots.
+The most intense disturbance induced strong species selection that changed the recruitment rules and makred plots composition and diversity for more than 30 years while less disturbed plots displayed a faster recovery.
 
 ## On the underlyings of the hump-shaped trajectories
 
