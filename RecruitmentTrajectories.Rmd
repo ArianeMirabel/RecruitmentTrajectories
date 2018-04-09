@@ -224,10 +224,10 @@ This revealed selective pressures and competition for resources leading to an in
 This competition benefited pioneers and light demanding species preserved from the overwhelming settlement of hard pioneers by recruitment limitation [@Hubbell1999;@Sheil2003;@Bongers2009].
 Recruitment limitation of hard pioneers that mitigated competitive exclusion and maintained inferior competitiors in the community, would be consistent with the short dispersal distance observed for tropical trees, specifically in Paracou with the genetic clumping of some pioneers [@Leclerc2015;@Scotti2015a].
 
-In the case of high disturbance intensity, the species turnover remained very high after the initial 10 year phase and the functional diversity decreased sharply towards a restricted range of acquisitive functional strategies.  
+In the case of high disturbance intensity, the species turnover remained very high after the initial 10 years phase and the functional diversity decreased sharply towards a restricted range of acquisitive functional strategies.  
 This translated into a decrease in leaf thoughness, Wood Specific Gravity and Hmax from the incorporation of long-lived pioneers.
 
-The trajectories of functional traits proved very different among plots and treatments, sometimes showing opposed tendencies (like for the Leaf chlorophyll Content, SLA or Hmax), which suggested that the recovery may be, more than commonly thought, upon dependence of the pre-disturbance functional ecosystem signature [@Herault2018].
+The trajectories of functional traits proved very different among plots and treatments, sometimes showing opposed tendencies (like for the Leaf Chlorophyll Content, SLA or Hmax), which suggested that the recovery may be, more than commonly thought, upon dependence of the pre-disturbance functional ecosystem signature [@Herault2018].
 For all traits the difference with control plots and initial conditions remained marked 30 years after disturbance, although the corresponding functional diversity had recovered.
 This supported the role of similarity limitation increasing maintainting high functional diversity whenever the dominant strategies.
 
@@ -246,13 +246,15 @@ In this hypothetical case, the competitive exclusion among dormant life-stage (s
 
 # Conclusion
 
-Our long-term study of diversity trajectories after disturbance disentangled the mechanisms underlying the forest trajectory in the diversity space. 
-While, in undisturbed forests, mechanisms like negative density dependence enhanced species diversity, disturbance induced new mechanisms depending on its intensity. 
-In the short-term communities response was always driven by the enhanced growth of grown saplings benefitting from alleviated competition and low selective pressure resulting in increased communities taxonomic and functional evenness. 
+The long-term study of recruitment diversity trajectories disentangle the mechanisms ruling recruitment dynamics after disturbance. 
+While in undisturbed forests mechanisms like negative density dependence enhanced species diversity, disturbance induced new mechanisms depending on its intensity. 
+In the short-term communities response was driven by the enhanced growth of grown saplings benefiting from the alleviated competition and the environmental changes following disturbance. 
+This resulted in increased communities taxonomic and functional evenness and a selection of more acquisitive functional strategies compared to mature forests.
 In the long-term communities trajectory strongly depended on the disturbance intensity. 
-At low intensity competition resumed to shape a functionally diversified and even community preserved from the over-whelming hard pioneers by recruitment limitation.
-For high intensity, strong environmental filters maintained high species turnover and a recruitment restricted to long lived pionneers. 
-Communities composition and functioning proved consistently resilient to single disturbance events but the functional redundancy and the diversified seed bank of mature forests proved altered and consequently communities resilience themselves.
+At low intensity competition resumed to shape a functionally diversified and even community, rapidly recovering the pre-disturbance composition and recruitment processes.
+At high intensity, the recruitment incorporated long-lived pioneers which maintained high species turnover in the long term. 
+Still, communities composition and functioning proved resilient to single disturbance events, maintaining the pre-disturbance difference among plots.
+The recruitment processes however relied on the diversified seed bank of mature forests that was altered by disturbance and therefore impacted communities resilience itself.
 
 ----
 
