@@ -208,10 +208,11 @@ mtext("Equivalent diversity",side=2,line=1)
 # Discussion
 
 From the 30 years of forest dynamics survey in the Paracou station, we highlighted contrasting recruitment trajectories determined by the disturbance intensity. 
-Disturbance, which increases the recruitment rate, also increased the taxonomic richness of recruited trees but impaired their evenness, all the more so that disturbance intensity was high. 
-Recruitment trajectories after disturbance were governed by deterministic selective pressures, restricting the pool of recruited species towards acquisitive functional strategies, and contrasting with the more stochastic demography of mature forests.
-After a time span determined by the disturbance intensity, recruitment trajectories were ruled by stochastic recruitment and similarity limitation processes.
-Although disturbed forests consistently recovered their initial composition, diversity and likely their functioning, the recruitment trajectories involved the soil seed bank and likely reduced the resilience of forest itself.
+Disturbance increased the recruitment rate and subsequently the taxonomic richness of recruitment, but it was dominated by a restricted pool of species, all the more so that disturbance intensity was high. 
+Recruitment trajectories after disturbancewere governed by the interplay of deterministic selection towards light acquisitive functional strategies and similarity limitation processes, before recovering the stochastic demography of mature forests, .
+For the highest disturbance intensity, though, this mechanisms was precedeed by a first phase witnessing the exclusive competition of hard pioneers.
+Disturbed plots consistently recovered their initial composition, diversity and functioning, and maintained their initial differences.
+However the recruitment trajectories involving the soil seed bank likely altered the resilience of forest itself and questions the consistency of similar trajectories after further disturbance.
 
 ## On the underlyings of the hump-shaped trajectories
 
