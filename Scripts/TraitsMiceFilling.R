@@ -6,11 +6,11 @@ library(mice)
 
 Traits_filling<-function(Traits1,Traits2,InvSp){
 
-  #Elimination des lignes vides 
-  Traits1<-Traits1[which(apply(Traits1,1,function(li){return(any(!is.na(li)))})),]
-  Traits2<-Traits2[which(apply(Traits2,1,function(li){return(any(!is.na(li)))})),]
+#Elimination des lignes vides 
+Traits1<-Traits1[which(apply(Traits1,1,function(li){return(any(!is.na(li)))})),]
+Traits2<-Traits2[which(apply(Traits2,1,function(li){return(any(!is.na(li)))})),]
   
-  #Ajout colonne nom genre_espece pour avoir un seul identifiant par espèce
+#Ajout colonne nom genre_espece pour avoir un seul identifiant par espèce
 Traits1["name"]<-as.factor(paste(Traits1$Genus,"_",Traits1$species,sep=""))
 Traits2["name"]<-sub(" ","_",Traits2[,"Name"])
 
@@ -33,7 +33,6 @@ traits[which(!is.na(traits[,"LA"])),"SLA"]<-
 #Selecion des traits qu'on va garder, pour les indices de diversité
 Seltraits<-c("L_thickness","L_chloro","L_toughness","L_DryMass","SLA","WD","Bark_thick","moisture","Hmax")#"S_mass")
 traits<-traits[,c("Family","Genus","name","bar_code",Seltraits)]
-
 
 ### espèces dont seulement certains traits manquent
 # On prend ligne par ligne (fonction apply) et on renvoie les numéro de lignes où au moins un élément est différent de NA
