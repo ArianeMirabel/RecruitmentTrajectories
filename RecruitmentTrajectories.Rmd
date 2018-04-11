@@ -76,7 +76,7 @@ Recruitment processes result from the interplay of deterministic processes, like
 Supposedly, deterministic processes are inherently linked to disturbance which locally changes ecosystem's biotic and abiotic conditions and maintains large ecological range of species in the community [@Molino2001;@Bongers2009].
 These processes would, inter alia, maintain in communities fast growing species with efficient resource acquisition but poorly resistant to hazards and diseases while in mature forests favor slow-growing, stress tolerant species conserving resources in long-lived dense tissues [@Denslow1980].
 Deterministic processes therefore rely on the Intermediate Disturbance Hypothesis (IDH) that explains the maintenance of tropical forests biodiversity by the patchy variability of environmental conditions in space and time [@Guitet2018]. 
-Specifically, in tropical wet forests changes in light availability after disturbance enhance the recruitment of pioneers and light-demanding species in comparison with mature stands forests dominated by more competitive shade bearers. 
+Specifically, in tropical wet forests changes in light availability after disturbance enhance the recruitment of pioneers and light-demanding species in comparison with mature forests dominated by more competitive shade bearers. 
 Empirical tests of the IDH in tropical rainforests, though, proved hard to succeed and yielded controversial results [@Hubbell1999;@Molino2001;@Sheil2003].
 During post-disturbance times, the shift from resource-acquisitive to resource-conservative ecological strategies may be detected in leaves (leaf thickness, toughness, chlorophyll content and specific area) and stem (wood specific gravity and bark thickness) functional traits and in life-history traits (maximum height at adult stage and class of seed mass) [@Wright2004;@Chave2009b;@Herault2011]. 
 
@@ -251,11 +251,11 @@ In this hypothetical case, the competitive exclusion among dormant life-stage (s
 # Conclusion
 
 The 30 years monitoring of Paracou plots highlighted contrasting recruitment trajectories determined by the disturbance intensity. 
-In the short-term communities response was driven by the enhanced growth of grown saplings benefiting from the alleviated competition and the environmental changes. 
+In the short-term forests response was driven by the enhanced growth of grown saplings benefiting from the alleviated competition and the environmental changes. 
 Above an intensity threshold the recruitment was besides dominated by hard-pioneers radically changing the recruitment composition, diversity and, likely, functioning.
 In the long-term response was driven by recruits from the seed bank which underwent dselection towards light demanding species and similarity limitation enhancing the functional diversity.
 These deterministic processes followed a gradual balance with the stochastic recruitment of mature forests which eventually restored communities diversity and composition, maintaining their initial differences.
-Although forest communities proved resilient to intense disturbance this appeared to be a long-term processes likely only valid for single disturbance events.
+Although forests proved resilient to intense disturbance this appeared to be a long-term processes likely only valid for single disturbance events.
 
 ----
 
