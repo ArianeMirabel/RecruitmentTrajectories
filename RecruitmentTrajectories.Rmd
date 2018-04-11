@@ -250,24 +250,12 @@ In this hypothetical case, the competitive exclusion among dormant life-stage (s
 
 # Conclusion
 
-The 30 years monitoring of Paracou plots, highlighted the contrasting recruitment trajectories determined by the disturbance intensity and the underlying mechanisms. 
-Disturbance induced deterministic mechanisms which balance with stochastic demography of mature forests dependend in the disturbance intensity. 
+The 30 years monitoring of Paracou plots highlighted contrasting recruitment trajectories determined by the disturbance intensity. 
 In the short-term communities response was driven by the enhanced growth of grown saplings benefiting from the alleviated competition and the environmental changes. 
-
-########
-This increased the number of recruits and hence their taxonomic richness, but they were dominated by a pool of species all the more restricted that disturbance intensity was high. 
-Recruitment trajectories after disturbance were thus governed by a gradual balance between deterministic processes, the selection towards light acquisitive functional strategies and the similarity limitation, and stochastic processes defining the demography of mature forests.
-For the highest disturbance intensity, though, this was preceeded by an additional phase where the exclusive competition of newly settled hard pioneers decreased the diversity and changed the composition of recruited trees.
-Communities then followed longer-term but similar trajectories.
-Pre-disturbance composition, diversity and functioning, then consistently recovered and initial differences among communities were maintained.
-Still, trajectories involved the soil seed bank which likely altered communities resilience, which questions the consistency of those trajectories after additional disturbance.
-
-
-In the long-term communities trajectory strongly depended on the disturbance intensity. 
-At low intensity competition resumed to shape a functionally diversified and even community, rapidly recovering the pre-disturbance composition and recruitment processes.
-At high intensity, the recruitment incorporated long-lived pioneers which maintained high species turnover in the long term. 
-Still, communities composition and functioning proved resilient to single disturbance events, maintaining the pre-disturbance difference among plots.
-The recruitment processes however relied on the diversified seed bank of mature forests that was altered by disturbance and therefore impacted communities resilience itself.
+Above an intensity threshold the recruitment was besides dominated by hard-pioneers radically changing the recruitment composition, diversity and, likely, functioning.
+In the long-term response was driven by recruits from the seed bank which underwent dselection towards light demanding species and similarity limitation enhancing the functional diversity.
+These deterministic processes followed a gradual balance with the stochastic demography of mature forests which eventually restored communities diversity and composition, maintaining their initial differences.
+Although forest communities proved resilient to intense disturbance this appeared to be a long-term processes likely only valid for single disturbance events.
 
 ----
 
