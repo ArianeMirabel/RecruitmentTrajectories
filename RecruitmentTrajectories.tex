@@ -161,10 +161,6 @@ Résumé de l'article.
 %----------------------------------------------------------------------------------------
 
 
-\begin{verbatim}
-## Warning: package 'kableExtra' was built under R version 3.3.3
-\end{verbatim}
-
 \section{Introduction}\label{introduction}
 
 Determining the response of tropical forests to disturbance is a key to
@@ -300,20 +296,22 @@ area per unit dry mass), wood economics (wood specific gravity and bark
 thickness) and life history traits (maximum specific height and seed
 mass), come from the BRIDGE project \footnote{http://www.ecofog.gf/Bridge/}
 where trait values were measured on nine french guianan forest plots,
-including two in Paracou. Missing trait values (X\%) were filled using
-multivariate imputation by chained equation (mice) restricted to samples
-pertaining to the next higher taxonomic level, in order to account for
-the phylogenetic signal of the functional traits (refs MICE). As seed
-mass information corresponds to a classification into mass classes, no
-data filling process was applied so analysis were performed only
-considering the 414 botanical species of the seed mass dataset.
+including two in Paracou. Missing trait values (10\%) were filled using
+multivariate imputation by chained equation (mice). As traits
+variability was lower within species and within genus, we accounted for
+the phylogenetic signal of the functional traits in restricting thegap
+filling processes to samples pertaining to the next higher taxonomic
+level (refs MICE). As seed mass information corresponds to a
+classification into mass classes, no data filling process was applied so
+analysis were performed only considering the 414 botanical species of
+the seed mass dataset.
 
 Functional trajectories were estimated with the Rao quadratic entropy
 using community weighted means (CWM) \citep{Diaz2007, Garnier2004}. Seed
 mass trajectories were reported by the proportion of each class recorded
 in the inventories. All composition and diversity metrics are the
-average obtained after 50 iterations of uncertainty propagation
-(taxonomy and trait values).
+average obtained after 50 iterations of taxonomy and trait values
+uncertainty propagation.
 
 \subsection{Recruitment trajectories}\label{recruitment-trajectories}
 
@@ -366,13 +364,15 @@ specifically for the most disturbed plots (Appendix I, fig. S1).
 \end{figure*}
 
 Punctual and accumulated recruitment diversity of orders 0, 1 and 2 were
-then compared to a null random recruitment model. While in control plots
-the richness and evenness of punctual recruits remained equivalent or
-higher than for the null random model (Figure \ref{fig:Fig1}), in was
-significantly lower for all disturbed plots all along the monitoring
-period. Accumulated recruitment richness (order 0) and evenness (order
-2) were higher or equivalent to those of the null model for plots T1 and
-some plots T2 but lower for plots T3 and a plot T2 (AppendixI, fig. S1).
+then compared to a null random recruitment model. In control plots the
+richness (order 0) and evenness (order 2) of punctual recruits remained
+equivalent or higher than for the null random model. For all disturbed
+plots in contrast both richness and evenness were lower than these of a
+random null model but displayed a significant but unachieved
+humped-shaped trajectory for all plots (Figure \ref{fig:Fig1}).
+Accumulated recruitment richness and evenness were higher or equivalent
+to those of the null model for plots T1 and some plots T2 but lower for
+plots T3 and a plot T2 (AppendixI, fig. S1).
 
 \subsubsection{Functional Diversity and
 Composition}\label{functional-diversity-and-composition}
@@ -437,127 +437,158 @@ disturbance.
 
 \section{Discussion}\label{discussion}
 
-From the 30 years of forest dynamics survey in the Paracou station, we
-highlighted contrasting recruitment patterns depending on disturbance
-intensity. Disturbance increased the recruitment rate and thus also the
-richness of recruited trees but in contrast impaired the recruitment
-evenness, all the more so that disturbance intensity was high. Post
-disturbance recruitment underwent significant selective pressure in
-favour of acquisitive functional strategies, which steered the diversity
-trajectories away from random processes and restricted the pool of
-recruited trees that did not reflect the initial stand composition,
-unlike the recruitment of control plots. The most intense disturbance
-induced strong species selection that changed the recruitment rules and
-makred plots composition and diversity for more than 30 years while less
-disturbed plots displayed a faster recovery.
+From the 30 years monitoring in Paracou forest, we highlighted
+contrasting recruitment trajectories determined by the disturbance
+intensity. Disturbance increased the number of recruits and hence their
+taxonomic richness, but the recruitment was dominated by a pool of
+species all the more restricted that disturbance intensity was high.
+Recruitment trajectories after disturbance were thus governed by a
+gradual balance between deterministic processes, the selection towards
+light acquisitive functional strategies and the similarity limitation,
+and stochastic processes defining the demography of mature forests. For
+the highest disturbance intensity, though, this was preceeded by an
+additional phase where the exclusive competition of newly settled hard
+pioneers decreased the diversity and changed the composition of
+recruited trees. Communities then followed longer-term but similar
+trajectories. Pre-disturbance composition, diversity and functioning,
+then consistently recovered and initial differences among communities
+were maintained. Still, trajectories involved the soil seed bank which
+likely altered communities resilience, which questions the consistency
+of those trajectories after additional disturbance.
 
 \subsection{On the underlyings of the hump-shaped
 trajectories}\label{on-the-underlyings-of-the-hump-shaped-trajectories}
 
-The punctual recruitment richness, some key functional traits (SLA and
-bark thickness) and the species turn-over trajectories exhibited
-hump-shaped, unimodal trajectories. The 10-15 first years of these
-trajectories seemed driven by the growth of pre-disturbance saplings
-benefitting from the environmental changes and alleviated competition
-following disturbance \citep{Herault2010}. This translated first by a
-stable functional diversity of the recruitment, equivalent as this of
-control plots, and low difference to random null model, specifically for
-low disturbance intensities. After the most intense disturbance this
-translated by a sharp increase of SLA and bark thickness values
-reflecting the dominance of short-lived pionneers capable of effective
-light acquisition and fast growth (Figure \ref{fig:Fig4})
-\citep{Wright2004, Chave2009b, Herault2011, Reich2014}.
+The trajectories of punctual recruitment richness, some key functional
+traits (SLA and bark thickness) and the species turn-over exhibited
+hump-shaped, unimodal trajectories.
+
+The 10-15 first years of these trajectories seemed driven by the growth
+of pre-disturbance saplings benefiting from the environmental changes
+and alleviated competition that follow disturbance \citep{Herault2010}.
+After low disturbance intensity this translated into a stable functional
+diversity of the recruited community, equivalent to this of control
+plots that is governed by stochastic recruitment processes. After
+intense disturbance, this phase corresponded to sharp increase of SLA
+and bark thickness and decrease of wood density weighted means,
+revealing prominent recruitment of species with efficient light
+acquisition, short-lived tissues and fast growth (Figure \ref{fig:Fig4})
+\citep{Wright2004, Chave2009b, Herault2011, Reich2014}. The first
+recruitment phase then in addition involved short-lived and competitive
+species, \emph{i.e.} hard pionneers, that rapidly dominated the
+recruited population and reduced its functional diversity.
 
 Following this first phase, the recruitment progressively incorporated
 true recruits, \emph{i.e.} individual trees that had germinated after
-the disturbance, which underwent competition for light resources.
-Different trajectories were then observed according to the disturbance
-intensity. In the case of low disturbance intensity (T1 plots), although
-the recruitment resembled the pre-disturbance species composition, it
-displayed decreasing eveness compared to control plots and random
-models. This revealed selective pressures and competition for resources
-leading to an increase in functional diversity, equating or exceeding
-this of control plots, and an overdispersion of functional traits
-compared to a null random model. This competition benefited pioneers and
-light demanding species preserved from the overwhelming settlement of
-hard pioneers by recruitment limitation
-\citep{Hubbell1999, Sheil2003, Bongers2009}. Recruitment limitation of
-hard pioneers that mitigated competitive exclusion and maintained
-inferior competitiors in the community, would be consistent with the
-short dispersal distance observed for tropical trees, specifically in
-Paracou with the genetic clumping of some pioneers
+disturbance. Disturbance trajectories corresponded to the interplay of
+random demographic processes of mature forests that progessively
+replaced deterministic processes involving selection and similarity
+limitation. The balance between both processes resulted in different
+trajectories according to the disturbance intensity.
+
+After low disturbance intensity (T1 plots) the recruitment trajectories
+were determined by selective pressures towards light demanding species
+that underwent similarity limitation enhancing their functional
+diversity. Although the taxonomic composition of the recruitment
+resembled the pre-disturbance composition the pool of recruited species
+was more restricted and evenly distributed. These restrictions revealed
+selective pressures favouring pioneers and light demanding species with
+efficient resource acquisition (high SLA and leaf chlorophyll content)
+and inexpensive, short-lived tissues (low leaf thickness and thoughness,
+small Hmax and low wood density and bark thickness). In parallel the
+recruitment's functional diversity increased, equating or exceeding this
+of control plots, revealing an overdispersion of functional traits
+driven by the limitation of similarity. At this disturbance intensity,
+recruitment seemed preserved from the competitive exclusion of hard
+pioneers which would have prevented the maintenance of inferior
+competitors in the community and would thus have lowered the functional
+diversity \citep{Hubbell1999, Sheil2003, Bongers2009}. The low dominance
+of hard pioneers might result from recruitment and dispersal limitation
+due to the short dispersal distance observed for tropical trees,
+specifically in Paracou with the genetic clumping of some pioneers
 \citep{Leclerc2015, Scotti2015a}.
 
-In the case of high disturbance intensity, the species turnover remains
-very high after the initial 10 year phase and the functional diversity
-decreased sharply towards a restricted range of acquisitive functional
-strategies.\\
-This translated by a decrease in leaf thoughness, Wood Specific Gravity
-and Hmax from the incorporation of long-lived pioneers.
+The trajectories after intense disturbance, first driven by the
+settlement of hard pioneers, progressively matched the same progressive
+balance between deterministic and stochastic processes. This translated
+by a progressive decrease of recruitment taxonomic turnover and an
+increase of functional diversity. Although acquisitive strategies
+remained dominant (high leaf chlorophyll content and low wood density
+and leaf toughness), the weighted values of other traits stabilized and
+the SLA and bark thickness decreased again (then following a unimodal
+trajectory with a peak after the first recruitement phase). The 15 years
+laps of the unimodal turnover and traits trajectories corresponding to
+the first recruitment phase matched the life expectancy of hard pionners
+and of their competitive pressure. The recruitment would progressively
+shift towards long-lived pionneers which participate to forest recovery
+as they might have been part of pre-disturbance communities, but still
+hold dominant more acquisitive functional strategies.
 
 \subsection{On the resilience of the recruitment
 process}\label{on-the-resilience-of-the-recruitment-process}
 
-Thirty years after disturbance, recruitment functional diversity and
-richness had recovered equivalent levels as those observed for the plots
-short after after disturbance and equivalent to those of control plots.
-The functional and taxonomic composition of the recruitment and the
-evenness of recruited species distribution, though, remained lower for
-all disturbed plots, along with and weighted means of all functional
-traits was remained altered thirty years after disturbance. Would this
-mean that ecosystem functioning recover faster than taxonomic
-composition? The link between functional traits and ecosystem
-functionning is not trivial but our results may highlight the key role
-of functional redundancy in ecological systems and also suggest.
-\textgreater{}\textgreater{} that the recovery trajectory may be, more
-than commonly thought, upon dependence of the pre-disturbance functional
-ecosystem signature \citep{Herault2018}. -\textgreater{} What makes us
-say that?
+Thirty years after disturbance, for all treatments the recruitment
+richness and functional diversity had recovered levels equivalent as
+those observed short after disturbance and in control plots. In contrast
+the species distribution evenness and functional diversity had not
+recovered for the most disturbed plots, displaying similar but
+unachieved trajectories as those of other plots. Still, the recruitment
+processes were restored for all treatments, the recruited species showed
+very low turnover compared to initial stands and the difference with
+random processes equated those of control plots. This argued for the
+high dependence of the composition recovery trajectory on the
+pre-disturbance ecosystem characteristics \citep{Anderson2007}. In other
+words, initial compositional variation caused tree communities to remain
+divergent in taxonomic composition, even though these same tree
+communities strongly converged in functional space \citep{Fukami2005}.
+This makes these commmunities both functionally and taxonomically
+resilient despite the settlment of long lived pioneers which make it a
+long term process for high disturbance intensity. Our results extend
+previous ones from the Paracou experiment, 10 years \citep{Molino2001}
+and 20 years \citep{Baraloto2012a} after disturbance which suggested the
+recovery towards pre-disturbance taxonomic and functional composition.
 
-Whatever the disturbance intensity, the recruitment turnover compared to
-initial stand ended up close to zero. This argued for the high
-dependence of the composition recovery trajectory on the pre-disturbance
-ecosystem characteristics \citep{Anderson2007}. In other words, initial
-compositional variation caused tree communities to remain divergent in
-taxonomic composition, even though these same tree communities strongly
-converged in functional space \citep{Fukami2005}. This makes these
-commmunities both functionally and taxonomically resilient despite the
-settlment of long lived pioneers which make it a long term process for
-high disturbance intensity. \textgreater{}\textgreater{} Not that much
-because the long lived pioneers probably remain long after disturbance,
-it would be in the long term.
+The trajectories of functional traits proved very different among plots
+and treatments, sometimes showing opposed tendencies (like for the Leaf
+Chlorophyll Content, SLA or Hmax), which suggested that the recovery may
+be, more than commonly thought, upon dependence of the pre-disturbance
+functional ecosystem signature \citep{Herault2018}. For all traits the
+difference with control plots and initial conditions remained marked 30
+years after disturbance, although the corresponding functional diversity
+had recovered. This supported the role of similarity limitation
+increasing maintainting high functional diversity whenever the dominant
+strategies.
 
-Our results extend previous ones from the Paracou experiment, 10 years
-\citep{Molino2001} and 20 years \citep{Baraloto2012a} after disturbance
-that suggested the recovery towards pre-disturbance taxonomic and
-functional composition. This is however only valid for a single
-disturbance event, given that second recruitment phase assumed to rely
-on the seed bank triggers a storage effect likely to modify the
-recruitment trajectories in case of a new disturbance event. In this
-hypothetical case, the competitive exclusion among dormant life-stage
-(seeds or even seedlings) would be harsher and would bring more radical
-changes in the recruitment composition and functional profile.
+These concusions however are only valid for a single disturbance event,
+give nthat the second recruitment phase involves the seed bank and
+therefore triggers a storage effect likely to modify the recruitment
+trajectories after an other disturbance event. In this hypothetical
+case, the competitive exclusion among dormant life-stage (seeds or even
+seedlings) would be harsher and likely bring more radical changes in the
+recruitment composition and functional profile.
 
 \section{Conclusion}\label{conclusion}
 
-Our long-term study of diversity trajectories after disturbance
-disentangled the mechanisms underlying the forest trajectory in the
-diversity space. While, in undisturbed forests, mechanisms like negative
-density dependence enhanced species diversity, disturbance induced new
-mechanisms depending on its intensity. In the short-term communities
-response was always driven by the enhanced growth of grown saplings
-benefitting from alleviated competition and low selective pressure
-resulting in increased communities taxonomic and functional evenness. In
-the long-term communities trajectory strongly depended on the
-disturbance intensity. At low intensity competition resumed to shape a
-functionally diversified and even community preserved from the
-over-whelming hard pioneers by recruitment limitation. For high
-intensity, strong environmental filters maintained high species turnover
-and a recruitment restricted to long lived pionneers. Communities
-composition and functioning proved consistently resilient to single
-disturbance events but the functional redundancy and the diversified
-seed bank of mature forests proved altered and consequently communities
-resilience themselves.
+The long-term study of recruitment diversity trajectories disentangle
+the mechanisms ruling recruitment dynamics after disturbance. While in
+undisturbed forests mechanisms like negative density dependence enhanced
+species diversity, disturbance induced new mechanisms depending on its
+intensity. In the short-term communities response was driven by the
+enhanced growth of grown saplings benefiting from the alleviated
+competition and the environmental changes following disturbance. This
+resulted in increased communities taxonomic and functional evenness and
+a selection of more acquisitive functional strategies compared to mature
+forests. In the long-term communities trajectory strongly depended on
+the disturbance intensity. At low intensity competition resumed to shape
+a functionally diversified and even community, rapidly recovering the
+pre-disturbance composition and recruitment processes. At high
+intensity, the recruitment incorporated long-lived pioneers which
+maintained high species turnover in the long term. Still, communities
+composition and functioning proved resilient to single disturbance
+events, maintaining the pre-disturbance difference among plots. The
+recruitment processes however relied on the diversified seed bank of
+mature forests that was altered by disturbance and therefore impacted
+communities resilience itself.
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
