@@ -213,11 +213,12 @@ The trajectories of punctual recruitment richness, some key functional traits (S
 
 The 10-15 first years of these trajectories seemed driven by the growth of pre-disturbance saplings benefiting from the environmental changes and alleviated competition that follow disturbance [@Herault2010].
 After low disturbance intensity this translated into a stable functional diversity of the recruited community, equivalent to these of control plots governed by stochastic recruitment processes. 
-After intense disturbance, this phase corresponded to sharp increase of SLA and bark thickness and decrease of wood density weighted means, revealing prominent recruitment of species with efficient light acquisition, short-lived tissues and fast growth (Figure \@ref(fig:Fig4)) [@Wright2004;@Chave2009b;@Herault2011;@Reich2014]. 
-The first recruitment phase then in addition involved short-lived and competitive species, *i.e.* hard pionneers, that rapidly dominated the recruited population and reduced its functional diversity.
+After intense disturbance, this phase corresponded to sharp increase of SLA and decrease of wood density and leaf thickness community means.
+This tendencies revealed prominent recruitment of pioneers with efficient light acquisition, short-lived tissues and fast growth (Figure \@ref(fig:Fig4)) [@Wright2004;@Chave2009b;@Herault2011;@Reich2014]. 
+Above an intensity threshold disturbance then additionally involved short-lived, competitive species, *i.e.* hard pionneers, dominating the recruitment and reducing its functional diversity.
 
-Following this first phase, the recruitment progressively incorporated true recruits, *i.e.* individual trees that had germinated after disturbance.
-Disturbance trajectories corresponded to the interplay of random demographic processes of mature forests that progessively replaced deterministic processes involving selection and similarity limitation.
+Following this first phase, the recruitment progressively incorporated true recruits, *i.e.* trees germinated from the seed bank after disturbance.
+The resulting trajectories then corresponded to the interplay between deterministic processes involving selection and similarity limitation and random demographic processes of mature forests progressively emerging again.
 The balance between both processes resulted in different trajectories according to the disturbance intensity.
 
 After low disturbance intensity (T1 plots) the recruitment trajectories were determined by selective pressures towards light demanding species that underwent similarity limitation enhancing their functional diversity.
