@@ -63,19 +63,19 @@ source("Scripts/DrawingTools.R")
 
 # Introduction
 
-Determining the response of tropical forests to disturbance is a key to predict their fate in a global change context.
+Determining the response of tropical forests to disturbance is a key to predict their fate in a global change context where disturbance are expected to become more and more frequent. .
 In that respect a vast literature has successfully modeled the response of tropical forest dynamics, carbon stocks and fluxes to anthropogenic and natural disturbances [@Gourlet-Fleury2000;@Putz2012;@Martin2015;@Piponiot2016]. 
 Regarding diversity, however, similar attempts have been hindered by both the huge biological diversity and the scarcity of long-term monitoring. 
 If the response to disturbance has been identified for common species assemblages, it usually remained confined to few commercial and valuable species [@Sebbenn2008;@Rozendaal2010;@Vinson2015]. 
 Forest dynamics, though, result from the constantly evolving interactions and feedbacks among trees and their environment and requires to encompass complete communities [@DeAvila2016].
 Forests response to disturbance is build on the recruitment of new individuals and on the mortality of disturbance survivors.
-Disturbance survivors proved to mirror the pre-disturbance forest composition [@Piponiot2018], so now predicting the recruitment composition and diversity trajectories would be a major step to elucidate the future of tropical forest in a changing global environment where disturbance are expected to become more and more frequent. 
-This would give insights into the resilience of this hyperdiverse ecosystems, elucidate the determinism, or not, of tropical forests trajectories, test the convergence after disturbance of taxonomic and functional communities towards initial state and also help future adaptative conservation strategies [@Diaz2005;@Gardner2007;@Schwartz2017].
+As disturbance survivors proved to mirror the pre-disturbance forest composition [@Piponiot2018], the recruitment composition and dynamics is the key to elucidate the future of tropical forest in a changing global environment.
+This would give insights into the resilience of hyperdiverse tropical forest ecosystems, elucidate the determinism, or not, of tropical forests trajectories and the maintenance of communities initial taxonomic and functional characteristics after disturbance and eventually help future adaptative conservation strategies [@Diaz2005;@Gardner2007;@Schwartz2017].
 
-Recruitment processes result from the interplay of deterministic processes, like the exclusion of stress-intolerant species or the limitation of similarity through the competition for resource [@Ackerly2003;@McGill2006], and stochastic processes like random dispersal, recruitment and death [@Hubbell2001].
+Recruitment result from the interplay of deterministic processes, like niche-based competitive exclusion or filtering of stress-intolerant species [@Ackerly2003;@McGill2006], and stochastic processes like random dispersal, recruitment and death [@Hubbell2001].
 Supposedly, deterministic processes are inherently linked to disturbance which locally changes ecosystem's biotic and abiotic conditions and maintains large ecological range of species in the community [@Molino2001;@Bongers2009].
-These processes would, inter alia, maintain in communities fast growing species with efficient resource acquisition but poorly resistant to hazards and diseases while in mature forests favor slow-growing, stress tolerant species conserving resources in long-lived dense tissues [@Denslow1980].
-Deterministic processes therefore rely on the Intermediate Disturbance Hypothesis (IDH) that explains the maintenance of tropical forests biodiversity by the patchy variability of environmental conditions in space and time [@Guitet2018]. 
+In disturbed communities these processes would maintain fast growing species with efficient resource acquisition but weak resistant to hazards and diseases while in mature forests favor slow-growing, stress tolerant species conserving resources in long-lived dense tissues [@Denslow1980].
+Deterministic processes therefore rely on the Intermediate Disturbance Hypothesis (IDH) explaining the maintenance of tropical forests biodiversity by the patchy variability of environmental conditions in space and time [@Guitet2018]. 
 Specifically, in tropical wet forests changes in light availability after disturbance enhance the recruitment of pioneers and light-demanding species in comparison with mature forests dominated by more competitive shade bearers. 
 Empirical tests of the IDH in tropical rainforests, though, proved hard to succeed and yielded controversial results [@Hubbell1999;@Molino2001;@Sheil2003].
 During post-disturbance times, the shift from resource-acquisitive to resource-conservative ecological strategies may be detected in leaves (leaf thickness, toughness, chlorophyll content and specific area) and stem (wood specific gravity and bark thickness) functional traits and in life-history traits (maximum height at adult stage and class of seed mass) [@Wright2004;@Chave2009b;@Herault2011]. 
@@ -210,13 +210,13 @@ mtext("Equivalent diversity",side=2,line=1)
 The trajectories of punctual recruitment richness, some key functional traits (SLA and bark thickness) and the species turn-over exhibited hump-shaped, unimodal trajectories.
 
 The 10-15 first years of these trajectories seemed driven by the growth of pre-disturbance saplings benefiting from the environmental changes and alleviated competition that follow disturbance [@Herault2010].
-After low disturbance intensity this translated into a stable functional diversity of the recruited community, equivalent to these of control plots governed by stochastic recruitment processes. 
+After low disturbance intensity this translated into a stable functional diversity of the recruited community, equivalent to these of control plots shaped by stochastic recruitment processes. 
 After intense disturbance, this phase corresponded to sharp increase of SLA and decrease of wood density and leaf thickness community means.
 This tendencies revealed prominent recruitment of pioneers with efficient light acquisition, short-lived tissues and fast growth (Figure \@ref(fig:Fig4)) [@Wright2004;@Chave2009b;@Herault2011;@Reich2014]. 
-Above an intensity threshold disturbance then additionally involved short-lived, competitive species, *i.e.* hard pionneers, dominating the recruitment and reducing its functional diversity.
+Above an intensity threshold disturbance then additionally involved short-lived, competitive, *hard pionneers* species, dominating the recruitment and reducing its functional diversity.
 
 Following this first phase, the recruitment progressively incorporated true recruits, *i.e.* trees germinated from the seed bank after disturbance.
-The resulting trajectories then corresponded to the interplay between deterministic processes involving selection and similarity limitation and random demographic processes of mature forests progressively emerging again.
+The resulting trajectories were shaped by the interplay between deterministic processes, excluding stress-intolerant and uncompetitive species, and stochastic recruitment of mature forests that progressively emerged again.
 The balance between both processes resulted in different trajectories according to the disturbance intensity.
 
 After low disturbance intensity (T1 plots) the recruitment trajectories were determined by selective pressures towards light demanding species that underwent similarity limitation enhancing their functional diversity.
@@ -238,10 +238,12 @@ The recruitment would progressively shift towards long-lived pionneers which par
 For all plots the richness and functional diversity of recruitment had recovered thirty years after disturbance to levels equivalent as those observed short after disturbance and in control plots.
 In contrast the species distribution evenness and functional diversity of recruited trees remained lower than initial and control values, revealing similar but unachieved trajectories as those of other plots. 
 
-Still, for all treatments recruitment processes were restored, matching the stochastic recruitment of mature forests and showing low taxonomic turnover between recruited trees and pre-disturbance communities.
-Communities trajectories would then maintain the initial differences in taxonomic composition among communities [@Fukami2005]. 
-Similarly the functional traits trajectories proved very different among plots and treatments, sometimes even showing opposed tendencies (like for the Leaf Chlorophyll Content, SLA or Hmax).
-More than commonly though, then, the taxonomic and functional recovery of communities would depend on the pre-disturbance ecosystem characteristics [@Anderson2007;@Herault2018]. 
+Still, for all treatments recruitment processes were restored, matching the stochastic recruitment of mature forests.
+Besides, whatever the disturbance intensity, the recruitment turnover between recruited and pre-disturbance communities ended up close to zero.
+More than commonly, then, the taxonomic recovery trajectories would depend on the pre-disturbance ecosystem characteristics and maintain the initial taxonomic differences among communities [@Anderson2007;@Herault2018]. 
+In contrast the functional diveristy and traits trajectories essentially followed a common trajectory among treatments.
+Communities then converged in the functional space despite their divergence in taxonomic composition [@Fukami2005].
+
 This makes these commmunities both functionally and taxonomically resilient despite the settlment of long lived pioneers which make it a long term process for high disturbance intensity as evidenced by the persistent impact on traits trajectories.
 Our results extend previous ones from the Paracou experiment, 10 years [@Molino2001] and 20 years [@Baraloto2012a] after disturbance which already suggested the resilience of taxonomic and functional composition. 
 
