@@ -246,7 +246,7 @@ In contrast the functional diveristy and traits trajectories essentially followe
 This makes these commmunities both functionally and taxonomically resilient despite the settlment of long lived pioneers, which make a long term process of recovery for high disturbance intensity as evidenced by the persistent impact on traits and diversity trajectories.
 Our results extend previous ones from the Paracou experiment, 10 years [@Molino2001] and 20 years [@Baraloto2012a] after disturbance which already suggested the resilience of taxonomic and functional composition. 
 
-These conclusions however only hold for a single disturbance event, given the involvement of the seed bank trigerring a storage effect likely to modify the resilience of the community. 
+These conclusions however only hold for a single disturbance event, given the involvement of the seed bank trigerring a storage effect likely to modify the resilience of the community [@Norden2009]. 
 In this hypothetical case, the competitive exclusion among dormant life-stage (seeds or even seedlings) would be harsher and likely bring more radical changes in the recruitment composition and functional profile of the community.
 
 # Conclusion
