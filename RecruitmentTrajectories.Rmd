@@ -1,5 +1,5 @@
 ---
-title: "30 Years of Recruitment in Tropical Forest After Selective Logging"
+title: "30 Years of Post-diturbance Recruitment in Tropical Forest"
 author:
   - name: Ariane MIRABEL
     authsuperscript: 1*
@@ -22,7 +22,7 @@ corrauthor:
     url: http://www.ecofog.gf/spip.php?article47
 abstract: >
   Résumé de l'article.
-keywords: [mot-clés, séparés par des virgules]
+keywords: [Taxonomic and Functional Diversity, Recruitment, Resilience, Tropical Forests, Disturbance Dynamics]
 journalinfo: Hal 00679993
 archive: DOI xxxx
 date: "`r format(Sys.time(), '%d %B %Y')`"
@@ -34,8 +34,8 @@ preamble: >
   \hyphenation{bio-di-ver-si-ty sap-lings}
 bibliography: references.bib
 lang: english
-keywordlabel: Mots-clés # Keywords
-corrauthorlabel: Contact # Corresponding author
+keywordlabel: Keywords #Mots-clés 
+corrauthorlabel: Corresponding author # Contact
 output: 
   bookdown::pdf_book:
     base_format: EcoFoG::article
@@ -69,8 +69,8 @@ Regarding diversity, however, similar attempts have been hindered by both the hu
 If the response to disturbance has been identified for common species assemblages, it usually remained confined to few commercial and valuable species [@Sebbenn2008;@Rozendaal2010;@Vinson2015]. 
 Forest dynamics, though, result from the constantly evolving interactions and feedbacks among trees and their environment and requires to encompass complete communities [@DeAvila2016].
 Forests response to disturbance is build on the recruitment of new individuals and on the mortality of disturbance survivors.
-As disturbance survivors proved to mirror the pre-disturbance forest composition [@Piponiot2018], the recruitment composition and dynamics is the key to elucidate the future of tropical forest in a changing global environment.
-This would give insights into the resilience of hyperdiverse tropical forest ecosystems, elucidate the determinism of tropical forests trajectories and their convergence towards intial states and eventually help future adaptative conservation strategies [@Diaz2005;@Gardner2007;@Schwartz2017].
+As disturbance survivors proved to mirror the pre-disturbance forest composition [@Herault2018], the recruitment composition and dynamics is the key to elucidate the future of tropical forest in a changing global environment.
+This would give insights into the resilience of hyperdiverse tropical forest ecosystems, elucidate the determinism of tropical forests trajectories and their convergence towards initial states and eventually help future adaptative conservation strategies [@Diaz2005;@Gardner2007;@Schwartz2017].
 
 Recruitment result from the interplay of stochastic processes like random dispersal, recruitment and death [@Hubbell2001] and niche-based deterministic processes [@Adler2005].
 The latter, relying on communities abiotic environment, exclude species according to their tolerance to stress or to the competition for resources that limits functional similarity [@Ackerly2003;@McGill2006].
