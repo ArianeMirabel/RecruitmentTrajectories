@@ -34,8 +34,8 @@ preamble: >
   \hyphenation{bio-di-ver-si-ty sap-lings}
 bibliography: references.bib
 lang: english
-keywordlabel: Keywords #Mots-clés 
-corrauthorlabel: Corresponding author # Contact
+keywordlabel: Keywords
+corrauthorlabel: Corresponding author 
 output: 
   bookdown::pdf_book:
     base_format: EcoFoG::article
@@ -72,7 +72,7 @@ Forests response to disturbance is build on the recruitment of new individuals a
 As disturbance survivors proved to mirror the pre-disturbance forest composition [@Herault2018], the recruitment composition and dynamics is the key to elucidate the future of tropical forest in a changing global environment.
 This would give insights into the resilience of hyperdiverse tropical forest ecosystems, elucidate the determinism of tropical forests trajectories and their convergence towards initial states and eventually help future adaptative conservation strategies [@Diaz2005;@Gardner2007;@Schwartz2017].
 
-Recruitment result from the interplay of stochastic processes like random dispersal, recruitment and death [@Hubbell2001] and niche-based deterministic processes [@Adler2005].
+Recruitment result from the interplay of stochastic processes like random dispersal, recruitment and death [@Hubbell2001] and niche-based deterministic processes [@Adler2007].
 The latter, relying on communities abiotic environment, exclude species according to their tolerance to stress or to the competition for resources that limits functional similarity [@Ackerly2003;@McGill2006].
 These deterministic processes along with the patchy variability of environmental conditions in space and time would then explain the maintenance of tropical forests biodiversity according to the Intermediate Disturbance Hypothesis (IDH) [@Guitet2018]. 
 Disturbance would maintain large ecological range of species in the community, from fast growing, resources-acquisitive but stress-intolerant species favored in disturbance gaps, to slow-growing, stress-tolerant and resource-conservative species dominating in mature forests [@Denslow1980;@Molino2001;@Bongers2009].
