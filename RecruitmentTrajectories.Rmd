@@ -1,5 +1,5 @@
 ---
-title: "30 Years of Post-diturbance Recruitment in Tropical Forest"
+title: "30 Years of Post-disturbance Recruitment in Tropical Forest"
 author:
   - name: Ariane MIRABEL
     authsuperscript: 1*
@@ -37,10 +37,10 @@ lang: english
 keywordlabel: Keywords
 corrauthorlabel: Corresponding author 
 output: 
+  bookdown::gitbook: default
   bookdown::pdf_book:
     base_format: EcoFoG::article
     keep_tex: TRUE
-  bookdown::gitbook: default
   bookdown::word_document2: default
 ---
 
@@ -207,11 +207,16 @@ mtext("Equivalent diversity",side=2,line=1)
 
 # Discussion
 
+We analyzed the trajectories followed by the composition, diversity, and functional characteristics of trees recruited after disturbance to highlight the response of tropical forests and determine its resilience to help future conservation strategies.
+The 30 years-long monitoring analysed allowed to identify the different steps of forests recovery and the corresponding assembly rules.
+We identified two distinct phases, the first corresponding to the recruitment of pre-disturbance saplings that reflected the diversity and composition of the stand in place, and the second driven by "true recruits" germinated from the seed bank after disturbance.
+The second phase involved environmental selection and progressive competition among species according to the disturbance intensity, which build recruited communities divergent from the initial stand persisting in the long term.
+
 ## On the underlyings of the hump-shaped trajectories
 
 The trajectories of punctual recruitment richness, some key functional traits (SLA and bark thickness) and the species turn-over exhibited hump-shaped, unimodal trajectories.
 
-The 10-15 first years of these trajectories seemed driven by the growth of pre-disturbance saplings benefiting from the environmental changes and alleviated competition that follow disturbance [@Herault2010].
+The 10-15 first years of these trajectories were driven by the growth of pre-disturbance saplings benefiting from the environmental changes and alleviated competition following disturbance [@Herault2010].
 After low disturbance intensity this translated into a stable functional diversity of the recruited community, equivalent to these of control plots shaped by stochastic recruitment processes. 
 After intense disturbance, this phase brought sharp increases in theSLA, wood density and leaf thickness trajectories.
 This tendencies revealed prominent recruitment, above an intensity threshold, of short-lived, fast growing *hard pionneers* species with competitive and efficient light acquisition (Figure \@ref(fig:Fig4)) [@Wright2004;@Chave2009b;@Herault2011;@Reich2014]. 
