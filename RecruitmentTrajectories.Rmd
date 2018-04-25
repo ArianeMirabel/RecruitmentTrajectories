@@ -64,25 +64,30 @@ source("Scripts/DrawingTools.R")
 # Introduction
 
 Determining the response of tropical forests to disturbance is a key to predict their fate in a global change context where disturbance are expected to become more and more frequent.
+Tropical forests indeed currently experience a wide range of disturbance, from radical land-use changes like for agriculture or mining [@Dezecache2017a;@Dezecache2017b] to insidious changes in communities structure and functioning like following changes in the precipitation regime or after selective logging [@Baraloto2012;@Herault2016].
 In that respect a vast literature has successfully modeled the response of tropical forest dynamics, carbon stocks and fluxes to anthropogenic and natural disturbances [@Gourlet-Fleury2000;@Putz2012;@Martin2015;@Piponiot2016]. 
 Regarding diversity, however, similar attempts have been hindered by both the huge biological diversity and the scarcity of long-term monitoring. 
 If the response to disturbance has been identified for common species assemblages, it usually remained confined to few commercial and valuable species [@Sebbenn2008;@Rozendaal2010;@Vinson2015]. 
-Forest dynamics, though, result from the constantly evolving interactions and feedbacks among trees and their environment and requires to encompass complete communities [@DeAvila2016].
-Forests response to disturbance is build on the recruitment of new individuals and on the mortality of disturbance survivors.
-As disturbance survivors proved to mirror the pre-disturbance forest composition [@Herault2018], the recruitment composition and dynamics is the key to elucidate the future of tropical forest in a changing global environment.
-This would give insights into the resilience of hyperdiverse tropical forest ecosystems, elucidate the determinism of tropical forests trajectories and their convergence towards initial states and eventually help future adaptative conservation strategies [@Diaz2005;@Gardner2007;@Schwartz2017].
+Forests communities functioning and dynamics, though, result from the constantly evolving interactions and feedbacks among trees and their environment and they would only be assessed through the study of entire communities [@DeAvila2016;@Liang2016].
+Forests response to disturbance is build on the recruitment of new individuals and on the population of disturbance survivors.
+As the latest proved to mirror the pre-disturbance forest composition [@Herault2018], the drivers of post-disturbance recruitment will be those of the response of the whole community. dynamics and composition of the recruitment is the key to elucidate the future of tropical forest in the changing global environment.
 
-Recruitment result from the interplay of stochastic processes like random dispersal, recruitment and death [@Hubbell2001] and niche-based deterministic processes [@Adler2007].
-The latter, relying on communities abiotic environment, exclude species according to their tolerance to stress or to the competition for resources that limits functional similarity [@Ackerly2003;@McGill2006].
-These deterministic processes along with the patchy variability of environmental conditions in space and time would then explain the maintenance of tropical forests biodiversity according to the Intermediate Disturbance Hypothesis (IDH) [@Guitet2018]. 
-Disturbance would maintain large ecological range of species in the community, from fast growing, resources-acquisitive but stress-intolerant species favored in disturbance gaps, to slow-growing, stress-tolerant and resource-conservative species dominating in mature forests [@Denslow1980;@Molino2001;@Bongers2009].
-Specifically, in tropical wet forests changes in light availability after disturbance enhance the recruitment of pioneers and light-demanding species to the contrary of mature forests dominated by more competitive shade bearers. 
-Empirical tests of the IDH in tropical rainforests, though, proved hard to succeed and yielded controversial results [@Hubbell1999;@Molino2001;@Sheil2003].
+Recruitment trajectories after disturbance will then first highlight the resilience of hyperdiverse tropical forest ecosystems and identify the determinants of their response to disturbance.
+Forests response to disturbance is translated by the trajectories of communities diversity and composition.
+To our opinion taxonomic and functional trajectories would depend on the initial community through its composition and diversity that determine a priori a part of the recruitable pool of species.
+This pool of species would in turn influence key drivers of community assembly [@Kunstler2016] and result in a self-designed trajectory along time.
+Similar reasoning apply to both taxonomic and functional trajectories, although those might be distinct given the possible decoupling between taxonomic and functional characteristics in a community [@Fukami2005].
+Besides the dependency of trajectories to initial state, a key point to adapt future conservation and exploitation strategies is the trajectories' convergence towards the same initial conditions and the maintenance of communities difference after disturbance [@Diaz2005;@Gardner2007;@Schwartz2017].
+Above the intrinsinc communities parameters, recruitment results from the interplay of external processes.
+Those are either stochastic, like random dispersal, recruitment and death [@Hubbell2001], or deterministic like niche-based competition processes [@Adler2007].
+While stochastic processes would build communities as random samples of larger, regional ones, deterministic processes rely on the abiotic environment and filter-out recruited species according to their ecology.
+Specifically, species would be selected through their tolerance to stress or competition for resources.
+Based on the Intermediate Disturbance Hypothesis (IDH) these deterministic processes and the patchy variability of environmental conditions in space and time maintain a large ecological range in the community via the species selected under past environmental conditions [@Guitet2018].
+In tropical forests deterministic processes depend on the strategy of resource use, specifically light, and therefore result in shifts from fast growing, resources-acquisitive but stress-intolerant species favored in disturbance gaps, to slow-growing, stress-tolerant and resource-conservative species dominating in mature forests [@Denslow1980;@Molino2001;@Bongers2009].
+Communities functional diversity would then be driven either by selective pressures filtering-out some functional strategies or by the competitive exclusion for resources limiting the functional similarity among species [@Ackerly2003;@McGill2006].
+It would be translated by either the overdispersion or the restriction of leaf and stem functional traits (leaf thickness, toughness, chlorophyll content and specific area; wood specific gravity and bark thickness) and life-history traits (maximum height at adult stage and class of seed mass) [@Wright2004;@Chave2009b;@Herault2011]. 
 
-The recruitment processes would be identified through the divergence of trait diversity patterns within communities to random species and traits samples. 
-An selection of species based in their ecology and stress-tolerance would reduce the communities trait diversity while an overdispersion of functional traits translates the exclusion of species using shared resources and a limitaiton of similarity.
-The subsequent shift from resource-acquisitive to resource-conservative ecological strategies may be detected in leaves (leaf thickness, toughness, chlorophyll content and specific area) and stem (wood specific gravity and bark thickness) functional traits and in life-history traits (maximum height at adult stage and class of seed mass) [@Wright2004;@Chave2009b;@Herault2011]. 
-
+Empirical tests of those mechanisms, the validation of the IDH in tropical rainforests, and the resilience of communities proved hard to succeed and yielded controversial results [@Hubbell1999;@Molino2001;@Sheil2003].
 In this paper we follow the fate of a recruited tree communities (60121 individuals) over 30 years on a disturbance gradient, with 10 to 60% of forest biomass removed. 
 We assessed the taxonomic as well as functional diversity of recruited trees, using a large functional trait database covering the leaf, wood and life-history spectra. 
 We compared the observed trajectories to null models representing random trees recruitment and randomized functional traits.
