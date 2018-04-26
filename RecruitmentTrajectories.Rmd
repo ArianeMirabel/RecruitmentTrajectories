@@ -64,22 +64,21 @@ source("Scripts/DrawingTools.R")
 # Introduction
 
 Determining the response of tropical forests to disturbance is a key to predict their fate in a global change context where disturbance are expected to become more and more frequent.
-Tropical forests indeed currently experience a wide range of disturbance, from radical land-use changes like for agriculture or mining [@Dezecache2017a;@Dezecache2017b] to insidious changes in communities structure and functioning like following changes in the precipitation regime or after selective logging [@Baraloto2012;@Herault2016].
-In that respect a vast literature has successfully modeled the response of tropical forest dynamics, carbon stocks and fluxes to anthropogenic and natural disturbances [@Gourlet-Fleury2000;@Putz2012;@Martin2015;@Piponiot2016]. 
+Tropical forests indeed currently experience a wide range of disturbance, from radical land-use changes for agriculture or mining [@Dezecache2017a;@Dezecache2017b] to insidious changes in communities structure and functioning following changes in the precipitation regime or after selective logging [@Baraloto2012;@Herault2016].
+In that respect a vast literature successfully modeled the response of tropical forests structure, carbon stocks and fluxes to anthropogenic and natural disturbances [@Gourlet-Fleury2000;@Putz2012;@Martin2015;@Piponiot2016]. 
 Regarding diversity, however, similar attempts have been hindered by both the huge biological diversity and the scarcity of long-term monitoring. 
 If the response to disturbance has been identified for common species assemblages, it usually remained confined to few commercial and valuable species [@Sebbenn2008;@Rozendaal2010;@Vinson2015]. 
 Forests communities functioning and dynamics, though, result from the constantly evolving interactions and feedbacks among trees and their environment and they would only be assessed through the study of entire communities [@DeAvila2016;@Liang2016].
-Forests response to disturbance is build on the recruitment of new individuals and on the population of disturbance survivors.
-As the latest proved to mirror the pre-disturbance forest composition [@Herault2018], the drivers of post-disturbance recruitment will be those of the response of the whole community. dynamics and composition of the recruitment is the key to elucidate the future of tropical forest in the changing global environment.
+Forests response to disturbance is build on the the population of disturbance survivors and the recruitment of new individuals.
+The latter proved to mirror the composition of pre-disturbance forest [@Herault2018] so the response of the whole community will be driven by the diversity and composition of the recruitment.
+Recruitment trajectories, directly determining the community to be, are then key to elucidate the future of tropical forest in the changing global environment.
 
-Recruitment trajectories after disturbance will then first highlight the resilience of hyperdiverse tropical forest ecosystems and identify the determinants of their response to disturbance.
-Forests response to disturbance is translated by the trajectories of communities diversity and composition.
-To our opinion taxonomic and functional trajectories would depend on the initial community through its composition and diversity that determine a priori a part of the recruitable pool of species.
-This pool of species would in turn influence key drivers of community assembly [@Kunstler2016] and result in a self-designed trajectory along time.
-Similar reasoning apply to both taxonomic and functional trajectories, although those might be distinct given the possible decoupling between taxonomic and functional characteristics in a community [@Fukami2005].
-Besides the dependency of trajectories to initial state, a key point to adapt future conservation and exploitation strategies is the trajectories' convergence towards the same initial conditions and the maintenance of communities difference after disturbance [@Diaz2005;@Gardner2007;@Schwartz2017].
-Above the intrinsinc communities parameters, recruitment results from the interplay of external processes.
-Those are either stochastic, like random dispersal, recruitment and death [@Hubbell2001], or deterministic like niche-based competition processes [@Adler2007].
+Recruitment diversity and composition trajectories elucidate the resilience of hyperdiverse tropical forest ecosystems and highlight the determinants of their response after disturbance.
+To our opinion taxonomic and functional trajectories would depend on the composition and diversity of initial community, partly conditioning the pool of recruited species.
+Thereafter, the commmunities composition will in turn influence the assembly rules giverning further recruitment and result in a self-perpetuated trajectory along time [@Kunstler2016].
+Similar reasoning apply to both taxonomic and functional trajectories, although given the possible decoupling between taxonomic and functional characteristics in a community their respective trajectories might differ [@Fukami2005].
+The dependency of communties trajectories upon their initial state besides brings the question of its resilience, meaning the convergence of communities towards pre-disturbance conditions and the maintenance of the initial differences among communities [@Diaz2005;@Gardner2007;@Schwartz2017].
+In addition to those intrinsinc communities parameters, the recruitment results from the interplay of external processes either stochastic, like random dispersal, recruitment and death [@Hubbell2001], or deterministic like niche-based competition processes [@Adler2007].
 While stochastic processes would build communities as random samples of larger, regional ones, deterministic processes rely on the abiotic environment and filter-out recruited species according to their ecology.
 Specifically, species would be selected through their tolerance to stress or competition for resources.
 Based on the Intermediate Disturbance Hypothesis (IDH) these deterministic processes and the patchy variability of environmental conditions in space and time maintain a large ecological range in the community via the species selected under past environmental conditions [@Guitet2018].
