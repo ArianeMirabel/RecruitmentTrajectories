@@ -143,7 +143,42 @@ turnover<-function(TurnData){
   }))
 }
 
-
+Gaps<-function(RecDBg,RecDBng){
+  par(mfrow=c(2,3),oma=c(3,4,4,0),no.readonly=TRUE)
+  par(mar=c(0, 2, 2, 1))
+  invisible(lapply(1:length(RecDBng),function(ind){
+    recind<-RecDBng[[ind]]
+    Ylim=c(min(recind),max(recind))
+    plot(colnames(recind),recind[1,,"0.5"],type="n",ylim=Ylim,xlab="",ylab="",xaxt="n",main=names(RecDBng)[ind])
+    invisible(lapply(1:length(treatments),function(tr){
+      toplot<-recind[which(rownames(recind)%in%treatments[[tr]]),,]
+      lapply(1:nrow(toplot),function(Li){
+        lines(colnames(toplot),toplot[Li,,"0.5"],col=ColorsTr[[tr]],lwd=1.5)
+        polygon(c(colnames(toplot),rev(colnames(toplot))),c(toplot[Li,,"0.025"],rev(toplot[Li,,"0.975"])),
+                col=rgb(0,0,0,alpha=0.05),border=NA)
+      })
+    }))
+  }))
+  
+  par(mar=c(1, 2, 0, 1))
+  invisible(lapply(1:length(RecDBg),function(ind){
+    recind<-RecDBg[[ind]]
+    Ylim=c(min(recind),max(recind))
+    plot(colnames(recind),recind[1,,"0.5"],type="n",ylim=Ylim,xlab="",ylab="")
+    invisible(lapply(1:length(treatments),function(tr){
+      toplot<-recind[which(rownames(recind)%in%treatments[[tr]]),,]
+      lapply(1:nrow(toplot),function(Li){
+        lines(colnames(toplot),toplot[Li,,"0.5"],col=ColorsTr[[tr]],lwd=1.5)
+        polygon(c(colnames(toplot),rev(colnames(toplot))),c(toplot[Li,,"0.025"],rev(toplot[Li,,"0.975"])),
+                col=rgb(0,0,0,alpha=0.05),border=NA)
+      })
+    }))
+  }))
+  mtext("Equivalent\ndiversity",side=3,adj=0,line=-1,cex=1.2,outer=TRUE)
+  mtext("Years since disturbance",side=1,at=0.85,line=2,cex=1.2,outer=TRUE)
+  mtext("Undisturbed",side=2,line=1,cex=1.2,at=0.75,outer=TRUE)
+  mtext("Gaps",side=2,line=1,cex=1.2,at=0.25,outer=TRUE)
+}
 
 
 ##############################################################"
