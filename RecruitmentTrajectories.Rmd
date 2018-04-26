@@ -240,7 +240,7 @@ No dominance of hard pionneers driving the recruitment to highly to very differe
 This might result from recruitment and dispersal limitation due to the short dispersal distance observed for tropical trees, specifically in Paracou with the genetic clumping of some pioneers [@Leclerc2015;@Scotti2015a].
 The consistent interplay between stochastic recruitment and deterministic processes advocated the role of low intensity disturbance to maintain forests diversity, in line with the Intermediate Disturbance Hypothesis [@Molino2001;@Sheil2003].
 
-The trajectories after intense disturbance were first driven by the settlement of hard pioneers and then progressively by the balance between deterministic and stochastic processes as observed after low disturbance intensity.
+The trajectories after intense disturbance were first driven by the settlement of hard pioneers before progressively rely on the balance between deterministic and stochastic processes as observed for low disturbance intensity.
 This translated by a progressive decrease of recruitment taxonomic turnover and an increase of functional diversity.
 Although acquisitive strategies remained dominant (high leaf chlorophyll content and low wood density and leaf toughness), the weighted values of other traits stabilized and the SLA and bark thickness decreased again (then following a unimodal trajectory with a peak after the first recruitement phase).
 The 15 years laps of the unimodal turnover and traits trajectories corresponding to the first recruitment phase matched the life expectancy of hard pionners and of their competitive pressure.
