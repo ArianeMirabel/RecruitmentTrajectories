@@ -37,7 +37,7 @@ RecG<-lapply(0:2,function(id){
       ret<-unlist(lapply(sort(unique(yr[,"n_parcelle"])),function(plot){
         ret<-yr[which(yr[,"n_parcelle"]==plot & yr[,"gap"]==1),]
         if(nrow(ret)!=0){ret<-Replacement(ret,Alpha=alphas_plot[[which(names(alphas_plot)==plot)]])
-        return(expq(bcTsallis(as.AbdVector(tapply(ret,ret,length)),q=id,Correction="Best"),q=id))}
+        return(expq(bcTsallis(as.AbdVector(tapply(ret,ret,length)),q=id,Correction="None"),q=id))}
         else(return(0))
       }))
       ret<-as.data.frame(ret,row.names=as.character(sort(unique(yr[,"n_parcelle"]))))
@@ -64,7 +64,7 @@ RecNG<-lapply(0:2,function(id){
       ret<-unlist(lapply(sort(unique(yr[,"n_parcelle"])),function(plot){
         ret<-yr[which(yr[,"n_parcelle"]==plot & yr[,"gap"]==0),]
         if(nrow(ret)!=0){ret<-Replacement(ret,Alpha=alphas_plot[[which(names(alphas_plot)==plot)]])
-        return(expq(bcTsallis(as.AbdVector(tapply(ret,ret,length)),q=id,Correction="Best"),q=id))}
+        return(expq(bcTsallis(as.AbdVector(tapply(ret,ret,length)),q=id,Correction="None"),q=id))}
         else(return(0))
       }))
       ret<-as.data.frame(ret,row.names=as.character(sort(unique(yr[,"n_parcelle"]))))
