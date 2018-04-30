@@ -242,7 +242,6 @@ After intense disturbance however, the first species recruited were hard pioneer
 This was observed for 15 years after disturbance, which corresponds to the life expectancy of hard pionners, before the functional diversity increased again, acquisitive functional still dominating, and the recruited trees progressively resembled the initial composition and diversity.
 Communities trajectories then involved the interplay between stochastic recruitment and deterministic processes and advocated the role of disturbance to maintain forests diversity, in line with the Intermediate Disturbance Hypothesis [@Molino2001;@Sheil2003].
 
-
 ## On the resilience of the recruitment process
 
 Both recruitment richness and functional diversity had recovered thirty years after all disturbance intensity, reaching equivalent levels as those of undisturbed forests.
