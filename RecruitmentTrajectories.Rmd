@@ -37,10 +37,10 @@ lang: english
 keywordlabel: Keywords
 corrauthorlabel: Corresponding author 
 output: 
-  bookdown::gitbook: default
   bookdown::pdf_book:
     base_format: EcoFoG::article
     keep_tex: TRUE
+  bookdown::gitbook: default
   bookdown::word_document2: default
 ---
 
@@ -64,7 +64,7 @@ source("Scripts/DrawingTools.R")
 # Introduction
 
 Determining the response of tropical forests to disturbance is a key to predict their fate in a global change context where disturbance are expected to become more and more frequent.
-Tropical forests indeed currently experience a wide range of disturbance, from radical land-use changes for agriculture or mining [@Dezecache2017a;@Dezecache2017b] to insidious changes in communities structure and functioning following changes in the precipitation regime or after selective logging [@Baraloto2012;@Herault2016].
+Tropical forests indeed currently experience a wide range of disturbance, from radical land-use changes for agriculture or mining [@Dezecache2017a;@Dezecache2017b] to insidious changes in communities structure and functioning following changes in the precipitation regime or after selective logging [@Baraloto2012a;@Herault2016].
 In that respect a vast literature successfully modeled the response of tropical forests structure, carbon stocks and fluxes to anthropogenic and natural disturbances [@Gourlet-Fleury2000;@Putz2012;@Martin2015;@Piponiot2016]. 
 Regarding diversity, however, similar attempts have been hindered by both the huge biological diversity and the scarcity of long-term monitoring. 
 If the response to disturbance has been identified for common species assemblages, it usually remained confined to few commercial and valuable species [@Sebbenn2008;@Rozendaal2010;@Vinson2015]. 
@@ -98,7 +98,7 @@ We aimed to (i) assess the role of deterministic processes compared to stochasti
 
 The Paracou station is located in a lowland tropical rain forest in French Guiana (5°18'N and 52°53'W). Climate is tropical wet with mean annual precipitation averaging 2980 mm.y^-1^ (30-y period) and a 3-months dry season (< 100 mm.months^-1^) from mid-August to mid-November, and a one-month dry season in March [@Wagner2011]. Elevation ranges from 5 to 50 m and mean annual temperature is 26°C. Soils are thin acrisols over a layer of transformed saprolite with low permeability generating lateral drainage during heavy rains. The disturbance experiment spread over a network of twelve 6.25ha plots (Table \@ref(tab:Tab1)) that underwent three disturbance treatments in 1986-1987 [@Herault2018]. Dominant families are Fabaceae, Chrysobalanaceae, Lecythidaceae and Sapotaceae. 
 
-```{r Tab1, echo=FALSE}
+```{r Tab1, echo=FALSE,as.is=T}
 Intervention <- data.frame(
   Treatment=c("Control", "T1", "T2", "T3"),
   Timber=c("", 
