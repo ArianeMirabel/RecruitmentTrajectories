@@ -63,8 +63,8 @@ source("Scripts/DrawingTools.R")
 
 # Introduction
 
-Determining the response of tropical forests to disturbance is a key to predict their fate in a global change context where disturbance are expected to become more and more frequent.
-Tropical forests indeed currently experience a wide range of disturbance, from radical land-use changes for agriculture or mining [@Dezecache2017a;@Dezecache2017b] to insidious changes in communities structure and functioning following changes in the precipitation regime or after selective logging [@Baraloto2012a;@Herault2016].
+Determining the response of tropical forests to disturbance is a key to predict their fate in a global change context.
+In the last decades, tropical forests have experience a wide range of disturbance, from radical land-use changes for agriculture or mining [@Dezecache2017a;@Dezecache2017b] to more insidious changes in communities structure and functioning following anthropogenic disturbances such as selective logging [@Baraloto2012a;@Herault2016] or climate change (XXAubry-Kientz Biogeosciences).
 In that respect a vast literature successfully modeled the response of tropical forests structure, carbon stocks and fluxes to anthropogenic and natural disturbances [@Gourlet-Fleury2000;@Putz2012;@Martin2015;@Piponiot2016]. 
 Regarding diversity, however, similar attempts have been hindered by both the huge biological diversity and the scarcity of long-term monitoring. 
 If the response to disturbance has been identified for common species assemblages, it usually remained confined to few commercial and valuable species [@Sebbenn2008;@Rozendaal2010;@Vinson2015]. 
