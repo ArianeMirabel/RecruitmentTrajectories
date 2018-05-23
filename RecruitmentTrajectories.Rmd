@@ -68,23 +68,23 @@ In the last decades, tropical forests experienced a wide range of disturbance, f
 In that respect a vast literature successfully modeled communities response to disturbance in terms of tree growth [@Gourlet-Fleury2000], tree height [@Rutishauser2016], carbon stocks and fluxes [@Putz2012;@Martin2015;@Piponiot2016]. 
 Similar approaches regarding forest composition and diversity, however, have been hindered by the huge biological diversity, often focusing on common or mainly commercial species, and the scarcity of long-term monitoring [@Sebbenn2008;@Rozendaal2010;@Vinson2015].
 
-Communites trajectories after disturbance, defined here as the evolution of communities diversity along time, depend on the trees surviving from before disturbance and on the new trees recruited afterward [@Herault2018]. 
-Surviving trees proved to mirror the composition of pre-disturbance forest so communities' diversity response is driven by the diversity and composition of recruited trees, which build the future community and determine the resilience of pre-disturbance state.
-Recruitment trajectories depend first on the composition and diversity of initial community that partly condition the available pool of recruited species [@Herault2018].
-Then trajectories depend on recruitment processes either stochastic, like random dispersal, recruitment and death [@Hubbell2001], or deterministic like niche-based competition processes [@Adler2007] 
-While stochastic processes would build communities similar to random samples of larger regional metacommunities, deterministic processes rely on the abiotic environment and filter-out recruited species according to their ecology. 
-Understand communities response to disturbance comes back first to estimate the balance between these determinants, the initial composition and the different recruitment processes, and then to elucidate communities resilience and the maintenance of the initial differences among local communities [@Diaz2005;@Gardner2007;@Schwartz2017].
+Communites trajectories after disturbance, defined here as the evolution of communities diversity along time, depend on the trees surviving from before disturbance and on those recruited afterward [@Herault2018]. 
+Because surviving trees proved to mirror the composition of pre-disturbance forest, the response of communities is driven by the diversity and composition of recruited trees that build the future community and determine the resilience of the pre-disturbance forest.
+The recruitment trajectories are first determined by the composition and diversity of the initial community that partly conditions the pool of recruitable species [@Herault2018].
+Trajectories then depend on the recruitment processes that are either stochastic, like random dispersal, recruitment and death [@Hubbell2001], or deterministic, like niche-based competition processes [@Adler2007] 
+While stochastic processes build communities as random samples of the larger regional-scale forest, deterministic processes rely on the abiotic environment and filter-out recruited species according to their ecology. 
+To understand the mechanisms of communities trajectories the first point is to estimate the importance of the initial community composition and the balance between stochastic and deterministic processes.
+Then it is to determine the resilience of communities and the time recover pre-disturbance ecosystem properties in order to adjust exploitation and conservation guidelines [@Diaz2005;@Gardner2007;@Schwartz2017].
 
-The processes shaping communities response will differently affect the functional diversity [@Kunstler2016], that considers species functioning and ecology [@Violle2007b], and the taxonomic diversity, which consider all species equal.
-The coupling between functional and taxonomic trajectories will then be insightful for the identification of ecological processes at stake, and communities resilience should be addressed considering both functional and taxonomics characteristics [@Fukami2005]. 
-Functional trajectories of recruited trees are shaped by the deterministic processes that are oriented towards the use of limiting resources. 
-Recruitment processes will then either filter-out the les efficient functional strategies and restrict the functional diversity, or exclude the less competitive ones and increase the functional diversity though the competition among species and limitation of their functional similarity [@Ackerly2003;@McGill2006]. 
-The disturbance response of tropical forests where the light is limiting would then be a shift from slow-growing, long-living species with "conservative" resource use to fast growing, resource "acquisitve" species [@Denslow1980;@Molino2001;@Bongers2009]. 
-To detect these processes the large functional trait-based litterature identified key leaf, wood and life-history functional traits assessing species ecology and resources acquisition strategy [@Wright2004;@Chave2009b;@Herault2011].
+The ecological processes shaping communities' trajectories differently affect their functional and taxonomic diversities as the first consider all species equally while the second accounts for species functioning and ecology [@Violle2007b;@Kunstler2016].
+The potential decoupling between functional and taxonomic trajectories is then insightful of the ecological processes at stake, and only a combined approach of functional and taxonomic diversities would reveal the determinant recruitment processes [@Fukami2005]. 
+Functional trajectories will rely on deterministic processes oriented towards the use of limiting resources: in tropical forests where the light is limiting forests response would then be a shift from slow-growing, long-living species with "conservative" resource use to fast growing, resource "acquisitve" species [@Denslow1980;@Molino2001;@Bongers2009].  
+Such processes would be detected throught the diversity and composition trajectories of key leaf, wood and life-history functional traits assessing species ecology and resources acquisition strategy [@Wright2004;@Chave2009b;@Herault2011].
+The deterministic processes could filtered-out, decreasing the recruitment functional diversity, or the less competitive ones could be excluded, increasing the functional diversity through the limitation of similarity among species [@Ackerly2003;@McGill2006].
 
-In this paper we follow the fate of a recruited tree communities (60121 individuals) over 30 years on a large disturbance gradient, with 10 to 60% of forest biomass removed. 
-We assess the taxonomic and functional diversity of recruited trees, using a large functional trait database covering the leaf, wood and life-history spectra. 
-We compare the observed trajectories to null models representing random trees recruitment and randomized functional traits. 
+In this paper we followed the fate of a recruited tree communities (60121 individuals) over 30 years on a large disturbance gradient, with 10 to 60% of forest biomass removed. 
+We assessed the taxonomic and functional diversity of recruited trees, using a large functional trait database covering the leaf, wood and life-history spectra. 
+We compared the observed trajectories to a stochastic recruitment entailing the random sampling of recruites and the randomization of their functional traits. 
 We aimed (i) to assess the role of deterministic processes compared to stochastic recruitment after disturbance, (ii) assess the taxonomic and functional convergence of forest communities and the maintenance of taxonomic composition in the long term, and (iii) determine the degree of resilience of the ecosystem.
 
 # Material and Methods
