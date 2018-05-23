@@ -37,10 +37,10 @@ lang: english
 keywordlabel: Keywords
 corrauthorlabel: Corresponding author 
 output: 
+  bookdown::gitbook: default
   bookdown::pdf_book:
     base_format: EcoFoG::article
     keep_tex: TRUE
-  bookdown::gitbook: default
   bookdown::word_document2: default
 ---
 
@@ -75,7 +75,7 @@ Then trajectories depend on recruitment processes either stochastic, like random
 While stochastic processes would build communities similar to random samples of larger regional metacommunities, deterministic processes rely on the abiotic environment and filter-out recruited species according to their ecology. 
 Understand communities response to disturbance comes back first to estimate the balance between these determinants, the initial composition and the different recruitment processes, and then to elucidate communities resilience and the maintenance of the initial differences among local communities [@Diaz2005;@Gardner2007;@Schwartz2017].
 
-The processes shaping communities response will differently affect the functional diversity [@Kunstler2016], that considers species functioning and ecology [@Violle2007], and the taxonomic diversity, which consider all species equal.
+The processes shaping communities response will differently affect the functional diversity [@Kunstler2016], that considers species functioning and ecology [@Violle2007b], and the taxonomic diversity, which consider all species equal.
 The coupling between functional and taxonomic trajectories will then be insightful for the identification of ecological processes at stake, and communities resilience should be addressed considering both functional and taxonomics characteristics [@Fukami2005]. 
 Functional trajectories of recruited trees are shaped by the deterministic processes that are oriented towards the use of limiting resources. 
 Recruitment processes will then either filter-out the les efficient functional strategies and restrict the functional diversity, or exclude the less competitive ones and increase the functional diversity though the competition among species and limitation of their functional similarity [@Ackerly2003;@McGill2006]. 
@@ -250,24 +250,21 @@ The recruitment remained dominated by acquisitive functional strategies but the 
 
 ## On the resilience of the recruitment process
 
-After 30 years, although taxonomic and functional diversity had recovered initial values, the recruitment rates  remained higher and the processes did not match the stochastic recruitment observed in undisturbed plots. 
-Recruitment processes might then be consistently resilient, despite the settlment of long-lived pioneers after intense disturbance, but slow to recover. 
+After 30 years, although taxonomic and functional diversity had recovered initial values, the recruitment remained more restricted than for stochastic recruitment of undisturbed plots. 
+Recruitment processes were then resilient despite the settlment after intense disturbance of long-lived pioneers, but proved slow to recover. 
 
-The recovery of recruitment processes involves the convergence of communities towards the initial state. 
-More than commonly thought, the ecosystem trajectories in the taxonomic space would depend on the pre-disturbance ecosystem characteristics and this concur to maintain the initial taxonomic differences among local communities [@Anderson200]. 
+The recovery of recruitment processes meant the convergence of communities towards the initial state.
+More than commonly thought, the taxonomic trajectory of ecosystems would then rely on their pre-disturbance characteristics and concur to maintain the initial taxonomic differences among local communities [@Anderson2007]. 
 In contrast the trajectories of traits and functional diversity were essentially similar among treatments, arguing for the confluence of communities in the functional space despite their divergence in taxonomic composition [@Fukami2005].
-This confirms previous results from the Paracou experiment, conducted 10 years [@Molino2001] and 20 years [@Baraloto2012a] after disturbance, where the early signs of the resilience of taxonomic and functional composition had been detected. 
-The time length, i.e. several decades, of the recovery processes entails great caution regarding the forest conservation and exploitation guidelines if the pursued objectives are a complete recovery of pre-disturbance ecosystem properties.
-
-????To that was added the involvement of the seed bank in the recovery processes which own resilience remains unknown.
-
-????Any storage effect, altering the pool of recruitable species, would modify the resilience of the community itself and impact the response to further disturbance events [@Norden2009]. 
-
-????In such case, the competitive exclusion among dormant life-stage (seeds or even seedlings) would be harsher and likely bring more radical changes in the recruitment composition and functional profile of the community.
+This confirmed previous results from the Paracou experiment, conducted 10 years [@Molino2001] and 20 years [@Baraloto2012a] after disturbance, where the early signs of the resilience of taxonomic and functional composition had been detected. 
+The recovery processes proved to spread over long periods, i.e. several decades, and to involve the germination of trees from the seed bank and therefore affect the stock of recruitable species and communities response and resilience to additional disturbance [@Norden2009]. 
 
 # Conclusion
 
-The 30 years monitoring of the Paracou plots highlighted the tropical forests' response to disturbance composed of two recruitment phase modulated by the disturbance intensity. In the short-term forests response was driven by the enhanced growth of grown saplings benefiting from the alleviated competition and the environmental changes.  Above an intensity threshold the recruitment was besides dominated by hard-pioneers radically changing the recruitment composition, diversity and, likely, functioning. In the long-term response was driven by recruits from the seed bank which underwent selection towards light demanding species and similarity limitation enhancing the functional diversity. These deterministic processes followed a gradual balance with the stochastic recruitment of mature forests which eventually restored communities diversity and composition, maintaining their initial differences. Although forests proved resilient to intense disturbance this appeared to be a long-term processes likely only valid for single disturbance events.
+The hindsight of the 30 years of forest monitoring highlighted a two-phased disturbance response, distinguished by the balance between stochastic and determinisitic recruitment processes.
+Communities trajectories were first driven by the stochastic recruitment of already-grown saplings mirroring the predisturbance state before it is dominated by true recruits from the seed bank selected based on their resource acquisition strategy.
+Both communities taxonomy and functioning recovered in the long term but while all communities followed similar trajectories in the funcional space, their taxonomic trajectories relied upon communities composition and diversity and maintained initial local differences.
+Although resilient within the range of applied disturbance, communities followed a decade-long recovery and probably underwent compositional changes of their seed bank which entailed great caution regarding the forest conservation and exploitation guidelines if the pursued objectives are a complete recovery of pre-disturbance ecosystem properties.
 
 ----
 
