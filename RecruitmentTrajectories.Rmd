@@ -74,7 +74,7 @@ The recruitment trajectories are first determined by the composition and diversi
 Trajectories then depend on the recruitment processes that are either stochastic, like random dispersal, recruitment and death [@Hubbell2001], or deterministic, like niche-based competition processes [@Adler2007] 
 While stochastic processes build communities as random samples of the larger regional-scale forest, deterministic processes rely on the abiotic environment and filter-out recruited species according to their ecology. 
 To understand the mechanisms of communities trajectories the first point is to estimate the importance of the initial community composition and the balance between stochastic and deterministic processes.
-Then it is to determine the resilience of communities and the time recover pre-disturbance ecosystem properties in order to adjust exploitation and conservation guidelines [@Diaz2005;@Gardner2007;@Schwartz2017].
+Then it is to determine the resilience of communities and the time to recover pre-disturbance ecosystem properties in order to adjust exploitation and conservation guidelines [@Diaz2005;@Gardner2007;@Schwartz2017].
 
 The ecological processes shaping communities' trajectories differently affect their functional and taxonomic diversities as the first consider all species equally while the second accounts for species functioning and ecology [@Violle2007b;@Kunstler2016].
 The potential decoupling between functional and taxonomic trajectories is then insightful of the ecological processes at stake, and only a combined approach of functional and taxonomic diversities would reveal the determinant recruitment processes [@Fukami2005]. 
