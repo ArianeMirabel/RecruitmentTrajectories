@@ -37,10 +37,10 @@ lang: english
 keywordlabel: Keywords
 corrauthorlabel: Corresponding author 
 output: 
+  bookdown::gitbook: default
   bookdown::pdf_book:
     base_format: EcoFoG::article
     keep_tex: TRUE
-  bookdown::gitbook: default
   bookdown::word_document2: default
 ---
 
@@ -60,22 +60,11 @@ Library("kableExtra")
 #source("Scripts/GithubPages.R")
 source("Scripts/DrawingTools.R")
 
-library(rJava)
-
-words <- function(text){
-  require(qdap)
-  if (missing(text)) {
-    text <- readLines("clipboard", warn = FALSE)  # read from clipboard
-  }
-  sum(wc(text), na.rm = TRUE)
-} 
-words()
 ```
 
-The vast tropical forests ensuring various ecological, economic ans social services worldwide currently face a global changing context threatening their diversity and functioning.
-Determine tree communities response to disturbance and the underlying mechanisms is crucial to anticipate the fate of tropical forests.
-Examine the recruitment processes enlighten both the ecological rules driving communities trajectories and their direction towards a recovery of pre-disturbance characteristics.
-I n this study we fully
+
+To clarify the fate of tropical forests in the current global changing context we examined the taxonomic and functional response of tree recruitment processes after a gradient of disturbance.
+
 
 # Introduction
 
@@ -163,7 +152,7 @@ Eventually, in disturbed plots the recruited communities were examined distingui
 
 The taxonomic diversity was assessed through Richness and the Hill number translation of Shannon and Simpson indices [@Hill1973;@chao2015estimating;@Marcon2015b].  
 The three diversities belong to the set of HCDT or generalized entropy, respectively corresponding to the 0, 1 and 2 order of diversity (*q*), which grasps the balance between richness and evenness in the community through the value of *q* that emphasizes common species.
-Functional trajectories were estimated with the Rao quadratic entropy and completed by the trajectories of traits community weighted means (CWM), representing the average trait value in a community weighted by relative abundance of the species carrying each value [@Diaz2007;@Garnier2004].
+Functional trajectories were estimated with the Rao quadratic entropy measuring the functional divergence within communities, and completed by the trajectories of traits community weighted means (CWM), representing the average trait value in a community weighted by relative abundance of the species carrying each value [@Diaz2007;@Garnier2004].
 Seed mass trajectories were reported by the proportion of each class recorded in the inventories.
 The similarity between the recruited trees and the pre-disturbance forest was measured with the turnover metrics detailed in @Podani2013a.
 To estimate the importance of stochastic processes the recruitment was compared to the trajectories of a random sampling.
