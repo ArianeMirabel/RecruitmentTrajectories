@@ -59,11 +59,23 @@ Library <- function(Packages) {
 Library("kableExtra")
 #source("Scripts/GithubPages.R")
 source("Scripts/DrawingTools.R")
+
+library(rJava)
+
+words <- function(text){
+  require(qdap)
+  if (missing(text)) {
+    text <- readLines("clipboard", warn = FALSE)  # read from clipboard
+  }
+  sum(wc(text), na.rm = TRUE)
+} 
+words()
 ```
 
-Forest dynamics rely on a constant disturbance regime shaping their diversity and composition. The underlying processes however remain unclear and it is difficult to anticipate the fate of forests in the current global changing context, specifically for the highly diverse and most threatened tropical forests. 
-Forests functioning and diversity structure 
-The diversity and composition in tree species determine forest functioning and the processes that build them: reading their trajectories after disturbance is the key to understand forest response to disturbance, elucidate their resilience and anticipate their fate in the changin climate. 
+The vast tropical forests ensuring various ecological, economic ans social services worldwide currently face a global changing context threatening their diversity and functioning.
+Determine tree communities response to disturbance and the underlying mechanisms is crucial to anticipate the fate of tropical forests.
+Examine the recruitment processes enlighten both the ecological rules driving communities trajectories and their direction towards a recovery of pre-disturbance characteristics.
+I n this study we fully
 
 # Introduction
 
