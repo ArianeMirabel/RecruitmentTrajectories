@@ -85,13 +85,13 @@ Determinisitic processes are a balance between species differences in competitiv
 On the one hand, the difference in competitive ability will drive the most competitive species to dominance and the least competitive to elimination, thus decreasing the functional diversity.
 On the other hand, niche differences favors low densities and low similarity among species, thus increasing the functional diversity [@Ackerly2003;@McGill2006].
 In tropical forests where the light is limiting, communities response to disturbance proved a shift from slow-growing, long-lived species with "conservative" resource use to fast growing, resource "acquisitive" species [@Denslow1980;@Molino2001;@Bongers2009].  
-The competition processes at stake then involve the key leaf, wood and life-history functional traits that poved to assess species ecology and resources acquisition strategy [@Wright2004;@Chave2009b;@Herault2011;@Gerhold2015].
+The competition processes at stake then involve the key leaf, wood and life-history functional traits assessing species ecology and resources acquisition strategy [@Wright2004;@Chave2009b;@Herault2011;@Gerhold2015].
 
 In this paper we followed the fate of a recruited tree communities (60121 individuals) over 30 years on a large disturbance gradient, with 1 to 60% of forest biomass removed. 
 We assessed the taxonomic and functional diversity of recruited trees and the corresponding traits trajectories, using a large functional trait database covering the leaf, wood and life-history spectra.
-We besides followed along time the composition dissimilarity of recruited trees compared to the initial communities.
+We besides followed the composition dissimilarity of recruited trees compared to the initial communities.
 Eventually we compared the observed trajectories to a stochastic recruitment entailing the random sampling of recruits and the randomization of their functional traits. 
-These trajectories aimed (i) to assess the role of deterministic processes compared to stochastic recruitment after disturbance, (ii) assess the taxonomic and functional convergence of forest communities and the maintenance of taxonomic composition in the long term, and (iii) determine the degree of resilience of the ecosystem.
+These trajectories aimed (i) to assess the balance between stochastic and deterministic processes shaping communities response to disturbance and (ii) further identify the deterministic competition processes at stake. Besides we (iii) assessed the taxonomic and functional convergence of forest communities and the maintenance of taxonomic composition in the long term, and (iv) determined the degree of resilience of the ecosystem.
 
 # Material and Methods
 
@@ -241,11 +241,11 @@ Communities trajectories involved an interplay between stochastic and determinis
 As a first step (0-8 years), recruited trees showed low turnover compared to the initial composition and matched the functional diversity of a stochastic recruitment process.
 This first recruitment phase mirroring the old-growth pre-disturbance community then likely involved already grown saplings (DBH <10cm) immediatly benefitting from the increased enlightment and the alleviated competition induced by disturbance [@Herault2010]. 
 
-A second phase (8-15 years) then fall into place, corresponding to marked changes in several functional traits trajectories and a decrease in recruitment evenness and functional diversity.
+A second phase (8-15 years) then fall into place, corresponding to marked changes in several functional traits trajectories and to a decrease in recruitment evenness and functional diversity.
 This second phase likely incorporated true recruits, *i.e.* trees germinated from the seed bank that constitute the main part of the recruitment [@Lawton1988].
 The pool of species recruited then was restricted according to their resource acquisition strategy and revealed the deterministic processes that balanced the stochastic recruitment observed in the first place.
 Indeed, sharp changes in the SLA, wood density and leaf thickness trajectories occured after intense disturbance and revealed the prominent recruitment of short-lived, fast growing hard pionneer species with competitive and efficient light acquisition [@Wright2004;@Chave2009b;@Herault2011;@Reich2014].  
-The recruitment was therefore shaped by exclusive competition among species based on their competitive ability differences for light acquisition [@Mayfield2010].
+The recruitment was therefore shaped by exclusive competition among species based on their competitive ability differences for light acquisition [@Mayfield2010], as already demonstrated in for tree species in temperate forests [@Kunstler2012].
 The balance between deterministic and stochastic processes shaping the second phase was determined by the initial disturbance intensity.
 After light disturbance (T1 plots), despite the pool of recruited species was restricted, the species turnover compared to initial state remained low.
 Recruited trees then still mirrored the pre-disturbance communities but recruited species were more pioneers and light demanders, with strategies of efficient resource acquisition (high SLA and leaf chlorophyll content) and inexpensive, short-lived tissues (low leaf thickness and thoughness, small Hmax and low wood density and bark thickness) [@Hubbell1999;@Schnitzer2001;@Sheil2003;@Bongers2009].
