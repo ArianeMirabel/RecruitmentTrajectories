@@ -80,12 +80,18 @@ Then it is to determine the resilience of communities and the time to recover pr
 
 The ecological processes shaping communities' trajectories differently affect communities taxonomic characteristics, that consider all species equal, and functional characteristics, which accounts for species ecology and functioning [@Violle2007b;@Kunstler2016].
 Major insights on determinisitict processes ruling species recruitment would be given by the comparisons of taxonomic and functional trajectories [@Mayfield2010;@Fukami2005]. 
-Deterministic processes rely on the competitive interactions amongs species and the corresponding functional differences regarding the use of limited shared resources.
-Determinisitic processes are a balance between species differences in competitive ability and niche differences.
+At this local scale, deterministic processes rely on individual-based competitive interactions depending on the functional differences among trees regarding the use of limited shared resources [@Webb2002].
+Determinisitic processes are a balance between the differences in species competitive ability and ecological niche.
 On the one hand, the difference in competitive ability will drive the most competitive species to dominance and the least competitive to elimination, thus decreasing the functional diversity.
-On the other hand, niche differences favors low densities and low similarity among species, thus increasing the functional diversity [@Ackerly2003;@McGill2006].
+On the other hand, niche differences favors low densities and low similarity among species, thus increasing the functional diversity [@Ackerly2003;@McGill2006;@Kunstler2012].
 In tropical forests where the light is limiting, communities response to disturbance proved a shift from slow-growing, long-lived species with "conservative" resource use to fast growing, resource "acquisitive" species [@Denslow1980;@Molino2001;@Bongers2009].  
 The competition processes at stake then involve the key leaf, wood and life-history functional traits assessing species ecology and resources acquisition strategy [@Wright2004;@Chave2009b;@Herault2011;@Gerhold2015].
+
+Beyond the mechanisms of communities response, the key question remain the taxonomic and functional resilience of initial mature forests.
+With great implications for ecosystem management and biodiversity conservation, the resilience of ecosystems besides raises key questions about communities dynamics.
+The 
+The determinism of post-distrbance trajectories either entails the convergence of communities towards determined, pre-disturbance states or the stochasticity of communities dynamics.
+
 
 In this paper we followed the fate of a recruited tree communities (60121 individuals) over 30 years on a large disturbance gradient, with 1 to 60% of forest biomass removed. 
 We assessed the taxonomic and functional diversity of recruited trees and the corresponding traits trajectories, using a large functional trait database covering the leaf, wood and life-history spectra.
@@ -233,7 +239,7 @@ mtext("Equivalent diversity",side=2,line=1)
 
 # Discussion
 
-## The three recruitment phases of communities trajectories
+## The three phases of recruitment trajectories
 
 Along the 30 years, the recruitment richness and species turnover compared to the initial composition, and the trajectories of key functional traits (SLA and bark thickness) exhibited clear hump-shaped trajectories, revealing three distinct recruitment phases.
 Communities trajectories involved an interplay between stochastic and deterministic recruitment, first involving species competitive exclusion and then niche partitioning, before recovering initial recruitment processes.
@@ -255,9 +261,7 @@ After intense disturbance in contrast (T2 and T3 plots), the recruitment rapidly
 These drastic trajectories changes reflected an overhelming recruitment of hard pioneers likely entailing significant changes in communities functioning [@Diaz2005]. 
 
 A third recruitment phase eventually entailed a return towards initial taxonomic and functional diversities.
-It revealed niche differentiation processes enhancing the recruitment functional diversity and the recovery of stochastiv recruitment processes.
-Recruited species remained mainly light-demanding and therefore still underwent competitive exclusion, but their enhanced functional diversity suggested an increasing importance of niche partitioning processes [@Mayfield2010].
-In parallell the recruitment composition increasingly mirrored pre-disturbance communities which revealed a progressive recovery of the stochastic recruitment processes dominating in mature forests [@Lawton1988].
+Recruited species remained mainly light-demanding and still submitted to competitive exclusion, but their functional diversity and compositional similarity with initial communities progressively increased which revealed the recovery of stochastic recruitment processes dominating in mature forests [@Lawton1988;@Mayfield2010].
 
 The recruitment trajectories proved identical in disturbed versus untouched areas with plots, suggesting community scale processes.
 In undisturbed forests the light availability proved quite homogeneous and unrelated to trees recruitment success [@Dalling2002] while disturbance gaps and associated edge effect significantly increasing the global enlightment enhancing trees recruitment success [@Ruger2009].
