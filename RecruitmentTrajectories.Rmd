@@ -87,13 +87,12 @@ On the other hand, niche differences favors low densities and low similarity amo
 In tropical forests where the light is limiting, communities response to disturbance proved a shift from slow-growing, long-lived species with "conservative" resource use to fast growing, resource "acquisitive" species [@Denslow1980;@Molino2001;@Bongers2009].  
 The competition processes at stake then involve the key leaf, wood and life-history functional traits assessing species ecology and resources acquisition strategy [@Wright2004;@Chave2009b;@Herault2011;@Gerhold2015].
 
-Beyond the mechanisms of communities response, the key question remain the taxonomic and functional resilience of initial mature forests.
-With great implications for ecosystem management and biodiversity conservation, the resilience of ecosystems besides raises key questions about communities dynamics.
-The 
-The determinism of post-distrbance trajectories either entails the convergence of communities towards determined, pre-disturbance states or the stochasticity of communities dynamics.
+Beyond the mere understanding of response mechanisms, disentangle deterministic from stochastic processes insights the facets of communities resilience.
+The deterministic view entails the convergence of communities towards a given structure, likely defined by the environment [@Clements1916], whereas the stochastic point of view presupposes random species recruitment and variable divergence of commnuities [@Diamond1975].
+Recent analysis reconciled both points of view in suggesting the convergence of communities in the functional space, with determined diversity and composition of functional niches, but its divergence in the taxonomic space.
+These hypothesis on communities assembly however remain rarely tested, specifically in tropical forest, despite their importance in guiding ecosystems management and conservation policies.
 
-
-In this paper we followed the fate of a recruited tree communities (60121 individuals) over 30 years on a large disturbance gradient, with 1 to 60% of forest biomass removed. 
+In this paper we followed the fate of recruited tree communities (60121 individuals) over 30 years on a large disturbance gradient, with 1 to 60% of forest biomass removed. 
 We assessed the taxonomic and functional diversity of recruited trees and the corresponding traits trajectories, using a large functional trait database covering the leaf, wood and life-history spectra.
 We besides followed the composition dissimilarity of recruited trees compared to the initial communities.
 Eventually we compared the observed trajectories to a stochastic recruitment entailing the random sampling of recruits and the randomization of their functional traits. 
@@ -266,20 +265,22 @@ Recruited species remained mainly light-demanding and still submitted to competi
 The recruitment trajectories proved identical in disturbed versus untouched areas with plots, suggesting community scale processes.
 In undisturbed forests the light availability proved quite homogeneous and unrelated to trees recruitment success [@Dalling2002] while disturbance gaps and associated edge effect significantly increasing the global enlightment enhancing trees recruitment success [@Ruger2009].
 
-
 ## The questioned completeness of communities resilience
 
 After 30 years, although taxonomic and functional diversity had recovered initial values, the recruitment processes remained submitted to the deterministic selection of recruited species in contrast with the stochastic recruitment of undisturbed forests. 
 The recruitment processes proved then consistently resilient but after long time period. 
 
-The recovery of recruitment processes meant the convergence of communities towards their initial, pre-disturbance state.
-More than commonly thought, the taxonomic trajectory of ecosystems relied on their pre-disturbance characteristics and concur to maintain the initial taxonomic differences among local communities [@Anderson2007]. 
-This dependency has already been observed in tropical forests and would be consistent with the major mobilisation of the seed bank that demonstrated to be very variable [@Dalling2002].
+The recovery of recruitment processes proceeded along with the recovery of initial composition and diversity.
+This return towards initial, pre-disturbance state meant the maintenance of their difference in composition and suggested the existence of multiple stable equilibrium, as suggested for the highly diverse and productive ecosystems by @Chase2003.
+To maintain initial differences taxonomic trajectory would then depend on initial states, consistently with previous observation and with the observed mobilisation of local seed banks that largely varies in tropical forests [@Dalling2002;@Anderson2007]. 
+The multiple communities composition restored by deterministic processes and then stochastically maintained suggest that tropical forest communities regionally rely on deterministic assembly processes building a regional species pool declined in locally divergent, randomly drifting communities.
+
 In contrast the trajectories of traits and functional diversity were essentially similar among treatments, arguing for the confluence of communities in the functional space despite their divergence in taxonomic composition [@Fukami2005].
 This confirmed previous results from the Paracou experiment, conducted 10 years [@Molino2001] and 20 years [@Baraloto2012a] after disturbance, where the early signs of the resilience of taxonomic and functional composition had been detected. 
-Although under way of recovery the functional diversity and several traits values remained altered 30 years after disturbance, revealing the long-term impact of disturbance. 
-Both taxonomic and functional recovery therefore spread over long periods, *i.e.* several decades, and besides involved the germination of trees from the seed bank.
-Forests seed bank constitute the stock of recruitable species and significantly determines communities recovery: its involvment in the recovery trajectories might then alter the diversity and composition of recruitable species and then the resilience of the community [@Norden2009]. 
+
+Although ongoing, communities recovery proved slow as functional diversity and several traits values remained altered 30 years after disturbance. 
+The long-lasting taxonomic and functional recovery besides impacted the seed bank, which is the stock of recruitable species.
+The seed bank significantly determines communities recovery so its involvment might alter the resilience of the community and its response to further disturbance [@Norden2009]. 
 
 # Conclusion
 
@@ -288,9 +289,9 @@ Communities trajectories were first driven by the stochastic recruitment of alre
 A second phase was driven by the true recruits from the seed bank submitted to deterministic competitive processes selecting the species based on their light acquisition strategy.
 After intense disturbance this second phase was dominated by hard pioneers that proved short-lived species but drastically changed the diversity structure and the functioning of communities. 
 A third phase eventually carried out the recovery towards the initial communities with the resurgence of stochastic recruitment progressively balancing the competitive selection processes.
-The recruitment response to disturbance ensured the resilience of the communities, all following similar trajectories in the functional space but diverging in the taxonomic space which maintained the initial local differences.
+The recruitment response to disturbance ensured communities resilience that followed similar trajectories in the functional space but diverged in the taxonomic space and maintained initial composition differences.
 Although tangible, communities recovery lasted for several decades and probably altered the seed bank diversity.
-Communities resilience would then decrease after disturbance, which entailed great caution regarding the forest conservation and exploitation guidelines if the pursued objectives are a complete recovery of pre-disturbance ecosystem properties.
+Disturbance would then alter communities resilience itself, entailing great caution of forests conservation and exploitation guidelines if the pursued objectives are a complete recovery of pre-disturbance ecosystem properties.
 
 ----
 
