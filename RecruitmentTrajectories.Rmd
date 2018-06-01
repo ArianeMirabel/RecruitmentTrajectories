@@ -26,7 +26,7 @@ abstract: >
   Specifically it would come to (i) disentangle stochastic from determined recruitment underlying communities and (ii) further specify the deterministic competition rules involved, and finally (iii) resolve the completeness and duration of communities resilience.
   
   We examined trees diversity and composition trajectories in a neotropical forest over 30 years after a gradient of logging and thinning disturbance, by focusing on recruitment processes that drive communities response to disturbance and determine the various facets their resilience.
-  Specifically we analysed the trajectories of three diversities assessing communities taxonomic richness and evennes, of Rao functional diversity intergrating species ecology through 7 key functional traits, and of the recruitment taxonomic turnover compared to pre-disturbance communities.
+  Specifically we analysed the trajectories of three diversities assessing communities taxonomic richness and evennes, of Rao functional diversity integrating species ecology through 7 key functional traits, and of the recruitment taxonomic turnover compared to pre-disturbance communities.
   Observed trajectories were besides compared to null models of stochastic taxonomic and functional recruitment.
   
   We found three-phased recruitment trajectories shaped by a gradual balance between stochastic and deterministic recruitment.
@@ -182,7 +182,7 @@ Seed mass trajectories were reported by the proportion of each class recorded in
 The similarity between the recruited trees and the pre-disturbance forest was measured with the turnover metrics detailed in @Podani2013a.
 To estimate the importance of stochastic processes the recruitment was compared to the trajectories of a stochastic model corresponding to random samplings.
 For the taxonomic trajectories the stochastic model was a random sampling of individual trees according to their observed abundance that preserved species abundance and tree density.
-For for the functional diversity the stochastic model was a shuffling of functional trait values among species that randomizes abundances across species but within coomunities [@Mason2013].
+For the functional diversity the stochastic model was a shuffling of functional trait values among species that randomizes abundances across species but within coomunities [@Mason2013].
 
 All composition and diversity metrics correspond to the median and 90% percentile obtained after 50 iterations of the taxonomy uncertainty propagation framework and the gap filling process.
 The stochastic trajectories were similarily obtained after 50 iterations of the random sampling.
