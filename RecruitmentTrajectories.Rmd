@@ -21,20 +21,23 @@ corrauthor:
     email: ariane.mirabel@ecofog.gf
     url: http://www.ecofog.gf/spip.php?article47
 abstract: >
-  The role of trees biodiversity for tropical forests environmental, economic and social services promt the clarification of its fate in the global changing climate.
-  Predict the response and resilience of forests to disturbance requires to understand the processes structuring communities along time in terms of functioning and taxonomic diversity and compostition. it would come to 
-  Specifically it would come to (i) disentangle stochastic from determined recruitment underlying communities and (ii) further specify the deterministic competition rules involved, and finally (iii) resolve the completeness and duration of communities resilience.
+  Trees biodiversity is central for tropical forests functioning and services.
+  In current climatic and land-use changing context it is urgent to clarify the response to disturbance of communities diversity and composition and to identify the underlying mechanisms.
+  Recruitment is a major driver of forests trajectories and directly reflects the processes driving the reponse to disturbance. 
+  Clarify forests resilience and recovery through recruitment trajectories would come to (i) unravel the stochastic from deterministic recruitment processes and (ii) specify the deterministic competition rules involved in species selection, and finally (iii) resolve the time to recover pre-disturbance recruitment processes and the completeness of their resilience.
   
-  We examined trees diversity and composition trajectories in a neotropical forest over 30 years after a gradient of logging and thinning disturbance, by focusing on recruitment processes that drive communities response to disturbance and determine the various facets their resilience.
-  Specifically we analysed the trajectories of three diversities assessing communities taxonomic richness and evennes, of Rao functional diversity integrating species ecology through 7 key functional traits, and of the recruitment taxonomic turnover compared to pre-disturbance communities.
-  Observed trajectories were besides compared to null models of stochastic taxonomic and functional recruitment.
+  We examined the trajectories of recruitment diversity and composition in 70ha of a neotropical forest over 30 years after a gradient of logging and thinning disturbance (from 15 to 60% of AGB removed).
+  Specifically we analysed the trajectories of three taxonomic diversities assessing communities richness and evennes, of Rao functional diversity integrating species ecology through 7 key functional traits, and of the species turnover of recruited trees compared to pre-disturbance communities.
+  Recruitment trajectories were besides compared to null models of stochastic taxonomic and functional recruitment.
   
-  We found three-phased recruitment trajectories shaped by a gradual balance between stochastic and deterministic recruitment.
-  Trajectories first relied on the stochastic recruitment of pre-disturbance grown saplings, before the dominance of deterministic recruitment of trees from the seed bank undergoing competitive exclusion for light.
-  Trajectories eventually restored the stochastic recruitment specific to old-growth forests along with communities initial states.
-  Communities resilience was consistent but while it proved fast in a common functional space among communities the taxonomic resilience was decades-long and maintained initial composition differences.
+  We found three-phased recruitment trajectories shaped by the gradual balance between stochastic and deterministic recruitment.
+  Trajectories first relied on the stochastic recruitment of pre-disturbance grown saplings, before the deterministic recruitment of *true recruits* from the seed bank, undergoing competitive exclusion for light, dominate in a second phase.
+  In a third phase an inversed balance restored the stochastic recruitment observed in mature forests marking a return to communities initial states.
+  Recruitment trajectories entailed a fast recovery of the functional diversity but a slower taxonomic recovery still unachieved although it maintained composition differencies among plots.
   
-  The response of tropical forests to disturbance shaped by deterministic, competitive recruitment ensures taxonomic and functional resilience. Forests response quickly recovered common functioning but composition differences, also restored, drove decades-long recovery diverging among communities. Although promising for the maintenance of forests' multiple biodiversity facets under a changing context, these results called cautions regarding the duration of management practices and the consistency of similar trajectories after repeted disturbance.
+  Recruitment processes after disturbance are driven by a gradual importance of deterministic competitive processes enhancing acquisitive, light demanding species in the first place before stochastic recruitment are restored.
+  Both taxonomic and functional structure of the recruitment proved resilient, although the species composition of pre-disturbance communities remained unachieved.
+  If promising for the maintenance of the multiple facets of forests biodiversity, these results called cautions regarding the necessary time for forest recovery and the resonse of repeated disturbance.
   
 keywords: [Taxonomic and Functional Diversity, Recruitment, Resilience, Tropical Forests, Disturbance Dynamics]
 journalinfo: Hal 00679993
@@ -84,38 +87,37 @@ source("Scripts/DrawingTools.R")
 Determining the response of tropical forests to disturbance is key to predict their fate in the global changing context.
 In the last decades, tropical forests experienced a wide range of disturbance, from radical land-use changes for agriculture or mining [@Dezecache2017a;@Dezecache2017b] to more insidious changes of communities structure, diversity and functioning following climatic changes [@Aubry-Kientz2015] or anthropogenic activities like selective logging [@Baraloto2012a;@Herault2016]. 
 In that respect a vast literature successfully modeled communities response to disturbance in terms of tree growth [@Gourlet-Fleury2000], tree height [@Rutishauser2016], carbon stocks and water and nutrient fluxes [@Putz2012;@Martin2015;@Piponiot2016]. 
-However, similar approaches regarding forest diversity remain hindered by the huge biological diversity constraining studies to focus on common or commercial species, and by the scarcity of long-term monitoring [@Sebbenn2008;@Rozendaal2010;@Vinson2015].
+However, similar approaches regarding forest diversity remain hindered the scarcity of long-term monitoring and by the huge biological diversity that constrain the analysis to focus on common or commercial species [@Sebbenn2008;@Rozendaal2010;@Vinson2015].
 
-Major insights on forests diversity response to disturbance would be given by communities trajectories along time.
+Major insights on the response of forests diversity to disturbance would be given by the trajectories of tree communities along time.
 Communities comprise on the one hand the trees surviving from before disturbance and on the other hand those recruited afterward [@Herault2018]. 
-Surviving trees already proved mirroring the diversity of pre-disturbance communities, so communities trajectories and resilience would depend on the diversity of recruited trees that build the future community.
-First, recruitment trajectories depend on the composition and diversity of the initial, pre-disturbance community that conditions the pool of recruitable species via the existing saplings and seed bank [@Herault2018].
-Then, trajectories depend either on stochastic recruitment determined by recruitment and dispersal limitations [@Hurtt1995;@Hubbell2001], or deterministic processes like niche-based competition or biotic interaction [@Adler2007].
+Surviving trees already proved to mirror the diversity and composition of pre-disturbance communities, so the dynamics and the resilience of communities would depend on the diversity of recruited trees.
+First, recruitment trajectories depend on the composition and diversity of the initial, pre-disturbance community as this conditions the pool of recruitable species via the existing saplings and seed bank [@Herault2018].
+Trajectories besides depend on recruitment processes, either stochastic and driven by recruitment and dispersal limitations [@Hurtt1995;@Hubbell2001], or deterministic and driven by niche-based competition or biotic interaction [@Adler2007].
 Stochastic processes build communities as random samples of the larger regional-scale forest.
 Deterministic processes in turn rely at this spatial scale on the interactions among species and with abiotic environment that filter-out recruited species following their ecology. 
-Understand the mechanisms of communities trajectories primarily requires to estimate the importance of the initial community composition and then balance between stochastic and deterministic processes.
-These mechanisms would then shed light on communities resilience and on the time to recover pre-disturbance ecosystem properties, eventually to adjust exploitation and conservation guidelines [@Diaz2005;@Gardner2007;@Schwartz2017].
+Understand the mechanisms of communities trajectories first comes to estimate the importance of the initial taxonomic composition and second to explicit the balance between stochastic and deterministic processes.
+Recruitment processes would then shed light on the resilience of communities and on the time before recovering the pre-disturbance ecosystem properties, and eventually help adjusting exploitation and conservation guidelines [@Diaz2005;@Gardner2007;@Schwartz2017].
 
-The ecological processes shaping the trajectories differently affect communities taxonomic characteristics, that consider all species equal, and functional characteristics, which accounts for species ecology and functioning [@Violle2007b;@Kunstler2016].
-Two communities may indeed be very different in terms of species diversity but very similar in terms of morphological traits and functioning [@Villeger2012].
-The differences between taxonomic and functional trajectories are insightful of recruitment rules, specifically regarding the deterministic processes and their strengh [@Mayfield2010;@Fukami2005]. 
-At this local spatial scale, deterministic processes rely on competitive interactions among trees determined by their functional differences in the use of limited shared resources [@Webb2002;@Perronne2017].
-Determinisitic processes ruling the assemblages of species are a balance between the differences in species competitive ability and ecological niche.
-Differences in competitive ability will drive the most competitive species to dominance and the least competitive to elimination, thus decreasing the functional diversity.
-Niche differences in turn favor low densities and low similarity among species, thus increasing the functional diversity [@Ackerly2003;@McGill2006;@Kunstler2012].
-In tropical forests where the light is limiting, communities response to disturbance proved a shift from slow-growing, long-lived species with "conservative" resource use to fast growing, resource "acquisitive" species [@Denslow1980;@Molino2001;@Bongers2009].  
-The competition processes at stake would therefore be grasp by key leaf, wood and life-history functional traits assessing species ecology and resources acquisition strategy [@Wright2004;@Chave2009b;@Herault2011;@Gerhold2015].
+The recruitment processes shaping the trajectories differently affect communities taxonomic structure, refering to species composition and diversity, and functional structure, accounting for species ecology and functioning [@Violle2007b;@Kunstler2016].
+Two communities may indeed be very different in terms of taxonomic diversity but very similar in terms of functional traits and functioning [@Villeger2012].
+The differences between taxonomic and functional trajectories are therefore insightful of the recruitment rules involved, specifically regarding the deterministic processes and their strength [@Mayfield2010;@Fukami2005]. 
+At this local spatial scale, deterministic processes rely on competitive interactions among trees determined by their functional differences regarding the use of limited shared resources [@Webb2002;@Perronne2017].
+The competitive interactions among species are a balance between their differences in competitive ability and ecological niche.
+Differences in competitive ability drive the most competitive species to dominance and the least competitive to elimination, and thus decrease the functional diversity of the community.
+Niche differences in turn favor low densities and low similarity among species, and thus increase the functional diversity [@Ackerly2003;@McGill2006;@Kunstler2012].
+In tropical forests where the light is limiting, communities response to disturbance translate in a shift from slow-growing, long-lived species with "conservative" resource use to fast growing, resource "acquisitive" species [@Denslow1980;@Molino2001;@Bongers2009].  
+The competition processes at stake would therefore be grasp by shifts in key leaf, wood and life-history functional traits assessing species resources acquisition strategy and ecology [@Wright2004;@Chave2009b;@Herault2011;@Gerhold2015].
 
-Beyond the mere understanding of response mechanisms, disentangle deterministic from stochastic processes insights the underlyings of communities resilience.
-Controversies remained about resilience determinism, entailing the convergence of communities towards a given structure likely defined by the environment [@Clements1916], opposed to a stochastic point of view entailing commnuities divergence through species random recruitment [@Diamond1975].
-Recently both points of view were reconciled under the hypothesis the communities diverge in the taxonomic space while they converge in the functional space with determined diversity and composition in functional niches.
-This hypothesis however remains to be tested for in tropical forest, despite their importance in guiding ecosystems management and conservation policies.
+Beyond the mere understanding of response mechanisms, disentangle deterministic from stochastic processes insights the tenants of communities resilience .
+Controversies remain about whether resilience is determinisitc, and thus entails the convergence of communities towards a given structure likely defined by the environment [@Clements1916], or stochastic, and thus entails communities divergence through species random recruitment [@Diamond1975].
+Recently both points of view were reconciled under the hypothesis that communities diverge in the taxonomic space while they converge in the functional space, and therefore have a determined diversity and composition in functional niches,but this hypothesis remains to be tested in tropical forest.
 
-In this paper we followed the fate of recruited tree communities (60121 individuals) over 30 years on a large disturbance gradient, with 1 to 60% of forest biomass removed. 
+In this paper we followed the fate of recruited tree communities (60 121 individuals) over 30 years on a large disturbance gradient, with 15 to 60% of forest biomass removed. 
 We assessed the taxonomic and functional diversity of recruited trees and associated traits trajectories, using a large functional trait database covering the leaf, wood and life-history spectra.
 We besides followed the dissimilarity in composition of recruited trees compared to the initial communities.
-Eventually we compared the observed trajectories to a stochastic recruitment entailing the recruits random sampling and the randomization of their functional traits. 
-These trajectories aimed to asses the recruitment mechanisms underlying forests response to disturbance, specifically assessing (i) the role of deterministic compared to stochastic processes and (ii) the competition deterministic processes invovled. Recruitment trajectories eventually (iii) enlightened the taxonomic and functional facets of forests resilience and its consequences on forests future.
+Eventually we compared the observed trajectories to a stochastic recruitment entailing a random sampling of recruited recruits and the randomization of their functional traits. 
+These trajectories aimed to highlight the recruitment processes underlying forests response to disturbance, specifically assessing (i) the role of deterministic compared to stochastic processes and (ii) the competition deterministic processes invovled. Recruitment trajectories eventually (iii) enlightened the taxonomic and functional facets of forests resilience and there consequences for forest management.
 
 # Material and Methods
 
