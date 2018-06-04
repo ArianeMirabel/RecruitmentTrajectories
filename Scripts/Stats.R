@@ -39,3 +39,33 @@ traits2[which(traits2[,"name"]=="Sterculia_speciosa"),"Hmax"]<-43
 
 traits<-merge(traits2,traits,by="name")[,c("Hmax","L_thickness","L_chloro","L_toughness","L_DryMass","SLA","WD","Bark_thick")]
 ### To be continued
+
+
+#########################################"
+# Test on traits database
+
+load("DB/BridgeData")
+
+Phylo<-"Genus" #"Family"
+
+Sep_t<-lapply(c("L_thickness","L_chloro","L_toughness","L_DryMass","SLA","WD","Hmax"),
+              function(trait){
+  sep<-lapply(as.character(unique(traits[,Phylo])),function(Fam){
+    ret<-traits[which(traits[,Phylo]==Fam),trait]
+    if(length(na.omit(ret))>1){
+    ret<-var.test(na.omit(ret),na.omit(traits[,trait]))
+    return(c(ret$p.value,ret$estimate,Fam))}
+    })
+  sep<-do.call(rbind,sep)
+  colnames(sep)<-c("Pval","ratio",'phylo')
+  return(sep)
+})
+names(Sep_t)<-c("L_thickness","L_chloro","L_toughness","L_DryMass","SLA","WD","Hmax")
+lapply(Sep_t,function(sep){return(sep[which(as.numeric(sep[,2])>1),])})
+  
+  
+  
+  
+  
+  
+  
