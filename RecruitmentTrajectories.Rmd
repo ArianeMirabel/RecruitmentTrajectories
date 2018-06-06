@@ -300,16 +300,15 @@ In contrast the trajectories of some traits and global functional diversity were
 This translated the convergence of communities in the functional space and the fast recovery of communities functioning despite their divergence in the taxonomic space [@Fukami2005].
 This confirmed previous results from the Paracou experiment, conducted 10 years [@Molino2001] and 20 years [@Baraloto2012a] after disturbance, where the early signs of the resilience of taxonomic and functional composition had been detected. 
 
-Although consistent communities recovery proved slow, specifically for taxonomic diversity and several functional traits that remained altered 30 years after disturbance. 
-The disturbance response besides impacted the seed bank, that is the stock of recruitable species and that determines communities resilience.
-Its involvment might therefore alter the resilience and future trajectories of communities [@Norden2009]. 
+Communities recovery was then consistent but slow, specifically for taxonomic diversity and several functional traits that remained altered 30 years after disturbance. 
+Besides, the recovery invovled and probably altered the seed bank stock, hence changing the diversity of the recruitable species and the resilience of the communities [@Norden2009]. 
 
 # Conclusion
 
 The hindsight of the 30 years of forest monitoring highlighted a three-phased disturbance response, defined by the balance between stochastic and determinisitic recruitment processes.
 Communities trajectories were first driven by the stochastic recruitment of already-grown saplings mirroring the pre-disturbance state before it was shaped by the true recruits from the seed bank that underwent competitive exclusion based on species light acquisition strategies.
 After intense disturbance the second recruitment phase was dominated by short-lived hard pioneers that drastically changed the diversity and the functioning of communities. 
-A third phase eventually carried out the recovery towards the initial communities with the resurgence of stochastic recruitment progressively balancing the competitive exclusion for resources.
+A third phase eventually carried out the recovery towards the initial communities with the resurgence of stochastic recruitment progressively balancing competitive exclusion.
 The recruitment response to disturbance demonstrated communities quick functional resilience in a common functional space while it highlighted the long-term taxonomic resilience, *i.e.* several decades, that maintained initial composition differences.
 Even though the accurate impact on the seed bank remains to be clarified, communities recovery was tangible but its length entailed great caution regarding forests management guidelines that aim to a complete recovery of ecosystems.
 
