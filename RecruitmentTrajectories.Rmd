@@ -224,6 +224,7 @@ For both disturbed and undisturbed plots, the observed functional diversity was 
 ```{r FunTraj, fig.asp=1.1/1, echo=FALSE,fig.cap="Functional diversity of punctual recruited trees (2-years laps) from the 7 functional traits (upper panel) and divergence to null model (lower panel). Values reported correspond to plot-level 0.025 and 0.975 percentiles (grey envelopes) and median (solid lines) obtained after 50 run of the null model and 50 repetitions of the taxonomic uncertainty propagation and the functional database gap-filling frameworks. Colors correspond to the disturbance intensity (green for control, blue for T1, orange for T2 and red for T3, see Table 1 for details)."}
 load("DB/RecruitmentPunctual_Functional");load("DB/RecruitmentPunctual_Functional_Nullmodel_Diff")
 
+windows()
 TrajectoryRec_fun(RecDB_fun=RecPun_Fun,RecDB_fun_Diff=RecPun_Fun_DiffNull)
 ```
 
