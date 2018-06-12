@@ -90,7 +90,8 @@ In the last decades, tropical forests experienced a wide range of disturbance, f
 In that respect a vast literature successfully modeled communities response to disturbance in terms of tree growth [@Gourlet-Fleury2000], tree height [@Rutishauser2016], carbon stocks and water and nutrient fluxes [@Putz2012;@Martin2015;@Piponiot2016]. 
 However, similar approaches regarding forest diversity remain hindered the scarcity of long-term monitoring and by the huge biological diversity that constrain the analysis to focus on common or commercial species [@Sebbenn2008;@Rozendaal2010;@Vinson2015].
 
-Major insights on the response of forests diversity to disturbance would be given by the trajectories of tree communities along time.
+Major insights on the response of forests diversity to disturbance and the underlying ecological processes would be given by the trajectories of tree communities along time.
+The structuring effects of determinant processes though might confound at the scale of the whole community [@Chave2004] and would be clarified by decomposing the communities according to underlying demographic processes. 
 Communities comprise on the one hand the trees surviving from before disturbance and on the other hand those recruited afterward [@Herault2018]. 
 Surviving trees already proved to mirror the diversity and composition of pre-disturbance communities, so the dynamics and the resilience of communities would depend on the diversity of recruited trees.
 First, recruitment trajectories depend on the composition and diversity of the initial, pre-disturbance community as this conditions the pool of recruitable species via the existing saplings and seed bank [@Herault2018].
