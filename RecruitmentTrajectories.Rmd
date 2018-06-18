@@ -23,22 +23,20 @@ corrauthor:
 abstract: >
   Trees biodiversity is central for tropical forests functioning and services.
   In the current climatic and land-use changing context it is urgent to clarify the response of communities diversity and composition to disturbance.
-  Recruitment as major driver of forests trajectories is crucial in that regard to highlight the underlying processes of forests response. 
-  Through recruitment trajectories, clarify forests resilience and recovery would come to (i) unravel the stochastic from deterministic recruitment processes and (ii) specify the deterministic competition rules involved in species selection, and finally (iii) resolve the time to recover pre-disturbance recruitment processes and the completeness of their resilience.
+  In that regard, recruitment processes as major driver of communities trajectories are suited to highlight their  response to disturbance and the underlying processes. 
+  Recruitment trajectories would allow (i) disentangling neutral, stochastic and deterministic, selective processes they rely on, and (ii) specifying the competition rules involved in species selection, and finally (iii) resolving the duration and the completeness of recruitment processes.
   
-  We examined the trajectories of recruitment diversity and composition in 70ha of a neotropical forest over 30 years after a gradient of logging and thinning disturbance (from 15 to 60% of AGB removed).
-  Specifically we analysed the trajectories of three taxonomic diversities assessing communities richness and evennes, of Rao functional diversity integrating species ecology through 7 key functional traits, and of the species turnover of recruited trees compared to pre-disturbance communities.
-  Recruitment trajectories were besides compared to null models of stochastic taxonomic and functional recruitment.
+  We examined the trajectories over 30 years of recruitment diversity and composition in 70ha of a neotropical forest following a gradient of logging and thinning disturbance (from 15 to 60% of AGB removed).
+  Specifically we analysed and compared to neutral models the recruitment trajectories in taxonomic richness, evennes, and compositional turnover compared to initial communities, and in Rao functional diversity integrating species ecology through 7 key functional traits.
   
-  We found three-phased recruitment trajectories shaped by the gradual balance between stochastic and deterministic processes.
-  Trajectories first relied on the stochastic recruitment of pre-disturbance grown saplings.
-  Then it relied on the deterministic recruitment of *true recruits* from the seed bank undergoing competitive exclusion favoring acquisitive, light-demandings species.
-  In a third phase an inversed balance restored the stochastic recruitment observed in mature forests and marked a return to communities initial states.
-  Recruitment trajectories entailed a fast recovery of the functional diversity but a slower taxonomic recovery still unachieved although it maintained composition differencies among plots.
+  We evidenced three recruitment phases shaped by the gradual balance between stochastic and deterministic underlying processes.
+  Trajectories first relied on the growth of saplings randomly recruited among the pre-disturbance community.
+  Then it relied on *true recruits* germinated from the seed bank recruited through competition processes favoring acquisitive, light-demandings species.
+  In a third phase an inversed balance restored the stochastic recruitment observed in mature forests and recovered the initial functioning and taxonomic compositon and diversity.
+  If the recruitment functional recovery was fast, the taxonomic recovery lasted for decades and although it confirmed the diversity and composition restoration, it questioned the completness of the resilience.
   
-  The response to disturbance is a combination of deterministic and stochastic processes, first altering recruits diversity and composition in favoring light-demanding species, and then restoring pre-disturbance taxonomic and functional structure through stochastic recruitment processes.
-  Both of the recruitment proved resilient, although the species composition of pre-disturbance communities remained unachieved.
-  Still, after 30 years recruits' composition remained alter so if promising for the maintenance of the multiple facets of forests biodiversity, these results called cautions regarding the necessary time for forest recovery and the resonse of repeated disturbance.
+  The response to disturbance is a combination of stochastic processes deterministic, predominant before disturbance and progressibvely restored, and deterministic competition processes favoring light-demanding species.
+  Both composition and diversity of the recruitment proved resilient, but the taxonmic characteristics was decades-long and called cautions regarding the time for forest recovery and the completeness of the resilience.
   
 keywords: [Taxonomic and Functional Diversity, Recruitment, Resilience, Tropical Forests, Disturbance Dynamics]
 journalinfo: Hal 00679993
