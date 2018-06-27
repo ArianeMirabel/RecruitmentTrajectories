@@ -39,7 +39,7 @@ abstract: >
   Although the taoxnomic and functional structure proved resilient, the taxonmic recovery was decades-long and called cautions regarding the time required for forest recovery and the completeness of communities resilience.
   
 keywords: [Taxonomic and Functional Diversity, Recruitment, Resilience, Tropical Forests, Disturbance Dynamics]
-journalinfo: Hal 00679993
+journalinfo: Hal xxx
 archive: DOI xxxx
 date: "`r format(Sys.time(), '%d %B %Y')`"
 preamble: >
@@ -47,7 +47,8 @@ preamble: >
   \DeclareUnicodeCharacter{B0}{\textdegree}
   \usepackage{tabu}
   \renewenvironment{table}{\begin{table*}}{\end{table*}\ignorespacesafterend}
-  \hyphenation{bio-di-ver-si-ty sap-lings}
+  \hyphenation{bio-di-ver-si-ty sap-lings post-dis-tur-bance}
+  \hypersetup{draft} 
 bibliography: references.bib
 lang: english
 keywordlabel: Keywords
@@ -80,16 +81,23 @@ source("Scripts/DrawingTools.R")
 
 ```
 
-
 # Introduction
 
-Determining the response of tropical forests to disturbance is key to predict their fate in the global changing context.
+Determining the response of tropical forests to disturbance is key to predict their fate in the global changing context. 
 In the last decades, tropical forests experienced a wide range of disturbance, from radical land-use changes for agriculture or mining [@Dezecache2017a;@Dezecache2017b] to more insidious changes of communities structure, diversity and functioning following climatic changes [@Aubry-Kientz2015] or anthropogenic activities like selective logging [@Baraloto2012a;@Herault2016]. 
-In that respect a vast literature successfully modeled communities response to disturbance in terms of tree growth [@Gourlet-Fleury2000], tree height [@Rutishauser2016], carbon, water and nutrient fluxes [@Putz2012;@Martin2015;@Piponiot2016]. 
+In that respect a vast literature successfully modeled communities response to disturbance in terms of tree growth [@Gourlet-Fleury2000], tree height [@Rutishauser2016], carbon, water and nutrient fluxes [@Putz2012;@Martin2015;@Piponiot2016].
 However, similar approaches regarding forest diversity remain hindered by the scarcity of long-term monitoring and by the huge biological diversity constraining the analysis to focus on common or commercial species [@Sebbenn2008;@Rozendaal2010;@Vinson2015].
 
-Major insights on the response of forests diversity to disturbance and the underlying ecological processes would be given by the trajectories of tree communities along time.
-The structuring effects of the determinant ecological processes might be confounded at the community scale [@Chave2004] and would be clarified by decomposing the communities according to underlying demographic processes. 
+Communities response to disturbance is built upon recruited communities and shaped by the ecological rules at stake.
+After disturbance the recruitment process is recognized to follow succession models based on different phases of tree growth and establishment.
+Successive phases depend on changes in interactions among species and resources availability, specifically light in tropical rainforests.
+After disturbance seedlings first establish under conditions of high light and nutrient availability and low competition.
+In a second phase, tree growth closes the canopy space and competition increases until excluding less competitive species.
+A third phase then correspond to the senescence of the seedlings first established and to the emergence and maintenance of understory species restoring the equilibrium of old-growth forests.
+In tropical rainforests though the succession pattern might be blurried by the high biodiversity and the trees rapid vegetative growth [@Denslow2000].
+Besides if this pattern has been validated across large environmental and spatial scales these successions models usually applied on clear cutting and secondary forests.
+In the case of lower disturbance succession models may mitigate with the maintenance regime of old growth forests.
+
 Post-disturbance communities comprise on the one hand the trees surviving from before disturbance and on the other hand those recruited afterward [@Herault2018]. 
 Surviving trees obviously mirror the diversity and composition of pre-disturbance communities, so the dynamics and the resilience of communities would depend on the diversity of recruited trees.
 First, recruitment trajectories depend on the composition and diversity of the initial, pre-disturbance community as this conditions the pool of recruitable species via the existing saplings and seeds bank [@Herault2018].
@@ -123,9 +131,9 @@ These trajectories aimed to highlight the recruitment processes underlying fores
 
 ## Study Site
 
-The Paracou station is located in a lowland tropical rain forest in French Guiana (5°18'N and 52°53'W). 
+The Paracou station is located in a lowland tropical rain forest in French Guiana (518'N and 5253'W). 
 Climate is tropical wet with mean annual precipitation averaging 2980 mm.y^-1^ (30-y period) and a 3-months dry season (< 100 mm.months^-1^) from mid-August to mid-November, and a one-month dry season in March [@Wagner2011]. 
-Elevation ranges from 5 to 50 m and mean annual temperature is 26°C. 
+Elevation ranges from 5 to 50 m and mean annual temperature is 26 C. 
 Soils are thin acrisols over a layer of transformed saprolite with low permeability generating lateral drainage during heavy rains. 
 The disturbance experiment spread over a network of twelve 6.25ha plots (Table \@ref(tab:Tab1)) that underwent three disturbance treatments in 1986-1987 [@Herault2018]. 
 Dominant families are Fabaceae, Chrysobalanaceae, Lecythidaceae and Sapotaceae. 
