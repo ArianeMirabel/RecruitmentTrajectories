@@ -2,12 +2,12 @@ ColorsTr<-c("darkolivegreen2","deepskyblue2","darkorange1","red2")
 T0<-c(1,6,11);T1<-c(2,7,9);T2<-c(3,5,10);T3<-c(4,8,12);treatments<-list(T0,T1,T2,T3)
 
 TrajectoryDiffNull<-function(RecDB,RecDB_Diff){
-  par(mfcol=c(2,3),oma=c(2.5,3,2,0),no.readonly=TRUE)
-  invisible(lapply(1:length(RecDB),function(ind){
+  invisible(lapply(c(1,3),function(ind){
     recind<-RecDB[[ind]]
     Ylim=c(min(recind),max(recind))
     par(mar=c(0, 2, 2, 1))
-    plot(colnames(recind),recind[1,,"0.5"],type="n",ylim=Ylim,xlab="",ylab="",xaxt="n",main=names(RecDB)[ind])
+    plot(colnames(recind),recind[1,,"0.5"],type="n",ylim=Ylim,xlab="",ylab="",xaxt="n",
+         main=c("(a) Taxonomic Richness", "", "(b) Taxonomic Evenness")[ind])
     invisible(lapply(1:length(treatments),function(tr){
       toplot<-recind[which(rownames(recind)%in%treatments[[tr]]),,]
       lapply(1:nrow(toplot),function(Li){
@@ -31,8 +31,7 @@ TrajectoryDiffNull<-function(RecDB,RecDB_Diff){
       })
     }))
   }))
-  mtext("Equivalent\ndiversity",side=3,adj=0,line=-1,outer=TRUE)
-  mtext("Years since disturbance",side=1,at=0.85,line=1.5,outer=TRUE)
+  mtext("Equivalent\ndiversity",side=3,adj=0,line=-1.5,outer=TRUE)
   mtext(expression(paste("Communities diversity,  ",'H'['obs']^q)),side=2,line=0.5,adj=0,at=0.45,cex=0.9,outer=TRUE)
   mtext(expression(paste('H'['obs']^q," - ",'H'['null']^q)),
         side=2,line=0.5,adj=0,at=0.1,cex=0.9,outer=TRUE)
@@ -63,7 +62,7 @@ legendCWM<-function(){
   mtext("SLA\n",at=0.88,line=-1,outer=TRUE,cex=0.9)
   mtext(expression(paste(mm^2,".",mg^-1,sep = "")),at=0.84,line=-1.4,outer=TRUE,cex=0.9)
   
-  mtext("WD\n",at=0.13,line=-14.5,outer=TRUE,cex=0.9)
+  mtext("WSG\n",at=0.13,line=-14.5,outer=TRUE,cex=0.9)
   mtext(expression(paste("g.",cm^-3,sep = "")),at=0.08,line=-14.5,outer=TRUE,cex=0.9)
   mtext("Bark thickness\n",at=0.4,line=-14.5,outer=TRUE,cex=0.9)
   mtext("mm",at=0.32,line=-14.5,outer=TRUE,cex=0.9)
@@ -84,10 +83,9 @@ FDiversity<-function(FdivDB){
   }))}
 
 TrajectoryRec_fun<-function(RecDB_fun,RecDB_fun_Diff){
-  par(mfcol=c(2,1),oma=c(2.5,3,2,0),no.readonly=TRUE)
   Ylim=c(min(RecDB_fun,na.rm=T),max(RecDB_fun,na.rm=T))
   par(mar=c(0, 2, 2, 1))
-  plot(colnames(RecDB_fun),RecDB_fun[1,,"0.5"],type="n",ylim=Ylim,xlab="",ylab="",xaxt="n",main="Rao Diversity")
+  plot(colnames(RecDB_fun),RecDB_fun[1,,"0.5"],type="n",ylim=Ylim,xlab="",ylab="",xaxt="n",main="(c) Rao Diversity")
   invisible(lapply(1:length(treatments),function(tr){
     toplot<-RecDB_fun[which(rownames(RecDB_fun)%in%treatments[[tr]]),,]
     lapply(1:nrow(toplot),function(Li){
@@ -106,11 +104,7 @@ TrajectoryRec_fun<-function(RecDB_fun,RecDB_fun_Diff){
         polygon(c(colnames(toplot),rev(colnames(toplot))),c(toplot[Li,,"0.025"],rev(toplot[Li,,"0.975"])),
                 col=rgb(0,0,0,alpha=0.03),border=NA)
       })}))
-  mtext("Equivalent\ndiversity",side=3,adj=0,line=-1,cex=1.2,outer=TRUE)
-  mtext("Years since disturbance",side=1,at=0.85,line=1.5,cex=1.2,outer=TRUE)
-  mtext(expression(paste("Functional diversity, ",'H'['obs']^q)),side=2,line=0.5,adj=0,at=0.6,cex=1.5,outer=TRUE)
-  mtext(expression(paste('H'['obs']^q," - ",'H'['null']^q)),
-        side=2,line=0.5,adj=0,at=0.05,cex=1.5,outer=TRUE)
+  mtext("Years since disturbance",side=1,at=0.85,line=1.5,outer=TRUE)
 }
 
 PlotCWM<-function(TrajTraits){
