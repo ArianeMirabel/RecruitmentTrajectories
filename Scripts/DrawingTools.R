@@ -1,4 +1,4 @@
-ColorsTr<-c("darkolivegreen2","deepskyblue2","darkorange1","red2")
+ColorsTr<-c("darkolivegreen2","gold","orangered","darkred")
 T0<-c(1,6,11);T1<-c(2,7,9);T2<-c(3,5,10);T3<-c(4,8,12);treatments<-list(T0,T1,T2,T3)
 
 TrajectoryDiffNull<-function(RecDB,RecDB_Diff){
