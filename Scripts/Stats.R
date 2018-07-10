@@ -64,7 +64,51 @@ names(Sep_t)<-c("L_thickness","L_chloro","L_toughness","L_DryMass","SLA","WD","H
 lapply(Sep_t,function(sep){return(sep[which(as.numeric(sep[,2])>1),])})
   
   
-  
+############################################
+## Spearman tests
+
+load("DB/RecruitmentPunctual");load("DB/RecruitmentPunctual_Functional");load("DB/LostAGB")
+
+treats<-cbind(c(1,6,11,2,7,9,3,5,10,4,8,12),rep(0:3,each=3))
+treats<-treats[order(treats[,1]),]
+colnames(treats)<-c("plot","treat"); rownames(treats)<-treats[,"plot"]
+
+for(q in 1:3){
+  Ret<-RecPun[[q]][,,"0.5"]     
+  Ret<-apply(Ret,1,max)
+  Ret<-apply(cbind(Ret,names(Ret)),2,as.numeric)
+  colnames(Ret)<-c("Max","plot")
+  Ret<-merge(Ret,AGBloss,by="plot")
+  assign(c("Richness","Shannon","Simpson")[q],Ret)
+}
+
+cor(Richness[,"Max"],Richness[,"AGB"],method="spearman")
+cor(Shannon[,"Max"],Shannon[,"AGB"],method="spearman")
+cor(Simpson[,"Max"],Simpson[,"AGB"],method="spearman")
+
+cor(Simpson[which(!Simpson$plot%in%c(8,12)),"Max"],Simpson[which(!Simpson$plot%in%c(8,12)),"treat"],method="spearman")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
   
   

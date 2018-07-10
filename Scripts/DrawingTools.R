@@ -31,8 +31,8 @@ TrajectoryDiffNull<-function(RecDB,RecDB_Diff){
       })
     }))
   }))
-  mtext("Equivalent\ndiversity",side=3,adj=0,line=-1.5,outer=TRUE)
-  mtext(expression(paste("Communities diversity,  ",'H'['obs']^q)),side=2,line=0.5,adj=0,at=0.45,cex=0.9,outer=TRUE)
+  mtext("Equivalent\ndiversity",side=3,adj=0,line=-0.3,outer=TRUE,cex=0.8)
+  mtext(expression(paste("Communities diversity\n",'H'['obs']^q)),side=2,line=0.5,adj=0,at=0.45,cex=0.9,outer=TRUE)
   mtext(expression(paste('H'['obs']^q," - ",'H'['null']^q)),
         side=2,line=0.5,adj=0,at=0.1,cex=0.9,outer=TRUE)
 }
