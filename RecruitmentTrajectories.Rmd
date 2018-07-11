@@ -66,7 +66,7 @@ output:
 (ref:Boldc) **(c)**
 
 ```{r Options, echo=FALSE, message=FALSE,warning=FALSE}
-knitr::opts_chunk$set(cache=T, warning=FALSE, tidy=TRUE, tidy.opts=list(blank=FALSE, width.cutoff=40),fig.align="center")
+knitr::opts_chunk$set(cache=F, warning=FALSE, tidy=TRUE, tidy.opts=list(blank=FALSE, width.cutoff=40),fig.align="center")
 # Installation des packages si nécessaire et chargement
 Library <- function(Packages) {
   InstallAndLoad <- function(Package) {
@@ -88,26 +88,26 @@ source("Scripts/DrawingTools.R")
 
 Determining the response of tropical forests to disturbance is key to predict their fate in the global changing context.
 In the last decades, tropical forests experienced a wide range of disturbance, from radical land-use changes for agriculture or mining [@Dezecache2017a;@Dezecache2017b] to more insidious changes of communities structure, diversity and functioning following climatic changes [@Aubry-Kientz2015] or anthropogenic activities like selective logging [@Baraloto2012a]. 
-In that respect a vast litterature successfully modeled community response to disturbance in terms of tree growth, tree height and fluxes of carbon, water and nutrients [@Gourlet-Fleury2000;@Putz2012;@Martin2015;@Piponiot2016;@Rutishauser2016].
-Similar approaches regarding forest diversity and composition remain hindered by the scarcity of long-term monitoring and by studies' restriction to common or commercial species imposed by forest huge biological diversity [@Sebbenn2008;@Rozendaal2010;@Vinson2015].
+In that respect a vast litterature successfully modeled community response to disturbance in terms of tree growth, tree height and fluxes of carbon, water and nutrients [@Gourlet-Fleury2000;@Putz2012;@Piponiot2016;@Rutishauser2016].
+Similar approaches regarding forest diversity and composition remain hindered by the scarcity of long-term monitoring and by studies' restriction to common or commercial species imposed by forest huge biological diversity [@Sebbenn2008;@Vinson2015].
 The template of community response to disturbance is set by recruitment processes that determine the species joining the community.
-Recruitment trajectories therefore give valuable insight into post-disturbance recovery and hence into the adjustment of exploitation and conservation guidelines [@Diaz2005;@Gardner2007;@Schwartz2017].
+Recruitment trajectories therefore give valuable insight into post-disturbance recovery and hence into the adjustment of exploitation and conservation guidelines [@Diaz2005;@Schwartz2017].
 
 The traditional view of community response to disturbance relies on successional vegetation models [@Clements1916] based on changes in resources availability and interactions among species. 
 Adapted to forest ecosystems the successional framework translates into [@Denslow2000] (i) the recruitement of pre-disturbance surviving saplings benefiting from the high resources availability and low competition, (ii) the progressive exclusion of species with low competitive ability because of increased competition for resources following stand maturation and (iii) the recovery of pre-disturbance composition and diversity due to the senescence of early-successional pioneers and the emergence of late-succesional species.
 This highly-deterministic successional pathway proved relevant in temperate forests but remain questioned in tropical rainforests [@Norden2015].
 Indeed, the classical successional pathway may be altered by the huge biological diversity of tropical rainforests and their high functional redundancy that lead up to more stochatic processes. 
 Moreover, the successional pathway proved well-adapted to system trajectories following clear cutting or very intense disturbance, but might be less robust following more insidious global changes. 
-In those cases, community trajectories would depend on the interplay between the stochastic processes, driven by recruitment and dispersal limitations [@Hurtt1995;@Hubbell2001], and deterministic processes, driven by niche-based competition and biotic interactions [@Adler2007]. 
+In those cases, community trajectories would depend on the interplay between the stochastic processes, driven by recruitment and dispersal limitations [@Hubbell2001], and deterministic processes, driven by niche-based competition and biotic interactions [@Adler2007]. 
 Stochastic processes, in the neutral theory spirit, build recruited communities as random samples of the surrounding communities [@Hubbell2001;@Chave2004]. 
 In contrast under deterministic processes, species are selected with respect to their ecological strategies and competitive ability. 
 The relative importance of stochastic and deterministic processes in shaping the post-disturbance trajectories would also change with time, along with the recovery of pre-disturbance environmental conditions.
 
 The processes shaping recruitment trajectories may differently affect communities taxonomic characteristics, that refer to neutral species assemblages, and functional characteristics, that account for species ecology and ecosystem functioning [@Violle2007b;@Kunstler2016].
-The correlations, or not, between community taxonomic and functional trajectories are therefore insightful of the processes underlying species recruitment [@Mayfield2010;@Villeger2012;@Fukami2005].
-Competitive interactions among species indeed depend on their competitive ability and ecological niche, defined by their functional differences regarding the use of limited shared resources [@Webb2002;@Perronne2017].
+The correlations, or not, between community taxonomic and functional trajectories are therefore insightful of the processes underlying species recruitment [@Fukami2005].
+Competitive interactions among species indeed depend on their competitive ability and ecological niche, defined by their functional differences regarding the use of limited shared resources [@Perronne2017].
 In tropical forests where light is the limiting resource, community response to disturbance is a shift from slow-growing, long-lived species with "conservative" resource use, to fast-growing species with "acquisitive" resource use [@Denslow1980;@Molino2001;@Bongers2009].  
-The competition processes at stake would be grasped by shifts in key leaf, wood and life-history functional traits assessing species resources acquisition strategy and ecology [@Wright2004;@Chave2009b;@Herault2011;@Gerhold2015].
+The competition processes at stake would be grasped by shifts in key leaf, wood and life-history functional traits assessing species resources acquisition strategy and ecology [@Wright2004;@Chave2009b;@Herault2011].
 
 The determinism of post-disturbance recruitment further elucidates determinism post-disturbance trajectories,*i.e.* either their random divergence, or their deterministic convergence towards stable taxonomic and functional characteritics, likely defined by the environment [@Clements1916;@Diamond1975].
 Both views were reconciled under the hypothesis that communities might diverge in the taxonomic space, having different taxonomic composition and diversity, while they converge in the functional space, but this remains to be tested [@Fukami2005;@Li2018].
@@ -183,18 +183,18 @@ All composition and diversity metrics were obtained after 50 iterations of the u
 
 Communities were split into surviving trees of pre-disturbance communities and trees recruited afterward in 2-years intervals. 
 
-Taxonomic diversity trajectories were assessed through species richness and evenness (the Hill number translation of the Simpson index) [@Hill1973;@chao2015;@Marcon2015b].  
+Taxonomic diversity trajectories were assessed through species richness and evenness (the Hill number translation of the Simpson index) [@chao2015;@Marcon2015b].  
 The two diversities belong to the set of HCDT or generalized entropy, respectively corresponding to the 0 and 2 order of diversity (*q*), which grasps the balance between richness and evenness in the community through the value of *q* that emphasizes common species.
 
 Functional diversity trajectories were assessed through the Rao index of quadratic entropy,  which combines species abundance distribution and average pairwise dissimilarity based on all functional traits.
-Functional composition trajectories were assessed through the functional traits community weighted means (CWM), representing the average trait value in a community weighted by species relative abundance [@Diaz2007;@Garnier2004;@Mason2013].
+Functional composition trajectories were assessed through the functional traits community weighted means (CWM), representing the average trait value in a community weighted by species relative abundance [@Diaz2007].
 Seed mass trajectories were reported by the proportion of each class recorded in the inventories (Annexe I).
 
 The taxonomic similarity between recruited trees and pre-disturbance forest was measured with the turnover metrics detailed in @Podani2013a.
 
 The taxonomic and functional recruitment trajectories were compared to null trajectories obtained after 50 iterations of the null models.
 The taxonomic null model was a random sampling of recruited trees within the living communities, with the maintenance of species abundance and tree density.
-The functional null model was a reassignment of species trait values that randomized traits abundances but maintained communities abundance distribution [@Mason2013].The null trajectories were similarily obtained after 50 iterations of the random sampling.
+The functional null model was a reassignment of species trait values that randomized traits abundances but maintained communities abundance distribution [@Mason2013]. The null trajectories were similarily obtained after 50 iterations of the random sampling.
 
 # Results
 
@@ -206,14 +206,14 @@ In disturbed communities the taxonomic richness followed hump-shaped trajectorie
 Afterward the taxonomic richness decreased and recovered the pre-disturbance values after 30 years.
 The observed taxonomic richness was increasingly lower than this of null model for 15 years, then the difference started to shrink but the observed richness remained negative remained negative until after 30 years.
 The taxonomic evenness decreased independently of the disturbance intensity over the 30 years ($\rho^{simpson}_{spearman}=-0.35$).
-The observed taxonomic eveness was increasingly lower than this of the null model until 15 years after disturbance, when the difference stabilized .
+The observed taxonomic eveness was increasingly lower than this of the null model until 15 years after disturbance, when the difference stabilized.
 
 The functional diversity in the undisturbed plots remained stable and equivalent to this of the functional null model over the 30 years.
 In the lowest disturbance plots the functional diversity remained stable or slightly increasing, and was higher than this of the null model for two of the T1 plots.
 In the disturbed plots of higher disturbance intensity (T2 and T3) the functional diversity decreased until 15 years after disturbance, when it started to recover towards initial values.
 The observed functional diversity remained lower than this of the null model over the 30 years.
 
-```{r DivTraj, fig.asp = 1.2/2, echo=FALSE,fig.cap="Upper panels, trajectories over 30 years of Richness (ref:Bolda), Shannon (ref:Boldb) and Simpson (ref:Boldd) diversities of 2-years laps recruitment. Lower panels, diversity differences to null models. Colors are treatments: green (control), yellow (T1), orange (T2), red (T3) with shaded areas the credibility intervals.", fig.env="figure*"}
+```{r DivTraj, fig.asp = 1.2/2, echo=FALSE,fig.cap="Upper panels, trajectories over 30 years of rtaxonomic richness (ref:Bolda), taxonomic evenness (ref:Boldb) and functional diversity (ref:Boldc) of 2-years laps recruitment. Lower panels, diversity differences to null models. Colors are treatments: green (control), yellow (T1), orange (T2), red (T3) with shaded areas the credibility intervals.", fig.env="figure*"}
 load("DB/RecruitmentPunctual");load("DB/RecruitmentPunctual_Nullmodel_Diff")
 load("DB/RecruitmentPunctual_Functional");load("DB/RecruitmentPunctual_Functional_Nullmodel_Diff")
 
@@ -232,12 +232,11 @@ Conversely, trajectories of leaf thickness, leaf toughness, wood specific gravit
 ```{r CWM,  fig.asp = 1.2/2, echo=FALSE,fig.cap="Community weighted means (CWM) of the leaf, the two stem and specific maximum height. Colors are treatments: green (control), yellow (T1), orange (T2), red (T3) with shaded areas the credibility intervals.", fig.env="figure*"}
 load("DB/Recruits_CWM")
 
-par(mfrow=c(2,4),mar=c(3,3,2,1),oma=c(2,1,4,1),no.readonly=TRUE)
+par(mfrow=c(2,4),mar=c(3,3,2,1),oma=c(2,1,1,1),no.readonly=TRUE)
 PlotCWM(Rec_CWM)
 legendCWM()
-mtext("Punctual recruits CWM",line=2,adj=0,outer=TRUE)
 mtext("Years since disturbance",side=1,at=0.6,cex=0.8,line=-0.2,outer=TRUE)
-legend("right",inset=c(-0.5,0),xpd=NA,legend=c("T0","T1","T2","T3"),col=ColorsTr,lwd=2.5,bty="n",title="Treatment")
+legend("right",inset=c(-0.6,0),xpd=NA,legend=c("T0","T1","T2","T3"),col=ColorsTr,lwd=2.5,bty="n",title="Treatment")
 ```
 
 
@@ -248,15 +247,14 @@ In disturbed plots the recruited species turnover followed a marked hump-shaped 
 The maximum turnover was positively correlated to the disturbance intensity ($\rho_{spearman}=0.93$). 
 Thirty years after disturbance the turnover had returned to low values.
 
-```{r Turnover, echo=FALSE,fig.cap="Trajectories over 30 years of the abundance-based turnover between 2-years laps recruited trees and initial communities before disturbance. Colors are treatments: green (control), yellow (T1), orange (T2), red (T3) with shaded areas the credibility intervals."}
+```{r Turnover, out.width='100%',echo=FALSE,fig.cap="Trajectories over 30 years of the abundance-based turnover between 2-years laps recruited trees and initial communities before disturbance. Colors are treatments: green (control), yellow (T1), orange (T2), red (T3) with shaded areas the credibility intervals."}
 load("DB/Turnover_toInit")
 
 turnover(Turn)
-par(mar=c(1,2,1,1),oma=c(1,1,4,1),no.readonly = T)
-mtext("Recruitment specific turnover compared to initial",side=3,adj=0,outer=T,line=3,cex=1.1)
-mtext("Years since disturbance",side=1,adj=1,outer=T,line=-2)
-mtext("Equivalent diversity",side=2,line=1)
-legend("topright",inset=c(-0,0),xpd=NA,legend=c("T0","T1","T2","T3"),col=ColorsTr,lwd=2.5,bty="n",title="Treatment")
+par(mar=c(1,2,1,1),no.readonly = T)
+mtext("Years since disturbance",side=1,adj=1,outer=T,line=-2,cex=1.5)
+mtext("Equivalent diversity",side=2,line=1,cex=1.5)
+legend("topright",xpd=NA,legend=c("T0","T1","T2","T3"),col=ColorsTr,lwd=2.5,bty="n",title="Treatment")
 ```
 
 
@@ -271,15 +269,15 @@ The taxonomic and functional characteristics of recruited trees mirrored the pre
 
 A second phase (8-15 years) was marked by a shift in community functional composition towards more "acquisitive" functional strategies and the dominance of a restricted set of species.
 The recruitment then involved true recruits, *i.e.* trees germinated from the seeds bank, representing the main part of the whole post-disturbance recruitment [@Lawton1988].
-The recruitment was dominated by short-lived, fast growing hard pionneers highly competitive and displaying efficient light acquisition [@Wright2004;@Chave2009b;@Herault2011;@Reich2014].
-As already demonstrated in temperate forests, the pool of recruited species was restricted by trait-based competition processes selecting species with efficient light acquisition (high SLA and leaf chlorophyll content) and inexpensive, short-lived tissues (low leaf thickness and thoughness, small Hmax and low wood specific gravity and bark thickness)  [@Chave2004;@Mayfield2010;@Kunstler2012].
+The recruitment was dominated by short-lived, fast growing hard pionneers highly competitive and displaying efficient light acquisition [@Wright2004;@Chave2009b;@Herault2011].
+As already demonstrated in temperate forests, the pool of recruited species was restricted by trait-based competition processes selecting species with efficient light acquisition (high SLA and leaf chlorophyll content) and inexpensive, short-lived tissues (low leaf thickness and thoughness, small Hmax and low wood specific gravity and bark thickness)[@Chave2004;@Kunstler2016].
 This emergence of trait-based deterministic processes balanced the stochastic recruitment observed in the first place, and the relative importance of both processes was determined by the disturbance intensity.
-After low intensity disturbance (T1 plots) recruited species still mirrored pre-disturbance taxonomic composition, but included more long-lived pioneers and light-demanding species [@Hubbell1999;@Schnitzer2001;@Sheil2003;@Bongers2009]. 
+After low intensity disturbance (T1 plots) recruited species still mirrored pre-disturbance taxonomic composition, but included more long-lived pioneers and light-demanding species [@Bongers2009]. 
 After intense disturbance in contrast (T2 and T3 plots), the composition of recruited trees rapidly differed from pre-disturbance community and with the high dominance of hard pioneers, such as Cecropia spp., likely entailing significant changes in communities functioning [@Diaz2005]. 
 
 A third recruitment phase corresponded to the recovery of pre-disturbance taxonomic and functional characteristics.
 Although the recruits remained mainly light-demanding species their functional diversity increased and they increasingly resembled resembled the pre-disturbance taxonomic composition.
-The deterministic recruitment processes then gradually left room to stochastic recruitment processes specific to undisturbed forest [@Lawton1988;@Chave2004;@Mayfield2010].
+The deterministic recruitment processes then gradually left room to stochastic recruitment processes specific to undisturbed forest [@Lawton1988;@Chave2004].
 
 ## The achievement of communities recovery
 

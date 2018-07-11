@@ -37,7 +37,6 @@ output:
   bookdown::word_document2: default
 ---
 
-
 ```{r Options, echo=FALSE, message=FALSE}
 knitr::opts_chunk$set(cache=F, warning=FALSE, tidy=TRUE, tidy.opts=list(blank=FALSE, width.cutoff=40),fig.align="center")
 # Installation des packages si nécessaire et chargement

@@ -5,9 +5,10 @@ TrajectoryDiffNull<-function(RecDB,RecDB_Diff){
   invisible(lapply(c(1,3),function(ind){
     recind<-RecDB[[ind]]
     Ylim=c(min(recind),max(recind))
-    par(mar=c(0, 2, 2, 1))
-    plot(colnames(recind),recind[1,,"0.5"],type="n",ylim=Ylim,xlab="",ylab="",xaxt="n",
-         main=c("(a) Taxonomic Richness", "", "(b) Taxonomic Evenness")[ind])
+    par(mar=c(0, 2, 3, 1))
+    plot(colnames(recind),recind[1,,"0.5"],type="n",ylim=Ylim,xlab="",ylab="",xaxt="n")
+    mtext(c("(a) Taxonomic Richness", "", "(b) Taxonomic Evenness")[ind],side=3,line=3.5,cex=0.9)
+    mtext(c("Equivalent\ndiversity", "", "")[ind],side=3,line=0.5,cex=0.77,adj=0)
     invisible(lapply(1:length(treatments),function(tr){
       toplot<-recind[which(rownames(recind)%in%treatments[[tr]]),,]
       lapply(1:nrow(toplot),function(Li){
@@ -31,8 +32,7 @@ TrajectoryDiffNull<-function(RecDB,RecDB_Diff){
       })
     }))
   }))
-  mtext("Equivalent\ndiversity",side=3,adj=0,line=-0.3,outer=TRUE,cex=0.8)
-  mtext(expression(paste("Communities diversity\n",'H'['obs']^q)),side=2,line=0.5,adj=0,at=0.45,cex=0.9,outer=TRUE)
+  mtext(expression(paste("Communities diversity, ",'H'['obs']^q)),side=2,line=0.5,adj=0,at=0.45,cex=0.8,outer=TRUE)
   mtext(expression(paste('H'['obs']^q," - ",'H'['null']^q)),
         side=2,line=0.5,adj=0,at=0.1,cex=0.9,outer=TRUE)
 }
@@ -53,21 +53,21 @@ PlotCWM<-function(TrajTraits){
   }
 }
 legendCWM<-function(){
-  mtext("Leaf thickness\n",at=0.13,line=-1,outer=TRUE,cex=0.9)
-  mtext(expression(paste(mu, "m",sep = "")),at=0.08,line=-1.4,outer=TRUE,cex=0.9)
-  mtext("Leaf cholophyll content\n",at=0.4,line=-1,outer=TRUE,cex=0.9)
-  mtext(expression(paste("g.",mm^-2,sep = "")),at=0.34,line=-1.4,outer=TRUE,cex=0.9)
-  mtext("Leaf toughness\n",at=0.64,line=-1,outer=TRUE,cex=0.9)
-  mtext("N",at=0.56,line=-1.4,outer=TRUE,cex=0.9)
-  mtext("SLA\n",at=0.88,line=-1,outer=TRUE,cex=0.9)
-  mtext(expression(paste(mm^2,".",mg^-1,sep = "")),at=0.84,line=-1.4,outer=TRUE,cex=0.9)
+  mtext("Leaf thickness\n",at=0.13,line=-1.5,outer=TRUE,cex=0.9)
+  mtext(expression(paste(mu, "m",sep = "")),at=0.08,line=-1.9,outer=TRUE,cex=0.9)
+  mtext("Leaf cholophyll content\n",at=0.4,line=-1.5,outer=TRUE,cex=0.9)
+  mtext(expression(paste("g.",mm^-2,sep = "")),at=0.34,line=-1.9,outer=TRUE,cex=0.9)
+  mtext("Leaf toughness\n",at=0.64,line=-1.5,outer=TRUE,cex=0.9)
+  mtext("N",at=0.56,line=-1.9,outer=TRUE,cex=0.9)
+  mtext("SLA\n",at=0.88,line=-1.5,outer=TRUE,cex=0.9)
+  mtext(expression(paste(mm^2,".",mg^-1,sep = "")),at=0.84,line=-1.9,outer=TRUE,cex=0.9)
   
-  mtext("WSG\n",at=0.13,line=-14.5,outer=TRUE,cex=0.9)
-  mtext(expression(paste("g.",cm^-3,sep = "")),at=0.08,line=-14.5,outer=TRUE,cex=0.9)
-  mtext("Bark thickness\n",at=0.4,line=-14.5,outer=TRUE,cex=0.9)
-  mtext("mm",at=0.32,line=-14.5,outer=TRUE,cex=0.9)
-  mtext("Hmax\n",at=0.64,line=-14.5,outer=TRUE,cex=0.9)
-  mtext("m",at=0.56,line=-14.5,outer=TRUE,cex=0.9)
+  mtext("WSG\n",at=0.13,line=-14.9,outer=TRUE,cex=0.9)
+  mtext(expression(paste("g.",cm^-3,sep = "")),at=0.08,line=-15.2,outer=TRUE,cex=0.9)
+  mtext("Bark thickness\n",at=0.4,line=-15,outer=TRUE,cex=0.9)
+  mtext("mm",at=0.32,line=-15,outer=TRUE,cex=0.9)
+  mtext("Hmax\n",at=0.64,line=-15,outer=TRUE,cex=0.9)
+  mtext("m",at=0.56,line=-15,outer=TRUE,cex=0.9)
 }
 
 FDiversity<-function(FdivDB){
@@ -84,8 +84,9 @@ FDiversity<-function(FdivDB){
 
 TrajectoryRec_fun<-function(RecDB_fun,RecDB_fun_Diff){
   Ylim=c(min(RecDB_fun,na.rm=T),max(RecDB_fun,na.rm=T))
-  par(mar=c(0, 2, 2, 1))
-  plot(colnames(RecDB_fun),RecDB_fun[1,,"0.5"],type="n",ylim=Ylim,xlab="",ylab="",xaxt="n",main="(c) Rao Diversity")
+  par(mar=c(0, 2, 3, 1))
+  plot(colnames(RecDB_fun),RecDB_fun[1,,"0.5"],type="n",ylim=Ylim,xlab="",ylab="",xaxt="n")
+  mtext("(c) Functional Diversity",side=3,line=3.5,cex=0.9)
   invisible(lapply(1:length(treatments),function(tr){
     toplot<-RecDB_fun[which(rownames(RecDB_fun)%in%treatments[[tr]]),,]
     lapply(1:nrow(toplot),function(Li){
@@ -106,23 +107,6 @@ TrajectoryRec_fun<-function(RecDB_fun,RecDB_fun_Diff){
       })}))
   mtext("Years since disturbance",side=1,at=0.85,line=1.5,outer=TRUE)
 }
-
-PlotCWM<-function(TrajTraits){
-  for (Ntrait in 1:length(TrajTraits)){
-    Toplot<-TrajTraits[[Ntrait]]
-    plot(colnames(Toplot),Toplot[1,,"0.5"],type="n",xaxt="n",xlab="",
-         ylab="",cex.lab=1.5,ylim=c(min(Toplot),max(Toplot)))
-    axis(1,at=seq(5,30,5),labels=T) 
-    invisible(lapply(1:length(treatments),function(tr){
-      toplot<-Toplot[which(rownames(Toplot)%in%treatments[[tr]]),,]  
-      lapply(1:nrow(toplot),function(Li){
-        lines(colnames(toplot),toplot[Li,,"0.5"],col=ColorsTr[[tr]],lwd=2)
-        polygon(c(colnames(toplot),rev(colnames(toplot))),c(toplot[Li,,"0.025"],rev(toplot[Li,,"0.975"])),
-                col=rgb(0,0,0,alpha=0.05),border=NA)})
-    }))
-  }
-  
-  }
 
 turnover<-function(TurnData){
   plot(colnames(TurnData),TurnData[1,,"0.5"],type="n",ylab="",xlab="",ylim=c(min(TurnData),max(TurnData)))
