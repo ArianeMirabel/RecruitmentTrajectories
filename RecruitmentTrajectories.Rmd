@@ -28,7 +28,7 @@ abstract: >
   Examine post-disturbance recruitment trajectories would (i) elucidate the recruitment determinism and disentangle stochastic from deterministic, selection processes, and (ii) elucidate of tropical forests taxonomic and functional resilience.
   
   We examined the trajectories over 30 years of recruited trees taxonomic and functional diversity in 75 ha of a neotropical forest following a disturbance gradient.
-  Specifically, we analysed recruitment taxonomic richness, evennes, taxonomic turnover, and functional diversity and composition regarding 7 leaf, stem and life-history functional traits.
+  Specifically, we analysed taxonomic richness, evenness, and turnover, and functional diversity and composition (regarding 7 leaf, stem and life-history functional traits) of recruited trees.
   We highlighted a three-phased deterministic successional pathway defined by the interplay of stochastic and deterministic recruitment processes.
   The successional pathway translated into (i) the growth of saplings mirroring the pre-disturbance community, (ii) the selective recruitment of light-demanding species entailing a high dominance of pioneers above a disturbance intensity threshold, and (iii) a return towards pre-disturbance taxonomic and functional characteristics with the recovery of stochastic recruitment processes.
   Both recuited trees functional and taxonomic characteristic seemed resilient, but the recovery time proved decades-long.
@@ -52,10 +52,10 @@ lang: english
 keywordlabel: Keywords
 corrauthorlabel: Corresponding author 
 output: 
-  bookdown::gitbook: default
   bookdown::pdf_book:
     base_format: EcoFoG::article
     keep_tex: TRUE
+  bookdown::gitbook: default
   bookdown::word_document2: default
 ---
 
@@ -96,7 +96,7 @@ Recruitment trajectories therefore give valuable insight into post-disturbance r
 The traditional view of community response to disturbance relies on successional vegetation models [@Clements1916] based on changes in resources availability and interactions among species. 
 Adapted to forest ecosystems the successional framework translates into [@Denslow2000] (i) the recruitement of pre-disturbance surviving saplings benefiting from the high resources availability and low competition, (ii) the progressive exclusion of species with low competitive ability because of increased competition for resources following stand maturation and (iii) the recovery of pre-disturbance composition and diversity due to the senescence of early-successional pioneers and the emergence of late-succesional species.
 This highly-deterministic successional pathway proved relevant in temperate forests but remain questioned in tropical rainforests [@Norden2015].
-Indeed, the classical successional pathway may be altered by the huge biological diversity of tropical rainforests and their high functional redundancy that lead up to more stochatic processes. 
+Indeed, the classical successional pathway may be altered by the huge biological diversity of tropical rainforests and their high functional redundancy that lead up to more stochastic processes. 
 Moreover, the successional pathway proved well-adapted to system trajectories following clear cutting or very intense disturbance, but might be less robust following more insidious global changes. 
 In those cases, community trajectories would depend on the interplay between the stochastic processes, driven by recruitment and dispersal limitations [@Hubbell2001], and deterministic processes, driven by niche-based competition and biotic interactions [@Adler2007]. 
 Stochastic processes, in the neutral theory spirit, build recruited communities as random samples of the surrounding communities [@Hubbell2001;@Chave2004]. 
@@ -300,7 +300,7 @@ The successional pathway first corresponded to the enhanced growth of pre-distur
 Second, recruitment trajectories were shaped by true recruits from the seeds bank selected through the emergence of competitive exclusion for light fostering pioneer species.
 Above a disturbance intensity threshold the second recruitment phase was dominated by short-lived hard pioneers that drastically changed community composition, diversity and likely functioning. 
 A third phase eventually corresponded to the return towards pre-disturbance recruitment composition and taxonomic and functional diversity, through the recovery of stochastic recruitment processes specific to undisturbed communities.
-Although resilient the recruitment processes remained altered for more than 30 years, fostering more pioneer and light-demanding species. This questioned the sustainability and profitability of forest exploitation which mainly value late-successional species that might be long to recover [@Putz2012].
+Although resilient the recruitment processes remained altered for more than 30 years, fostering more pioneer and light-demanding species. This questioned the sustainability and profitability of forest exploitation which mainly values late-successional species that might be long to recover [@Putz2012].
 Besides, repeated disturbance might have increasingly strong impacts, as community recovery involved the seeds bank and probably altered the composition and diversity of the seeds stock [@Norden2009].
 
 ----
