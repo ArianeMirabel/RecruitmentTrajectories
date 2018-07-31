@@ -258,8 +258,8 @@ load("DB/Turnover_toInit")
 
 turnover(Turn)
 par(mar=c(1,2,1,1),no.readonly = T)
-mtext("Years since disturbance",side=1,adj=1,outer=T,line=-2,cex=1.5)
-mtext("Equivalent diversity",side=2,line=1,cex=1.5)
+mtext("Years since disturbance",side=1,adj=1,outer=T,line=-2,cex=1.3)
+mtext("Equivalent diversity",side=2,line=1,cex=1.3)
 legend("topright",xpd=NA,legend=c("T0","T1","T2","T3"),col=ColorsTr,lwd=2.5,bty="n",title="Treatment")
 ```
 
