@@ -109,7 +109,7 @@ TrajectoryRec_fun<-function(RecDB_fun,RecDB_fun_Diff){
 }
 
 turnover<-function(TurnData){
-  plot(colnames(TurnData),TurnData[1,,"0.5"],type="n",ylab="",xlab="",ylim=c(min(TurnData),max(TurnData)))
+  plot(colnames(TurnData),TurnData[1,,"0.5"],type="n",ylab="",xlab="",ylim=c(min(TurnData),max(TurnData)),bty="n")
   invisible(lapply(1:length(treatments),function(tr){
     toplot<-TurnData[which(rownames(TurnData)%in%treatments[[tr]]),,]
     lapply(1:nrow(toplot),function(li){
