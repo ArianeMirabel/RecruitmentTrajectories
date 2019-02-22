@@ -46,8 +46,9 @@ traits<-merge(traits2,traits,by="name")[,c("Hmax","L_thickness","L_chloro","L_to
 
 load("DB/BridgeData")
 
-Phylo<-"Genus" #"Family"
+Phylo<-"Family" #"Genus" 
 
+# Par famille ou par genre, comparer la variance des communautés à une distribution normale
 Sep_t<-lapply(c("L_thickness","L_chloro","L_toughness","L_DryMass","SLA","WD","Hmax"),
               function(trait){
   sep<-lapply(as.character(unique(traits[,Phylo])),function(Fam){
@@ -63,6 +64,21 @@ Sep_t<-lapply(c("L_thickness","L_chloro","L_toughness","L_DryMass","SLA","WD","H
 names(Sep_t)<-c("L_thickness","L_chloro","L_toughness","L_DryMass","SLA","WD","Hmax")
 lapply(Sep_t,function(sep){return(sep[which(as.numeric(sep[,2])>1),])})
   
+# Correlations entre traits
+Sp_means<-lapply(c("L_thickness","L_chloro","L_toughness","L_DryMass","SLA","WD","Hmax"), 
+                 function (Tr){
+Sp_mean<-by(data=traits[,Tr],traits[,"name"],function(x){return(mean(x, na.rm=T))},simplify=F)
+return(unlist(Sp_mean))
+})
+Sp_means<-do.call(cbind,Sp_means)
+colnames(Sp_means)<-c("L_thickness","L_chloro","L_toughness","L_DryMass","SLA","WD","Hmax")
+Sp_means<-Sp_means[which(!apply(Sp_means,1,anyNA)),]
+
+Corr<-cor(Sp_means)
+Corr<-round(Corr,2)
+save(Corr,file="DB/Traitscorrelations")
+Corr<-cbind(rownames(Corr),Corr)
+write.table(Corr,file="DB/Traitscorrelations.csv",sep=";",row.names=F)
   
 ############################################
 ## Spearman tests
@@ -88,28 +104,78 @@ cor(Simpson[,"Max"],Simpson[,"AGB"],method="spearman")
 
 cor(Simpson[which(!Simpson$plot%in%c(8,12)),"Max"],Simpson[which(!Simpson$plot%in%c(8,12)),"treat"],method="spearman")
 
+## Species repartition
 
+load("DB/Paracou_R_Subdivided_ok")
+T0<-c(1,6,11);T1<-c(2,7,9);T2<-c(3,5,10);T3<-c(4,8,12)
+treatments<-list(T0,T1,T2,T3)
+names(treatments)<-c("Control","T1","T2","T3")
 
+Rec_stat<-Recruitment[,c("n_parcelle","name")]
+Rec_stat<-Rec_stat[which(!duplicated(Rec_stat)),]
+Rec_stat2<-unlist(lapply(unstack(Rec_stat),function(x){
+  return(length(which(x%in%1:12)))}))
 
+length(which(Rec_stat2==1))
+       
+Rec_stat3<-lapply(treatments,function(tr){
+  ret<-Rec_stat[which(Rec_stat[,"n_parcelle"]%in%tr),]
+  ret<-unstack(ret)[which(!unlist(lapply(unstack(ret),is.null)))]
+  #return(length(ret))
+  return(names(ret))
+})
 
+#Species only recruited in control plots
+Only0<-setdiff(setdiff(setdiff(Rec_stat3[[1]],Rec_stat3[[2]]),Rec_stat3[[3]]),Rec_stat3[[4]])
+#Species only recruited in T1
+Only1<-setdiff(setdiff(setdiff(Rec_stat3[[2]],Rec_stat3[[1]]),Rec_stat3[[3]]),Rec_stat3[[4]])
+#Species only recruited in T2
+Only2<-setdiff(setdiff(setdiff(Rec_stat3[[3]],Rec_stat3[[1]]),Rec_stat3[[2]]),Rec_stat3[[4]])
+#Species only recruited in T3
+Only3<-setdiff(setdiff(setdiff(Rec_stat3[[4]],Rec_stat3[[1]]),Rec_stat3[[3]]),Rec_stat3[[3]])
 
+# NMDS of recruitment
+library(ade4)
+library(factoextra)
 
+ColorsTr<-c("darkolivegreen2","gold","orangered","darkred")
 
+dates<-sort(names(LivingStand_all))[-1]
+dates<-dates[which(!dates%in%c("1996","1998","2000","2002","2004","2006","2008","2010","2012","2014","2016"))]
 
+all<-as.character(Recruitment[,"name"])
+all<-as.data.frame(as.ProbaVector(tapply(all,all,length)))
 
+Mat<-lapply(1:12,function(p){
+    temp<-Recruitment[which(Recruitment[,"n_parcelle"]==p),]
+      if(nrow(temp)==0){return(NA)}
+      if(nrow(temp)!=0){temp<-as.character(temp[!duplicated(temp),"name"])
+      return(as.ProbaVector(tapply(temp,temp,length)))}
+})
+names(Mat)<-1:12
 
+DistMat<-do.call(cbind,lapply(Mat,function(plo){
+  plo<-as.data.frame(plo)
+  ret<-merge(all,plo,by="row.names",all.x=T)
+  ret[is.na(ret)]<-0
+  rownames(ret)<-ret[,"Row.names"];ret<-ret["plo"]
+  return(ret)#dist(t(ret[,c(2:3)]))
+  }))
+colnames(DistMat)<-1:12
 
+AFC<-dudi.coa(DistMat, scannf=F,nf=2)
+plot(AFC)
 
+Pcoord<-AFC$co;rownames(Pcoord)<-1:12
+Spcont<-get_ca_row(AFC)$contrib
+Sp_1<-rownames(Spcont[order(Spcont[,"Dim.1"],decreasing=T)[1:10],])
+Sp_2<-rownames(Spcont[order(Spcont[,"Dim.2"],decreasing=T)[1:10],])
+SpCont<-AFC$li[unique(c(Sp_1,Sp_2)),]
 
-
-
-
-
-
-
-
-
-  
-  
-  
-  
+windows()
+plot(Pcoord,type="n")
+lapply(1:4,function(tr){
+ Tr<-treatments[[tr]]
+ text(x=Pcoord[Tr,1],y=Pcoord[Tr,2],col=ColorsTr[tr],labels=rownames(Pcoord[Tr,]),cex=1.5)
+})
+text(x=SpCont[,"Axis1"],y=SpCont[,"Axis2"],labels=rownames(SpCont),cex=0.8)
