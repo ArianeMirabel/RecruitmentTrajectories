@@ -111,15 +111,18 @@ Specifically, we (i) elucidated the successional pathway shaping community respo
 
 The Paracou station is located in a lowland tropical rainforest in French Guiana (518\textdegree N and 5253\textdegree W). 
 Climate is tropical wet with mean annual precipitation averaging 2980 mm.yr^-1^ (30-yr period) and a 3-months dry season (< 100 mm.mo^-1^) from mid-August to mid-November, and a one-month dry season in March [@Wagner2011]. 
-Elevation ranges from 5 to 50 m and mean annual temperature is 26\textdegree C. 
-Soils are ferralitic acrisols over a layer of transformed saprolite. 
-The ferralitic surface is thin with a low permeability generating a lateral drainage in the whole area, except in the highest hilltops where the thick surface allows a free vertical drainage [@Gourlet-Fleury2004].
+The mean annual temperature is 26\textdegree C. 
+Elevation ranges from 5 to 50 m.
+Across all plots the topography mainly corresponds to hilltops or hillsides, while bottomlands cover less than 1 % of the area. 
+Plots are shallow ferralitic acrisols over a layer of transformed saprolite with low permeability and lateral drainage.
+Soil conditions are homogeneous, to the exception of the highest hilltops where the thick surface allows a free vertical drainage [@Gourlet-Fleury2004].
 
 The experiment is a network of twelve 6.25 ha plots (Table \@ref(tab:Tab1)) that underwent three disturbance treatments in 1987 according to a randomized plot design with three replicate blocks of four plots [@Herault2018].  
 The experiment comprised three control plots (hereafter T0), 3 plots with selective logging (T1), 3 plots with selective logging and thinning (T2) and 3 plots with selective logging, thinning and fuelwood harvesting (T3). 
-Plots T1, T2 and T3 underwent a selective logging with an average of 10 trees/ha of commercial species logged with 50 cm minimum DBH. 
-Plots T2 and T3 besides underwent a thinning treatment through poison-girdling of non-commercial species with an average 30 trees/ha with 40 cm minimum DBH (T2), and an average 20 trees /ha with 50 cm minimum DBH (T3). 
-Plots T3 eventually underwent the logging of 15 trees/ha with a 40 cm minimum DBH to simulate additional cutting for fuelwood. Considering the silvicultural treatments and the corresponding exploitation damage, the three treatments corresponded to gradients of above-ground biomass (AGB) removed and surface disturbed. The experiment then corresponded to a gradient of disturbance intensity [@Blanc2009;@Piponiot2016;@Yguel2018].
+All treatments T1, T2 and T3 comprised the logging of 10 trees/ha with 50 cm minimum DBH that belonged to a set of 58 commercial species [@Gourlet-Fleury2004]. 
+Treatment T2 additionally comprised a thinning treatment by poison-girdling of non-commercial, randomly selected species with an average 30 trees/ha with 40 cm minimum DBH.
+Treatment T3 additionally comprised the logging of 15 trees /ha with 40 cm minimum DBH and the poison-gidling of 20 trees/ha with a 50 cm minimum DBH, all belonging to non-commercial species. 
+Considering the silvicultural treatments and the following damage, the three treatments were a disturbance intensity gradient with increasing of above-ground biomass (AGB) removed and surface disturbed [@Blanc2009;@Piponiot2016;@Yguel2018].
 
 ```{r Tab1, echo=FALSE,as.is=T}
 Intervention <- data.frame(
@@ -190,7 +193,9 @@ T_{ab}=\frac{\sum_{i=1}^{n}|x_i^a - x_i^b| - \bigg| \sum_{i=1}^{n}{x_i^a} - \sum
 \end{equation}.
 With Tab the turnover between communities a and b, n the total number of species in the two communities and xij the abundance of species I in community j.
 
-The observed recruitment trajectories were compared to null trajectories obtained from taxonomic and functional null models. The taxonomic null models were built for each plot and for each year independently as random samplings of the recruited trees within the corresponding living communities. The functional null models were a reassignment of species trait values among species, which randomized traits abundances in the communities but maintained the abundance distribution [@Mason2013].
+The observed recruitment trajectories were compared to null trajectories obtained from taxonomic and functional null models. 
+The taxonomic null models were built for each plot and for each year independently as random samplings of the recruited trees in the current living community. 
+The functional null models were a reassignment of species trait values among species, which randomized traits abundances in the communities but maintained the abundance distribution [@Mason2013].
 Null trajectories were similarly obtained after 50 iterations of the random samplingthe models
 
 # Results

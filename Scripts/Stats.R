@@ -179,3 +179,51 @@ lapply(1:4,function(tr){
  text(x=Pcoord[Tr,1],y=Pcoord[Tr,2],col=ColorsTr[tr],labels=rownames(Pcoord[Tr,]),cex=1.5)
 })
 text(x=SpCont[,"Axis1"],y=SpCont[,"Axis2"],labels=rownames(SpCont),cex=0.8)
+
+
+############## Number of recruits
+load("DB/Paracou_R_Subdivided_ok")
+
+smooth<-function(mat,larg){return(do.call(cbind,lapply(1:ncol(mat),function(step){
+  range<-max(1,step-larg):min(ncol(mat),step+larg)
+  rowSums(mat[,range])/length(range)})))}
+
+#Plots of the different treatments
+T0<-c(1,6,11);T1<-c(2,7,9);T2<-c(3,5,10);T3<-c(4,8,12)
+treatments<-list(T0,T1,T2,T3)
+names(treatments)<-c("Control","T1","T2","T3")
+
+Recruits<-lapply(unique(Recruitment[,"campagne"]),function(y){
+  return(Recruitment[which(Recruitment[,"campagne"]==y),])})
+names(Recruits)<-unique(Recruitment[,"campagne"])
+Recruits<-Recruits[order(names(Recruits))]
+Recruits<-lapply(Recruits,function(yr){return(yr[which(yr[,"n_parcelle"]%in%1:15),])})
+Recruits<-Recruits[which(lapply(Recruits,nrow)>0)]
+
+dates<-names(Recruits[seq(2,29,2)])
+Recruits3<-lapply(1:(length(dates)-1),function(y){
+  return(do.call(rbind,Recruits[which(names(Recruits)>=dates[y] & names(Recruits)<dates[y+1])]))})
+names(Recruits3)<-dates[-1]
+
+RecCount<-do.call(cbind,lapply(Recruits3,function(yr){
+      ret<-unlist(lapply(sort(unique(yr[,"n_parcelle"])),function(plot){
+        return(nrow(yr[which(yr[,"n_parcelle"]==plot),]))
+      }))
+      ret<-as.data.frame(ret,row.names=as.character(sort(unique(yr[,"n_parcelle"]))))
+      ret<-merge(ret,as.data.frame(1:12,row.names=as.character(1:12)),by="row.names",all.y=TRUE)[,1:2]
+      ret<-ret[order(as.numeric(ret[,"Row.names"])),];rownames(ret)<-ret[,"Row.names"]
+      return(ret["ret"])
+    }))
+RecCount<-smooth(recind,2) # moving average, path=2
+colnames(RecCount)<-as.numeric(names(Recruits3))-1984
+
+ColorsTr<-c("darkolivegreen2","gold","orangered","darkred")
+T0<-c(1,6,11);T1<-c(2,7,9);T2<-c(3,5,10);T3<-c(4,8,12);treatments<-list(T0,T1,T2,T3)
+
+Ylim=c(min(RecCount),max(RecCount))
+    plot(colnames(RecCount),RecCount[1,],type="n",ylim=Ylim,xlab="",ylab="",xaxt="n")
+    invisible(lapply(1:length(treatments),function(tr){
+      toplot<-RecCount[which(rownames(RecCount)%in%treatments[[tr]]),]
+      lapply(1:nrow(toplot),function(Li){
+        lines(colnames(toplot),toplot[Li,],col=ColorsTr[[tr]],lwd=2)
+      })}))
