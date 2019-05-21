@@ -217,13 +217,25 @@ RecCount<-do.call(cbind,lapply(Recruits3,function(yr){
 RecCount<-smooth(recind,2) # moving average, path=2
 colnames(RecCount)<-as.numeric(names(Recruits3))-1984
 
+windows()
 ColorsTr<-c("darkolivegreen2","gold","orangered","darkred")
 T0<-c(1,6,11);T1<-c(2,7,9);T2<-c(3,5,10);T3<-c(4,8,12);treatments<-list(T0,T1,T2,T3)
 
 Ylim=c(min(RecCount),max(RecCount))
-    plot(colnames(RecCount),RecCount[1,],type="n",ylim=Ylim,xlab="",ylab="",xaxt="n")
+plot(colnames(RecCount),RecCount[1,],type="n",ylim=Ylim,xlab="",ylab="",xaxt="n")
     invisible(lapply(1:length(treatments),function(tr){
       toplot<-RecCount[which(rownames(RecCount)%in%treatments[[tr]]),]
       lapply(1:nrow(toplot),function(Li){
+        li<-toplot[Li,]
         lines(colnames(toplot),toplot[Li,],col=ColorsTr[[tr]],lwd=2)
-      })}))
+        points(x=names(li[which(li==max(li))]),y=max(li),pch=16,col=ColorsTr[[tr]])
+        #text(labels=max(li),x=5,y=max(li),col=ColorsTr[[tr]])
+        lines(x=c(3,names(li[which(li==max(li))])),y=rep(max(li),2),col=ColorsTr[[tr]],lty=3)
+})
+        boxed.labels(x=5,y=max(toplot),labels=max(toplot),col=ColorsTr[[tr]],bg="white",border=F)
+}))
+axis(1,at=seq(5,30,5),labels=T)
+
+MeanEff<-unlist(lapply(treatments,function(tr){
+  mean(RecCount[which(rownames(RecCount)%in%tr),])}))
+names(MeanEff)<-names(treatments)

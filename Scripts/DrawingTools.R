@@ -55,7 +55,7 @@ PlotCWM<-function(TrajTraits){
 legendCWM<-function(){
   mtext("Leaf thickness\n",at=0.13,line=-1.5,outer=TRUE,cex=0.9)
   mtext(expression(paste(mu, "m",sep = "")),at=0.08,line=-1.9,outer=TRUE,cex=0.9)
-  mtext("Leaf cholophyll content\n",at=0.4,line=-1.5,outer=TRUE,cex=0.9)
+  mtext("Leaf chlorophyll content\n",at=0.4,line=-1.5,outer=TRUE,cex=0.9)
   mtext(expression(paste("g.",mm^-2,sep = "")),at=0.34,line=-1.9,outer=TRUE,cex=0.9)
   mtext("Leaf toughness\n",at=0.64,line=-1.5,outer=TRUE,cex=0.9)
   mtext("N",at=0.56,line=-1.9,outer=TRUE,cex=0.9)

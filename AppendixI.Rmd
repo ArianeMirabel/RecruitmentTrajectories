@@ -47,6 +47,8 @@ Library <- function(Packages) {
   }
   invisible(sapply(Packages, InstallAndLoad))
 }
+
+Library("knitr")
 #source("Scripts/GithubPages.R")
 source("Scripts/DrawingTools.R")
 ```
@@ -54,20 +56,9 @@ source("Scripts/DrawingTools.R")
 The following information are available for this article:
 
 
-**Figure A1**: Trajectories of Richness, Shannon and Simpson diversity for 2-years laps accumulated recruitment (upper panels) and divergence to null model (lower panels). Lines colors refer to the perturbation regime: green for control, blue for T1, orange for T2 and red for T3 disturbance treatments. Plain lines correspond to the median observed after uncertainty propagation and are given along with the 95\\% confidence interval (grey envelope).
+**Table A1**: Inter-traits correlations, measured as regression coefficients (r) of mixed model with species as grouping variable. Correlations were averaged for 100 repetitions of the processes for missing trait values. Correlations were transformed using the Fisher transformation to be averaged, and were then back-transformed (using the metafor package [@Viechtbauer2010]).
 
-**Figure A2**: Trajectories of Richness, Shannon and Simpson diversity for 2-years laps punctual recruitment in disturbance gaps only (upper panels) and in undisturbed areas only (lower panels). Lines colors refer to the perturbation regime: green for control, blue for T1, orange for T2 and red for T3 disturbance treatments. Plain lines correspond to the median observed after uncertainty propagation and are given along with the 95\\% confidence interval (grey envelope).
-
-```{r AccumRec, out.width = '80%', fig.asp = 1.2/2, echo=FALSE,fig.cap="Trajectories of Richness, Shannon and Simpson diversity for 2-years laps accumulated recruitment (upper panels) and divergence to null model (lower panels). Lines colors refer to the perturbation regime: green for control, blue for T1, orange for T2 and red for T3 disturbance treatments. Plain lines correspond to the median observed after uncertainty propagation and are given along with the 95\\% confidence interval (grey envelope).", fig.env="figure*"}
-load("DB/RecruitmentAccum");load("DB/RecruitmentAccum_Nullmodel_Diff")
-
-TrajectoryDiffNull(RecDB=RecAccum,RecDB_Diff=RecAccum_DiffNull)
-
-```
-
-```{r Gaps, out.width = '80%', fig.asp = 1.2/2, echo=FALSE,fig.cap="Trajectories of Richness, Shannon and Simpson diversity for 2-years laps punctual recruitment in disturbance gaps only (upper panels) and in undisturbed areas only (lower panels). Lines colors refer to the perturbation regime: green for control, blue for T1, orange for T2 and red for T3 disturbance treatments. Plain lines correspond to the median observed after uncertainty propagation and are given along with the 95\\% confidence interval (grey envelope).", fig.env="figure*"}
-load("DB/RecruitmentGap");load("DB/RecruitmentNonGap")
-
-Gaps(RecDBg=RecG,RecDBng=RecNG)
-
+```{r TraitsCorr, echo = FALSE, results = 'asis'}
+load("DB/TraitsCorrelations")
+kable(TraitCorr, caption = "Among traits correlations")
 ```

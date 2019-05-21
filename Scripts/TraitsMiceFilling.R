@@ -31,7 +31,7 @@ traits[which(!is.na(traits[,"LA"])),"SLA"]<-
   traits[which(!is.na(traits[,"LA"])),"LA"]/traits[which(!is.na(traits[,"LA"])),"L_DryMass"]
 
 #Selecion des traits qu'on va garder, pour les indices de diversité
-Seltraits<-c("L_thickness","L_chloro","L_toughness","L_DryMass","SLA","WD","Bark_thick","moisture","Hmax")#"S_mass")
+Seltraits<-c("L_thickness","L_chloro","L_toughness","L_DryMass","SLA","WD","Bark_thick","Hmax")#"S_mass","moisture")
 traits<-traits[,c("Family","Genus","name","bar_code",Seltraits)]
 
 ### espèces dont seulement certains traits manquent
@@ -92,10 +92,14 @@ traitsPartial_fam<-lapply(traitsPartial_fam,function(sub){
   ret<-complete(mice(data[,Seltraits],printFlag=F))
   return(cbind(sub[,c("Family","Genus","name","bar_code")],ret[(nrow(ret)-nrow(sub)+1):nrow(ret),]))})
 
-# Pour les espèce squi n'avaient toujours pas assez d'individus dans leur famille pour permettre l'estimation
-idScarce<-as.character(traitsPartial_all[,"bar_code"],
-   do.call(rbind,traitsPartial_fam[which(unlist(
-     lapply(traitsPartial_fam,function(sub){anyNA(sub[,"WD"])})))])[,"bar_code"])
+# Pour les espèces qui n'avaient toujours pas assez d'individus dans leur famille pour permettre l'estimation
+idScarce<-as.character(traitsPartial_all[,"bar_code"])
+if(any(unlist(lapply(traitsPartial_fam,function(sub){anyNA(sub[,"WD"])})))){
+  idScarce<-as.character(traitsPartial_all[,"bar_code"],
+                         do.call(rbind,traitsPartial_fam[
+    which(unlist(lapply(traitsPartial_fam,function(sub){anyNA(sub[,"WD"])})))])[,"bar_code"])
+}
+
 # Pour ces individus on utilise l'ensemble du jeu de données pour estimer les valeurs manquantes
 comScarce<-cbind(traits[,c("Family","Genus","name","bar_code")],
                  complete(mice(traits[,Seltraits],printFlag=F)))
