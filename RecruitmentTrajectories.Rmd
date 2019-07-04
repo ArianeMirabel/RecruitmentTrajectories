@@ -46,10 +46,10 @@ lang: english
 keywordlabel: Keywords
 corrauthorlabel: Corresponding author 
 output: 
+  bookdown::gitbook: default
   bookdown::pdf_book:
     base_format: EcoFoG::article
     keep_tex: TRUE
-  bookdown::gitbook: default
   bookdown::word_document2: default
 ---
 
@@ -246,7 +246,24 @@ Observed values were compared to the mean values obtained from 50 random permuta
 
 # Results
 
-## Indicative species of post-disturbance recruitment
+## Indicative species and species repartition
+
+Overall, 602 species were recorded along the 30 years of inventory and across the 12 plots.
+Among all species, were only inventoried in one plot and 43 were inventoried in all plots.
+Species repartition is detailed in table 2.
+
+```{r Tab2, echo=FALSE,as.is=T}
+Repartition <- data.frame(
+  None=c("Number of species by treatment", "Number of species recruited only in one treatment"),
+  Control=c("373", "42"),
+  T1=c("313", "30"),
+  T2=c("390", "43"),
+  T3=c("432", "81")
+)
+names(Repartition) <- c("","Control","T1","T2","T3")
+knitr::kable(Repartition, caption="Recruited species repartition across treatments: number of species inventoried and species only recruited in the treatment considered", longtable = FALSE, booktabs = TRUE, escape = FALSE,format="latex") %>%
+  kableExtra::kable_styling(bootstrap_options = "striped", full_width = TRUE)
+```
 
 We defined the indicative species of a group when their indicative value was above 90%.
 Indicative species of undisturbed communities were *Couepia bracteosa* and species of the genus *Neea*.
