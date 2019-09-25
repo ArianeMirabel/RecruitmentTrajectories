@@ -1,0 +1,64 @@
+---
+title: "30 Years of Post-disturbance Recruitment in a Neotropical Forest _ Supplementary Materials"
+author:
+  - name: Ariane MIRABEL
+    authsuperscript: 1*
+  - name: Eric MARCON
+    authsuperscript: 1
+  - name: Bruno HERAULT
+    authsuperscript: 2
+affiliation:
+  - affsuperscript: 1
+    dptuniv: UMR EcoFoG, AgroParistech, CNRS, Cirad, INRA, Université des Antilles, Université de Guyane.
+    address: >
+      Campus Agronomique,
+      97310 Kourou,
+      France.
+  - affsuperscript: 2
+    dptuniv: INPHB (Institut National Polytechnique Félix Houphoüet Boigny) 
+    address: Yamoussoukro, Ivory Coast
+corrauthor:
+    email: ariane.mirabel@ecofog.gf
+    url: https://github.com/ArianeMirabel
+preamble: >
+  \usepackage{textcomp}
+  \DeclareUnicodeCharacter{B0}{\textdegree}
+  \usepackage{tabu}
+  \renewenvironment{table}{\begin{table*}}{\end{table*}\ignorespacesafterend}
+  \hyphenation{bio-di-ver-si-ty sap-lings post-dis-tur-bance}
+  \hypersetup{draft} 
+bibliography: references.bib
+lang: english
+keywordlabel: Keywords
+corrauthorlabel: Corresponding author 
+output: 
+  bookdown::pdf_book:
+    base_format: EcoFoG::article
+    keep_tex: TRUE
+  bookdown::gitbook: default
+  bookdown::word_document2: default
+---
+
+```{r Options, echo=FALSE, message=FALSE, warning=F}
+knitr::opts_chunk$set(cache=F, warning=FALSE, tidy=TRUE, tidy.opts=list(blank=FALSE, width.cutoff=40),fig.align="center")
+# Installation des packages si nécessaire et chargement
+Library <- function(Packages) {
+  InstallAndLoad <- function(Package) {
+    if (!Package %in% installed.packages()[, 1]) {install.packages(Package, repos="https://cran.rstudio.com/")}
+    require(Package, character.only = TRUE)
+  }
+  invisible(sapply(Packages, InstallAndLoad))
+}
+
+Library("kableExtra")
+#source("Scripts/GithubPages.R")
+source("Scripts/DrawingTools.R")
+```
+
+#Supplementary Material {-}
+
+```{r Tab1, echo=FALSE,as.is=T}
+corr<-read.csv("DB/SpeciesCorrel.csv",sep=";",row.names=1)
+kable(corr)
+```
+
