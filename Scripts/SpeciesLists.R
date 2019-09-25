@@ -4,6 +4,24 @@ library(vegan)
 
 load("DB/Paracou_R_Subdivided_ok")
 
+load("DB/BotaVern")
+load("DB/Alpha_Plots")
+source("Scripts/Vernacular_handle.R")
+
+Verlist<-c("muamba","win udu","aganiamai","buguni","patawa")
+
+AlphaRec<-alpha_construct(Life)
+Nrep<-50
+trials<-unlist(lapply(Verlist,function(name){
+  ret<-unlist(lapply(1:Nrep,function(rep){
+   return(Dirichlet_draw(AlphaRec[,name]))}))
+  ret<-tapply(ret,ret,length)
+  return(names(ret[which(ret==max(ret))]))
+  }))
+  
+
+
+
 T0<-c(1,6,11);T1<-c(2,7,9);T2<-c(3,5,10);T3<-c(4,8,12)
 treatments<-list(T0,T1,T2,T3)
 names(treatments)<-c("Control","T1","T2","T3")
@@ -31,6 +49,46 @@ RecList<-do.call(cbind,RecList)
 rownames(RecList)<-Nm
 colnames(RecList)<-1:12
 #RecList<-apply(RecList,2,as.ProbaVector)
+
+RecList_last5<-lapply(1:12,function(p){
+  Traj<-Recruitment[which(
+    Recruitment[,"n_parcelle"]==p &
+      Recruitment[,"campagne"]%in% c(2009,2011,2013,2015)),]
+  Traj<-Traj[which(Traj[,"name"]!="Indet._Indet."),"name"]
+  Traj<-as.data.frame(tapply(Traj,Traj,length))
+  Traj<-merge(AllInv,Traj,by="row.names",all.x=TRUE)
+  Traj[which(is.na(Traj[,3])),3]<-0
+  return(Traj[3])})
+RecList_last5<-do.call(cbind,RecList_last5)
+rownames(RecList_last5)<-Nm
+colnames(RecList_last5)<-1:12
+
+Dom_last5<-lapply(treatments,function(tr){
+  return(names(head(
+    sort(rowSums(RecList_last5[,tr]),decreasing=T),n=5L)))
+})
+unique(unlist(Dom_last5[2:4]))
+Dom_last5[[1]]
+
+RecList_first5<-lapply(1:12,function(p){
+  Traj<-Recruitment[which(
+    Recruitment[,"n_parcelle"]==p &
+      Recruitment[,"campagne"]%in% c(1994, 1997, 1999, 2001, 2003)),]
+  Traj<-Traj[which(Traj[,"name"]!="Indet._Indet."),"name"]
+  Traj<-as.data.frame(tapply(Traj,Traj,length))
+  Traj<-merge(AllInv,Traj,by="row.names",all.x=TRUE)
+  Traj[which(is.na(Traj[,3])),3]<-0
+  return(Traj[3])})
+RecList_first5<-do.call(cbind,RecList_first5)
+rownames(RecList_first5)<-Nm
+colnames(RecList_first5)<-1:12
+
+Dom_first5<-lapply(treatments,function(tr){
+  return(names(head(
+    sort(rowSums(RecList_first5[,tr]),decreasing=T),n=5L)))
+})
+unique(unlist(Dom_first5[2:4]))
+Dom_first5[[1]]
 
 # Cluster de plot: clear separation only between control and disturbed
 #Measure indicative value
