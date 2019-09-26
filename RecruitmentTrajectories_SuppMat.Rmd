@@ -26,7 +26,10 @@ preamble: >
   \usepackage{tabu}
   \renewenvironment{table}{\begin{table*}}{\end{table*}\ignorespacesafterend}
   \hyphenation{bio-di-ver-si-ty sap-lings post-dis-tur-bance}
-  \hypersetup{draft} 
+  \hypersetup{draft}
+  \usepackage{caption}
+  \captionsetup[figure]{labelformat=empty}
+  \captionsetup[table]{labelformat=empty}
 bibliography: references.bib
 lang: english
 keywordlabel: Keywords
@@ -55,10 +58,34 @@ Library("kableExtra")
 source("Scripts/DrawingTools.R")
 ```
 
-#Supplementary Material {-}
+```{r, include=F}
+library(captioner)
+tables <- captioner(prefix = "Table S", auto_space = FALSE)
 
-```{r Tab1, echo=FALSE,as.is=T}
+tables("Corrtab", "Table of pearson correlation coefficients among functional traits.", display=FALSE)
+tables("Splist","List of recruited species for all plots throughout the 30 years inventoried.",display=F)
+```
+
+\onecolumn
+
+```{r Corrtab, echo=FALSE,as.is=T}
 corr<-read.csv("DB/SpeciesCorrel.csv",sep=";",row.names=1)
-kable(corr)
+corr[is.na(corr)]<-""
+
+knitr::kable(corr, caption=tables("Corrtab"), longtable = FALSE, booktabs = TRUE, escape = FALSE,format="latex") %>%
+  kableExtra::kable_styling(bootstrap_options = c("striped","condensed","hold_position"), full_width = TRUE)
+```
+
+
+```{r Splist, echo=FALSE,as.is=T,caption=tables("Splist")}
+load("DB/Paracou_R_Subdivided_ok")
+
+splist<-unique(Recruitment[which(Recruitment[,"Espece"]!="Indet."),c("Famille","Genre","Espece")])
+rownames(splist)<-NULL
+knitr::kable(splist, caption=tables("Corrtab"), longtable = F, booktabs = TRUE, format="latex") %>%
+  kableExtra::kable_styling(bootstrap_options = c("striped","hold_position","repeat_header","scale_down"), position="left") %>%
+  row_spec(1:nrow(splist),italic=T) %>%
+  row_spec(0,bold=T)
+
 ```
 

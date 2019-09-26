@@ -74,8 +74,6 @@ Library("kableExtra")
 #source("Scripts/GithubPages.R")
 source("Scripts/DrawingTools.R")
 
-## Note: wordcountaddin, the fisrt line is fine, separate the citation words (1 citation = 1 word) and link the composed word (land-use = 1 word). Abstract: 365 words
-
 ```
 
 # Introduction
@@ -352,6 +350,7 @@ Although the recruitment trajectories suggested community taxonomic and function
 ## A three-phased deterministic successional pathway
 
 Post-disturbance recruitment trajectories followed a three-phased successional pathway defined by the emergence of deterministic competition processes for light, that balanced the stochastic processes involved in undisturbed communities before disturbance.
+Indicative species of disturbed plots corresponded to pionners and light demanding species while indicative species of undistrubed plots were shade-tolerant, late successional species. 
 
 A first phase (*i.e.* 0-8 years) was defined by a very low taxonomic turnover between recruited trees and initial communities (Figure \@ref(fig:Turnover)), and by similar taxonomic and functional trajectories matching the null model trajectories (Figure (\@ref(fig:DivTraj))).
 The first phase corresponded to the time lapse before recruitment processes markedly changed.
@@ -361,6 +360,7 @@ These saplings were the first to benefit from the alleviated competition and the
 
 A second phase (*i.e.* 8-15 years) was marked by an increase of the taxonomic turnover between recruited trees and initial communities, and a decrease of recruits richness and evenness compared to the null model.
 The second phase also corresponded to a shift in recruits functional composition towards more "resource-acquisitive" strategies.
+Indicative species switched from pioneers of genus *Cecropia* or *Vismia*, to non-pioneer light demanding species of genuses *Cupania*, *Xylopia* or *Miconia*.
 The shift would mark the recruitment of trees germinated from seeds, eventually representing the main part of the recruitment [@Lawton1988].
 This first phase was the time lapse before pioneers, like *Miconia tschudyoides*, *Inga spp.*, *Tapirira spp.*, and *Cecropia spp.*, became dominant among recruits.
 The dominance of pioneers decreased the taxonomic richness and evenness of recruited trees and made the recruitment trajectories depart from those of the null model.
