@@ -239,3 +239,20 @@ axis(1,at=seq(5,30,5),labels=T)
 MeanEff<-unlist(lapply(treatments,function(tr){
   mean(RecCount[which(rownames(RecCount)%in%tr),])}))
 names(MeanEff)<-names(treatments)
+
+
+#### GAM for CWM trajectories
+library("mgcv")
+load("DB/Recruits_CWM")
+
+T0<-c(1,6,11);T1<-c(2,7,9);T2<-c(3,5,10);T3<-c(4,8,12)
+treatments<-list(T0,T1,T2,T3);names(treatments)<-c("0","1","2","3")
+
+Ntrait<-names(Rec_CWM)
+
+lapply(Rec_CWM,function(tr){
+  toplot<-tr[treatments[[1]],,"0.5"]
+  toplot<-as.data.frame(cbind(rownames(toplot),toplot))
+  toplot<-reshape(toplot,direction="long",idvar="rownames(toplot)",varying=list(2:ncol(toplot)))[,2:3]
+  toplot<-apply(toplot,2,as.numeric)
+})

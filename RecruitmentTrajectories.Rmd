@@ -84,11 +84,11 @@ In that respect a vast literature successfully modeled community response to dis
 In terms of tree community diversity and composition, the ecological theory of succession assumes post-disturbance pathways driven by a succession of deterministic recruitment processes.
 These pathways would track the post-disturbance variations in resource availability, that imply a succession of recruitment processes depending on species resource use and competitive abilities [@Clements1916;@Meiners2015].
 The theory assumes that the deterministic succession shaped predictable trajectories gradually restoring communities pre-disturbance states [@Chesson2000;@Rees2001;@Adler2007].
-Specifically, in forest ecosystem, tree species community succession first comprises the recruitment of saplings benefiting from higher resources availability and the lower competition.
+Specifically, in forest ecosystem, tree species community succession first comprises the recruitment of saplings benefiting from higher resources availability and lower competition.
 Then, stand maturation progressively enforces the exclusion of low-competitive species until the senescence of early-successional species, and the emergence of late-successional ones leading to the recovery of pre-disturbance composition and diversity [@Denslow2000]. 
 Empirical evidence, however, often show post-disturbance trajectories deviating from the predictable succession and resulting from an interplay of deterministic and stochastic recruitment processes.
-Post-disturbance trajectories then also rely on stochastic processes, like dispersal limitations, and thus lead to new equilibrium states instead of the pre-disturbance recovery [@Hubbell2001;@Chave2004;@Norden2015].
-The issue to tackle is hence to determine the balance between deterministic and stochastic recruitment processes.
+Post-disturbance trajectories would then also rely on stochastic processes, like dispersal limitations, and thus lead to new equilibrium states instead of recovering towards the pre-disturbance state [@Hubbell2001;@Chave2004;@Norden2015].
+Hence, the question is to determine the balance between deterministic and stochastic recruitment processes.
 In the hyper-diverse tropical forests, this balance is specifically debated.
 While several studies revealed predictable and homogeneous successional patterns restoring the pre-disturbance community [@Norden2009;@Letcher2015], others showed diverging trajectories following disturbance and different equilibrium state [@Longworth2014;@Norden2015].
 
@@ -187,7 +187,7 @@ All composition and diversity metrics were obtained after 50 iterations of the u
 ## Recruitment trajectories
 
 Communities were split into surviving trees of pre-disturbance communities and trees recruited afterward.
-Trajectories of recruitment diversity (hereafter H^q_{obs}) and turnover started from the first year after disturbance and then considered the trees recruited by 2-years intervals (*i.e.* for the date Y, the trees that were under 10 cm DBH at Y-1 but above 10 cm DBH at Y). 
+Trajectories of recruitment diversity (hereafter $H^q_{obs}$) and turnover started from the first year after disturbance and then considered the trees recruited by 2-years intervals (*i.e.* for the date Y, the trees that were under 10 cm DBH at Y-1 but above 10 cm DBH at Y). 
 
 Trajectories of taxonomic diversity were assessed through species richness and evenness (the Hill number translation of the Simpson index) [@Chao2015;@Marcon2015]. 
 The two diversities belong to the set of Tsallis or generalized entropy, respectively corresponding to the zero and two order *q* of diversity that emphasizes common species regarding their stem density.
@@ -198,15 +198,16 @@ Functional diversity trajectories were assessed through the Rao index of quadrat
 Functional composition trajectories were assessed through the functional traits community weighted means (CWM), representing the average trait value in a community weighted by species relative abundance based on the number of stem [@Diaz2007].
 Seed mass trajectories were reported by the stems proportion of each class recorded in the inventories.
 
-The taxonomic similarity between recruited trees and pre-disturbance forest was measured with the relativized abundance replacement measuring species turnover between communities [@Podani2013a]
+The taxonomic similarity between recruited trees and pre-disturbance forest was measured with the relativized abundance replacement measuring species turnover between communities [@Podani2013a]:
+
 \begin{equation}
 T_{ab}=\frac{\sum_{i=1}^{n}|x_i^a - x_i^b| - \bigg| \sum_{i=1}^{n}{x_i^a} - \sum_{i=1}^{n}{x_i^b} \bigg|}{\sum_{i=1}^{n}\max{\left( x_i^a;x_i^b \right)}}
 (\#eq:formNestedness)
-\end{equation}.
+\end{equation}
+
 With $Tab$ the turnover between communities $a$ and $b$, $n$ the total number of species in the two communities and $x_{ij}$ the abundance of species $I$ in community $j$.
 
 The correlation between the initial disturbance intensity and recruited community taxonomic richness and evenness, functional richness and taxonomic turnover were tested through Spearman rank correlation tests.
->> Perform t-test between observed diversity and mean of permutations to determine the difference with null model
 
 The observed recruitment trajectories were compared to null trajectories obtained from taxonomic and functional null models. 
 A taxonomic null model was independently built for each plot and for each year.

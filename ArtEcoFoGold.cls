@@ -91,6 +91,29 @@
 \titlespacing*{\subsection}{0pc}{2.5ex \@plus3pt \@minus2pt}{0pt}
 \titlespacing*{\subsubsection}{0pc}{2ex \@plus2.5pt \@minus1.5pt}{0pt}
 \titlespacing*{\paragraph}{0pc}{1.5ex \@plus2pt \@minus1pt}{10pt}
+% ---------------------------------------------------------------------
+% tableofcontents set-up
+\usepackage{titletoc}
+\contentsmargin{0cm}
+\titlecontents{section}[\tocsep]
+  {\addvspace{4pt}\small\bfseries\sffamily}
+  {\contentslabel[\thecontentslabel]{\tocsep}}
+  {}
+  {\hfill\thecontentspage}
+  []
+\titlecontents{subsection}[\tocsep]
+  {\addvspace{2pt}\small\sffamily}
+  {\contentslabel[\thecontentslabel]{\tocsep}}
+  {}
+  {\ \titlerule*[.5pc]{.}\ \thecontentspage}
+  []
+\titlecontents*{subsubsection}[\tocsep]
+  {\footnotesize\sffamily}
+  {}
+  {}
+  {}
+  [\ \textbullet\ ]  
+% ---------------------------------------------------------------------  
 % Get the multiple author set
 \newcount\@authcnt
 \newcount\@tmpcnt\@tmpcnt\z@
@@ -136,15 +159,15 @@
 \parbox{\textwidth-2\fboxsep-2\fboxrule}{\centering%
 \colorbox{color2!10}{%
 \parbox{\textwidth-3.5\fboxsep-3.5\fboxrule}{%
-%\ifx\@Keywords\@empty
-%\sffamily\small\textbf{\abstractname}\\\@Abstract
-%\else
-%\sffamily\small\textbf{\abstractname}\\\@Abstract\\[5pt]%
-%\textbf{\keywordname}\\\@Keywords%
-%\fi
+\ifx\@Keywords\@empty
+\sffamily\small\textbf{\abstractname}\\\@Abstract
+\else
+\sffamily\small\textbf{\abstractname}\\\@Abstract\\[5pt]%
+\textbf{\keywordname}\\\@Keywords%
+\fi
 }%
 }%
-%\vskip5pt%
+\vskip5pt%
 \begingroup%
 \raggedright\sffamily\small%
 \footnotesize\@affiliation\par%
@@ -162,6 +185,9 @@
 
 \definecolor{color1}{RGB}{0,0,90}   % Color of the article title and sections
 \definecolor{color2}{RGB}{0,20,20}  % Color of the boxes behind the abstract and headings
+
+\newlength{\tocsep}                 % Format de la table des matières 
+\setlength\tocsep{1.5pc}            % Sets the indentation of the sections in the table of contents
 
 \RequirePackage{tabularx}           % Retour à la ligne des tableaux
   \renewcommand{\arraystretch}{1.8}
