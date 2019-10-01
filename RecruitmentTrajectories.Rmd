@@ -41,15 +41,16 @@ preamble: >
   \renewenvironment{table}{\begin{table*}}{\end{table*}\ignorespacesafterend}
   \hyphenation{bio-di-ver-si-ty sap-lings post-dis-tur-bance}
   \hypersetup{draft} 
+  \usepackage{color}
 bibliography: references.bib
 lang: english
 keywordlabel: Keywords
 corrauthorlabel: Corresponding author 
 output: 
+  bookdown::gitbook: default
   bookdown::pdf_book:
     base_format: EcoFoG::article
     keep_tex: TRUE
-  bookdown::gitbook: default
   bookdown::word_document2: default
 ---
 
@@ -78,6 +79,7 @@ source("Scripts/DrawingTools.R")
 
 # Introduction
 
+\color{red}
 Determining the response of tropical forests to disturbance is key to predict their fate in the global changing context.
 In the last decades, tropical forests experienced a wide range of disturbance, from radical land-use changes for agriculture or mining [@Dezecache2017a;@Dezecache2017b] to more insidious changes following climatic changes or anthropogenic activities like selective logging [@Baraloto2012a;@Aubry-Kientz2015]. 
 In that respect a vast literature successfully modeled community response to disturbance in terms of tree growth, tree height and fluxes of carbon, water, and nutrients [@Gourlet-Fleury2000;@Putz2012;@Piponiot2016;@Rutishauser2016].
@@ -106,6 +108,8 @@ We examined recruited trees taxonomic composition, richness, and evenness, taxon
 We compared the recruitment trajectories to neutral models corresponding to a stochastic recruitment and a randomization of species functional traits. 
 Specifically, we (i) elucidated the successional pathway shaping community response to disturbance and the underlying ecological processes, and (ii) clarified the extent of community taxonomic and functional resilience, in the sense of pre-disturbance characteristics recovery, and its consequences for tropical forest management.
 
+\color{black}
+
 # Material and Methods
 
 ## Study Site
@@ -114,17 +118,23 @@ The Paracou station is located in a lowland tropical rainforest in French Guiana
 Climate is tropical wet with mean annual precipitation averaging 2980 mm.yr^-1^ (30-yr period) and a 3-months dry season (< 100 mm.mo^-1^) from mid-August to mid-November, and a one-month dry season in March [@Wagner2011]. 
 The mean annual temperature is 26\textdegree C. 
 Elevation ranges from 5 to 50 m.
+
+\color{red}
 Across all plots, the topography mainly corresponds to hilltops or hillsides, and bottomlands cover less than 1 % of the area. 
 Plots are shallow ferralitic acrisols over a layer of transformed saprolite with low permeability and lateral drainage.
 Soil conditions are homogeneous, to the exception of the highest hilltops where the thick surface allows a free vertical drainage [@Gourlet-Fleury2004].
+\color{black}
 
 The experiment is a network of twelve 6.25 ha plots (Table \@ref(tab:Tab1)) that underwent three disturbance treatments in 1987 according to a randomized plot design [@Herault2018].  
+
+\color{red}
 The experiment comprised three replicates of three sylvicultural treatments (hereafter plots T1, T2 and T3) and three control plots (T0).
 All treatments T1, T2 and T3 comprised the logging of 10 trees/ha with 50 cm minimum DBH that belonged to a set of 58 commercially exploited species [@Gourlet-Fleury2004]. 
 Treatment T2 additionally comprised a thinning treatment by poison-girdling of non-commercially exploited species, randomly selected species with an average 30 trees/ha with 40 cm minimum DBH.
 Treatment T3 additionally comprised the logging of 15 trees /ha with 40 cm minimum DBH and the poison-girdling of 20 trees/ha with a 50 cm minimum DBH, all belonging to non-commercial species. 
 Considering the silvicultural treatments and the following damage, disturbance intensity was measured as the percentage of aboveground standing biomass of trees above 10 cm DBH  (%AGB) lost between the first inventory in 1984 and five years after disturbance [@Piponiot2016], estimated with the BIOMASS R package [@Biomass2018], and without accounting for lianas.
 The three treatments constituted a disturbance intensity gradient with increasing of above-ground biomass (AGB) lost and surface disturbed.
+\color{black}
 
 ```{r Tab1, echo=FALSE,as.is=T}
 Intervention <- data.frame(
@@ -171,7 +181,11 @@ To minimize the remaining identification uncertainties, the simulated botanical 
 We considered six functional traits representing leaf economics, the leaf thickness, toughness, total chlorophyll content and specific leaf area, and stem economics, the wood specific gravity and bark thickness.
 These traits were obtained from the BRIDGE project [^1], which proved to reliably assess species functional traits and community functional diversity [@Paine2015]. 
 Trait values were assessed from a selection of individuals located in nine permanent plots in French Guiana, including two in Paracou, and comprised 294 species belonging to 157 genera. 
+
+\color{red}
 For the trait value at species level we took the median value of the several trees sampled in the database, which allowed accounting for intraspecific variability although we considered species-level trait values.
+\color{black}
+
 Whenever a species was in the dataset was missing some trait values (10% of the species), missing values were filled using multivariate imputation by chained equation [@Mice2011].
 To account for the phylogenetic signal in the filling process, imputations based on samples from the same genus or from the same family. 
 Whenever a species was not in the dataset, it was attributed a set of trait values randomly sampled among species of the next higher taxonomic level (same genus or family). 
@@ -186,18 +200,24 @@ All composition and diversity metrics were obtained after 50 iterations of the u
 
 ## Recruitment trajectories
 
+\color{red}
 Communities were split into surviving trees of pre-disturbance communities and trees recruited afterward.
 Trajectories of recruitment diversity (hereafter $H^q_{obs}$) and turnover started from the first year after disturbance and then considered the trees recruited by 2-years intervals (*i.e.* for the date Y, the trees that were under 10 cm DBH at Y-1 but above 10 cm DBH at Y). 
+\color{black}
 
 Trajectories of taxonomic diversity were assessed through species richness and evenness (the Hill number translation of the Simpson index) [@Chao2015;@Marcon2015]. 
-The two diversities belong to the set of Tsallis or generalized entropy, respectively corresponding to the zero and two order *q* of diversity that emphasizes common species regarding their stem density.
+The two diversities belong to the set of Tsallis or generalized entropy, respectively corresponding to the zero and two order *q* of diversity that emphasizes common species
+\color{red}
+regarding their stem density.
 These two metrics assess community richness and evenness, that reveals the structure of dominance in the community and allow grasping the changes in community abundance distribution.
 Both metric are complementary to detect the changes in community structure [@Magurran2004].
+\color{black}
 
 Functional diversity trajectories were assessed through the Rao index of quadratic entropy, which combines species abundance distribution and average pairwise dissimilarity based on all functional traits.
 Functional composition trajectories were assessed through the functional traits community weighted means (CWM), representing the average trait value in a community weighted by species relative abundance based on the number of stem [@Diaz2007].
 Seed mass trajectories were reported by the stems proportion of each class recorded in the inventories.
 
+\color{red}
 The taxonomic similarity between recruited trees and pre-disturbance forest was measured with the relativized abundance replacement measuring species turnover between communities [@Podani2013a]:
 
 \begin{equation}
@@ -208,6 +228,7 @@ T_{ab}=\frac{\sum_{i=1}^{n}|x_i^a - x_i^b| - \bigg| \sum_{i=1}^{n}{x_i^a} - \sum
 With $Tab$ the turnover between communities $a$ and $b$, $n$ the total number of species in the two communities and $x_{ij}$ the abundance of species $I$ in community $j$.
 
 The correlation between the initial disturbance intensity and recruited community taxonomic richness and evenness, functional richness and taxonomic turnover were tested through Spearman rank correlation tests.
+\color{black}
 
 The observed recruitment trajectories were compared to null trajectories obtained from taxonomic and functional null models. 
 A taxonomic null model was independently built for each plot and for each year.
@@ -216,6 +237,7 @@ Functional null trajectories were simulated by randomly reassigning the combinat
 The functional null models maintained the community abundance distribution while randomizing the relative abundance of trait values [@Mason2013].
 Trajectories of null diversity (hereafter $H^q_{null}$) were similarly obtained after 50 iterations of the random sampling models.
 
+\color{red}
 ## Identification of indicative species
 
 We identified characteristic species of post-disturbance recruitment by computing species indicator values for post-disturbance and undisturbed recruited communities.
@@ -246,9 +268,11 @@ The indicator value is maximal when all individuals of species $i$ are observed 
 
 The significance of species indicator values was tested through the comparison with a random permutaiton procedure of sites among groups.
 Observed values were compared to the mean values obtained from 50 random permutations with a z statistic.
+\color{black}
 
 # Results
 
+\color{red}
 ## Indicative species and species repartition
 
 Overall, 602 species were recorded along the 30 years of inventory and across the 12 plots.
@@ -276,13 +300,16 @@ We defined the indicative species of a group when their indicative value was abo
 Indicative species of undisturbed communities were *Couepia bracteosa* and species of the genus *Neea*.
 Indicative species of post-disturbance communities were species of the genuses *Cecropia*, *Cupania*, *Apeiba*, *Pourouma*, *Sterculia*, *Tapirira*, *Vismia*, and the species *Miconia tschudyoides*, *Schefflera decaphylla*, *Virola surinamensis*, and *Xylopia nitida*.
 Among disturbance-indicator species, genus *Cecropia*, *Apeiba*, *Vismia* and *Pourouma* were representative of the first years following disturbance while *Cupania*, *Xylopia*, *Miconia* and *Sterculia* were characteristic of later time after disturbance.
+\color{black}
 
 ## Taxonomic richness and evenness and functional diversity
 
+\color{red}
 The average number of recruited trees per plot and per year along the whole time survey increased with the increasing disturbance intensity.
 For a 2-year laps, the number of recruits per plot was around 74 in plots T0, 142 in plots T1, 211 in plots T2 and 273 in plots T3.
 In total, during the 30 years, 602 species were recruited across the 12 plots.
 Among thoses, 26% occured in one plot only and 7% occured in all plots.
+\color{black}
 
 In undisturbed communities the taxonomic richness and evenness of recruited trees remained stable over the 30 years, around values equivalent to those of the taxonomic null model (Figure (\@ref(fig:DivTraj))).
 
@@ -292,7 +319,7 @@ Compared to the null models, the observed taxonomic richness was lower than the 
 The difference between the observed and null model richness followed a hump-shaped trajectory with a maximum difference reached after 15 years.
 In all disturbed communities, the taxonomic evenness decreased whenever the disturbance intensity over the 30 years ($\rho^{simpson}_{spearman}=-0.35$).
 Compared to the null model, the observed taxonomic eveness was lower than the evenness of a random species recruitment.
-The difference between the observed and null model evenness followed a hump-shaped trajectory with a maximum difference reached after around 25 years years.
+The difference between the observed and null model evenness followed a hump-shaped trajectory with a maximum difference reached around 25 years after disturbance.
 
 The functional diversity in the undisturbed plots remained stable and equivalent to this of the functional null model over the 30 years.
 In the lowest disturbance plots the functional diversity remained stable or slightly increasing, and was higher than this of the null model for two of the T1 plots.
@@ -345,6 +372,7 @@ legend("topright",xpd=NA,legend=c("T0","T1","T2","T3"),col=ColorsTr,lwd=2.5,bty=
 
 # Discussion
 
+\color{red}
 Our analysis of the taxonomic and functional response of tree recruitment over 30 years following a disturbance gradient revealed a three-phased successional pathway shaped by an interplay between stochastic recruitment and deterministic processes.
 Although the recruitment trajectories suggested community taxonomic and functional recovery, the return to the initial stage remained unachieved after 30 years.
 
@@ -405,6 +433,7 @@ Above a disturbance intensity threshold, the second recruitment phase saw the do
 A third phase eventually corresponded to the recovery of stochastic recruitment processes and to the return towards pre-disturbance taxonomic and functional characteristics.
 Although resilient, recruits diversity and composition remained altered 30 years after disturbance, all the more so that disturbance was intense.
 Regarding forest management, our results supported cutting cycles longer than 30 years and demonstrated long-term impacts emphasising the need to evaluate forest management sustainability. 
+\color{black}
 
 # Acknowledgement
 

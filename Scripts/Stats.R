@@ -250,9 +250,49 @@ treatments<-list(T0,T1,T2,T3);names(treatments)<-c("0","1","2","3")
 
 Ntrait<-names(Rec_CWM)
 
-lapply(Rec_CWM,function(tr){
-  toplot<-tr[treatments[[1]],,"0.5"]
+windows()
+par(mfrow=c(4,2))
+GAM_T0<-lapply(1:length(Rec_CWM),function(tra){
+  treat<-lapply(1:4,function(tre){
+  toplot<-Rec_CWM[[tra]][treatments[[1]],,"0.5"]
   toplot<-as.data.frame(cbind(rownames(toplot),toplot))
   toplot<-reshape(toplot,direction="long",idvar="rownames(toplot)",varying=list(2:ncol(toplot)))[,2:3]
-  toplot<-apply(toplot,2,as.numeric)
+  toplot<-as.data.frame(apply(toplot,2,as.numeric))
+  colnames(toplot)<-c("time","div")
+  gam_mod <- gam(div ~ s(time,k=3), data = toplot, sp=0.1)
+  return(gam_mod)    
+  })
+  lapply(1:4,function(tre){
+    plot(treat[[tre]], col=ColorsTr[tre],residuals=F)
+    pred<-predict(treat[[3]], type = "terms",se.fit=T)
+    xseq<-seq(1,10,length.out = length(pred$fit))
+    lines(y=pred$fit,x=xseq)
+    polygon(c(xseq,rev(xseq)),c(pred$se.fit,rev(pred$se.fit)),
+            col=rgb(0,0,0,alpha=0.05),border=NA)
+  
+    par(new=F)
+    plot(treat[[2]], col=ColorsTr[tre],residuals=F)
+    par(new=F)
+    plot(treat[[3]], col=ColorsTr[tre],residuals=F)
+    
+    
+  })
+  par(new=T)
+return(treat)
 })
+
+ColorsTr<-c("darkolivegreen2","gold","orangered","darkred")
+
+lapply(1:4,function(tre){
+  plot(treat[[tre]], col=ColorsTr[tre])
+  })
+
+plot(toplot)
+gam_mod <- gam(div ~ s(time,k=3), data = toplot, sp=0.1)
+
+# Plot the results
+plot(gam_mod, residuals = TRUE, pch = 1)
+
+
+
+
