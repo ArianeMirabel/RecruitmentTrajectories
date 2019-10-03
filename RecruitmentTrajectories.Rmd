@@ -71,7 +71,7 @@ Library <- function(Packages) {
   invisible(sapply(Packages, InstallAndLoad))
 }
 # Ajouter les packages nécessaires ici
-Library("kableExtra")
+Library(c("kableExtra","mgcv"))
 #source("Scripts/GithubPages.R")
 source("Scripts/DrawingTools.R")
 
@@ -214,7 +214,9 @@ Both metric are complementary to detect the changes in community structure [@Mag
 \color{black}
 
 Functional diversity trajectories were assessed through the Rao index of quadratic entropy, which combines species abundance distribution and average pairwise dissimilarity based on all functional traits.
-Functional composition trajectories were assessed through the functional traits community weighted means (CWM), representing the average trait value in a community weighted by species relative abundance based on the number of stem [@Diaz2007].
+Functional composition trajectories were assessed through functional traits Community Weighted Means (CWM).
+CWM are average trait value in the community weighted by species relative abundance in number of stem [@Diaz2007].
+For graphical representation, CWM trajectories are represented through the fitted lines of generalised additive models adjusted at treatment level [@Wood2011].
 Seed mass trajectories were reported by the stems proportion of each class recorded in the inventories.
 
 \color{red}
@@ -342,7 +344,7 @@ In undisturbed plots functional traits values remained stable over the 30 years 
 Trajectories of SLA and bark thickness first increased before decreasing towards initial values.
 Conversely, trajectories of leaf thickness, leaf toughness, wood specific gravity, and maximum height first decreased and then started returning towards initial values but their recovery remained unachieved after 30 years (Figure \@ref(fig:CWM)). 
 
-```{r CWM,  fig.asp = 1.2/2, echo=FALSE,fig.cap="Community weighted means (CWM) of the 7 functional traits considered: leaf thickness, leaf chlorophyll content, leaf tougness, specific leaf area (SLA), wood specific gravity (WSG), bark thickness and maximum height at adult stage (Hmax). Shaded areas are the credibility intervals.", fig.env="figure*"}
+```{r CWM,  fig.asp = 1.2/2, echo=FALSE,fig.cap="Fitted lines of additive models adjusted at treatment level on observed community weighted means (CWM) for the 7 functional traits considered. Starting from top left are presented leaf thickness, leaf chlorophyll content, leaf tougness, specific leaf area (SLA), wood specific gravity (WSG), bark thickness and maximum height at adult stage (Hmax). Models standard error were estimated but to small to appear in the graph.", fig.env="figure*"}
 load("DB/Recruits_CWM")
 
 par(mfrow=c(2,4),mar=c(3,3,2,1),oma=c(2,1,1,1),no.readonly=TRUE)

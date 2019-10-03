@@ -39,19 +39,29 @@ TrajectoryDiffNull<-function(RecDB,RecDB_Diff){
 
 PlotCWM<-function(TrajTraits){
   for (Ntrait in 1:length(TrajTraits)){
-    Toplot<-TrajTraits[[Ntrait]]
-    plot(colnames(Toplot),Toplot[1,,"0.5"],type="n",xaxt="n",xlab="",
-         ylab="",cex.lab=1.5,ylim=c(min(Toplot),max(Toplot)))
-    axis(1,at=seq(5,30,5),labels=T) 
-    invisible(lapply(1:length(treatments),function(tr){
-      toplot<-Toplot[which(rownames(Toplot)%in%treatments[[tr]]),,]  
-      lapply(1:nrow(toplot),function(Li){
-        lines(colnames(toplot),toplot[Li,,"0.5"],col=ColorsTr[[tr]],lwd=2)
-        polygon(c(colnames(toplot),rev(colnames(toplot))),c(toplot[Li,,"0.025"],rev(toplot[Li,,"0.975"])),
-                col=rgb(0,0,0,alpha=0.05),border=NA)})
-    }))
+    toplot<-Rec_CWM[[Ntrait]][,,"0.5"]
+    nm<-colnames(toplot)
+    toplot<-as.data.frame(cbind(rownames(toplot),toplot))
+    
+    toplot<-reshape(toplot, direction="long", varying = 2:14, idvar="V1", v.names="val", timevar="time", times=nm)
+    toplot<-as.data.frame(apply(toplot,2,as.numeric))
+    plot(x=toplot[,"time"],y=toplot[,"val"],type="n",xlab="time",ylab=names(Rec_CWM)[Ntrait])
+    
+    lapply(1:4,function(treat){
+      colTr<-col2rgb(ColorsTr[treat])
+      colTr<-rgb(red=colTr[1], green=colTr[2], blue=colTr[3], maxColorValue = 255,alpha=75)
+      dat<-toplot[which(toplot[,"V1"]%in%treatments[[treat]]),]
+      points(x=dat[,"time"],y=dat[,"val"],col=colTr,pch=20,cex=0.5)
+      gam_mod <- gam(val ~ s(time,k=5), data = dat, sp=0.1)
+      xseq<-seq(from=5,to=30,length.out = 100)
+      pred<-predict.gam(gam_mod,data.frame(time=xseq),type="response",se.fit=T)
+      lines(y=pred$fit, x=xseq,col=ColorsTr[treat],lwd=1.5)
+      polygon(c(xseq,rev(xseq)),c(pred$se.fit,rev(pred$se.fit)),
+              col=rgb(0,0,0,alpha=0.05),border=NA)
+    })
   }
 }
+
 legendCWM<-function(){
   mtext("Leaf thickness\n",at=0.13,line=-1.5,outer=TRUE,cex=0.9)
   mtext(expression(paste(mu, "m",sep = "")),at=0.08,line=-1.9,outer=TRUE,cex=0.9)
@@ -183,3 +193,20 @@ TrajectoryRec_vsNull<-function(RecDB_obs,RecDB_null){
       }))
     })
   }}
+
+
+PlotCWM_old<-function(TrajTraits){
+  for (Ntrait in 1:length(TrajTraits)){
+    Toplot<-TrajTraits[[Ntrait]]
+    plot(colnames(Toplot),Toplot[1,,"0.5"],type="n",xaxt="n",xlab="",
+         ylab="",cex.lab=1.5,ylim=c(min(Toplot),max(Toplot)))
+    axis(1,at=seq(5,30,5),labels=T) 
+    invisible(lapply(1:length(treatments),function(tr){
+      toplot<-Toplot[which(rownames(Toplot)%in%treatments[[tr]]),,]  
+      lapply(1:nrow(toplot),function(Li){
+        lines(colnames(toplot),toplot[Li,,"0.5"],col=ColorsTr[[tr]],lwd=2)
+        polygon(c(colnames(toplot),rev(colnames(toplot))),c(toplot[Li,,"0.025"],rev(toplot[Li,,"0.975"])),
+                col=rgb(0,0,0,alpha=0.05),border=NA)})
+    }))
+  }
+}

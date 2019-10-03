@@ -247,52 +247,37 @@ load("DB/Recruits_CWM")
 
 T0<-c(1,6,11);T1<-c(2,7,9);T2<-c(3,5,10);T3<-c(4,8,12)
 treatments<-list(T0,T1,T2,T3);names(treatments)<-c("0","1","2","3")
+ColorsTr<-c("darkolivegreen2","gold","orangered","darkred")
+
 
 Ntrait<-names(Rec_CWM)
 
 windows()
 par(mfrow=c(4,2))
-GAM_T0<-lapply(1:length(Rec_CWM),function(tra){
-  treat<-lapply(1:4,function(tre){
-  toplot<-Rec_CWM[[tra]][treatments[[1]],,"0.5"]
-  toplot<-as.data.frame(cbind(rownames(toplot),toplot))
-  toplot<-reshape(toplot,direction="long",idvar="rownames(toplot)",varying=list(2:ncol(toplot)))[,2:3]
-  toplot<-as.data.frame(apply(toplot,2,as.numeric))
-  colnames(toplot)<-c("time","div")
-  gam_mod <- gam(div ~ s(time,k=3), data = toplot, sp=0.1)
-  return(gam_mod)    
-  })
-  lapply(1:4,function(tre){
-    plot(treat[[tre]], col=ColorsTr[tre],residuals=F)
-    pred<-predict(treat[[3]], type = "terms",se.fit=T)
-    xseq<-seq(1,10,length.out = length(pred$fit))
-    lines(y=pred$fit,x=xseq)
-    polygon(c(xseq,rev(xseq)),c(pred$se.fit,rev(pred$se.fit)),
-            col=rgb(0,0,0,alpha=0.05),border=NA)
-  
-    par(new=F)
-    plot(treat[[2]], col=ColorsTr[tre],residuals=F)
-    par(new=F)
-    plot(treat[[3]], col=ColorsTr[tre],residuals=F)
+
+PlotCWM<-function(TrajTraits){
+  for (Ntrait in 1:length(TrajTraits)){
+    toplot<-Rec_CWM[[Ntrait]][,,"0.5"]
+    nm<-colnames(toplot)
+    toplot<-as.data.frame(cbind(rownames(toplot),toplot))
     
+    toplot<-reshape(toplot, direction="long", varying = 2:14, idvar="V1", v.names="val", timevar="time", times=nm)
+    toplot<-as.data.frame(apply(toplot,2,as.numeric))
+    plot(x=toplot[,"time"],y=toplot[,"val"],type="n",xlab="time",ylab=names(Rec_CWM)[Ntrait])
     
-  })
-  par(new=T)
-return(treat)
-})
-
-ColorsTr<-c("darkolivegreen2","gold","orangered","darkred")
-
-lapply(1:4,function(tre){
-  plot(treat[[tre]], col=ColorsTr[tre])
-  })
-
-plot(toplot)
-gam_mod <- gam(div ~ s(time,k=3), data = toplot, sp=0.1)
-
-# Plot the results
-plot(gam_mod, residuals = TRUE, pch = 1)
-
-
+    lapply(1:4,function(treat){
+      colTr<-col2rgb(ColorsTr[treat])
+      colTr<-rgb(red=colTr[1], green=colTr[2], blue=colTr[3], maxColorValue = 255,alpha=75)
+      dat<-toplot[which(toplot[,"V1"]%in%treatments[[treat]]),]
+      points(x=dat[,"time"],y=dat[,"val"],col=colTr,pch=20,cex=0.5)
+      gam_mod <- gam(val ~ s(time,k=5), data = dat, sp=0.1)
+      xseq<-seq(from=5,to=30,length.out = 100)
+      pred<-predict.gam(gam_mod,data.frame(time=xseq),type="response",se.fit=T)
+      lines(y=pred$fit, x=xseq,col=ColorsTr[treat],lwd=1.5)
+      polygon(c(xseq,rev(xseq)),c(pred$se.fit,rev(pred$se.fit)),
+              col=rgb(0,0,0,alpha=0.05),border=NA)
+    })
+  }
+}
 
 
