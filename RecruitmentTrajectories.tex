@@ -392,7 +392,7 @@ value of the several trees sampled in the database, which allowed
 accounting for intraspecific variability although we considered
 species-level trait values. \color{black}
 
-Whenever a species was in the dataset was missing some trait values
+Whenever some trait values missed for a species in the trait dataset
 (10\% of the species), missing values were filled using multivariate
 imputation by chained equation \citep{Mice2011}. To account for the
 phylogenetic signal in the filling process, imputations based on samples
@@ -455,7 +455,7 @@ T_{ab}=\frac{\sum_{i=1}^{n}|x_i^a - x_i^b| - \bigg| \sum_{i=1}^{n}{x_i^a} - \sum
 
 With \(Tab\) the turnover between communities \(a\) and \(b\), \(n\) the
 total number of species in the two communities and \(x_{ij}\) the
-abundance of species \(I\) in community \(j\).
+abundance of species \(i\) in community \(j\).
 
 The correlation between the initial disturbance intensity and recruited
 community taxonomic richness and evenness, functional richness and
@@ -473,9 +473,15 @@ The functional null models maintained the community abundance
 distribution while randomizing the relative abundance of trait values
 \citep{Mason2013}. Trajectories of null diversity (hereafter
 \(H^q_{null}\)) were similarly obtained after 50 iterations of the
-random sampling models.
+random sampling models. For each iteration of the null model gave a
+difference between null and observed trajectories. The 50 iterations
+which allowed calculating a 95\% confidence interval of the difference
+between null and observed trajectories.
 
-\color{red} \#\# Identification of indicative species
+\color{red}
+
+\subsection{Identification of indicative
+species}\label{identification-of-indicative-species}
 
 We identified characteristic species of post-disturbance recruitment by
 computing species indicator values for post-disturbance and undisturbed
@@ -524,7 +530,10 @@ permutations with a z statistic. \color{black}
 
 \section{Results}\label{results}
 
-\color{red} \#\# Indicative species and species repartition
+\color{red}
+
+\subsection{Indicative species and species
+repartition}\label{indicative-species-and-species-repartition}
 
 Overall, 602 species were recorded along the 30 years of inventory and
 across the 12 plots. Among all species, 157 were only inventoried in one
@@ -583,20 +592,23 @@ equivalent to those of the taxonomic null model (Figure
 
 In disturbed communities the taxonomic richness followed hump-shaped
 trajectories first increasing until a maximum reached after around 15
-years and positively correlated to the disturbance intensity
-(\(\rho^{Richness}_{spearman}=0.93\)). The taxonomic richness then
-decreased and recovered the pre-disturbance values after 30 years.
-Compared to the null models, the observed taxonomic richness was lower
-than the richness of a random species recruitment. The difference
-between the observed and null model richness followed a hump-shaped
-trajectory with a maximum difference reached after 15 years. In all
-disturbed communities, the taxonomic evenness decreased whenever the
-disturbance intensity over the 30 years
+years. This maximum was positively correlated to the disturbance
+intensity (\(\rho^{Richness}_{spearman}=0.93\)). The taxonomic richness
+then decreased and recovered the pre-disturbance values after 30 years.
+Compared to the null models, the observed taxonomic richness in
+disturbed plots were significantly lower than the richness of a random
+species recruitment. The confidence interval of the difference between
+observed and null models remained well under zero for all disturbed
+plots. In all disturbed communities, the taxonomic evenness decreased
+whenever the disturbance intensity over the 30 years
 (\(\rho^{simpson}_{spearman}=-0.35\)). Compared to the null model, the
-observed taxonomic eveness was lower than the evenness of a random
-species recruitment. The difference between the observed and null model
-evenness followed a hump-shaped trajectory with a maximum difference
-reached around 25 years after disturbance.
+observed taxonomic eveness was significantly lower than the evenness of
+a random species recruitment. The difference between the observed and
+null model evenness followed a hump-shaped trajectory with a maximum
+difference reached around 25 years after disturbance. \color{red} The
+confidence interval of the difference between null and observed
+trajectories remained well under zero for all disturbed plots.
+\color{black}
 
 The functional diversity in the undisturbed plots remained stable and
 equivalent to this of the functional null model over the 30 years. In
@@ -606,16 +618,22 @@ of the T1 plots. In the disturbed plots of higher disturbance intensity
 (T2 and T3) the functional diversity decreased until 15 years after
 disturbance, when it started to recover towards initial values. The
 observed functional diversity remained lower than this of the null model
-over the 30 years.
+over the 30 years. \color{red} The difference between null and observed
+functional trajectories, however, were significant only for the most
+higly disturbed plots (T3). \color{black}
 
-\begin{figure*}
+\textbackslash{}begin\{figure*\}
 
-{\centering \includegraphics{RecruitmentTrajectories_files/figure-latex/DivTraj-1} 
+\{\centering \includegraphics{RecruitmentTrajectories_files/figure-latex/DivTraj-1}
 
-}
+\}
 
-\caption{Upper panels, trajectories over 30 years of taxonomic richness \textbf{(a)}, taxonomic evenness \textbf{(b)} and functional diversity \textbf{(c)} of observed 2-years laps recruitment $H_{obs}^q$. Lower panels, diversity differences to null models $H_{obs}^q - H_{null}^q$. Shaded areas are the credibility intervals.}\label{fig:DivTraj}
-\end{figure*}
+\textbackslash{}caption\{Upper panels, trajectories over 30 years of
+taxonomic richness \textbf{(a)}, taxonomic evenness \textbf{(b)} and
+functional diversity \textbf{(c)} of observed 2-years laps recruitment
+\(H_{obs}^q\). Lower panels, diversity differences to null models
+\(H_{obs}^q - H_{null}^q\). Shaded areas are the 95\% confidence
+intervals.\}\label{fig:DivTraj} \textbackslash{}end\{figure*\}
 
 \subsection{Functional composition}\label{functional-composition}
 
@@ -634,7 +652,7 @@ after 30 years (Figure \ref{fig:CWM}).
 
 }
 
-\caption{Fitted lines of additive models adjusted at treatment level on observed community weighted means (CWM) for the 7 functional traits considered. Starting from top left are presented leaf thickness, leaf chlorophyll content, leaf tougness, specific leaf area (SLA), wood specific gravity (WSG), bark thickness and maximum height at adult stage (Hmax). Models standard error were estimated but to small to appear in the graph.}\label{fig:CWM}
+\caption{Fitted lines of additive models adjusted at treatment level on observed community weighted means (CWM) for the 7 functional traits considered. Dotted lines are the observed trajectories at plot level. From top left to bottom right, graphs are leaf thickness, leaf chlorophyll content, leaf tougness, specific leaf area (SLA), wood specific gravity (WSG), bark thickness and maximum height at adult stage (Hmax). Models standard error were estimated but to small to appear in the graph.}\label{fig:CWM}
 \end{figure*}
 
 \subsection{Recruitment Turnover}\label{recruitment-turnover}

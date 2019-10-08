@@ -280,4 +280,9 @@ PlotCWM<-function(TrajTraits){
   }
 }
 
+################################
+## Significance, confidence interval
+load("DB/RecruitmentPunctual");load("DB/RecruitmentPunctual_Nullmodel_Diff")
+load("DB/RecruitmentPunctual_Functional");load("DB/RecruitmentPunctual_Functional_Nullmodel_Diff")
+
 
