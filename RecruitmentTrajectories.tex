@@ -108,11 +108,15 @@
 \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
 
 % User-adder preamble
-\usepackage{textcomp} \DeclareUnicodeCharacter{B0}{\textdegree}
-\usepackage{tabu}
-\renewenvironment{table}{\begin{table*}}{\end{table*}\ignorespacesafterend}
-\hyphenation{bio-di-ver-si-ty sap-lings post-dis-tur-bance}
-\hypersetup{draft} \usepackage{color}
+\usepackage{textcomp}
+
+\DeclareUnicodeCharacter{B0}{\textdegree}
+
+\usepackage{tabu} \renewenvironment{table}{\begin{table*}}{\end{table*}\ignorespacesafterend}
+
+\hyphenation{bio-di-ver-si-ty sap-lings post-dis-tur-bance} \hypersetup{draft}
+
+\usepackage{color}
 
 %----------------------------------------------------------------------------------------
 %	ARTICLE INFORMATION
@@ -127,8 +131,7 @@
 Ariane MIRABEL\textsuperscript{1*}\\ Eric MARCON\textsuperscript{1}\\ Bruno HERAULT\textsuperscript{2}
 } % Authors
 \affiliation{
-\textsuperscript{1}UMR EcoFoG, AgroParistech, CNRS, Cirad, INRA, Université des Antilles,
-Université de Guyane.\\ \hspace{1em} Campus Agronomique, 97310 Kourou, France.\\\textsuperscript{2}INPHB (Institut National Polytechnique Félix Houphoüet Boigny)\\ \hspace{1em} Yamoussoukro, Ivory Coast
+\textsuperscript{1}UMR EcoFoG, AgroParistech, CNRS, Cirad, INRA, Université des Antilles, Université de Guyane.\\ \hspace{1em} Campus Agronomique, 97310 Kourou, France.\\\textsuperscript{2}INPHB (Institut National Polytechnique Félix Houphoüet Boigny)\\ \hspace{1em} Yamoussoukro, Ivory Coast
 }
 \affiliation{*\textbf{Corresponding author}: ariane.mirabel@ecofog.gf, https://github.com/ArianeMirabel} % Corresponding author
 
@@ -140,34 +143,8 @@ Université de Guyane.\\ \hspace{1em} Campus Agronomique, 97310 Kourou, France.\
 %----------------------------------------------------------------------------------------
 
 \Abstract{
-The role of tree diversity for tropical forests functioning and services
-makes it crucial tree diversity and composition fate in the global
-changing context. Community long-term response to disturbance rely on
-tree recruitment, long seen as following deterministic successional
-pathways. These pathways however might be altered in the hyper-diverse
-tropical forests and of slight but recurrent disturbances induced by
-global changes. Post-disturbance recruitment trajectories would (i)
-disentangle the determinants of tree recruitment between stochastic and
-deterministic processes that enhance a restricted pool of species, and
-(ii) elucidate tropical forests taxonomic and functional resilience. We
-examined the trajectories over 30 years of recruited trees taxonomic and
-functional diversity in 12 plots of 6.25 ha of forest following a
-disturbance gradient. We analyzed taxonomic richness, evenness, and
-turnover, and functional diversity and composition (regarding 7 leaf,
-stem and life-history functional traits). We revealed a three-phased
-successional pathway defined by the interplay of stochastic and
-deterministic recruitment processes. The succession translated into (i)
-saplings growth maintaining pre-disturbance community diversity and
-composition, (ii) light-demanding species enhanced recruitment
-entailing, above a disturbance intensity threshold, the dominance of
-pioneers and (iii) the recovery of pre-disturbance taxonomic and
-functional characteristics and of stochastic recruitment processes.
-Although tangible, community taxonomic and functional resilience was
-decades-long. Post-disturbance recruitment relied on deterministic
-competition processes for light balancing the stochastic processes
-ruling undisturbed communities. Although resilient, recruitment
-taxonomic and functional characteristics remained altered in the
-long-term, calling caution for forest management.
+The role of tree diversity for tropical forests functioning and services makes it crucial tree diversity and composition fate in the global changing context. Community long-term response to disturbance rely on tree recruitment, long seen as following deterministic successional pathways. These pathways however might be altered in the hyper-diverse tropical forests and of slight but recurrent disturbances induced by global changes. Post-disturbance recruitment trajectories would (i) disentangle the determinants of tree recruitment between stochastic and deterministic processes that enhance a restricted pool of species, and (ii) elucidate tropical forests taxonomic and functional resilience. We examined the trajectories over 30 years of recruited trees taxonomic and functional diversity in 12 plots of 6.25 ha of forest following a disturbance gradient. We analyzed taxonomic richness, evenness, and turnover, and functional diversity and composition (regarding 7 leaf, stem and life-history functional traits). We revealed a three-phased successional pathway defined by the interplay of stochastic and deterministic recruitment processes. The succession translated into (i) saplings growth maintaining pre-disturbance community diversity and composition, (ii) light-demanding species enhanced recruitment entailing, above a disturbance intensity threshold, the dominance of pioneers and (iii) the recovery of pre-disturbance taxonomic and functional characteristics and of stochastic recruitment processes. Although tangible, community taxonomic and functional resilience was decades-long.
+Post-disturbance recruitment relied on deterministic competition processes for light balancing the stochastic processes ruling undisturbed communities. Although resilient, recruitment taxonomic and functional characteristics remained altered in the long-term, calling caution for forest management.
 }
 
 %----------------------------------------------------------------------------------------
@@ -195,139 +172,72 @@ long-term, calling caution for forest management.
 
 
 
-\section{Introduction}\label{introduction}
+\hypertarget{introduction}{%
+\section{Introduction}\label{introduction}}
 
-\color{red} Determining the response of tropical forests to disturbance
-is key to predict their fate in the global changing context. In the last
-decades, tropical forests experienced a wide range of disturbance, from
-radical land-use changes for agriculture or mining
-\citep{Dezecache2017a, Dezecache2017b} to more insidious changes
-following climatic changes or anthropogenic activities like selective
-logging \citep{Baraloto2012a, Aubry-Kientz2015}. In that respect a vast
-literature successfully modeled community response to disturbance in
-terms of tree growth, tree height and fluxes of carbon, water, and
-nutrients
-\citep{Gourlet-Fleury2000, Putz2012, Piponiot2016, Rutishauser2016}. In
-terms of tree community diversity and composition, the ecological theory
-of succession assumes post-disturbance pathways driven by a succession
-of deterministic recruitment processes. These pathways would track the
-post-disturbance variations in resource availability, that imply a
-succession of recruitment processes depending on species resource use
-and competitive abilities \citep{Clements1916, Meiners2015}. The theory
-assumes that the deterministic succession shaped predictable
-trajectories gradually restoring communities pre-disturbance states
-\citep{Chesson2000, Rees2001, Adler2007}. Specifically, in forest
-ecosystem, tree species community succession first comprises the
-recruitment of saplings benefiting from higher resources availability
-and lower competition. Then, stand maturation progressively enforces the
-exclusion of low-competitive species until the senescence of
-early-successional species, and the emergence of late-successional ones
-leading to the recovery of pre-disturbance composition and diversity
-\citep{Denslow2000}. Empirical evidence, however, often show
-post-disturbance trajectories deviating from the predictable succession
-and resulting from an interplay of deterministic and stochastic
-recruitment processes. Post-disturbance trajectories would then also
-rely on stochastic processes, like dispersal limitations, and thus lead
-to new equilibrium states instead of recovering towards the
-pre-disturbance state \citep{Hubbell2001, Chave2004, Norden2015}. Hence,
-the question is to determine the balance between deterministic and
-stochastic recruitment processes. In the hyper-diverse tropical forests,
-this balance is specifically debated. While several studies revealed
-predictable and homogeneous successional patterns restoring the
-pre-disturbance community \citep{Norden2009, Letcher2015}, others showed
-diverging trajectories following disturbance and different equilibrium
-state \citep{Longworth2014, Norden2015}.
+\color{red}
 
-Post-disturbance trajectories may correspond either to recruited trees
-taxonomic characteristics, that refer to neutral species assemblages, or
-to functional characteristics, that account for species ecology and
-functioning \citep{Macarthur1967, Violle2007b, Kunstler2016}.
-Deterministic processes correspond to a recruitment depending on species
-competitive ability determined by their functional characteristics
-\citep{Rees2001, Perronne2017}. Resulting recruitment trajectories would
-be similar among communities. Specifically, as light is the limiting
-resource in tropical forests, deterministic processes would drive a
-functional succession from fast-growing species with ``acquisitive''
-resource use, able of important and fast light acquisition, to
-slow-growing, long-lived species with ``conservative'' resource use
-\citep{Denslow1980, Molino2001, Bongers2009}.\\
-Key leaf, wood and life-history functional traits assessing species
-resources acquisition strategy and ecology would thus allow grasping the
-deterministic processes involved in post-disturbance trajectories
-\citep{Wright2004, Chave2009b, Herault2011}. Stochastic processes, in
-turn, correspond to a random species recruitment independant of their
-taxonomic identity and functional characteristics, and imply
-trajectories diverging among communities. Because of the high diversity
-and functional redundancy in tropical forests, tree community taxonomic
-trajectories may not track functional ones. The combination of taxonomic
-and functional approaches is then necessary to identify the different
-recruitment processes involved
-\citep{Fukami2005, Chalmandrier2015, Cequinel2018} and to conclude about
-the recovery of pre-disturbance community
-\citep{Clements1916, Diamond1975}.
+Determining the response of tropical forests to disturbance is key to predict their fate in the global changing context.
+In the last decades, tropical forests experienced a wide range of disturbance, from radical land-use changes for agriculture or mining \citep{Dezecache2017a, Dezecache2017b} to more insidious changes following climatic changes or anthropogenic activities like selective logging \citep{Baraloto2012a, Aubry-Kientz2015}.
+In that respect a vast literature successfully modeled community response to disturbance in terms of tree growth, tree height and fluxes of carbon, water, and nutrients \citep{Gourlet-Fleury2000, Putz2012, Piponiot2016, Rutishauser2016}.
+In terms of tree community diversity and composition, the ecological theory of succession assumes post-disturbance pathways driven by a succession of deterministic recruitment processes.
+These pathways would track the post-disturbance variations in resource availability, that imply a succession of recruitment processes depending on species resource use and competitive abilities \citep{Clements1916, Meiners2015}.
+The theory assumes that the deterministic succession shaped predictable trajectories gradually restoring communities pre-disturbance states \citep{Chesson2000, Rees2001, Adler2007}.
+Specifically, in forest ecosystem, tree species community succession first comprises the recruitment of saplings benefiting from higher resources availability and lower competition.
+Then, stand maturation progressively enforces the exclusion of low-competitive species until the senescence of early-successional species, and the emergence of late-successional ones leading to the recovery of pre-disturbance composition and diversity \citep{Denslow2000}.
+Empirical evidence, however, often show post-disturbance trajectories deviating from the predictable succession and resulting from an interplay of deterministic and stochastic recruitment processes.
+Post-disturbance trajectories would then also rely on stochastic processes, like dispersal limitations, and thus lead to new equilibrium states instead of recovering towards the pre-disturbance state \citep{Hubbell2001, Chave2004, Norden2015}.
+Hence, the question is to determine the balance between deterministic and stochastic recruitment processes.
+In the hyper-diverse tropical forests, this balance is specifically debated.
+While several studies revealed predictable and homogeneous successional patterns restoring the pre-disturbance community \citep{Norden2009, Letcher2015}, others showed diverging trajectories following disturbance and different equilibrium state \citep{Longworth2014, Norden2015}.
 
-Here, we followed recruitment trajectories over 30 years of 75 ha
-cumulated area of Neotropical forest plots set up on a gradient of
-disturbance intensity, from 10 to 60\% of aboveground standing biomass
-removed. We examined recruited trees taxonomic composition, richness,
-and evenness, taxonomic turnover compared to pre-disturbance community,
-and functional composition and diversity based on seven major leaf,
-stem, and life-history traits. We compared the recruitment trajectories
-to neutral models corresponding to a stochastic recruitment and a
-randomization of species functional traits. Specifically, we (i)
-elucidated the successional pathway shaping community response to
-disturbance and the underlying ecological processes, and (ii) clarified
-the extent of community taxonomic and functional resilience, in the
-sense of pre-disturbance characteristics recovery, and its consequences
-for tropical forest management.
+Post-disturbance trajectories may correspond either to recruited trees taxonomic characteristics, that refer to neutral species assemblages, or to functional characteristics, that account for species ecology and functioning \citep{Macarthur1967, Violle2007b, Kunstler2016}.
+Deterministic processes correspond to a recruitment depending on species competitive ability determined by their functional characteristics \citep{Rees2001, Perronne2017}.
+Resulting recruitment trajectories would be similar among communities.
+Specifically, as light is the limiting resource in tropical forests, deterministic processes would drive a functional succession from fast-growing species with ``acquisitive'' resource use, able of important and fast light acquisition, to slow-growing, long-lived species with ``conservative'' resource use \citep{Denslow1980, Molino2001, Bongers2009}.\\
+Key leaf, wood and life-history functional traits assessing species resources acquisition strategy and ecology would thus allow grasping the deterministic processes involved in post-disturbance trajectories \citep{Wright2004, Chave2009b, Herault2011}.
+Stochastic processes, in turn, correspond to a random species recruitment independant of their taxonomic identity and functional characteristics, and imply trajectories diverging among communities.
+Because of the high diversity and functional redundancy in tropical forests, tree community taxonomic trajectories may not track functional ones.
+The combination of taxonomic and functional approaches is then necessary to identify the different recruitment processes involved \citep{Fukami2005, Chalmandrier2015, Cequinel2018} and to conclude about the recovery of pre-disturbance community \citep{Clements1916, Diamond1975}.
+
+Here, we followed recruitment trajectories over 30 years of 75 ha cumulated area of Neotropical forest plots set up on a gradient of disturbance intensity, from 10 to 60\% of aboveground standing biomass removed.
+We examined recruited trees taxonomic composition, richness, and evenness, taxonomic turnover compared to pre-disturbance community, and functional composition and diversity based on seven major leaf, stem, and life-history traits.
+We compared the recruitment trajectories to neutral models corresponding to a stochastic recruitment and a randomization of species functional traits.
+Specifically, we (i) elucidated the successional pathway shaping community response to disturbance and the underlying ecological processes, and (ii) clarified the extent of community taxonomic and functional resilience, in the sense of pre-disturbance characteristics recovery, and its consequences for tropical forest management.
 
 \color{black}
 
-\section{Material and Methods}\label{material-and-methods}
+\hypertarget{material-and-methods}{%
+\section{Material and Methods}\label{material-and-methods}}
 
-\subsection{Study Site}\label{study-site}
+\hypertarget{study-site}{%
+\subsection{Study Site}\label{study-site}}
 
-The Paracou station is located in a lowland tropical rainforest in
-French Guiana (518\textdegree N and 5253\textdegree W). Climate is
-tropical wet with mean annual precipitation averaging 2980
-mm.yr\textsuperscript{-1} (30-yr period) and a 3-months dry season
-(\textless{} 100 mm.mo\textsuperscript{-1}) from mid-August to
-mid-November, and a one-month dry season in March \citep{Wagner2011}.
-The mean annual temperature is 26\textdegree C. Elevation ranges from 5
-to 50 m.
+The Paracou station is located in a lowland tropical rainforest in French Guiana (518\textdegree N and 5253\textdegree W).
+Climate is tropical wet with mean annual precipitation averaging 2980 mm.yr\textsuperscript{-1} (30-yr period) and a 3-months dry season (\textless{} 100 mm.mo\textsuperscript{-1}) from mid-August to mid-November, and a one-month dry season in March \citep{Wagner2011}.
+The mean annual temperature is 26\textdegree C.
+Elevation ranges from 5 to 50 m.
 
-\color{red} Across all plots, the topography mainly corresponds to
-hilltops or hillsides, and bottomlands cover less than 1 \% of the area.
-Plots are shallow ferralitic acrisols over a layer of transformed
-saprolite with low permeability and lateral drainage. Soil conditions
-are homogeneous, to the exception of the highest hilltops where the
-thick surface allows a free vertical drainage
-\citep{Gourlet-Fleury2004}. \color{black}
+\color{red}
 
-The experiment is a network of twelve 6.25 ha plots (Table
-\ref{tab:Tab1}) that underwent three disturbance treatments in 1987
-according to a randomized plot design \citep{Herault2018}.
+Across all plots, the topography mainly corresponds to hilltops or hillsides, and bottomlands cover less than 1 \% of the area.
+Plots are shallow ferralitic acrisols over a layer of transformed saprolite with low permeability and lateral drainage.
+Soil conditions are homogeneous, to the exception of the highest hilltops where the thick surface allows a free vertical drainage \citep{Gourlet-Fleury2004}.
+\color{black}
 
-\color{red} The experiment comprised three replicates of three
-sylvicultural treatments (hereafter plots T1, T2 and T3) and three
-control plots (T0). All treatments T1, T2 and T3 comprised the logging
-of 10 trees/ha with 50 cm minimum DBH that belonged to a set of 58
-commercially exploited species \citep{Gourlet-Fleury2004}. Treatment T2
-additionally comprised a thinning treatment by poison-girdling of
-non-commercially exploited species, randomly selected species with an
-average 30 trees/ha with 40 cm minimum DBH. Treatment T3 additionally
-comprised the logging of 15 trees /ha with 40 cm minimum DBH and the
-poison-girdling of 20 trees/ha with a 50 cm minimum DBH, all belonging
-to non-commercial species. Considering the silvicultural treatments and
-the following damage, disturbance intensity was measured as the
-percentage of aboveground standing biomass of trees above 10 cm DBH
-(\%AGB) lost between the first inventory in 1984 and five years after
-disturbance \citep{Piponiot2016}, estimated with the BIOMASS R package
-\citep{Biomass2018}, and without accounting for lianas. The three
-treatments constituted a disturbance intensity gradient with increasing
-of above-ground biomass (AGB) lost and surface disturbed. \color{black}
+The experiment is a network of twelve 6.25 ha plots (Table \ref{tab:Tab1}) that underwent three disturbance treatments in 1987 according to a randomized plot design \citep{Herault2018}.
 
-\begin{table}
+\color{red}
+
+The experiment comprised three replicates of three sylvicultural treatments (hereafter plots T1, T2 and T3) and three control plots (T0).
+All treatments T1, T2 and T3 comprised the logging of 10 trees/ha with 50 cm minimum DBH that belonged to a set of 58 commercially exploited species \citep{Gourlet-Fleury2004}.
+Treatment T2 additionally comprised a thinning treatment by poison-girdling of non-commercially exploited species, randomly selected species with an average 30 trees/ha with 40 cm minimum DBH.
+Treatment T3 additionally comprised the logging of 15 trees /ha with 40 cm minimum DBH and the poison-girdling of 20 trees/ha with a 50 cm minimum DBH, all belonging to non-commercial species.
+Considering the silvicultural treatments and the following damage, disturbance intensity was measured as the percentage of aboveground standing biomass of trees above 10 cm DBH (\%AGB) lost between the first inventory in 1984 and five years after disturbance \citep{Piponiot2016}, estimated with the BIOMASS R package \citep{Biomass2018}, and without accounting for lianas.
+The three treatments constituted a disturbance intensity gradient with increasing of above-ground biomass (AGB) lost and surface disturbed.
+\color{black}
+
+\begin{table*}[t]
 
 \caption{\label{tab:Tab1}Intervention table, summary of the disturbance intensity for the 4 plot treatments in Paracou. DBH refers to Diameter at Breast Height and AGB refers to aboveground standing biomass of trees above 10 cm DBH.}
 \centering
@@ -341,164 +251,106 @@ T2 & DBH $\geq$ 50 cm, commercial species, $\approx$ 10  $trees.ha^{-1}$ & DBH $
 T3 & DBH $\geq$ 50 cm, commercial species, $\approx$ 10  $trees.ha^{-1}$ & DBH $\geq$ 50 cm, non-valuable species, $\approx$ 15  $trees.ha^{-1}$ & 40 cm $\leq$ DBH $\leq$ 50 cm, non-valuable species,\ $\approx$ 15 $trees.ha^{-1}$ & $[35-56]$\\
 \bottomrule
 \end{tabu}
-\end{table}
+\end{table*}\ignorespacesafterend
 
-\subsection{Inventories Protocol and Dataset
-Collection}\label{inventories-protocol-and-dataset-collection}
+\hypertarget{inventories-protocol-and-dataset-collection}{%
+\subsection{Inventories Protocol and Dataset Collection}\label{inventories-protocol-and-dataset-collection}}
 
-Dominant families in the study site are \emph{Fabaceae},
-\emph{Chrysobalanaceae}, \emph{Lecythidaceae} and \emph{Sapotaceae}. All
-trees above 10 cm DBH were mapped and measured annually since 1984.
-Trees are first identified with a vernacular name assigned by the forest
-worker team, and afterward with a scientific name assigned by botanists
-during regular botanical campaigns. Botanical campaigns have been
-carried out every five to six years from 2003 onwards, but
-identification levels varied between campaigns.
+Dominant families in the study site are \emph{Fabaceae}, \emph{Chrysobalanaceae}, \emph{Lecythidaceae} and \emph{Sapotaceae}.
+All trees above 10 cm DBH were mapped and measured annually since 1984.
+Trees are first identified with a vernacular name assigned by the forest worker team, and afterward with a scientific name assigned by botanists during regular botanical campaigns.
+Botanical campaigns have been carried out every five to six years from 2003 onwards, but identification levels varied between campaigns.
 
-The variability of protocols in time raised methodological issues as
-vernacular names usually correspond to different botanical species. This
-variability resulted in significant taxonomic uncertainties that had to
-be propagated to composition and diversity metrics. The uncertainty
-propagation was done through a Bayesian framework reconstituting
-complete inventories at genus level from real incomplete ones on the
-basis of vernacular/botanical names association. Vernacular names were
-replaced through multinomial trials based on the association probability
-\(\big[\alpha_1, \alpha_2,..., \alpha_N\big]\) observed across all
-inventories between each vernacular name \emph{v} and the species
-\(\big[s_1, s_2,..., s_N\big]\):
+The variability of protocols in time raised methodological issues as vernacular names usually correspond to different botanical species.
+This variability resulted in significant taxonomic uncertainties that had to be propagated to composition and diversity metrics.
+The uncertainty propagation was done through a Bayesian framework reconstituting complete inventories at genus level from real incomplete ones on the basis of vernacular/botanical names association.
+Vernacular names were replaced through multinomial trials based on the association probability \(\big[\alpha_1, \alpha_2,..., \alpha_N\big]\) observed across all inventories between each vernacular name \emph{v} and the species \(\big[s_1, s_2,..., s_N\big]\):
 
 \begin{align}
 M_v\Big(\big[s_1, s_2,..., s_N\big],\big[\alpha_1, \alpha_2,..., \alpha_N\big]\Big) \nonumber
 \end{align}
 
-See appendix 1 and \citet{Aubry-Kientz2013} for the detailed
-methodology.
+See appendix 1 and \citet{Aubry-Kientz2013} for the detailed methodology.
 
-To minimize the remaining identification uncertainties, the simulated
-botanical inventories were reported at genus level.
+To minimize the remaining identification uncertainties, the simulated botanical inventories were reported at genus level.
 
-We considered six functional traits representing leaf economics, the
-leaf thickness, toughness, total chlorophyll content and specific leaf
-area, and stem economics, the wood specific gravity and bark thickness.
-These traits were obtained from the BRIDGE project \footnote{http://www.ecofog.gf/Bridge/},
-which proved to reliably assess species functional traits and community
-functional diversity \citep{Paine2015}. Trait values were assessed from
-a selection of individuals located in nine permanent plots in French
-Guiana, including two in Paracou, and comprised 294 species belonging to
-157 genera.
+We considered six functional traits representing leaf economics, the leaf thickness, toughness, total chlorophyll content and specific leaf area, and stem economics, the wood specific gravity and bark thickness.
+These traits were obtained from the BRIDGE project \footnote{http://www.ecofog.gf/Bridge/}, which proved to reliably assess species functional traits and community functional diversity \citep{Paine2015}.
+Trait values were assessed from a selection of individuals located in nine permanent plots in French Guiana, including two in Paracou, and comprised 294 species belonging to 157 genera.
 
-\color{red} For the trait value at species level we took the median
-value of the several trees sampled in the database, which allowed
-accounting for intraspecific variability although we considered
-species-level trait values. \color{black}
+\color{red}
 
-Whenever some trait values missed for a species in the trait dataset
-(10\% of the species), missing values were filled using multivariate
-imputation by chained equation \citep{Mice2011}. To account for the
-phylogenetic signal in the filling process, imputations based on samples
-from the same genus or from the same family. Whenever a species was not
-in the dataset, it was attributed a set of trait values randomly sampled
-among species of the next higher taxonomic level (same genus or family).
-Two life-history traits (maximum specific height and seed mass) came
-from the Mariwenn database \footnote{https://www.ecofog.gf/mariwenn/}.
-The database compiles information from a vast literature on the flora of
-French Guiana \citep{Ollivier2007} and comprises 362 species belonging
-to 188 genera. As seed mass information was classified into classes, no
-data filling process was applied and analyses were restricted to the
-botanical species recorded.
-
-All composition and diversity metrics were obtained after 50 iterations
-of the uncertainty propagation framework.
-
-\subsection{Recruitment trajectories}\label{recruitment-trajectories}
-
-\color{red} Communities were split into surviving trees of
-pre-disturbance communities and trees recruited afterward. Trajectories
-of recruitment diversity (hereafter \(H^q_{obs}\)) and turnover started
-from the first year after disturbance and then considered the trees
-recruited by 2-years intervals (\emph{i.e.} for the date Y, the trees
-that were under 10 cm DBH at Y-1 but above 10 cm DBH at Y).
+For the trait value at species level we took the median value of the several trees sampled in the database, which allowed accounting for intraspecific variability although we considered species-level trait values.
 \color{black}
 
-Trajectories of taxonomic diversity were assessed through species
-richness and evenness (the Hill number translation of the Simpson index)
-\citep{Chao2015, Marcon2015}. The two diversities belong to the set of
-Tsallis or generalized entropy, respectively corresponding to the zero
-and two order \emph{q} of diversity that emphasizes common species
-\color{red} regarding their stem density. These two metrics assess
-community richness and evenness, that reveals the structure of dominance
-in the community and allow grasping the changes in community abundance
-distribution. Both metric are complementary to detect the changes in
-community structure \citep{Magurran2004}. \color{black}
+Whenever some trait values missed for a species in the trait dataset (10\% of the species), missing values were filled using multivariate imputation by chained equation \citep{Mice2011}.
+To account for the phylogenetic signal in the filling process, imputations based on samples from the same genus or from the same family.
+Whenever a species was not in the dataset, it was attributed a set of trait values randomly sampled among species of the next higher taxonomic level (same genus or family).
+Two life-history traits (maximum specific height and seed mass) came from the Mariwenn database \footnote{https://www.ecofog.gf/mariwenn/}.
+The database compiles information from a vast literature on the flora of French Guiana \citep{Ollivier2007} and comprises 362 species belonging to 188 genera.
+As seed mass information was classified into classes, no data filling process was applied and analyses were restricted to the botanical species recorded.
 
-Functional diversity trajectories were assessed through the Rao index of
-quadratic entropy, which combines species abundance distribution and
-average pairwise dissimilarity based on all functional traits.
-Functional composition trajectories were assessed through functional
-traits Community Weighted Means (CWM). CWM are average trait value in
-the community weighted by species relative abundance in number of stem
-\citep{Diaz2007}. For graphical representation, CWM trajectories are
-represented through the fitted lines of generalised additive models
-adjusted at treatment level \citep{Wood2011}. Seed mass trajectories
-were reported by the stems proportion of each class recorded in the
-inventories.
+All composition and diversity metrics were obtained after 50 iterations of the uncertainty propagation framework.
 
-\color{red} The taxonomic similarity between recruited trees and
-pre-disturbance forest was measured with the relativized abundance
-replacement measuring species turnover between communities
-\citep{Podani2013a}:
+\hypertarget{recruitment-trajectories}{%
+\subsection{Recruitment trajectories}\label{recruitment-trajectories}}
+
+\color{red}
+
+Communities were split into surviving trees of pre-disturbance communities and trees recruited afterward.
+Trajectories of recruitment diversity (hereafter \(H^q_{obs}\)) and turnover started from the first year after disturbance and then considered the trees recruited by 2-years intervals (\emph{i.e.} for the date Y, the trees that were under 10 cm DBH at Y-1 but above 10 cm DBH at Y).
+\color{black}
+
+Trajectories of taxonomic diversity were assessed through species richness and evenness (the Hill number translation of the Simpson index) \citep{Chao2015, Marcon2015}.
+The two diversities belong to the set of Tsallis or generalized entropy, respectively corresponding to the zero and two order \emph{q} of diversity that emphasizes common species
+\color{red}
+regarding their stem density.
+These two metrics assess community richness and evenness, that reveals the structure of dominance in the community and allow grasping the changes in community abundance distribution.
+Both metric are complementary to detect the changes in community structure \citep{Magurran2004}.
+\color{black}
+
+Functional diversity trajectories were assessed through the Rao index of quadratic entropy, which combines species abundance distribution and average pairwise dissimilarity based on all functional traits.
+Functional composition trajectories were assessed through functional traits Community Weighted Means (CWM).
+CWM are average trait value in the community weighted by species relative abundance in number of stem \citep{Diaz2007}.
+For graphical representation, CWM trajectories are represented through the fitted lines of generalised additive models adjusted at treatment level \citep{Wood2011}.
+Seed mass trajectories were reported by the stems proportion of each class recorded in the inventories.
+
+\color{red}
+
+The taxonomic similarity between recruited trees and pre-disturbance forest was measured with the relativized abundance replacement measuring species turnover between communities \citep{Podani2013a}:
 
 \begin{equation}
 T_{ab}=\frac{\sum_{i=1}^{n}|x_i^a - x_i^b| - \bigg| \sum_{i=1}^{n}{x_i^a} - \sum_{i=1}^{n}{x_i^b} \bigg|}{\sum_{i=1}^{n}\max{\left( x_i^a;x_i^b \right)}}
 \label{eq:formNestedness}
 \end{equation}
 
-With \(Tab\) the turnover between communities \(a\) and \(b\), \(n\) the
-total number of species in the two communities and \(x_{ij}\) the
-abundance of species \(i\) in community \(j\).
+With \(Tab\) the turnover between communities \(a\) and \(b\), \(n\) the total number of species in the two communities and \(x_{ij}\) the abundance of species \(i\) in community \(j\).
 
-The correlation between the initial disturbance intensity and recruited
-community taxonomic richness and evenness, functional richness and
-taxonomic turnover were tested through Spearman rank correlation tests.
+The correlation between the initial disturbance intensity and recruited community taxonomic richness and evenness, functional richness and taxonomic turnover were tested through Spearman rank correlation tests.
 \color{black}
 
-The observed recruitment trajectories were compared to null trajectories
-obtained from taxonomic and functional null models. A taxonomic null
-model was independently built for each plot and for each year. Taxonomic
-null trajectories were simulated by randomly sampling the recruited
-trees in the current living community, according to the observed number
-of recruits. Functional null trajectories were simulated by randomly
-reassigning the combinations of functional trait values among species.
-The functional null models maintained the community abundance
-distribution while randomizing the relative abundance of trait values
-\citep{Mason2013}. Trajectories of null diversity (hereafter
-\(H^q_{null}\)) were similarly obtained after 50 iterations of the
-random sampling models. For each iteration of the null model gave a
-difference between null and observed trajectories. The 50 iterations
-which allowed calculating a 95\% confidence interval of the difference
-between null and observed trajectories.
+The observed recruitment trajectories were compared to null trajectories obtained from taxonomic and functional null models.
+A taxonomic null model was independently built for each plot and for each year.
+Taxonomic null trajectories were simulated by randomly sampling the recruited trees in the current living community, according to the observed number of recruits.
+Functional null trajectories were simulated by randomly reassigning the combinations of functional trait values among species.
+The functional null models maintained the community abundance distribution while randomizing the relative abundance of trait values \citep{Mason2013}.
+Trajectories of null diversity (hereafter \(H^q_{null}\)) were similarly obtained after 50 iterations of the random sampling models.
+For each iteration of the null model gave a difference between null and observed trajectories.
+The 50 iterations which allowed calculating a 95\% confidence interval of the difference between null and observed trajectories.
 
 \color{red}
 
-\subsection{Identification of indicative
-species}\label{identification-of-indicative-species}
+\hypertarget{identification-of-indicative-species}{%
+\subsection{Identification of indicative species}\label{identification-of-indicative-species}}
 
-We identified characteristic species of post-disturbance recruitment by
-computing species indicator values for post-disturbance and undisturbed
-recruited communities. We used the methodology developed in
-\citet{Dufrene1997}. Indicator species are defined as the most
-characteristic species of a group: it would be species only found in
-that group and recorded in the majority of the plots belonging to this
-group. All disturbed plots were pooled in the disturbed group and
-opposed to the undisturbed plots. \(IndVal_{ij}\) is the indicator value
-of species i relative to group j. It is the product of \(A_{ij}\), a
-measure of species specificity, by \(B_{ij}\), a measure of species
-fidelity. \(A_{ij}\) is the mean abundance of species \(i\) in each plot
-\(j\) of the group compared to all groups in the study. \(A_{ij}\) is
-maximum when species \(i\) is only present in group \(j\). \(B_{ij}\) is
-the relative frequency of occurence if species \(i\) in the plots of
-group \(j\), it is maximum when species \(i\) is only present in all
-plots of group \(j\).
+We identified characteristic species of post-disturbance recruitment by computing species indicator values for post-disturbance and undisturbed recruited communities.
+We used the methodology developed in \citet{Dufrene1997}.
+Indicator species are defined as the most characteristic species of a group: it would be species only found in that group and recorded in the majority of the plots belonging to this group.
+All disturbed plots were pooled in the disturbed group and opposed to the undisturbed plots.
+\(IndVal_{ij}\) is the indicator value of species i relative to group j.
+It is the product of \(A_{ij}\), a measure of species specificity, by \(B_{ij}\), a measure of species fidelity.
+\(A_{ij}\) is the mean abundance of species \(i\) in each plot \(j\) of the group compared to all groups in the study. \(A_{ij}\) is maximum when species \(i\) is only present in group \(j\).
+\(B_{ij}\) is the relative frequency of occurence if species \(i\) in the plots of group \(j\), it is maximum when species \(i\) is only present in all plots of group \(j\).
 
 \begin{equation}
 A_{ij} = Nindividuals_{ij} / Nindividuals_{i.}
@@ -512,35 +364,28 @@ B_{ij} = Nsites_{ij} / Nsites_{.j}
 IndVal_{ij} = A_{ij} x B_{ij} x 100
 \end{equation}
 
-In the formula for \(A_{ij}\), \(Nindividuals_{ij}\) is the number of
-individuals of species \(i\) in plots of group \(j\) and
-\(Nindividuals_{i.}\) is the sum of the mean number of individuals of
-species \(i\) over all groups. In the formula for \(B_{ij}\),
-\(Nsites_{ij}\) is the number of plots in group \(j\) where species
-\(i\) is recorded and \(Nsites_{j}\) is the total number of sites. The
-Indicator Value of a species is the maximum value of \(IndVal_{ij}\),
-expressed in percentage, observed across all groups. The indicator value
-is maximal when all individuals of species \(i\) are observed in all
-plots of one group.
+In the formula for \(A_{ij}\), \(Nindividuals_{ij}\) is the number of individuals of species \(i\) in plots of group \(j\) and \(Nindividuals_{i.}\) is the sum of the mean number of individuals of species \(i\) over all groups.
+In the formula for \(B_{ij}\), \(Nsites_{ij}\) is the number of plots in group \(j\) where species \(i\) is recorded and \(Nsites_{j}\) is the total number of sites.
+The Indicator Value of a species is the maximum value of \(IndVal_{ij}\), expressed in percentage, observed across all groups.
+The indicator value is maximal when all individuals of species \(i\) are observed in all plots of one group.
 
-The significance of species indicator values was tested through the
-comparison with a random permutaiton procedure of sites among groups.
-Observed values were compared to the mean values obtained from 50 random
-permutations with a z statistic. \color{black}
+The significance of species indicator values was tested through the comparison with a random permutaiton procedure of sites among groups.
+Observed values were compared to the mean values obtained from 50 random permutations with a z statistic.
+\color{black}
 
-\section{Results}\label{results}
+\hypertarget{results}{%
+\section{Results}\label{results}}
 
 \color{red}
 
-\subsection{Indicative species and species
-repartition}\label{indicative-species-and-species-repartition}
+\hypertarget{indicative-species-and-species-repartition}{%
+\subsection{Indicative species and species repartition}\label{indicative-species-and-species-repartition}}
 
-Overall, 602 species were recorded along the 30 years of inventory and
-across the 12 plots. Among all species, 157 were only inventoried in one
-plot and 43 were inventoried in all plots. Species repartition is
-detailed in table 2.
+Overall, 602 species were recorded along the 30 years of inventory and across the 12 plots.
+Among all species, 157 were only inventoried in one plot and 43 were inventoried in all plots.
+Species repartition is detailed in table 2.
 
-\begin{table}
+\begin{table*}[t]
 
 \caption{\label{tab:Tab2}Recruited species repartition across treatments: number of species inventoried and species only recruited in the treatment considered}
 \centering
@@ -552,99 +397,65 @@ Number of species by treatment & 373 & 313 & 390 & 432\\
 Number of species recruited only in one treatment & 42 & 30 & 43 & 81\\
 \bottomrule
 \end{tabu}
-\end{table}
+\end{table*}\ignorespacesafterend
 
-The dominant recruited species were \emph{Lecythis persistens},
-\emph{Licania alba}, \emph{Oenocarpus bataua}, \emph{Oxandra asbeckii},
-and \emph{Eperua grandiflora}. The dominant species recruited in
-disturbed plots were \emph{Miconia tschudyoides}, \emph{Inga sp.},
-\emph{Oenocarpus bataua}, \emph{Licania alba}, and \emph{Xylopia sp.}.
+The dominant recruited species were \emph{Lecythis persistens}, \emph{Licania alba}, \emph{Oenocarpus bataua}, \emph{Oxandra asbeckii}, and \emph{Eperua grandiflora}.
+The dominant species recruited in disturbed plots were \emph{Miconia tschudyoides}, \emph{Inga sp.}, \emph{Oenocarpus bataua}, \emph{Licania alba}, and \emph{Xylopia sp.}.
 
-We defined the indicative species of a group when their indicative value
-was above 90\%. Indicative species of undisturbed communities were
-\emph{Couepia bracteosa} and species of the genus \emph{Neea}.
-Indicative species of post-disturbance communities were species of the
-genuses \emph{Cecropia}, \emph{Cupania}, \emph{Apeiba}, \emph{Pourouma},
-\emph{Sterculia}, \emph{Tapirira}, \emph{Vismia}, and the species
-\emph{Miconia tschudyoides}, \emph{Schefflera decaphylla}, \emph{Virola
-surinamensis}, and \emph{Xylopia nitida}. Among disturbance-indicator
-species, genus \emph{Cecropia}, \emph{Apeiba}, \emph{Vismia} and
-\emph{Pourouma} were representative of the first years following
-disturbance while \emph{Cupania}, \emph{Xylopia}, \emph{Miconia} and
-\emph{Sterculia} were characteristic of later time after disturbance.
+We defined the indicative species of a group when their indicative value was above 90\%.
+Indicative species of undisturbed communities were \emph{Couepia bracteosa} and species of the genus \emph{Neea}.
+Indicative species of post-disturbance communities were species of the genuses \emph{Cecropia}, \emph{Cupania}, \emph{Apeiba}, \emph{Pourouma}, \emph{Sterculia}, \emph{Tapirira}, \emph{Vismia}, and the species \emph{Miconia tschudyoides}, \emph{Schefflera decaphylla}, \emph{Virola surinamensis}, and \emph{Xylopia nitida}.
+Among disturbance-indicator species, genus \emph{Cecropia}, \emph{Apeiba}, \emph{Vismia} and \emph{Pourouma} were representative of the first years following disturbance while \emph{Cupania}, \emph{Xylopia}, \emph{Miconia} and \emph{Sterculia} were characteristic of later time after disturbance.
 \color{black}
 
-\subsection{Taxonomic richness and evenness and functional
-diversity}\label{taxonomic-richness-and-evenness-and-functional-diversity}
+\hypertarget{taxonomic-richness-and-evenness-and-functional-diversity}{%
+\subsection{Taxonomic richness and evenness and functional diversity}\label{taxonomic-richness-and-evenness-and-functional-diversity}}
 
-\color{red} The average number of recruited trees per plot and per year
-along the whole time survey increased with the increasing disturbance
-intensity. For a 2-year laps, the number of recruits per plot was around
-74 in plots T0, 142 in plots T1, 211 in plots T2 and 273 in plots T3. In
-total, during the 30 years, 602 species were recruited across the 12
-plots. Among thoses, 26\% occured in one plot only and 7\% occured in
-all plots. \color{black}
+\color{red}
 
-In undisturbed communities the taxonomic richness and evenness of
-recruited trees remained stable over the 30 years, around values
-equivalent to those of the taxonomic null model (Figure
-(\ref{fig:DivTraj})).
-
-In disturbed communities the taxonomic richness followed hump-shaped
-trajectories first increasing until a maximum reached after around 15
-years. This maximum was positively correlated to the disturbance
-intensity (\(\rho^{Richness}_{spearman}=0.93\)). The taxonomic richness
-then decreased and recovered the pre-disturbance values after 30 years.
-Compared to the null models, the observed taxonomic richness in
-disturbed plots were significantly lower than the richness of a random
-species recruitment. The confidence interval of the difference between
-observed and null models remained well under zero for all disturbed
-plots. In all disturbed communities, the taxonomic evenness decreased
-whenever the disturbance intensity over the 30 years
-(\(\rho^{simpson}_{spearman}=-0.35\)). Compared to the null model, the
-observed taxonomic eveness was significantly lower than the evenness of
-a random species recruitment. The difference between the observed and
-null model evenness followed a hump-shaped trajectory with a maximum
-difference reached around 25 years after disturbance. \color{red} The
-confidence interval of the difference between null and observed
-trajectories remained well under zero for all disturbed plots.
+The average number of recruited trees per plot and per year along the whole time survey increased with the increasing disturbance intensity.
+For a 2-year laps, the number of recruits per plot was around 74 in plots T0, 142 in plots T1, 211 in plots T2 and 273 in plots T3.
+In total, during the 30 years, 602 species were recruited across the 12 plots.
+Among thoses, 26\% occured in one plot only and 7\% occured in all plots.
 \color{black}
 
-The functional diversity in the undisturbed plots remained stable and
-equivalent to this of the functional null model over the 30 years. In
-the lowest disturbance plots the functional diversity remained stable or
-slightly increasing, and was higher than this of the null model for two
-of the T1 plots. In the disturbed plots of higher disturbance intensity
-(T2 and T3) the functional diversity decreased until 15 years after
-disturbance, when it started to recover towards initial values. The
-observed functional diversity remained lower than this of the null model
-over the 30 years. \color{red} The difference between null and observed
-functional trajectories, however, were significant only for the most
-higly disturbed plots (T3). \color{black}
+In undisturbed communities the taxonomic richness and evenness of recruited trees remained stable over the 30 years, around values equivalent to those of the taxonomic null model (Figure (\ref{fig:DivTraj})).
 
-\textbackslash{}begin\{figure*\}
+In disturbed communities the taxonomic richness followed hump-shaped trajectories first increasing until a maximum reached after around 15 years.
+This maximum was positively correlated to the disturbance intensity (\(\rho^{Richness}_{spearman}=0.93\)).
+The taxonomic richness then decreased and recovered the pre-disturbance values after 30 years.
+Compared to the null models, the observed taxonomic richness in disturbed plots were significantly lower than the richness of a random species recruitment.
+The confidence interval of the difference between observed and null models remained well under zero for all disturbed plots.
+In all disturbed communities, the taxonomic evenness decreased whenever the disturbance intensity over the 30 years (\(\rho^{simpson}_{spearman}=-0.35\)).
+Compared to the null model, the observed taxonomic eveness was significantly lower than the evenness of a random species recruitment.
+The difference between the observed and null model evenness followed a hump-shaped trajectory with a maximum difference reached around 25 years after disturbance.
+\color{red}
+The confidence interval of the difference between null and observed trajectories remained well under zero for all disturbed plots.
+\color{black}
 
-\{\centering \includegraphics{RecruitmentTrajectories_files/figure-latex/DivTraj-1}
+The functional diversity in the undisturbed plots remained stable and equivalent to this of the functional null model over the 30 years.
+In the lowest disturbance plots the functional diversity remained stable or slightly increasing, and was higher than this of the null model for two of the T1 plots.
+In the disturbed plots of higher disturbance intensity (T2 and T3) the functional diversity decreased until 15 years after disturbance, when it started to recover towards initial values.
+The observed functional diversity remained lower than this of the null model over the 30 years.
+\color{red}
+The difference between null and observed functional trajectories, however, were significant only for the most higly disturbed plots (T3).
+\color{black}
 
-\}
+\begin{figure*}
 
-\textbackslash{}caption\{Upper panels, trajectories over 30 years of
-taxonomic richness \textbf{(a)}, taxonomic evenness \textbf{(b)} and
-functional diversity \textbf{(c)} of observed 2-years laps recruitment
-\(H_{obs}^q\). Lower panels, diversity differences to null models
-\(H_{obs}^q - H_{null}^q\). Shaded areas are the 95\% confidence
-intervals.\}\label{fig:DivTraj} \textbackslash{}end\{figure*\}
+{\centering \includegraphics{RecruitmentTrajectories_files/figure-latex/DivTraj-1} 
 
-\subsection{Functional composition}\label{functional-composition}
+}
 
-In undisturbed plots functional traits values remained stable over the
-30 years while it followed hump-shaped trajectories in all disturbed
-plots, to the exception of the leaf chlorophyll content. Trajectories of
-SLA and bark thickness first increased before decreasing towards initial
-values. Conversely, trajectories of leaf thickness, leaf toughness, wood
-specific gravity, and maximum height first decreased and then started
-returning towards initial values but their recovery remained unachieved
-after 30 years (Figure \ref{fig:CWM}).
+\caption{Upper panels, trajectories over 30 years of taxonomic richness \textbf{(a)}, taxonomic evenness \textbf{(b)} and functional diversity \textbf{(c)} of observed 2-years laps recruitment $H_{obs}^q$. Lower panels, diversity differences to null models $H_{obs}^q - H_{null}^q$. Shaded areas are the 95\% confidence intervals.}\label{fig:DivTraj}
+\end{figure*}
+
+\hypertarget{functional-composition}{%
+\subsection{Functional composition}\label{functional-composition}}
+
+In undisturbed plots functional traits values remained stable over the 30 years while it followed hump-shaped trajectories in all disturbed plots, to the exception of the leaf chlorophyll content.
+Trajectories of SLA and bark thickness first increased before decreasing towards initial values.
+Conversely, trajectories of leaf thickness, leaf toughness, wood specific gravity, and maximum height first decreased and then started returning towards initial values but their recovery remained unachieved after 30 years (Figure \ref{fig:CWM}).
 
 \begin{figure*}
 
@@ -655,15 +466,13 @@ after 30 years (Figure \ref{fig:CWM}).
 \caption{Fitted lines of additive models adjusted at treatment level on observed community weighted means (CWM) for the 7 functional traits considered. Dotted lines are the observed trajectories at plot level. From top left to bottom right, graphs are leaf thickness, leaf chlorophyll content, leaf tougness, specific leaf area (SLA), wood specific gravity (WSG), bark thickness and maximum height at adult stage (Hmax). Models standard error were estimated but to small to appear in the graph.}\label{fig:CWM}
 \end{figure*}
 
-\subsection{Recruitment Turnover}\label{recruitment-turnover}
+\hypertarget{recruitment-turnover}{%
+\subsection{Recruitment Turnover}\label{recruitment-turnover}}
 
-Over the 30 years in control plots the turnover of recruited species
-compared to initial community remained low (Figure \ref{fig:Turnover}).
-In disturbed plots the recruited species turnover followed a marked
-hump-shaped trajectory, with a maximum reached around 15 years after
-disturbance. The maximum turnover was positively correlated to the
-disturbance intensity (\(\rho_{spearman}=0.93\)). Thirty years after
-disturbance the turnover had returned to low values.
+Over the 30 years in control plots the turnover of recruited species compared to initial community remained low (Figure \ref{fig:Turnover}).
+In disturbed plots the recruited species turnover followed a marked hump-shaped trajectory, with a maximum reached around 15 years after disturbance.
+The maximum turnover was positively correlated to the disturbance intensity (\(\rho_{spearman}=0.93\)).
+Thirty years after disturbance the turnover had returned to low values.
 
 \begin{figure}
 
@@ -674,173 +483,87 @@ disturbance the turnover had returned to low values.
 \caption{Trajectories over 30 years of the abundance-based turnover between 2-years laps recruited trees pre-disturbance communities.}\label{fig:Turnover}
 \end{figure}
 
-\section{Discussion}\label{discussion}
+\hypertarget{discussion}{%
+\section{Discussion}\label{discussion}}
 
-\color{red} Our analysis of the taxonomic and functional response of
-tree recruitment over 30 years following a disturbance gradient revealed
-a three-phased successional pathway shaped by an interplay between
-stochastic recruitment and deterministic processes. Although the
-recruitment trajectories suggested community taxonomic and functional
-recovery, the return to the initial stage remained unachieved after 30
-years.
+\color{red}
 
-\subsection{A three-phased deterministic successional
-pathway}\label{a-three-phased-deterministic-successional-pathway}
+Our analysis of the taxonomic and functional response of tree recruitment over 30 years following a disturbance gradient revealed a three-phased successional pathway shaped by an interplay between stochastic recruitment and deterministic processes.
+Although the recruitment trajectories suggested community taxonomic and functional recovery, the return to the initial stage remained unachieved after 30 years.
 
-Post-disturbance recruitment trajectories followed a three-phased
-successional pathway defined by the emergence of deterministic
-competition processes for light, that balanced the stochastic processes
-involved in undisturbed communities before disturbance. Indicative
-species of disturbed plots corresponded to pionners and light demanding
-species while indicative species of undistrubed plots were
-shade-tolerant, late successional species.
+\hypertarget{a-three-phased-deterministic-successional-pathway}{%
+\subsection{A three-phased deterministic successional pathway}\label{a-three-phased-deterministic-successional-pathway}}
 
-A first phase (\emph{i.e.} 0-8 years) was defined by a very low
-taxonomic turnover between recruited trees and initial communities
-(Figure \ref{fig:Turnover}), and by similar taxonomic and functional
-trajectories matching the null model trajectories (Figure
-(\ref{fig:DivTraj})). The first phase corresponded to the time lapse
-before recruitment processes markedly changed. During this phase,
-recruits comprised a few pioneer species, like \emph{Cecropia obtusa},
-and rather corresponded to the growth of pre-disturbance surviving
-saplings (with DBH \textless{} 10 cm), that were late-successional
-species like \emph{Lecythis persistens} or \emph{Licania alba}. These
-species displayed ``resource-conservative'' functional strategies,
-\emph{i.e.} dense leaf and wood tissues and low exchange surface,
-favored in undisturbed communities where light levels are low
-\citep{Peet1992, Denslow2000}. These saplings were the first to benefit
-from the alleviated competition and the higher light availability that
-is known to follow disturbance and foster plant productivity and growth
-\citep{Monteith1972, Chazdon1984}.
+Post-disturbance recruitment trajectories followed a three-phased successional pathway defined by the emergence of deterministic competition processes for light, that balanced the stochastic processes involved in undisturbed communities before disturbance.
+Indicative species of disturbed plots corresponded to pionners and light demanding species while indicative species of undistrubed plots were shade-tolerant, late successional species.
 
-A second phase (\emph{i.e.} 8-15 years) was marked by an increase of the
-taxonomic turnover between recruited trees and initial communities, and
-a decrease of recruits richness and evenness compared to the null model.
-The second phase also corresponded to a shift in recruits functional
-composition towards more ``resource-acquisitive'' strategies. Indicative
-species switched from pioneers of genus \emph{Cecropia} or
-\emph{Vismia}, to non-pioneer light demanding species of genuses
-\emph{Cupania}, \emph{Xylopia} or \emph{Miconia}. The shift would mark
-the recruitment of trees germinated from seeds, eventually representing
-the main part of the recruitment \citep{Lawton1988}. This first phase
-was the time lapse before pioneers, like \emph{Miconia tschudyoides},
-\emph{Inga spp.}, \emph{Tapirira spp.}, and \emph{Cecropia spp.}, became
-dominant among recruits. The dominance of pioneers decreased the
-taxonomic richness and evenness of recruited trees and made the
-recruitment trajectories depart from those of the null model.
-Recruitment processes then changed after disturbance, with the emergence
-of deterministic processes favoring a restricted pool of species. During
-the second phase, the recruitment functional composition switched from a
-random trait assembly to more ``resource-acquisitive'' functional
-strategies (Figure (\ref{fig:CWM})). Species displaying high SLA and low
-maximum height, leaf toughness and wood specific gravity became dominant
-\citep{Wright2004, Chave2009b, Herault2011}. During the second
-succession phase, a net advantage then emerged for species displaying
-efficient light acquisition, with high SLA and leaf chlorophyll content,
-and displaying inexpensive, short-lived tissues, with low leaf
-thickness, leaf toughness, small Hmax, low wood specific gravity, and
-low bark thickness. The advantage gained by ``light acquisitive''
-species confirmed the role of light availability in the post-disturbance
-successional pathways, as already demonstrated in temperate and tropical
-forests \citep{Pena2008, Carreno2012, Kunstler2016, Both2019}. The
-emergence of deterministic processes favoring pioneers balanced the
-neutral species assemblage where late-successional species were
-dominant, like in undisturbed communities. Deterministic processes made
-post-disturbance trajectories depart from the null trajectories, all the
-more so that the disturbance was intense (Figure (\ref{fig:DivTraj})).
-Following low intensity disturbance (T1 plots), pioneers and
-late-successional species were balanced \citep{Bongers2009}. Following
-intense disturbance (T2 and T3 plots), deterministic processes prevailed
-and the composition of recruited communities rapidly differed from this
-of the pre-disturbance community.
+A first phase (\emph{i.e.} 0-8 years) was defined by a very low taxonomic turnover between recruited trees and initial communities (Figure \ref{fig:Turnover}), and by similar taxonomic and functional trajectories matching the null model trajectories (Figure (\ref{fig:DivTraj})).
+The first phase corresponded to the time lapse before recruitment processes markedly changed.
+During this phase, recruits comprised a few pioneer species, like \emph{Cecropia obtusa}, and rather corresponded to the growth of pre-disturbance surviving saplings (with DBH \textless{} 10 cm), that were late-successional species like \emph{Lecythis persistens} or \emph{Licania alba}.
+These species displayed ``resource-conservative'' functional strategies, \emph{i.e.} dense leaf and wood tissues and low exchange surface, favored in undisturbed communities where light levels are low \citep{Peet1992, Denslow2000}.
+These saplings were the first to benefit from the alleviated competition and the higher light availability that is known to follow disturbance and foster plant productivity and growth \citep{Monteith1972, Chazdon1984}.
 
-A third recruitment ongoing phase (starting around 15 years) was
-delineated by a return towards pre-disturbance values of functional
-diversity and taxonomic richness, while taxonomic evenness and
-functional composition remained altered (Figure (\ref{fig:DivTraj}) \&
-(\ref{fig:CWM})). Although recruited species were mainly light-demanding
-and pioneers, like species from \emph{Inga}, \emph{Miconia}, or
-\emph{Licania} genera, late-successional species progressively settled,
-like \emph{Licania alba} \citep{Fortunel2014}. The recruitment of
-late-successionals would translate the progressive closing of forest
-canopy and the increase competition for light and space
-{[}\citet{Peet1992};\citet{Denslow2000};{]} Deterministic recruitment
-processes then gradually left room again to stochastic recruitment as
-observed in undisturbed forest \citep{Lawton1988, Chave2004}.
+A second phase (\emph{i.e.} 8-15 years) was marked by an increase of the taxonomic turnover between recruited trees and initial communities, and a decrease of recruits richness and evenness compared to the null model.
+The second phase also corresponded to a shift in recruits functional composition towards more ``resource-acquisitive'' strategies.
+Indicative species switched from pioneers of genus \emph{Cecropia} or \emph{Vismia}, to non-pioneer light demanding species of genuses \emph{Cupania}, \emph{Xylopia} or \emph{Miconia}.
+The shift would mark the recruitment of trees germinated from seeds, eventually representing the main part of the recruitment \citep{Lawton1988}.
+This first phase was the time lapse before pioneers, like \emph{Miconia tschudyoides}, \emph{Inga spp.}, \emph{Tapirira spp.}, and \emph{Cecropia spp.}, became dominant among recruits.
+The dominance of pioneers decreased the taxonomic richness and evenness of recruited trees and made the recruitment trajectories depart from those of the null model.
+Recruitment processes then changed after disturbance, with the emergence of deterministic processes favoring a restricted pool of species.
+During the second phase, the recruitment functional composition switched from a random trait assembly to more ``resource-acquisitive'' functional strategies (Figure (\ref{fig:CWM})).
+Species displaying high SLA and low maximum height, leaf toughness and wood specific gravity became dominant \citep{Wright2004, Chave2009b, Herault2011}.
+During the second succession phase, a net advantage then emerged for species displaying efficient light acquisition, with high SLA and leaf chlorophyll content, and displaying inexpensive, short-lived tissues, with low leaf thickness, leaf toughness, small Hmax, low wood specific gravity, and low bark thickness.
+The advantage gained by ``light acquisitive'' species confirmed the role of light availability in the post-disturbance successional pathways, as already demonstrated in temperate and tropical forests \citep{Pena2008, Carreno2012, Kunstler2016, Both2019}.
+The emergence of deterministic processes favoring pioneers balanced the neutral species assemblage where late-successional species were dominant, like in undisturbed communities.
+Deterministic processes made post-disturbance trajectories depart from the null trajectories, all the more so that the disturbance was intense (Figure (\ref{fig:DivTraj})).
+Following low intensity disturbance (T1 plots), pioneers and late-successional species were balanced \citep{Bongers2009}.
+Following intense disturbance (T2 and T3 plots), deterministic processes prevailed and the composition of recruited communities rapidly differed from this of the pre-disturbance community.
 
-\subsection{Community recovery}\label{community-recovery}
+A third recruitment ongoing phase (starting around 15 years) was delineated by a return towards pre-disturbance values of functional diversity and taxonomic richness, while taxonomic evenness and functional composition remained altered (Figure (\ref{fig:DivTraj}) \& (\ref{fig:CWM})).
+Although recruited species were mainly light-demanding and pioneers, like species from \emph{Inga}, \emph{Miconia}, or \emph{Licania} genera, late-successional species progressively settled, like \emph{Licania alba} \citep{Fortunel2014}.
+The recruitment of late-successionals would translate the progressive closing of forest canopy and the increase competition for light and space {[}\citet{Peet1992};\citet{Denslow2000};{]}
+Deterministic recruitment processes then gradually left room again to stochastic recruitment as observed in undisturbed forest \citep{Lawton1988, Chave2004}.
 
-Following disturbance, community taxonomic and functional composition
-recovered towards pre-disturbance values. Such recovery confirmed
-previous results from the Paracou experiment, conducted 10 years
-\citep{Molino2001} and 20 years \citep{Baraloto2012a} after disturbance,
-where the early signs of the resilience of pre-disturbance taxonomic and
-functional composition recovery had been detected.
+\hypertarget{community-recovery}{%
+\subsection{Community recovery}\label{community-recovery}}
 
-Thirty years after disturbance, the taxonomic and functional diversity
-and composition of the recruited community returned towards
-pre-disturbance states \citep{Fukami2005, Fortunel2014}. The recovery of
-pre-disturbance states meant the maintenance of community diversity and
-composition, and a low recruitment of species absent in the
-pre-disturbance community. It then confirmed the importance of dispersal
-limitations among tropical tree species \citep{Svenning2005}.
+Following disturbance, community taxonomic and functional composition recovered towards pre-disturbance values.
+Such recovery confirmed previous results from the Paracou experiment, conducted 10 years \citep{Molino2001} and 20 years \citep{Baraloto2012a} after disturbance, where the early signs of the resilience of pre-disturbance taxonomic and functional composition recovery had been detected.
 
-Although community taxonomic and functional recovery was ongoing, both
-remained altered 30 years after disturbance. Besides, the recovery of
-community taxonomic richness was faster, while this of the functional
-richness tracked the trajectory of the taxonomic evenness
-\citep{Grime1998}. The higher the disturbance intensity, the more
-persistent the dominance of light-demanding species. Such long-term
-impact raises questions for tropical forests management as most valuable
-species are late-successional species, so their exploitation would
-require cutting cycles longer than 30 years \citep{Putz2012}. Besides,
-persistent changes in community composition likely alters community
-functioning \citep{Diaz2005}, and increases the risk of losing keystone
-species, with unexpected ecological consequences
-\citep{Jones1994, Chazdon2003a}. Infrequent species might indeed have
-unique functional characteristics in the ecosystem, apart from the ones
-considered here, or be a key resource for some of the fauna
-\citep{Schleuning2016}.
+Thirty years after disturbance, the taxonomic and functional diversity and composition of the recruited community returned towards pre-disturbance states \citep{Fukami2005, Fortunel2014}.
+The recovery of pre-disturbance states meant the maintenance of community diversity and composition, and a low recruitment of species absent in the pre-disturbance community.
+It then confirmed the importance of dispersal limitations among tropical tree species \citep{Svenning2005}.
 
-\section{Conclusion}\label{conclusion}
+Although community taxonomic and functional recovery was ongoing, both remained altered 30 years after disturbance.
+Besides, the recovery of community taxonomic richness was faster, while this of the functional richness tracked the trajectory of the taxonomic evenness \citep{Grime1998}.
+The higher the disturbance intensity, the more persistent the dominance of light-demanding species.
+Such long-term impact raises questions for tropical forests management as most valuable species are late-successional species, so their exploitation would require cutting cycles longer than 30 years \citep{Putz2012}.
+Besides, persistent changes in community composition likely alters community functioning \citep{Diaz2005}, and increases the risk of losing keystone species, with unexpected ecological consequences \citep{Jones1994, Chazdon2003a}.
+Infrequent species might indeed have unique functional characteristics in the ecosystem, apart from the ones considered here, or be a key resource for some of the fauna \citep{Schleuning2016}.
 
-Post-disturbance recruitment trajectories revealed a three-phased
-deterministic successional pathway driven by the emergence of
-trait-based deterministic processes balancing pre-disturbance stochastic
-processes, and enhancing light-acquisitive species. A first phase
-corresponded to the recruitment of pre-disturbance surviving saplings
-maintaining the taxonomic and functional diversity and composition of
-pre-disturbance communities. A second phase corresponded to the
-recruitment of true recruits from germinating seeds, belonging to a
-restricted pool of pioneers, that were favored by the emergence of
-competitive exclusion for light. Above a disturbance intensity
-threshold, the second recruitment phase saw the dominance of
-short-lived, fast growing pioneers that drastically changed community
-composition, diversity, and likely functioning. A third phase eventually
-corresponded to the recovery of stochastic recruitment processes and to
-the return towards pre-disturbance taxonomic and functional
-characteristics. Although resilient, recruits diversity and composition
-remained altered 30 years after disturbance, all the more so that
-disturbance was intense. Regarding forest management, our results
-supported cutting cycles longer than 30 years and demonstrated long-term
-impacts emphasising the need to evaluate forest management
-sustainability. \color{black}
+\hypertarget{conclusion}{%
+\section{Conclusion}\label{conclusion}}
 
-\section{Acknowledgement}\label{acknowledgement}
+Post-disturbance recruitment trajectories revealed a three-phased deterministic successional pathway driven by the emergence of trait-based deterministic processes balancing pre-disturbance stochastic processes, and enhancing light-acquisitive species.
+A first phase corresponded to the recruitment of pre-disturbance surviving saplings maintaining the taxonomic and functional diversity and composition of pre-disturbance communities.
+A second phase corresponded to the recruitment of true recruits from germinating seeds, belonging to a restricted pool of pioneers, that were favored by the emergence of competitive exclusion for light.
+Above a disturbance intensity threshold, the second recruitment phase saw the dominance of short-lived, fast growing pioneers that drastically changed community composition, diversity, and likely functioning.
+A third phase eventually corresponded to the recovery of stochastic recruitment processes and to the return towards pre-disturbance taxonomic and functional characteristics.
+Although resilient, recruits diversity and composition remained altered 30 years after disturbance, all the more so that disturbance was intense.
+Regarding forest management, our results supported cutting cycles longer than 30 years and demonstrated long-term impacts emphasising the need to evaluate forest management sustainability.
+\color{black}
 
-We are in debt with all Paracou station technicians and colleagues who
-helped setting up the plots and collecting data over years. Without
-their precious work, this study would have not been possible and they
-may be warmly thanked here. Our work benefited from an ``Investissement
-d'Avenir'' grant managed by the Agence Nationale de la Recherche (LABEX
-CEBA, ref ANR-10-LBX-25).
+\hypertarget{acknowledgement}{%
+\section{Acknowledgement}\label{acknowledgement}}
 
-\section{Data availability}\label{data-availability}
+We are in debt with all Paracou station technicians and colleagues who helped setting up the plots and collecting data over years.
+Without their precious work, this study would have not been possible and they may be warmly thanked here.
+Our work benefited from an ``Investissement d'Avenir'' grant managed by the Agence
+Nationale de la Recherche (LABEX CEBA, ref ANR-10-LBX-25).
 
-This article is based upon the dataset of the Paracou station, which is
-part of the Guyafor permanent plots network in French Guiana
-(Cirad-CNRS-ONF). The dataset is available upon request to the
-scientific director (https://paracou.cirad. fr).
+\#Data availability
+
+This article is based upon the dataset of the Paracou station, which is part of the Guyafor permanent plots network in French Guiana (Cirad-CNRS-ONF). The dataset is available upon request to the scientific director (https://paracou.cirad. fr).
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 

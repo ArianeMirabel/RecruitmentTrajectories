@@ -47,10 +47,10 @@ lang: english
 keywordlabel: Keywords
 corrauthorlabel: Corresponding author 
 output: 
+  bookdown::gitbook: default
   bookdown::pdf_book:
     base_format: EcoFoG::article
     keep_tex: TRUE
-  bookdown::gitbook: default
   bookdown::word_document2: default
 ---
 
@@ -340,7 +340,7 @@ The observed functional diversity remained lower than this of the null model ove
 The difference between null and observed functional trajectories, however, were significant only for the most higly disturbed plots (T3).
 \color{black}
 
-```{r DivTraj, fig.asp = 1.2/2, echo=FALSE,fig.cap="Upper panels, trajectories over 30 years of taxonomic richness (ref:Bolda), taxonomic evenness (ref:Boldb) and functional diversity (ref:Boldc) of observed 2-years laps recruitment $H_{obs}^q$. Lower panels, diversity differences to null models $H_{obs}^q - H_{null}^q$. Shaded areas are the 95% confidence intervals.", fig.env="figure*"}
+```{r DivTraj, fig.asp = 1.2/2, echo=FALSE,fig.cap="Upper panels, trajectories over 30 years of taxonomic richness (ref:Bolda), taxonomic evenness (ref:Boldb) and functional diversity (ref:Boldc) of observed 2-years laps recruitment $H_{obs}^q$. Lower panels, diversity differences to null models $H_{obs}^q - H_{null}^q$. Shaded areas are the 95\\% confidence intervals.", fig.env="figure*"}
 load("DB/RecruitmentPunctual");load("DB/RecruitmentPunctual_Nullmodel_Diff")
 load("DB/RecruitmentPunctual_Functional");load("DB/RecruitmentPunctual_Functional_Nullmodel_Diff")
 
