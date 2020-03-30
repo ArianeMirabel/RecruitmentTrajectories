@@ -1,41 +1,63 @@
-ColorsTr<-c("darkolivegreen2","gold","orangered","darkred")
-T0<-c(1,6,11);T1<-c(2,7,9);T2<-c(3,5,10);T3<-c(4,8,12);treatments<-list(T0,T1,T2,T3)
+load("DB/LostAGB")
+norm<-(AGBloss_cor[,"AGB"]-min(AGBloss_cor[,"AGB"]))/(max(AGBloss_cor[,"AGB"])-min(AGBloss_cor[,"AGB"]))
+ColorsDist <- colorRampPalette(c("darkolivegreen2","gold","orangered","darkred"))(12)[as.numeric(cut(norm, breaks = 12))]
 
 TrajectoryDiffNull<-function(RecDB,RecDB_Diff){
   invisible(lapply(c(1,3),function(ind){
     recind<-RecDB[[ind]]
     Ylim=c(min(recind),max(recind))
     par(mar=c(0, 2, 3, 1))
-    plot(colnames(recind),recind[1,,"0.5"],type="n",ylim=Ylim,xlab="",ylab="",xaxt="n")
+    plot(colnames(recind),recind[AGBloss_cor[,"plot"],,"0.5"][1,],type="n",ylim=Ylim,xlab="",ylab="",xaxt="n")
     mtext(c("(a) Taxonomic Richness", "", "(b) Taxonomic Evenness")[ind],side=3,line=3.5,cex=0.9)
     mtext(c("Equivalent\ndiversity", "", "")[ind],side=3,line=0.5,cex=0.77,adj=0)
-    invisible(lapply(1:length(treatments),function(tr){
-      toplot<-recind[which(rownames(recind)%in%treatments[[tr]]),,]
-      lapply(1:nrow(toplot),function(Li){
-        lines(colnames(toplot),toplot[Li,,"0.5"],col=ColorsTr[[tr]],lwd=2)
-        polygon(c(colnames(toplot),rev(colnames(toplot))),c(toplot[Li,,"0.025"],rev(toplot[Li,,"0.975"])),
-                col=rgb(0,0,0,alpha=0.05),border=NA)
-      })
-    }))
+    lapply(1:nrow(recind),function(Li){
+      lines(colnames(recind),recind[AGBloss_cor[,"plot"],,"0.5"][Li,],col=ColorsDist[Li],lwd=2)
+      polygon(c(colnames(recind),rev(colnames(recind))),
+              c(recind[AGBloss_cor[,"plot"],,"0.025"][Li,],rev(recind[AGBloss_cor[,"plot"],,"0.975"][Li,])),
+              col=rgb(0,0,0,alpha=0.05),border=NA)
+    })
     par(mar=c(1, 2, 0, 1))
     recindN<-RecDB_Diff[[ind]]
     Ylim=c(min(recindN),max(recindN))
-    plot(colnames(recindN),recindN[1,,"0.5"],type="n",ylim=Ylim,xlab="",ylab="",xaxt="n")
+    plot(colnames(recindN),recind[AGBloss_cor[,"plot"],,"0.5"][1,],type="n",ylim=Ylim,xlab="",ylab="",xaxt="n")
     axis(1,at=colnames(recindN),labels=T) 
     abline(h=0,lty=1,lwd=1)
-    invisible(lapply(1:length(treatments),function(tr){
-      toplot<-recindN[which(rownames(recindN)%in%treatments[[tr]]),,]
-      lapply(1:nrow(toplot),function(Li){
-        lines(colnames(toplot),toplot[Li,,"0.5"],col=ColorsTr[[tr]],lwd=2,lty=2)
-        polygon(c(colnames(toplot),rev(colnames(toplot))),c(toplot[Li,,"0.025"],rev(toplot[Li,,"0.975"])),
-                col=rgb(0,0,0,alpha=0.03),border=NA)
-      })
-    }))
+    lapply(1:nrow(recindN),function(Li){
+      lines(colnames(recindN),recindN[AGBloss_cor[,"plot"],,"0.5"][Li,],col=ColorsDist[Li],lwd=2,lty=2)
+      polygon(c(colnames(recindN),rev(colnames(recindN))),
+              c(recindN[AGBloss_cor[,"plot"],,"0.025"][Li,],rev(recindN[AGBloss_cor[,"plot"],,"0.975"][Li,])),
+              col=rgb(0,0,0,alpha=0.05),border=NA)
+    })
   }))
   mtext(expression(paste("Communities diversity, ",'H'['obs']^q)),side=2,line=0.5,adj=0,at=0.45,cex=0.8,outer=TRUE)
   mtext(expression(paste('H'['obs']^q," - ",'H'['null']^q)),
         side=2,line=0.5,adj=0,at=0.1,cex=0.9,outer=TRUE)
 }
+
+TrajectoryRec_fun<-function(RecDB_fun,RecDB_fun_Diff){
+  Ylim=c(min(RecDB_fun,na.rm=T),max(RecDB_fun,na.rm=T))
+  par(mar=c(0, 2, 3, 1))
+  plot(colnames(RecDB_fun),RecDB_fun[AGBloss_cor[,"plot"],,"0.5"][1,],type="n",ylim=Ylim,xlab="",ylab="",xaxt="n")
+  mtext("(c) Functional Diversity",side=3,line=3.5,cex=0.9)
+  lapply(1:nrow(RecDB_fun),function(Li){
+    lines(colnames(RecDB_fun),RecDB_fun[AGBloss_cor[,"plot"],,"0.5"][Li,],col=ColorsDist[Li],lwd=2)
+    polygon(c(colnames(RecDB_fun),rev(colnames(RecDB_fun))),
+            c(RecDB_fun[AGBloss_cor[,"plot"],,"0.025"][Li,],rev(RecDB_fun[AGBloss_cor[,"plot"],,"0.975"][Li,])),
+            col=rgb(0,0,0,alpha=0.05),border=NA)
+  })
+  par(mar=c(1, 2, 0, 1))
+  Ylim=c(min(RecDB_fun_Diff,na.rm=T),max(RecDB_fun_Diff,na.rm=T))
+  plot(colnames(RecDB_fun_Diff),RecDB_fun_Diff[AGBloss_cor[,"plot"],,"0.5"][1,],type="n",ylim=Ylim,xlab="",ylab="")
+  abline(h=0,lty=1,lwd=1)
+  lapply(1:nrow(RecDB_fun_Diff),function(Li){
+    lines(colnames(RecDB_fun_Diff),RecDB_fun_Diff[AGBloss_cor[,"plot"],,"0.5"][Li,],col=ColorsDist[Li],lwd=2,lty=2)
+    polygon(c(colnames(RecDB_fun_Diff),rev(colnames(RecDB_fun_Diff))),
+            c(RecDB_fun_Diff[AGBloss_cor[,"plot"],,"0.025"][Li,],rev(RecDB_fun_Diff[AGBloss_cor[,"plot"],,"0.975"][Li,])),
+            col=rgb(0,0,0,alpha=0.03),border=NA)
+  })
+  mtext("Years since disturbance",side=1,at=0.85,line=1.5,outer=TRUE)
+}
+
 
 PlotCWM<-function(TrajTraits){
   for (Ntrait in 1:length(TrajTraits)){
@@ -47,15 +69,14 @@ PlotCWM<-function(TrajTraits){
     toplot<-as.data.frame(apply(toplot,2,as.numeric))
     plot(x=toplot[,"time"],y=toplot[,"val"],type="n",xlab="time",ylab=names(Rec_CWM)[Ntrait])
     
-    lapply(1:4,function(treat){
-      colTr<-col2rgb(ColorsTr[treat])
-      colTr<-rgb(red=colTr[1], green=colTr[2], blue=colTr[3], maxColorValue = 255,alpha=75)
-      dat<-toplot[which(toplot[,"V1"]%in%treatments[[treat]]),]
-      points(x=dat[,"time"],y=dat[,"val"],col=colTr,pch=20,cex=0.5)
-      gam_mod <- gam(val ~ s(time,k=5), data = dat, sp=0.1)
+    lapply(1:nrow(AGBloss_cor),function(Li){
+      dat<-toplot[which(toplot[,"V1"]==AGBloss_cor[Li,"plot"]),]
+      points(x=dat[,"time"],y=dat[,"val"],col=ColorsDist[Li],pch=20,cex=0.5)
+      #gam_mod <- gam(val ~ s(time,k=5), data = dat, sp=0.1)
+      gam_mod <- gam(val ~ s(time,k=5), data = dat, method="REML")
       xseq<-seq(from=5,to=30,length.out = 100)
       pred<-predict.gam(gam_mod,data.frame(time=xseq),type="response",se.fit=T)
-      lines(y=pred$fit, x=xseq,col=ColorsTr[treat],lwd=1.5)
+      lines(y=pred$fit, x=xseq,col=ColorsDist[Li],lwd=1.5)
       polygon(c(xseq,rev(xseq)),c(pred$se.fit,rev(pred$se.fit)),
               col=rgb(0,0,0,alpha=0.05),border=NA)
     })
@@ -72,12 +93,12 @@ legendCWM<-function(){
   mtext("SLA\n",at=0.88,line=-1.5,outer=TRUE,cex=0.9)
   mtext(expression(paste(mm^2,".",mg^-1,sep = "")),at=0.84,line=-1.9,outer=TRUE,cex=0.9)
   
-  mtext("WSG\n",at=0.13,line=-14.9,outer=TRUE,cex=0.9)
-  mtext(expression(paste("g.",cm^-3,sep = "")),at=0.08,line=-15.2,outer=TRUE,cex=0.9)
-  mtext("Bark thickness\n",at=0.4,line=-15,outer=TRUE,cex=0.9)
-  mtext("mm",at=0.32,line=-15,outer=TRUE,cex=0.9)
-  mtext("Hmax\n",at=0.64,line=-15,outer=TRUE,cex=0.9)
-  mtext("m",at=0.56,line=-15,outer=TRUE,cex=0.9)
+  mtext("WSG\n",at=0.13,line=-16.3,outer=TRUE,cex=0.9)
+  mtext(expression(paste("g.",cm^-3,sep = "")),at=0.08,line=-16.5,outer=TRUE,cex=0.9)
+  mtext("Bark thickness\n",at=0.4,line=-16.6,outer=TRUE,cex=0.9)
+  mtext("mm",at=0.32,line=-16.2,outer=TRUE,cex=0.9)
+  mtext("Hmax\n",at=0.64,line=-16.2,outer=TRUE,cex=0.9)
+  mtext("m",at=0.56,line=-16.2,outer=TRUE,cex=0.9)
 }
 
 FDiversity<-function(FdivDB){
@@ -95,40 +116,35 @@ FDiversity<-function(FdivDB){
 TrajectoryRec_fun<-function(RecDB_fun,RecDB_fun_Diff){
   Ylim=c(min(RecDB_fun,na.rm=T),max(RecDB_fun,na.rm=T))
   par(mar=c(0, 2, 3, 1))
-  plot(colnames(RecDB_fun),RecDB_fun[1,,"0.5"],type="n",ylim=Ylim,xlab="",ylab="",xaxt="n")
+  plot(colnames(RecDB_fun),RecDB_fun[AGBloss_cor[,"plot"],,"0.5"][1,],type="n",ylim=Ylim,xlab="",ylab="",xaxt="n")
   mtext("(c) Functional Diversity",side=3,line=3.5,cex=0.9)
-  invisible(lapply(1:length(treatments),function(tr){
-    toplot<-RecDB_fun[which(rownames(RecDB_fun)%in%treatments[[tr]]),,]
-    lapply(1:nrow(toplot),function(Li){
-      lines(colnames(toplot),toplot[Li,,"0.5"],col=ColorsTr[[tr]],lwd=2)
-      polygon(c(colnames(toplot),rev(colnames(toplot))),c(toplot[Li,,"0.025"],rev(toplot[Li,,"0.975"])),
-              col=rgb(0,0,0,alpha=0.05),border=NA)
-    })}))
-    par(mar=c(1, 2, 0, 1))
-    Ylim=c(min(RecDB_fun_Diff,na.rm=T),max(RecDB_fun_Diff,na.rm=T))
-    plot(colnames(RecDB_fun_Diff),RecDB_fun_Diff[1,,"0.5"],type="n",ylim=Ylim,xlab="",ylab="")
-    abline(h=0,lty=1,lwd=1)
-    invisible(lapply(1:length(treatments),function(tr){
-      toplot<-RecDB_fun_Diff[which(rownames(RecDB_fun_Diff)%in%treatments[[tr]]),,]
-      lapply(1:nrow(toplot),function(Li){
-        lines(colnames(toplot),toplot[Li,,"0.5"],col=ColorsTr[[tr]],lwd=2,lty=2)
-        polygon(c(colnames(toplot),rev(colnames(toplot))),c(toplot[Li,,"0.025"],rev(toplot[Li,,"0.975"])),
-                col=rgb(0,0,0,alpha=0.03),border=NA)
-      })}))
+  lapply(1:nrow(RecDB_fun),function(Li){
+    lines(colnames(RecDB_fun),RecDB_fun[AGBloss_cor[,"plot"],,"0.5"][Li,],col=ColorsDist[Li],lwd=2)
+    polygon(c(colnames(RecDB_fun),rev(colnames(RecDB_fun))),
+            c(RecDB_fun[AGBloss_cor[,"plot"],,"0.025"][Li,],rev(RecDB_fun[AGBloss_cor[,"plot"],,"0.975"][Li,])),
+            col=rgb(0,0,0,alpha=0.05),border=NA)
+  })
+  par(mar=c(1, 2, 0, 1))
+  Ylim=c(min(RecDB_fun_Diff,na.rm=T),max(RecDB_fun_Diff,na.rm=T))
+  plot(colnames(RecDB_fun_Diff),RecDB_fun_Diff[AGBloss_cor[,"plot"],,"0.5"][1,],type="n",ylim=Ylim,xlab="",ylab="")
+  abline(h=0,lty=1,lwd=1)
+  lapply(1:nrow(RecDB_fun_Diff),function(Li){
+    lines(colnames(RecDB_fun_Diff),RecDB_fun_Diff[AGBloss_cor[,"plot"],,"0.5"][Li,],col=ColorsDist[Li],lwd=2,lty=2)
+    polygon(c(colnames(RecDB_fun_Diff),rev(colnames(RecDB_fun_Diff))),
+            c(RecDB_fun_Diff[AGBloss_cor[,"plot"],,"0.025"][Li,],rev(RecDB_fun_Diff[AGBloss_cor[,"plot"],,"0.975"][Li,])),
+            col=rgb(0,0,0,alpha=0.03),border=NA)
+  })
   mtext("Years since disturbance",side=1,at=0.85,line=1.5,outer=TRUE)
 }
 
 turnover<-function(TurnData){
-  plot(colnames(TurnData),TurnData[1,,"0.5"],type="n",ylab="",xlab="",ylim=c(min(TurnData),max(TurnData)),bty="n")
-  invisible(lapply(1:length(treatments),function(tr){
-    toplot<-TurnData[which(rownames(TurnData)%in%treatments[[tr]]),,]
-    lapply(1:nrow(toplot),function(li){
-      lines(colnames(toplot),toplot[li,,"0.5"],col=ColorsTr[[tr]],lwd=2)
-      polygon(c(colnames(toplot),rev(colnames(toplot))),
-              c(toplot[li,,"0.025"],rev(toplot[li,,"0.975"])),
+  plot(colnames(TurnData),TurnData[AGBloss_cor[,"plot"],,"0.5"][1,],type="n",ylab="",xlab="",ylim=c(min(TurnData),max(TurnData)),bty="n")
+  invisible(lapply(1:nrow(TurnData),function(li){
+      lines(colnames(TurnData),TurnData[AGBloss_cor[,"plot"],,"0.5"][li,],col=ColorsDist[li],lwd=2)
+      polygon(c(colnames(TurnData),rev(colnames(TurnData))),
+              c(TurnData[AGBloss_cor[,"plot"],,"0.025"][li,],rev(TurnData[AGBloss_cor[,"plot"],,"0.975"][li,])),
               col=rgb(0,0,0,alpha=0.05),border=NA)
-    })
-  }))
+    }))
 }
 
 Gaps<-function(RecDBg,RecDBng){

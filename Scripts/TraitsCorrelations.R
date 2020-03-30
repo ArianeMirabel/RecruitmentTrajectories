@@ -33,7 +33,7 @@ return(z.transform(correl))
 
 TraitCorr<-array(unlist(Tcorr),dim=c(nrow(Tcorr[[1]]),ncol(Tcorr[[1]]),Nrep),
       dimnames=list(TraitsName,TraitsName,1:Nrep))
-TraitCorr<-apply(TraitCorr,c(1,2),function(c){return(round(transf.stor(mean(c,na.rm=T),2)))})
+TraitCorr<-apply(TraitCorr,c(1,2),function(c){return(round(mean(c,na.rm=T),3))})
 for (i in 1:length(TraitsName)){
   TraitCorr[TraitsName[i],TraitsName[i]]<-1
 }
@@ -41,6 +41,8 @@ TraitCorr[which(is.na(TraitCorr))]<-""
 as.data.frame(TraitCorr)
 
 save(TraitCorr,file="DB/TraitsCorrelations")
+
+library("psych")
 
 Tcorr2<-lapply(1:Nrep,function(rep){
   Traits_filled<-Traits_filling(Traits1,Traits2,InventorySp)
@@ -58,7 +60,7 @@ TraitCorr2<-array(unlist(Tcorr2),dim=c(nrow(Tcorr2[[1]]),ncol(Tcorr2[[1]]),Nrep)
                  dimnames=list(TraitsName,TraitsName,1:Nrep))
 TraitCorr2<-apply(TraitCorr2,c(1,2),function(c){return(round(mean(c,na.rm=T),2))})
 
-
+save(TraitCorr2,file="DB/TraitsCorrelations2")
 
 
 

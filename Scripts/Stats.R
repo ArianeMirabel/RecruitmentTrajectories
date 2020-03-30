@@ -84,23 +84,36 @@ write.table(Corr,file="DB/Traitscorrelations.csv",sep=";",row.names=F)
 ## Spearman tests
 
 load("DB/RecruitmentPunctual");load("DB/RecruitmentPunctual_Functional");load("DB/LostAGB")
+load("DB/RecruitmentPunctual_Nullmodel_Diff");load("DB/RecruitmentPunctual_Functional_Nullmodel_Diff")
 
 treats<-cbind(c(1,6,11,2,7,9,3,5,10,4,8,12),rep(0:3,each=3))
 treats<-treats[order(treats[,1]),]
 colnames(treats)<-c("plot","treat"); rownames(treats)<-treats[,"plot"]
 
+Tax <- RecPun_DiffNull
+Fun <- RecPun_Fun_DiffNull
+  
 for(q in 1:3){
-  Ret<-RecPun[[q]][,,"0.5"]     
+  Ret<-Tax[[q]][,,"0.5"]   
+  Ret <- apply(Ret,2,function(col){return(abs(col-Ret[,1]))})
   Ret<-apply(Ret,1,max)
   Ret<-apply(cbind(Ret,names(Ret)),2,as.numeric)
   colnames(Ret)<-c("Max","plot")
-  Ret<-merge(Ret,AGBloss,by="plot")
+  Ret<-merge(Ret,AGBloss_cor,by="plot")
   assign(c("Richness","Shannon","Simpson")[q],Ret)
 }
 
 cor(Richness[,"Max"],Richness[,"AGB"],method="spearman")
 cor(Shannon[,"Max"],Shannon[,"AGB"],method="spearman")
 cor(Simpson[,"Max"],Simpson[,"AGB"],method="spearman")
+
+Rao <- apply(Fun[,,"0.5"],2,function(col){return(abs(col- Fun[,1,"0.5"]))})
+Rao <- apply(Rao,1,max)
+Rao <- apply(cbind(Rao,names(Rao)),2,as.numeric)
+colnames(Rao)<-c("Max","plot")
+Rao<-merge(Rao,AGBloss_cor,by="plot")
+cor(Rao[,"Max"],Rao[,"AGB"],method="spearman")
+
 
 cor(Simpson[which(!Simpson$plot%in%c(8,12)),"Max"],Simpson[which(!Simpson$plot%in%c(8,12)),"treat"],method="spearman")
 
@@ -133,6 +146,17 @@ Only1<-setdiff(setdiff(setdiff(Rec_stat3[[2]],Rec_stat3[[1]]),Rec_stat3[[3]]),Re
 Only2<-setdiff(setdiff(setdiff(Rec_stat3[[3]],Rec_stat3[[1]]),Rec_stat3[[2]]),Rec_stat3[[4]])
 #Species only recruited in T3
 Only3<-setdiff(setdiff(setdiff(Rec_stat3[[4]],Rec_stat3[[1]]),Rec_stat3[[3]]),Rec_stat3[[3]])
+
+## Dominant species
+Rec_stat <- Recruitment[,c("n_parcelle","name","campagne")]
+
+Rec_statD <- subset(Rec_stat, n_parcelle %in% c(2,7,9,3,5,10,4,8,12))
+Rec_statD1 <- Rec_stat[which(Rec_stat[,"campagne"]-1984 <=15),]
+Dom_D1 <- sort(tapply(Rec_statD1$name,Rec_statD1$name,length),decreasing=T)[1:10]
+Rec_statD2 <- Rec_stat[which(Rec_stat[,"campagne"]-1984 > 15),]
+Dom_D2 <- sort(tapply(Rec_statD2$name,Rec_statD2$name,length),decreasing=T)[1:10]
+
+length(grep("sp.",Recruitment$Espece))/nrow(Recruitment)*100
 
 # NMDS of recruitment
 library(ade4)
@@ -280,9 +304,179 @@ PlotCWM<-function(TrajTraits){
   }
 }
 
-################################
-## Significance, confidence interval
+
+########## Breakpoint analysis
 load("DB/RecruitmentPunctual");load("DB/RecruitmentPunctual_Nullmodel_Diff")
 load("DB/RecruitmentPunctual_Functional");load("DB/RecruitmentPunctual_Functional_Nullmodel_Diff")
+load("DB/Turnover_toInit")
+
+load("DB/LostAGB")
+norm<-(AGBloss_cor[,"AGB"]-min(AGBloss_cor[,"AGB"]))/(max(AGBloss_cor[,"AGB"])-min(AGBloss_cor[,"AGB"]))
+ColorsDist <- colorRampPalette(c("darkolivegreen2","gold","orangered","darkred"))(12)[as.numeric(cut(norm, breaks = 12))]
+
+RecPun_BP_3 <- do.call(rbind,lapply(1:length(RecPun), function(ind){
+  
+  Totest <- RecPun[[ind]][AGBloss_cor[,"plot"],,"0.5"]
+  
+  breakPoints <- do.call(cbind,lapply(1:nrow(Totest),function(li){
+    totest <- Totest[li,]
+    x <- as.numeric(names(totest))
+    pairs <- combn(x,2)
+    
+    mse <- numeric(ncol(pairs))
+    
+    for(i in 1:ncol(pairs)){
+      piecewise1 <- lm(totest ~ x*(x < pairs[1,i]) + x*(x < pairs[2,i] & x > pairs[1,i]) + x*( x >= pairs[2,i]))
+      mse[i] <- summary(piecewise1)$sigma
+    }
+    mse <- as.numeric(mse)
+    BPs <- pairs[,which(mse==min(mse))]
+    
+    piecewise2 <- lm(totest ~ x*(x <= BPs[1]) + x*(x < BPs[2] & x > BPs[1]) + x*( x >= BPs[2]))
+    return(!is.na(piecewise2$coefficients["x:x >= pairs[2, i]TRUE"]))
+  }))
+  
+  return(breakPoints)
+}))
+which(RecPun_BP_3)
+
+RecPun_Fun_BP_3 <-unlist(lapply(1:nrow(RecPun_Fun),function(li){
+    totest <- RecPun_Fun[AGBloss_cor[,"plot"],,"0.5"][li,]
+    x <- as.numeric(names(totest))
+    pairs <- combn(x,2)
+    
+    mse <- numeric(ncol(pairs))
+    
+    for(i in 1:ncol(pairs)){
+      piecewise1 <- lm(totest ~ x*(x < pairs[1,i]) + x*(x < pairs[2,i] & x > pairs[1,i]) + x*( x >= pairs[2,i]))
+      mse[i] <- summary(piecewise1)$sigma
+    }
+    mse <- as.numeric(mse)
+    BPs <- pairs[,which(mse==min(mse))]
+    
+    piecewise2 <- lm(totest ~ x*(x <= BPs[1]) + x*(x < BPs[2] & x > BPs[1]) + x*( x >= BPs[2]))
+    return(!is.na(piecewise2$coefficients["x:x >= pairs[2, i]TRUE"]))
+  }))
+which(RecPun_Fun_BP_3)
+
+RecPun_BP_1 <- do.call(rbind,lapply(1:length(RecPun), function(ind){
+  
+  Totest <- RecPun[[ind]][AGBloss_cor[,"plot"],,"0.5"]
+  
+  breakPoints <- do.call(cbind,lapply(1:nrow(Totest),function(li){
+    totest <- Totest[li,]
+    x <- as.numeric(names(totest))
+   
+    mse <- numeric(length(x))
+    
+    for(i in 1:length(totest)){
+      piecewise1 <- lm(totest ~ x*(x < x[i]) + x*(x>=x[i]))
+      mse[i] <- summary(piecewise1)$sigma 
+    }
+    mse <- as.numeric(mse)
+    mse <- which(mse==min(mse))
+    
+    wBP <- AIC(lm(totest ~ x*(x < x[mse]) + x*(x>=x[mse])))
+    noBP <- AIC(lm(totest ~ x))
+
+    return(wBP<noBP)
+  }))
+  
+  return(breakPoints)
+}))
+
+windows()
+layout(rbind(c(1,1,2,2,3,3),c(1,1,2,2,3,3),c(0,0,4,4,0,0),c(0,0,4,4,0,0)))
+
+RecPun_BP <- lapply(c(1,3), function(ind){
+  
+  Totest <- RecPun[[ind]][AGBloss_cor[,"plot"],,"0.5"]
+  
+  plot(colnames(Totest),Totest[1,], ylim=c(min(Totest),max(Totest)),type="n",ylab="diversity",xlab="year", main =names(RecPun)[ind])
+  
+  breakPoints <- do.call(cbind,lapply(1:nrow(Totest),function(li){
+    totest <- Totest[li,]
+    x <- as.numeric(names(totest))
+    
+    mse <- numeric(length(x))
+    
+    for(i in 1:length(x)){
+      piecewise1 <- lm(totest ~ x*(x < x[i]) + x*(x>=x[i]))
+      mse[i] <- summary(piecewise1)$sigma
+    }
+    mse <- as.numeric(mse)
+    
+    BP <- x[which(mse==min(mse))]
+    
+    piecewise2 <- lm(totest ~ x*(x < BP) + x*(x > BP))
+    lmBP <- summary(piecewise2)$coefficients[,"Estimate"]
+    Pval <- summary(piecewise2)$fstatistic
+    Pval <- round(pf(Pval[1],Pval[2],Pval[3],lower.tail=F),3)
+    
+    lines(x,totest,col=ColorsDist[li])
+    curve((lmBP["(Intercept)"] + lmBP["x < BPTRUE"]) + (lmBP["x"]+lmBP["x:x < BPTRUE"])*x, add=T, from= x[1], to=BP,col=ColorsDist[li])
+    curve((lmBP["(Intercept)"] + lmBP["x > BPTRUE"]) + lmBP["x"]*x, add=T, from=BP, to=max(x),col=ColorsDist[li])
+    abline(v=BP, lty=3,col=ColorsDist[li])
+    return(c(BP,min(mse),Pval))
+  }))
+  
+  rownames(breakPoints) <- c("BP","MSEmodel","Pval")  
+  colnames(breakPoints) <- rownames(Totest)
+  
+  return(breakPoints)
+})
+
+plot(colnames(RecPun_Fun),RecPun_Fun[1,,"0.5"],
+       ylim=c(min(RecPun_Fun[,,"0.5"]),max(RecPun_Fun[,,"0.5"])),type="n",ylab="diversity",xlab="year", main = "Rao")
+RecPun_Fun_BP <- unlist(lapply(1:nrow(RecPun_Fun),function(li){
+  
+    totest <- RecPun_Fun[AGBloss_cor[,"plot"],,"0.5"][li,]
+    x <- as.numeric(names(totest))
+    
+    mse <- numeric(length(x))
+    
+    for(i in 1:length(x)){
+      piecewise1 <- lm(totest ~ x*(x < x[i]) + x*(x>=x[i]))
+      mse[i] <- summary(piecewise1)$sigma
+    }
+    mse <- as.numeric(mse)
+    
+    BP <- x[which(mse==min(mse))]
+    
+    piecewise2 <- lm(totest ~ x*(x < BP) + x*(x > BP))
+    lmBP <- summary(piecewise2)$coefficients[,"Estimate"]
+    
+    lines(x,totest,col=ColorsDist[li])
+    curve((lmBP["(Intercept)"] + lmBP["x < BPTRUE"]) + (lmBP["x"]+lmBP["x:x < BPTRUE"])*x, add=T, from= x[1], to=BP,col=ColorsDist[li])
+    curve((lmBP["(Intercept)"] + lmBP["x > BPTRUE"]) + lmBP["x"]*x, add=T, from=BP, to=max(x),col=ColorsDist[li])
+    abline(v=BP, lty=3,col=ColorsDist[li])
+    return(c(BP,min(mse)))
+  }))
 
 
+plot(colnames(Turn),Turn[1,,"0.5"],
+     ylim=c(min(Turn[,,"0.5"]),max(Turn[,,"0.5"])),type="n",ylab="diversity",xlab="year", main = "Turnover")
+RecPun_Turn_BP <- unlist(lapply(1:nrow(Turn),function(li){
+  
+  totest <- Turn[AGBloss_cor[,"plot"],,"0.5"][li,]
+  x <- as.numeric(names(totest))
+  
+  mse <- numeric(length(x))
+  
+  for(i in 1:length(x)){
+    piecewise1 <- lm(totest ~ x*(x < x[i]) + x*(x>=x[i]))
+    mse[i] <- summary(piecewise1)$sigma
+  }
+  mse <- as.numeric(mse)
+  
+  BP <- x[which(mse==min(mse))]
+  
+  piecewise2 <- lm(totest ~ x*(x < BP) + x*(x > BP))
+  lmBP <- summary(piecewise2)$coefficients[,"Estimate"]
+  
+  lines(x,totest,col=ColorsDist[li])
+  curve((lmBP["(Intercept)"] + lmBP["x < BPTRUE"]) + (lmBP["x"]+lmBP["x:x < BPTRUE"])*x, add=T, from= x[1], to=BP,col=ColorsDist[li])
+  curve((lmBP["(Intercept)"] + lmBP["x > BPTRUE"]) + lmBP["x"]*x, add=T, from=BP, to=max(x),col=ColorsDist[li])
+  abline(v=BP, lty=3,col=ColorsDist[li])
+  return(c(BP,min(mse)))
+}))

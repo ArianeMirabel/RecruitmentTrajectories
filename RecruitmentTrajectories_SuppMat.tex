@@ -108,13 +108,17 @@
 \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
 
 % User-adder preamble
-\usepackage{textcomp} \DeclareUnicodeCharacter{B0}{\textdegree}
-\usepackage{tabu}
-\renewenvironment{table}{\begin{table*}}{\end{table*}\ignorespacesafterend}
-\hyphenation{bio-di-ver-si-ty sap-lings post-dis-tur-bance}
-\hypersetup{draft} \usepackage{caption} \usepackage{longtable}
-\captionsetup[figure]{labelformat=empty}
-\captionsetup[table]{labelformat=empty}
+\usepackage{textcomp}
+
+\DeclareUnicodeCharacter{B0}{\textdegree}
+
+\usepackage{tabu} \renewenvironment{table}{\begin{table*}}{\end{table*}\ignorespacesafterend}
+
+\hyphenation{bio-di-ver-si-ty sap-lings post-dis-tur-bance} \hypersetup{draft}
+
+\usepackage{caption} \usepackage{longtable} \usepackage{float} \usepackage{booktabs}
+
+\captionsetup[figure]{labelformat=empty} \captionsetup[table]{labelformat=empty}
 
 %----------------------------------------------------------------------------------------
 %	ARTICLE INFORMATION
@@ -123,15 +127,13 @@
 \JournalInfo{\ }
 \Archive{\ }
 
-\PaperTitle{30 Years of Post-disturbance Recruitment in a Neotropical Forest \_
-Supplementary Materials} % Article title
+\PaperTitle{30 Years of Post-disturbance Recruitment in a Neotropical Forest \_ Supplementary Materials} % Article title
 
 \Authors{
 Ariane MIRABEL\textsuperscript{1*}\\ Eric MARCON\textsuperscript{1}\\ Bruno HERAULT\textsuperscript{2}
 } % Authors
 \affiliation{
-\textsuperscript{1}UMR EcoFoG, AgroParistech, CNRS, Cirad, INRA, Université des Antilles,
-Université de Guyane.\\ \hspace{1em} Campus Agronomique, 97310 Kourou, France.\\\textsuperscript{2}INPHB (Institut National Polytechnique Félix Houphoüet Boigny)\\ \hspace{1em} Yamoussoukro, Ivory Coast
+\textsuperscript{1}UMR EcoFoG, AgroParistech, CNRS, Cirad, INRA, Université des Antilles, Université de Guyane.\\ \hspace{1em} Campus Agronomique, 97310 Kourou, France.\\\textsuperscript{2}INPHB (Institut National Polytechnique Félix Houphoüet Boigny)\\ \hspace{1em} Yamoussoukro, Ivory Coast
 }
 \affiliation{*\textbf{Corresponding author}: ariane.mirabel@ecofog.gf, https://github.com/ArianeMirabel} % Corresponding author
 
@@ -167,30 +169,39 @@ Université de Guyane.\\ \hspace{1em} Campus Agronomique, 97310 Kourou, France.\
 
 \onecolumn
 
-\begin{table}
+\begin{table*}[t]
 
-\caption{\label{tab:Corrtab}Table S1: Table of pearson correlation coefficients among functional traits.}
+\caption{\label{tab:Corrtab}Table S1: Table of pearson correlation coefficients among functional traits at species level.}
 \centering
 \begin{tabu} to \linewidth {>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedright}X>{\raggedleft}X}
 \toprule
-  & L_thickness & L_chloro & L_toughness & L_DryMass & SLA & WD & Hmax\\
+  & L\_thickness & L\_chloro & L\_toughness & Brak\_thickness & SLA & WD & Hmax\\
 \midrule
-L_thickness & 1 & 0.3 & 0.58 & 0.36 & 0.18 & -0.12 & 0.05\\
-L_chloro &  & 1 & 0.24 & 0.04 & -0.04 & -0.05 & -0.06\\
-L_toughness &  &  & 1 & 0.37 & 0.24 & 0.09 & -0.03\\
-L_DryMass &  &  &  & 1 & 0.84 & -0.23 & -0.11\\
+L\_thickness & 1 & 0.3 & 0.58 & 0.36 & 0.18 & -0.12 & 0.05\\
+L\_chloro &  & 1 & 0.24 & 0.04 & -0.04 & -0.05 & -0.06\\
+L\_toughness &  &  & 1 & 0.37 & 0.24 & 0.09 & -0.03\\
+L\_DryMass &  &  &  & 1 & 0.84 & -0.23 & -0.11\\
 SLA &  &  &  &  & 1 & -0.23 & -0.19\\
 \addlinespace
 WD &  &  &  &  &  & 1 & 0.00\\
 Hmax &  &  &  &  &  &  & 1.00\\
 \bottomrule
 \end{tabu}
-\end{table}
+\end{table*}\ignorespacesafterend
 
-\begin{table}
+\begin{figure}
+
+{\centering \includegraphics{RecruitmentTrajectories_SuppMat_files/figure-latex/BPanalysis-1} 
+
+}
+
+\caption{Figure S1: Breakpoint analysis of post-disturbance trajectories regarding, from left to right, taxonomic richness, taxonomic evenness, functional diversity, and taxonomic turnver of 2-years laps recuited communities. The best linear models segmented according to break points are selected based on their mean square errors. Dots are the observed trajectories, plain lines are linera model, and vertical dotted lines are the break points. Lines color correspond to initial disturbance intensity.}\label{fig:BPanalysis}
+\end{figure}
+
+\begin{table*}[t]
 
 \caption{\label{tab:Splist}Table S2: List of recruited species for all plots throughout the 30 years inventoried.}
-\begin{tabular}[t]{lll}
+\begin{tabular}{lll}
 \toprule
 \textbf{Famille} & \textbf{Genre} & \textbf{Espece}\\
 \midrule
@@ -991,7 +1002,7 @@ Hmax &  &  &  &  &  &  & 1.00\\
 \em{Vochysiaceae} & \em{Vochysia} & \em{tomentosa}\\
 \bottomrule
 \end{tabular}
-\end{table}
+\end{table*}\ignorespacesafterend
 
 %----------------------------------------------------------------------------------------
 %	REFERENCE LIST
