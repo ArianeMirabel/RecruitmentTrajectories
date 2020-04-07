@@ -2,6 +2,7 @@ load("DB/LostAGB")
 norm<-(AGBloss_cor[,"AGB"]-min(AGBloss_cor[,"AGB"]))/(max(AGBloss_cor[,"AGB"])-min(AGBloss_cor[,"AGB"]))
 ColorsDist <- colorRampPalette(c("darkolivegreen2","gold","orangered","darkred"))(12)[as.numeric(cut(norm, breaks = 12))]
 
+
 TrajectoryDiffNull<-function(RecDB,RecDB_Diff){
   invisible(lapply(c(1,3),function(ind){
     recind<-RecDB[[ind]]

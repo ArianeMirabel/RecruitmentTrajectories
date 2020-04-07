@@ -480,3 +480,26 @@ RecPun_Turn_BP <- unlist(lapply(1:nrow(Turn),function(li){
   abline(v=BP, lty=3,col=ColorsDist[li])
   return(c(BP,min(mse)))
 }))
+
+
+### Uncertainty deviation
+load("DB/RecruitmentPunctual");load("DB/RecruitmentPunctual_Nullmodel_Diff")
+
+DevUncertainty_Taxo <-lapply(c(1,3),function(ind){
+  recind<-RecPun[[ind]]
+  ret<-mean(unlist(lapply(1:nrow(recind),function(Li){
+    return(max(abs((recind[Li,,"0.975"]-recind[Li,,"0.025"])/recind[Li,,"0.5"]*100)))
+  })))
+  
+})
+
+DevUncertainty_Fun <-mean(unlist(lapply(1:nrow(RecPun_Fun),function(Li){
+    return(max(abs((RecPun_Fun[Li,,"0.975"]-RecPun_Fun[Li,,"0.025"])/RecPun_Fun[Li,,"0.5"]*100)))
+  })))
+
+load("DB/Turnover_toInit")
+DevUncertainty_Turn <-mean(unlist(lapply(1:nrow(Turn),function(Li){
+  return(max(abs((Turn[Li,,"0.975"]-Turn[Li,,"0.025"])/Turn[Li,,"0.5"]*100)))
+})))
+
+
