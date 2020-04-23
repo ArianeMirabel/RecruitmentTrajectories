@@ -227,3 +227,74 @@ PlotCWM_old<-function(TrajTraits){
     }))
   }
 }
+
+
+### Main figure
+
+.f = function() {
+  
+  load("DB/Turnover_toInit")
+  load("DB/RecruitmentPunctual");load("DB/RecruitmentPunctual_Nullmodel_Diff")
+  load("DB/RecruitmentPunctual_Functional");load("DB/RecruitmentPunctual_Functional_Nullmodel_Diff")
+  load("DB/LostAGB")
+  
+  RecDB <-RecPun
+  RecDB_fun <-RecPun_Fun
+  
+  #windows(width=100, height=40)
+  par(mfcol=c(1,4),oma=c(5,2,5,3),no.readonly=TRUE)
+  invisible(lapply(c(1,3),function(ind){
+    recind<-RecDB[[ind]]
+    Ylim=c(min(recind),max(recind))
+    par(mar=c(0, 2, 3, 1))
+    plot(colnames(recind),recind[AGBloss_cor[,"plot"],,"0.5"][1,],type="n",ylim=Ylim,xlab="",ylab="")
+    mtext(c("(a) Taxonomic Richness", "", "(b) Taxonomic Evenness")[ind],side=3,line=3.5,cex=0.9)
+    mtext("Equivalent\ndiversity",side=3,line=0.5,cex=0.77,adj=0)
+    lapply(1:nrow(recind),function(Li){
+      lines(colnames(recind),recind[AGBloss_cor[,"plot"],,"0.5"][Li,],col=ColorsDist[Li],lwd=2)
+      polygon(c(colnames(recind),rev(colnames(recind))),
+              c(recind[AGBloss_cor[,"plot"],,"0.025"][Li,],rev(recind[AGBloss_cor[,"plot"],,"0.975"][Li,])),
+              col=rgb(0,0,0,alpha=0.05),border=NA)
+    })
+  }))
+  
+  Ylim=c(min(RecDB_fun,na.rm=T),max(RecDB_fun,na.rm=T))
+  par(mar=c(0, 2, 3, 1))
+  plot(colnames(RecDB_fun),RecDB_fun[AGBloss_cor[,"plot"],,"0.5"][1,],type="n",ylim=Ylim,xlab="",ylab="")
+  mtext("(c) Functional Diversity",side=3,line=3.5,cex=0.9)
+  mtext("Equivalent\ndiversity",side=3,line=0.5,cex=0.77,adj=0)
+  lapply(1:nrow(RecDB_fun),function(Li){
+    lines(colnames(RecDB_fun),RecDB_fun[AGBloss_cor[,"plot"],,"0.5"][Li,],col=ColorsDist[Li],lwd=2)
+    polygon(c(colnames(RecDB_fun),rev(colnames(RecDB_fun))),
+            c(RecDB_fun[AGBloss_cor[,"plot"],,"0.025"][Li,],rev(RecDB_fun[AGBloss_cor[,"plot"],,"0.975"][Li,])),
+            col=rgb(0,0,0,alpha=0.05),border=NA)
+  })
+  
+  turnover(Turn)  
+  mtext(c("(d) Taxonomic turnover"),side=3,line=3.5,cex=0.9)
+  mtext("Years since disturbance",side=1,adj=1,outer=T,line=4,cex=1.1)
+  mtext("Post-disturbance Recruitment Trajectories",side=3,outer=T,line=3.5,cex=1.1)
+  
+  legd<-rep(NA, 12);legd[c(1,6,12)]<-round(sort(AGBloss_cor[,"AGB"])[c(1,6,12)])
+  legend("right",inset=c(-0.3,0),xpd=NA,legend=rev(legd),fill=rev(ColorsDist),bty="n",title="Lost AGB\n(%)\n", y.intersp = 0.5, border=NA)
+  legend(x=31,y=0.05,xpd=NA,legend = "CI 95%",fill=rgb(0,0,0,alpha=0.1),border=NA,bty="n",x.intersp = 0.4)
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

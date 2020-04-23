@@ -6,7 +6,7 @@ colnames(treats)<-c("plot","treat"); rownames(treats)<-treats[,"plot"]
 Maxs<-cbind(apply(Turn,1,max),treats[,"treat"])
 colnames(Maxs)<-c("Max","treat")
 
-cor(Maxs[,"Max"],Maxs[,"treat"],method="spearman")
+cor.test(Maxs[,"Max"],Maxs[,"treat"],method="spearman")
 
 ##################################################"
 
@@ -20,7 +20,7 @@ colnames(traits)<-c("Family","Genus","species","name","bar_code","L_thickness","
 traits[which(!is.na(traits[,"LA"])),"SLA"]<-
   traits[which(!is.na(traits[,"LA"])),"LA"]/traits[which(!is.na(traits[,"LA"])),"L_DryMass"]
 
-traitsName<-c("L_thickness","L_chloro","L_toughness","L_DryMass","LA","SLA","WD","moisture","Bark_thick")
+c<-c("L_thickness","L_chloro","L_toughness","L_DryMass","LA","SLA","WD","moisture","Bark_thick")
 
 allSd<-apply(traits[,traitsName],2,function(x){return(sd(x, na.rm=T))})
 
@@ -40,6 +40,31 @@ traits2[which(traits2[,"name"]=="Sterculia_speciosa"),"Hmax"]<-43
 traits<-merge(traits2,traits,by="name")[,c("Hmax","L_thickness","L_chloro","L_toughness","L_DryMass","SLA","WD","Bark_thick")]
 ### To be continued
 
+## Traits percent uncertainty
+Traits1<-read.csv("DB/BridgeOK.csv",sep=";",na.strings="")
+Traits1<-Traits1[which(apply(Traits1,1,function(li){return(any(!is.na(li)))})),]
+Traits1["name"]<-as.factor(paste(Traits1$Genus,"_",Traits1$species,sep=""))
+traits<-Traits1[,c("Family","Genus","species","name","bar_code","thickness","SPAD","toughness","dry_mass","traits_surf_area","ind_surf_area",
+                    "sapwood_dens","moisture","bark_thick")]
+colnames(traits)<-c("Family","Genus","species","name","bar_code","L_thickness","L_chloro","L_toughness","L_DryMass","LA","SLA","WD",
+                     "moisture","Bark_thick")
+traits[which(!is.na(traits[,"LA"])),"SLA"]<-
+  traits[which(!is.na(traits[,"LA"])),"LA"]/traits[which(!is.na(traits[,"LA"])),"L_DryMass"]
+Seltraits<-c("L_thickness","L_chloro","L_toughness","L_DryMass","SLA","WD","Bark_thick")#"S_mass","moisture")
+traits<-traits[,c("Family","Genus","name","bar_code",Seltraits)]
+
+library(doBy)
+traitsSp <- summaryBy(L_thickness + L_chloro + L_toughness + L_DryMass + SLA + WD + Bark_thick ~ name, 
+                      data=traits, FUN = function(x){return(mean(x,na.rm=T))},keep.names = T)
+length(which(apply(traitsSp[,Seltraits],1,anyNA)))/nrow(traitsSp)
+
+length(which(apply(traits[,Seltraits],1,anyNA)))/nrow(traits)
+
+load("DB/Paracou_R_Subdivided_ok")
+diff <- setdiff(unique(Recruitment[,"name"]),unique(traits[,"name"]))
+diff <- diff[which(!grepl("Indet.",diff))]
+length(diff)/length(unique(Recruitment[,"name"]))
+length(which(Recruitment[,"name"] %in% diff))/nrow(Recruitment)
 
 #########################################"
 # Test on traits database
@@ -90,7 +115,7 @@ treats<-cbind(c(1,6,11,2,7,9,3,5,10,4,8,12),rep(0:3,each=3))
 treats<-treats[order(treats[,1]),]
 colnames(treats)<-c("plot","treat"); rownames(treats)<-treats[,"plot"]
 
-Tax <- RecPun_DiffNull
+Tax <- RecPun
 Fun <- RecPun_Fun_DiffNull
   
 for(q in 1:3){
@@ -103,16 +128,16 @@ for(q in 1:3){
   assign(c("Richness","Shannon","Simpson")[q],Ret)
 }
 
-cor(Richness[,"Max"],Richness[,"AGB"],method="spearman")
+cor.test(Richness[,"Max"],Richness[,"AGB"],method="spearman")
 cor(Shannon[,"Max"],Shannon[,"AGB"],method="spearman")
-cor(Simpson[,"Max"],Simpson[,"AGB"],method="spearman")
+cor.test(Simpson[,"Max"],Simpson[,"AGB"],method="spearman")
 
 Rao <- apply(Fun[,,"0.5"],2,function(col){return(abs(col- Fun[,1,"0.5"]))})
 Rao <- apply(Rao,1,max)
 Rao <- apply(cbind(Rao,names(Rao)),2,as.numeric)
 colnames(Rao)<-c("Max","plot")
 Rao<-merge(Rao,AGBloss_cor,by="plot")
-cor(Rao[,"Max"],Rao[,"AGB"],method="spearman")
+cor.test(Rao[,"Max"],Rao[,"AGB"],method="spearman")
 
 
 cor(Simpson[which(!Simpson$plot%in%c(8,12)),"Max"],Simpson[which(!Simpson$plot%in%c(8,12)),"treat"],method="spearman")

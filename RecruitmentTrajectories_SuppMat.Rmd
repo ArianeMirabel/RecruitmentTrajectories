@@ -192,6 +192,10 @@ mtext("Years since disturbance",side=1,line=2.1)
 legd<-rep(NA, 12);legd[c(1,6,12)]<-round(sort(AGBloss_cor[,"AGB"])[c(1,6,12)])
 legend("right",inset=c(-0.27,0),xpd=NA,legend=rev(legd),fill=rev(ColorsDist),bty="n",title="Lost AGB\n(%)\n", y.intersp = 0.5, border=NA)
 
+legend(x=29,y=0.05,xpd=NA,legend = "CI 95%",fill=rgb(0,0,0,alpha=0.1),border=NA,bty="n",x.intersp = 0.4)
+
+legend(x=32,y=-0.05,xpd=NA,legend = "Breakpoint",lty=3,border=NA,bty="n",x.intersp = 0.4,cex=0.8)
+
 ```
 
 ```{r Splist, echo=FALSE,as.is=T}

@@ -41,11 +41,11 @@ lang: english
 keywordlabel: Keywords
 corrauthorlabel: Corresponding author 
 output: 
+  bookdown::gitbook: default
+  bookdown::word_document2: default
   bookdown::pdf_book:
     base_format: EcoFoG::article
     keep_tex: TRUE
-  bookdown::word_document2: default
-  bookdown::gitbook: default
 ---
 
 (ref:Bolda) **(a)**
@@ -219,6 +219,8 @@ TrajectoryDiffNull(RecDB=RecPun,RecDB_Diff=RecPun_DiffNull)
 TrajectoryRec_fun(RecDB_fun=RecPun_Fun,RecDB_fun_Diff=RecPun_Fun_DiffNull)
 legd<-rep(NA, 12);legd[c(1,6,12)]<-round(sort(AGBloss_cor[,"AGB"])[c(1,6,12)])
 legend("right",inset=c(-0.37,0),xpd=NA,legend=rev(legd),fill=rev(ColorsDist),bty="n",title="Lost AGB\n(%)\n", y.intersp = 0.5, border=NA)
+legend(x=33,y=-0.25,xpd=NA,legend = "CI 95%",fill=rgb(0,0,0,alpha=0.1),border=NA,bty="n",x.intersp = 0.4)
+
 ```
 
 ## Species composition
@@ -242,6 +244,8 @@ legendCWM()
 mtext("Years since disturbance",side=1,at=0.6,cex=0.8,line=-0.2,outer=TRUE)
 legd<-rep(NA, 12);legd[c(1,6,12)]<-round(sort(AGBloss_cor[,"AGB"])[c(1,6,12)])
 legend("right",inset=c(-0.37,-0.5),xpd=NA,legend=rev(legd),fill=rev(ColorsDist),bty="n",title="Lost AGB\n(%)\n", y.intersp = 0.5, border=NA)
+legend(x=33,y=-0.25,xpd=NA,legend = "CI 95%",fill=rgb(0,0,0,alpha=0.1),border=NA,bty="n",x.intersp = 0.4)
+
 ```
 
 
@@ -255,12 +259,16 @@ Thirty years after the disturbance, the turnover had returned to low values.
 ```{r Turnover, out.width='100%',echo=FALSE,fig.cap=" Trajectories over the 30 years of the relativized abundance-based turnover between recruited populations and the pre-disturbance communities. Recruited populations were analyzed at 2-year intervals at plot level and compared to the plot inventory carried out before the disturbance. The colored lines stand for the disturbance treatments."}
 load("DB/Turnover_toInit")
 
+load("DB/Turnover_toInit")
+
 turnover(Turn)
-par(mar=c(1,2,1,1),no.readonly = T)
-mtext("Years since disturbance",side=1,adj=1,outer=T,line=-2,cex=1.3)
+par(mar=c(1,2,1,1),no.readonly = T,oma=c(4,0,0,1))
+mtext("Years since disturbance",side=1,adj=1,outer=T,line=3,cex=1.3)
 mtext("Taxonomic\nturnover",side=3,adj=0,line=-3,cex=1.3)
 legd<-rep(NA, 12);legd[c(1,6,12)]<-round(sort(AGBloss_cor[,"AGB"])[c(1,6,12)])
-legend("right",inset=c(0,0),xpd=NA,legend=rev(legd),fill=rev(ColorsDist),bty="n",title="Lost AGB\n(%)\n", y.intersp = 0.5, border=NA)
+legend(x=29,y=0.15,xpd=NA,legend=rev(legd),fill=rev(ColorsDist),bty="n",title="Lost AGB\n(%)\n", y.intersp = 0.5, border=NA)
+legend(x=29,y=0.05,xpd=NA,legend = "CI 95%",fill=rgb(0,0,0,alpha=0.1),border=NA,bty="n",x.intersp = 0.4)
+
 ```
 
 # Discussion
